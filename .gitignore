@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Development artifacts
+screenshots/
+uploads/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

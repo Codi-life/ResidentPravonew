@@ -1,0 +1,52 @@
+Options -Indexes
+
+# ── Redirect www to non-www (edit domain if needed) ──────────────────────────
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www\.residentpravo\.com$ [NC]
+RewriteRule ^ https://residentpravo.com%{REQUEST_URI} [R=301,L]
+
+# ── Force HTTPS ───────────────────────────────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# ── Clean URLs ────────────────────────────────────────────────────────────────
+# / → ResidentPravo.html  (Russian root)
+RewriteRule ^$ ResidentPravo.html [L]
+
+# /en/ or /en → index-en.html  (English root)
+RewriteRule ^en/?$ index-en.html [L]
+
+# /privacy-policy → privacy-policy.html
+RewriteRule ^privacy-policy/?$ privacy-policy.html [L]
+
+# /terms-of-use → terms-of-use.html
+RewriteRule ^terms-of-use/?$ terms-of-use.html [L]
+
+# /ru/privacy-policy → ru/privacy-policy.html
+RewriteRule ^ru/privacy-policy/?$ ru/privacy-policy.html [L]
+
+# /ru/terms-of-use → ru/terms-of-use.html
+RewriteRule ^ru/terms-of-use/?$ ru/terms-of-use.html [L]
+
+# ── Caching headers ───────────────────────────────────────────────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg         "access plus 1 year"
+  ExpiresByType image/png          "access plus 1 year"
+  ExpiresByType image/webp         "access plus 1 year"
+  ExpiresByType text/css           "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/html          "access plus 1 hour"
+</IfModule>
+
+# ── Gzip compression ─────────────────────────────────────────────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/plain
+</IfModule>
+
+# ── Security headers ─────────────────────────────────────────────────────────
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

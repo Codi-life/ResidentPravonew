@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Privacy Policy | ResidentPravo</title>
+<meta name="description" content="Privacy Policy for ResidentPravo. Learn how we collect, use and protect your personal data in accordance with GDPR and Cyprus data protection law." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://residentpravo.com/privacy-policy" />
+<link rel="alternate" hreflang="en" href="https://residentpravo.com/privacy-policy" />
+<link rel="alternate" hreflang="ru" href="https://residentpravo.com/ru/privacy-policy" />
+<link rel="alternate" hreflang="x-default" href="https://residentpravo.com/privacy-policy" />
+<link rel="icon" type="image/png" href="images/logo-new.png" />
+<link rel="apple-touch-icon" href="images/logo-new.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy:#0A2540; --blue:#1D4ED8; --sky:#38BDF8;
+    --ink:#111827; --mist:#F5F7FA; --white:#FFFFFF;
+    --navy-70:rgba(10,37,64,0.70); --navy-55:rgba(10,37,64,0.55);
+    --navy-12:rgba(10,37,64,0.12); --navy-06:rgba(10,37,64,0.06);
+    --line:rgba(10,37,64,0.10); --wa:#25D366;
+    --maxw:1400px; --gutter:clamp(1.25rem,5vw,5rem);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;}
+  body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
+  .btn{display:inline-flex;align-items:center;gap:0.65rem;font-family:inherit;font-weight:600;font-size:0.98rem;padding:1rem 1.6rem;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s,background 0.25s;white-space:nowrap;}
+  .btn svg{width:19px;height:19px;flex:none;}
+  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 30px -10px rgba(37,211,102,0.55);}
+  .btn-wa:hover{transform:translateY(-2px);}
+
+  /* Header */
+  header{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(9,28,50,0.92);backdrop-filter:saturate(150%) blur(13px);-webkit-backdrop-filter:saturate(150%) blur(13px);border-bottom:1px solid rgba(255,255,255,0.09);padding-top:calc(0.75rem + env(safe-area-inset-top,0px));padding-bottom:0.75rem;transition:background 0.35s;}
+  .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;}
+  .brand{display:flex;align-items:center;gap:0.85rem;}
+  .brand-text{display:flex;flex-direction:column;line-height:1.05;}
+  .brand-name{font-weight:700;font-size:1.36rem;color:#fff;letter-spacing:-0.015em;}
+  .brand-tag{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;color:rgba(255,255,255,0.6);margin-top:3px;}
+  .menu{display:flex;justify-content:center;gap:2.3rem;}
+  .menu a{font-size:0.92rem;font-weight:500;color:rgba(255,255,255,0.78);position:relative;padding:0.3rem 0;transition:color 0.2s;}
+  .menu a:hover{color:#fff;}
+  .header-cta{display:flex;justify-content:flex-end;align-items:center;gap:0.9rem;}
+  .header-cta .btn{padding:0.58rem 1.05rem;font-size:0.85rem;}
+  .header-cta .btn-wa{box-shadow:0 4px 14px -6px rgba(37,211,102,0.45);}
+  .header-cta .btn-wa svg{width:17px;height:17px;}
+  .lang-switch{display:flex;align-items:center;gap:0.35rem;font-size:0.74rem;font-weight:700;letter-spacing:0.1em;margin-right:0.4rem;}
+  .lang-switch a{color:rgba(255,255,255,0.5);transition:color 0.2s;}
+  .lang-switch a:hover{color:#fff;}
+  .lang-switch a.current{color:#fff;}
+  .lang-switch-sep{color:rgba(255,255,255,0.28);user-select:none;}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:0.3s;}
+
+  /* Mobile Menu */
+  .mobile-menu{position:fixed;inset:0;z-index:99;background:#fff;transform:translateY(-100%);transition:transform 0.45s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;justify-content:center;padding:calc(var(--gutter) + env(safe-area-inset-top,0px)) var(--gutter) calc(var(--gutter) + env(safe-area-inset-bottom,0px));gap:0.4rem;}
+  .mobile-menu.open{transform:translateY(0);}
+  .mobile-menu a{font-size:1.5rem;font-weight:600;color:var(--navy);padding:0.5rem 0;border-bottom:1px solid var(--line);}
+  .mobile-menu .btn-wa{margin-top:1.5rem;justify-content:center;font-size:0.92rem;}
+  .mobile-menu-close{position:absolute;top:calc(var(--gutter) + env(safe-area-inset-top,0px));right:var(--gutter);width:44px;height:44px;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--navy);border-radius:10px;transition:background 0.2s;}
+  .mobile-menu-close:hover{background:var(--navy-06);}
+  .mobile-menu-close svg{width:22px;height:22px;}
+  .mobile-menu-lang{display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--line);margin-top:0.25rem;}
+  .mobile-menu-lang a{font-size:0.82rem;font-weight:700;letter-spacing:0.1em;color:var(--navy-55);padding:0;border-bottom:none;transition:color 0.2s;}
+  .mobile-menu-lang a.current{color:var(--navy);}
+  .mobile-menu-lang-sep{color:var(--navy-12);font-size:0.82rem;user-select:none;}
+
+  /* Legal Hero */
+  .legal-hero{background:var(--navy);padding-top:calc(5.5rem + env(safe-area-inset-top,0px));padding-bottom:3rem;color:#fff;}
+  .legal-breadcrumb{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;}
+  .legal-breadcrumb a{color:rgba(255,255,255,0.5);transition:color 0.2s;}
+  .legal-breadcrumb a:hover{color:#fff;}
+  .legal-breadcrumb-sep{color:rgba(255,255,255,0.22);}
+  .legal-hero h1{font-size:clamp(1.75rem,4vw,2.8rem);color:#fff;font-weight:700;margin-bottom:1rem;letter-spacing:-0.02em;line-height:1.1;}
+  .legal-updated{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.3);padding:0.3em 0.9em;border-radius:999px;}
+
+  /* Legal Content */
+  .legal-content{background:var(--white);padding-block:clamp(2.5rem,7vh,5rem);}
+  .legal-wrap{max-width:900px;margin:0 auto;padding-inline:var(--gutter);}
+  .legal-wrap h2{font-size:clamp(1.1rem,2.2vw,1.4rem);color:var(--navy);font-weight:700;margin:2.75rem 0 0.8rem;padding-bottom:0.6rem;border-bottom:1px solid var(--line);letter-spacing:-0.01em;}
+  .legal-wrap h2:first-child{margin-top:0;}
+  .legal-wrap h3{font-size:0.97rem;color:var(--navy);font-weight:700;margin:1.4rem 0 0.45rem;text-transform:uppercase;letter-spacing:0.04em;}
+  .legal-wrap p{color:var(--navy-70);font-size:0.95rem;line-height:1.8;margin-bottom:0.9rem;}
+  .legal-wrap ul{list-style:none;padding:0;margin:0.5rem 0 1.1rem;display:flex;flex-direction:column;gap:0.35rem;}
+  .legal-wrap ul li{color:var(--navy-70);font-size:0.95rem;line-height:1.78;padding-left:1.4rem;position:relative;}
+  .legal-wrap ul li::before{content:"";position:absolute;left:0;top:0.72em;width:5px;height:5px;border-radius:50%;background:var(--blue);}
+  .legal-wrap strong{color:var(--navy);font-weight:700;}
+  .legal-wrap a{color:var(--blue);text-decoration:underline;text-underline-offset:3px;transition:color 0.2s;}
+  .legal-wrap a:hover{color:var(--navy);}
+  .legal-contact-card{background:var(--mist);border:1px solid var(--line);border-radius:14px;padding:1.5rem 1.75rem;margin-top:1rem;}
+  .legal-contact-card p{margin-bottom:0.35rem;font-size:0.94rem;}
+  .legal-contact-card p:last-child{margin-bottom:0;}
+  .legal-divider{height:1px;background:var(--line);margin:2rem 0;}
+
+  /* Footer */
+  footer{background:var(--ink);color:rgba(255,255,255,0.7);padding-top:clamp(3.5rem,7vh,5.5rem);padding-bottom:calc(2.5rem + env(safe-area-inset-bottom,0px));}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:clamp(2rem,4vw,3.5rem);padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .footer-brand .brand-name{color:#fff;}
+  .footer-brand .brand-tag{color:rgba(255,255,255,0.5);}
+  .footer-brand p{font-size:0.92rem;margin:1.4rem 0;max-width:32ch;color:rgba(255,255,255,0.6);}
+  .footer-col h4{color:#fff;font-size:0.8rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.3rem;font-weight:600;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.85rem;}
+  .footer-col a{font-size:0.92rem;color:rgba(255,255,255,0.65);transition:color 0.2s;}
+  .footer-col a:hover{color:var(--sky);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;padding-top:2rem;font-size:0.82rem;color:rgba(255,255,255,0.45);}
+  .footer-credit a{color:rgba(255,255,255,0.7);font-weight:600;transition:color 0.2s;}
+  .footer-credit a:hover{color:var(--sky);}
+  .footer-legal{display:flex;gap:1.5rem;}
+  .footer-legal a{font-size:0.82rem;color:rgba(255,255,255,0.45);transition:color 0.2s;}
+  .footer-legal a:hover{color:#fff;}
+  .footer-copy-br{display:none;}
+  .footer-social{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;}
+  .footer-social a{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);transition:background 0.25s,color 0.25s,transform 0.25s,border-color 0.25s;}
+  .footer-social a svg{width:19px;height:19px;}
+  .footer-social a:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-2px);}
+  .footer-langs{margin-top:1.6rem;}
+  .footer-langs-label{display:block;font-size:0.82rem;color:rgba(255,255,255,0.6);margin-bottom:0.7rem;}
+  .footer-flags{display:flex;gap:0.45rem;}
+  .flag{width:28px;height:19px;border-radius:4px;overflow:hidden;display:block;box-shadow:0 0 0 1px rgba(255,255,255,0.18),0 6px 14px -6px rgba(0,0,0,0.6);}
+  .flag svg{display:block;width:100%;height:100%;}
+
+  /* Responsive */
+  @media(max-width:1024px){.menu{display:none;}.burger{display:flex;}.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:720px){
+    .header-cta .btn-wa{display:none;}.burger{display:flex;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column;align-items:flex-start;gap:0.75rem;padding-top:1.75rem;}
+    .footer-legal{flex-direction:column;gap:0.75rem;order:1;}
+    .footer-copy{order:2;}.footer-credit{order:3;font-size:0.72rem;opacity:0.75;margin-top:0.25rem;}
+    .footer-copy-br{display:inline;}
+    .legal-hero{padding-top:calc(4.5rem + env(safe-area-inset-top,0px));padding-bottom:2rem;}
+  }
+  @media(max-width:430px){:root{--gutter:1.1rem;}.brand-tag{font-size:0.58rem;letter-spacing:0.12em;}.mobile-menu a{font-size:1.35rem;}}
+  @media(max-width:375px){:root{--gutter:1rem;}.brand-tag{display:none;}.brand-name{font-size:1.2rem;}.mobile-menu a{font-size:1.2rem;}.footer-copy-br{display:inline;}footer{padding-block:2.5rem 2rem;}}
+  @media(max-width:320px){:root{--gutter:0.875rem;}.brand-tag{display:none;}.brand-name{font-size:1.1rem;}.mobile-menu a{font-size:1.1rem;}.mobile-menu{padding:2rem 1rem;}}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <div class="wrap nav">
+    <a href="index-en.html" class="brand" aria-label="ResidentPravo — Home">
+      <div class="brand-text">
+        <span class="brand-name">ResidentPravo</span>
+        <span class="brand-tag">BUSINESS&nbsp;•&nbsp;RESIDENCY&nbsp;•&nbsp;IMMIGRATION</span>
+      </div>
+    </a>
+    <nav class="menu" aria-label="Main navigation">
+      <a href="index-en.html#why">Why Us</a>
+      <a href="index-en.html#services">Services</a>
+      <a href="index-en.html#process">Process</a>
+      <a href="index-en.html#cases">Cases</a>
+      <a href="index-en.html#faq">FAQ</a>
+    </nav>
+    <div class="header-cta">
+      <nav class="lang-switch" aria-label="Language">
+        <a href="ru/privacy-policy.html" hreflang="ru">RU</a>
+        <span class="lang-switch-sep">|</span>
+        <a href="index-en.html" hreflang="en" class="current" aria-current="page">EN</a>
+      </nav>
+      <a href="#" class="btn btn-wa" data-wa aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <a href="index-en.html#why">Why Us</a>
+  <a href="index-en.html#services">Services</a>
+  <a href="index-en.html#process">Process</a>
+  <a href="index-en.html#cases">Cases</a>
+  <a href="index-en.html#faq">FAQ</a>
+  <nav class="mobile-menu-lang" aria-label="Language">
+    <a href="ru/privacy-policy.html" hreflang="ru">RU</a>
+    <span class="mobile-menu-lang-sep">|</span>
+    <a href="index-en.html" hreflang="en" class="current">EN</a>
+  </nav>
+  <a href="#" class="btn btn-wa" data-wa>Chat on WhatsApp</a>
+</div>
+
+<main>
+
+  <section class="legal-hero" aria-label="Privacy Policy">
+    <div class="wrap">
+      <nav class="legal-breadcrumb" aria-label="Breadcrumb">
+        <a href="index-en.html">Home</a>
+        <span class="legal-breadcrumb-sep" aria-hidden="true">›</span>
+        <span>Privacy Policy</span>
+      </nav>
+      <h1>Privacy Policy</h1>
+      <span class="legal-updated">Last updated: June 2026</span>
+    </div>
+  </section>
+
+  <section class="legal-content">
+    <div class="legal-wrap">
+
+      <h2>1. Introduction</h2>
+      <p>ResidentPravo ("<strong>ResidentPravo</strong>", "<strong>we</strong>", "<strong>us</strong>" or "<strong>our</strong>") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use and protect your personal data when you visit our website or engage with our consulting services.</p>
+      <p>This Policy is prepared in accordance with the General Data Protection Regulation (EU) 2016/679 ("<strong>GDPR</strong>") and the Cyprus Law on the Protection of Natural Persons with Regard to the Processing of Personal Data (Law 125(I)/2018).</p>
+
+      <h2>2. Data Controller</h2>
+      <p>The data controller responsible for your personal data is:</p>
+      <div class="legal-contact-card">
+        <p><strong>ResidentPravo</strong></p>
+        <p>Limassol, Republic of Cyprus</p>
+        <p>Email: <a href="mailto:residentpravo@gmail.com">residentpravo@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/35794440424">+357 94 440 424</a></p>
+      </div>
+
+      <h2>3. Personal Data We Collect</h2>
+      <p>We may collect and process the following categories of personal data:</p>
+      <ul>
+        <li><strong>Contact information:</strong> name, email address, telephone number</li>
+        <li><strong>Communication data:</strong> messages sent via WhatsApp, email or website contact forms</li>
+        <li><strong>Business information:</strong> company name, business registration details, nationality, country of residence</li>
+        <li><strong>Identity documents:</strong> where required for services — copies of passports, proof of address and similar documents</li>
+        <li><strong>Usage data:</strong> IP address, browser type, pages visited, time on site (collected via cookies and analytics tools)</li>
+      </ul>
+      <p>We collect personal data only to the extent necessary for the purposes described in this Policy.</p>
+
+      <h2>4. How We Use Your Information</h2>
+      <p>We use your personal data for the following purposes:</p>
+      <ul>
+        <li>To respond to your enquiries and provide consulting services</li>
+        <li>To assess your eligibility for company registration, residence permits or other services</li>
+        <li>To coordinate with licensed professionals (lawyers, accountants, banking institutions) on your behalf</li>
+        <li>To send communications related to the delivery of agreed services</li>
+        <li>To comply with applicable legal and regulatory obligations</li>
+        <li>To improve the functionality and content of our website</li>
+      </ul>
+
+      <h2>5. Legal Basis for Processing (GDPR)</h2>
+      <p>We process your personal data on the following legal grounds:</p>
+      <ul>
+        <li><strong>Contractual necessity</strong> (Art. 6(1)(b) GDPR) — processing necessary to deliver our consulting services</li>
+        <li><strong>Legitimate interests</strong> (Art. 6(1)(f) GDPR) — responding to enquiries and improving our services</li>
+        <li><strong>Legal obligation</strong> (Art. 6(1)(c) GDPR) — compliance with Cyprus and European Union law</li>
+        <li><strong>Consent</strong> (Art. 6(1)(a) GDPR) — where you have provided explicit consent, such as for marketing communications</li>
+      </ul>
+
+      <h2>6. Data Sharing</h2>
+      <p>We may share your personal data with the following categories of recipients:</p>
+      <ul>
+        <li><strong>Licensed partner professionals:</strong> lawyers, accountants, auditors and tax advisors where required to deliver your services</li>
+        <li><strong>Banking institutions:</strong> where assistance with bank account opening is provided</li>
+        <li><strong>Government authorities:</strong> including the Cyprus Registrar of Companies, the Department of Immigration and the Tax Department</li>
+        <li><strong>IT service providers:</strong> website hosting providers and communication tools, subject to GDPR-compliant data processing agreements</li>
+      </ul>
+      <p>We do not sell, rent or otherwise transfer your personal data to third parties for marketing or commercial purposes.</p>
+
+      <h2>7. International Data Transfers</h2>
+      <p>In the course of delivering services, your data may be transferred to and processed in countries outside the European Economic Area (EEA). Where such transfers occur, we ensure that appropriate safeguards are in place, including Standard Contractual Clauses (SCCs) approved by the European Commission, or other legally recognised transfer mechanisms under GDPR Chapter V.</p>
+
+      <h2>8. Data Retention</h2>
+      <p>We retain your personal data for as long as is necessary to fulfil the purposes for which it was collected and to comply with our legal obligations:</p>
+      <ul>
+        <li>Enquiry data (where no contract is concluded): up to 2 years from the date of last contact</li>
+        <li>Active client data: for the duration of the engagement plus 5 years, for accounting and legal compliance purposes</li>
+        <li>Communication records: up to 3 years</li>
+        <li>Data required by Cyprus law: up to 7 years where applicable</li>
+      </ul>
+      <p>On expiry of the applicable retention period, personal data will be securely deleted or anonymised.</p>
+
+      <h2>9. Security Measures</h2>
+      <p>We implement appropriate technical and organisational measures to protect your personal data against unauthorised access, disclosure, alteration or destruction. These measures include encrypted communications, restricted access controls and periodic security reviews. While we take all reasonable steps to protect your data, no method of electronic transmission or storage is completely secure.</p>
+
+      <h2>10. Cookies &amp; Tracking Technologies</h2>
+      <p>Our website uses cookies and similar tracking technologies. These may include:</p>
+      <ul>
+        <li><strong>Essential cookies:</strong> necessary for the website to function correctly</li>
+        <li><strong>Analytics cookies:</strong> to understand how visitors use our website (for example, Google Analytics)</li>
+        <li><strong>Preference cookies:</strong> to remember your settings and improve your experience</li>
+      </ul>
+      <p>You may control or disable cookies through your browser settings. Please note that disabling certain cookies may affect website functionality. For detailed information, please refer to our Cookie Policy or your browser's help documentation.</p>
+
+      <h2>11. Your Rights under GDPR</h2>
+      <p>Subject to applicable law, you have the following rights with respect to your personal data:</p>
+      <ul>
+        <li><strong>Right of Access</strong> (Art. 15): request a copy of the personal data we hold about you</li>
+        <li><strong>Right to Rectification</strong> (Art. 16): request correction of any inaccurate or incomplete data</li>
+        <li><strong>Right to Erasure</strong> (Art. 17): request deletion of your data where no legal basis for retention applies</li>
+        <li><strong>Right to Restrict Processing</strong> (Art. 18): request that we limit how we use your data in certain circumstances</li>
+        <li><strong>Right to Data Portability</strong> (Art. 20): receive your personal data in a structured, machine-readable format</li>
+        <li><strong>Right to Object</strong> (Art. 21): object to processing based on our legitimate interests</li>
+        <li><strong>Right to Withdraw Consent:</strong> where processing is based on consent, you may withdraw it at any time without affecting the lawfulness of prior processing</li>
+      </ul>
+      <p>To exercise any of the above rights, please contact us at <a href="mailto:residentpravo@gmail.com">residentpravo@gmail.com</a>. We will respond within 30 days in accordance with GDPR requirements.</p>
+
+      <h2>12. Complaints</h2>
+      <p>If you believe that your data protection rights have been infringed, you have the right to lodge a complaint with the Cyprus Commissioner for Personal Data Protection:</p>
+      <div class="legal-contact-card">
+        <p><strong>Office of the Commissioner for Personal Data Protection</strong></p>
+        <p>1 Iasonos Street, 1082 Nicosia, Cyprus</p>
+        <p>Website: <a href="https://www.dataprotection.gov.cy" target="_blank" rel="noopener noreferrer">www.dataprotection.gov.cy</a></p>
+        <p>Email: <a href="mailto:commissioner@dataprotection.gov.cy">commissioner@dataprotection.gov.cy</a></p>
+      </div>
+      <p>We encourage you to contact us first so that we may address your concern directly before escalating to the supervisory authority.</p>
+
+      <h2>13. Amendments to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. The current version will always be available on this page, with the date of the most recent update shown at the top. We encourage you to review this page periodically.</p>
+
+      <h2>14. Contact Us</h2>
+      <p>For any questions or concerns regarding this Privacy Policy or the processing of your personal data, please contact us:</p>
+      <div class="legal-contact-card">
+        <p><strong>ResidentPravo</strong></p>
+        <p>Limassol, Republic of Cyprus</p>
+        <p>Email: <a href="mailto:residentpravo@gmail.com">residentpravo@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/35794440424">+357 94 440 424</a></p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index-en.html" class="brand">
+          <div class="brand-text">
+            <span class="brand-name">ResidentPravo</span>
+            <span class="brand-tag">BUSINESS&nbsp;•&nbsp;RESIDENCY&nbsp;•&nbsp;IMMIGRATION</span>
+          </div>
+        </a>
+        <p>Company registration, residence permits, banking and business support in Cyprus.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/35794440424" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg></a>
+          <a href="https://t.me/ResidentPravo1" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.6l-3.32 15.66c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.4 6.9c.4-.36-.09-.56-.62-.2L6.21 13.5l-4.97-1.56c-1.08-.34-1.1-1.08.22-1.6L20.55 3.02c.9-.34 1.69.2 1.39 1.58z"/></svg></a>
+          <a href="https://www.instagram.com/residentpravo_cyprus" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.linkedin.com/in/resident-pravo-785884414/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5v9H4v-9h2.5zM5.25 4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM20 17.5h-2.5v-4.7c0-1.1-.4-1.9-1.4-1.9-.77 0-1.2.52-1.4 1.02-.07.18-.09.43-.09.68v4.9H12.1s.03-7.95 0-8.78v-.22h2.5v1.1c.33-.51.92-1.24 2.25-1.24 1.64 0 2.9 1.07 2.9 3.38v5.76z"/></svg></a>
+        </div>
+        <div class="footer-langs">
+          <span class="footer-langs-label">We speak your language</span>
+          <div class="footer-flags">
+            <span class="flag" title="Armenian"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="6.67" y="0" fill="#D90012"/><rect width="30" height="6.67" y="6.67" fill="#0033A0"/><rect width="30" height="6.66" y="13.33" fill="#F2A800"/></svg></span>
+            <span class="flag" title="English"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="20" fill="#012169"/><polygon points="0,0 3.5,0 30,17.5 30,20 26.5,20 0,2.5" fill="#fff"/><polygon points="30,0 26.5,0 0,17.5 0,20 3.5,20 30,2.5" fill="#fff"/><polygon points="0,0 2,0 30,18.75 30,20 28,20 0,1.25" fill="#C8102E"/><polygon points="30,0 28,0 0,18.75 0,20 2,20 30,1.25" fill="#C8102E"/><rect x="12" y="0" width="6" height="20" fill="#fff"/><rect x="0" y="7.5" width="30" height="5" fill="#fff"/><rect x="13" y="0" width="4" height="20" fill="#C8102E"/><rect x="0" y="8.75" width="30" height="2.5" fill="#C8102E"/></svg></span>
+            <span class="flag" title="Ukrainian"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="10" y="0" fill="#0057B7"/><rect width="30" height="10" y="10" fill="#FFD700"/></svg></span>
+            <span class="flag" title="Greek"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="20" fill="#0D5EAF"/><rect y="2.222" width="30" height="2.222" fill="#fff"/><rect y="6.667" width="30" height="2.222" fill="#fff"/><rect y="11.111" width="30" height="2.222" fill="#fff"/><rect y="15.556" width="30" height="2.222" fill="#fff"/><rect width="11.111" height="11.111" fill="#0D5EAF"/><rect x="4.444" width="2.222" height="11.111" fill="#fff"/><rect y="4.444" width="11.111" height="2.222" fill="#fff"/></svg></span>
+            <span class="flag" title="Russian"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="6.67" y="0" fill="#fff"/><rect width="30" height="6.67" y="6.67" fill="#0039A6"/><rect width="30" height="6.66" y="13.33" fill="#D52B1E"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="index-en.html#services">Company Registration in Cyprus</a></li>
+          <li><a href="index-en.html#services">Residence &amp; Permanent Permit</a></li>
+          <li><a href="index-en.html#services">Cyprus Citizenship</a></li>
+          <li><a href="index-en.html#services">Accounting &amp; Audit</a></li>
+          <li><a href="index-en.html#services">Bank Account Opening</a></li>
+          <li><a href="index-en.html#services">Legal Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="index-en.html#why">Why Choose Us</a></li>
+          <li><a href="index-en.html#process">How It Works</a></li>
+          <li><a href="index-en.html#cases">Client Cases</a></li>
+          <li><a href="index-en.html#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#" data-wa>WhatsApp · message us</a></li>
+          <li><a href="mailto:residentpravo@gmail.com">residentpravo@gmail.com</a></li>
+          <li><a href="index-en.html">Limassol, Cyprus</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 ResidentPravo.<br class="footer-copy-br">All rights reserved.</span>
+      <span class="footer-credit">Website by <a href="https://codilife.com/" target="_blank" rel="noopener">Codilife</a></span>
+      <nav class="footer-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-use.html">Terms of Use</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const WA_URL = 'https://wa.me/35794440424?text=' + encodeURIComponent("Hello! I'd like a free consultation with ResidentPravo about business or relocation to Cyprus.");
+  document.querySelectorAll('[data-wa]').forEach(a => { a.setAttribute('href', WA_URL); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener noreferrer'); });
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuClose = document.getElementById('menuClose');
+  function closeMobileMenu() { mobileMenu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; }
+  burger.addEventListener('click', () => { const open = mobileMenu.classList.toggle('open'); burger.setAttribute('aria-expanded', String(open)); document.body.style.overflow = open ? 'hidden' : ''; });
+  menuClose.addEventListener('click', closeMobileMenu);
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+</script>
+</body>
+</html>

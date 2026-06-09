@@ -1,0 +1,13 @@
+# ResidentPravo — Netlify / Cloudflare Pages redirects
+# Remove if using Apache/.htaccess hosting
+
+/en              /index-en.html           200
+/en/             /index-en.html           200
+/privacy-policy  /privacy-policy.html     200
+/privacy-policy/ /privacy-policy.html     200
+/terms-of-use    /terms-of-use.html       200
+/terms-of-use/   /terms-of-use.html       200
+/ru/privacy-policy  /ru/privacy-policy.html  200
+/ru/privacy-policy/ /ru/privacy-policy.html  200
+/ru/terms-of-use    /ru/terms-of-use.html    200
+/ru/terms-of-use/   /ru/terms-of-use.html    200
