@@ -35,8 +35,8 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="image" href="/images/arthur-hero.png" fetchpriority="high" />
-<link rel="preload" as="image" href="/images/limassol-dark.jpg" />
+<link rel="preload" as="image" href="/images/limassol-dark.webp" fetchpriority="high" type="image/webp" />
+<link rel="preload" as="image" href="/images/arthur-hero.webp" fetchpriority="high" type="image/webp" />
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
@@ -127,8 +127,8 @@
   .mobile-menu-lang a.current { color: var(--navy); }
   .mobile-menu-lang-sep { color: var(--navy-12); font-size: 0.82rem; user-select: none; }
   .hero { position: relative; min-height: 680px; padding-top: clamp(7rem, 13vh, 9rem); padding-bottom: clamp(2rem, 4vh, 3.5rem); overflow: hidden; color: #fff; display: flex; align-items: center; background: radial-gradient(90% 80% at 78% 10%, #133a61 0%, rgba(19,58,97,0) 58%), linear-gradient(158deg, #061726 0%, var(--navy) 48%, #08233f 100%); }
-  .hero::before { content: ""; position: absolute; inset: 0; background-image: url("/images/limassol-dark.jpg"); background-position: 130% 26%; background-size: 58% auto; background-repeat: no-repeat; filter: blur(28px) saturate(0.9); opacity: 0.3; z-index: 0; pointer-events: none; }
-  .hero-photo { position: absolute; right: 0; bottom: 0; top: 0; width: 42%; max-width: 720px; z-index: 1; background: url("/images/arthur-hero.png") no-repeat right bottom; background-size: contain; pointer-events: none; }
+  .hero::before { content: ""; position: absolute; inset: 0; background-image: url("/images/limassol-dark.webp"); background-position: 130% 26%; background-size: 58% auto; background-repeat: no-repeat; filter: blur(28px) saturate(0.9); opacity: 0.3; z-index: 0; pointer-events: none; }
+  .hero-photo { position: absolute; right: 0; bottom: 0; top: 0; width: 42%; max-width: 720px; z-index: 1; background: url("/images/arthur-hero.webp") no-repeat right bottom; background-size: contain; pointer-events: none; }
   .hero-wrap { position: relative; z-index: 2; width: 100%; }
   .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 60%); gap: clamp(2rem, 4.5vw, 4rem); align-items: center; }
   .hero h1 { font-size: clamp(2rem, 3.6vw, 3.5rem); font-weight: 700; line-height: 1.14; margin: 1.2rem 0 1.3rem; max-width: 17ch; text-wrap: balance; color: #fff; }
@@ -751,7 +751,7 @@
 
       <div class="case-grid reveal">
         <article class="case-card">
-          <div class="case-card-photo"><img src="/images/case-uae.jpg" alt="IT company from UAE — business relocation to Cyprus" loading="lazy" /></div>
+          <div class="case-card-photo"><img src="/images/case-uae.webp" alt="IT company from UAE — business relocation to Cyprus" loading="lazy" /></div>
           <div class="case-card-body">
             <h3>IT Company from the UAE</h3>
             <ul class="case-results">
@@ -762,7 +762,7 @@
           </div>
         </article>
         <article class="case-card">
-          <div class="case-card-photo"><img src="/images/case-ukraine.jpg" alt="Entrepreneur from Armenia — company registration in Cyprus" loading="lazy" /></div>
+          <div class="case-card-photo"><img src="/images/case-ukraine.webp" alt="Entrepreneur from Armenia — company registration in Cyprus" loading="lazy" /></div>
           <div class="case-card-body">
             <h3>Entrepreneur from Armenia</h3>
             <ul class="case-results">
@@ -773,7 +773,7 @@
           </div>
         </article>
         <article class="case-card">
-          <div class="case-card-photo"><img src="/images/case-armenia.jpg" alt="Family from Ukraine — residence permit in Cyprus" loading="lazy" /></div>
+          <div class="case-card-photo"><img src="/images/case-armenia.webp" alt="Family from Ukraine — residence permit in Cyprus" loading="lazy" /></div>
           <div class="case-card-body">
             <h3>Family from Ukraine</h3>
             <ul class="case-results">

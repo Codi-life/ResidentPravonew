@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Russian homepage -->
+  <url>
+    <loc>https://residentpravo.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://residentpravo.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://residentpravo.com/en/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- English homepage -->
+  <url>
+    <loc>https://residentpravo.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://residentpravo.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://residentpravo.com/"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- English Privacy Policy -->
+  <url>
+    <loc>https://residentpravo.com/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://residentpravo.com/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://residentpravo.com/ru/privacy-policy"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- English Terms of Use -->
+  <url>
+    <loc>https://residentpravo.com/terms-of-use</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://residentpravo.com/terms-of-use"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://residentpravo.com/ru/terms-of-use"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Russian Privacy Policy -->
+  <url>
+    <loc>https://residentpravo.com/ru/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://residentpravo.com/ru/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://residentpravo.com/privacy-policy"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Russian Terms of Use -->
+  <url>
+    <loc>https://residentpravo.com/ru/terms-of-use</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://residentpravo.com/ru/terms-of-use"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://residentpravo.com/terms-of-use"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
