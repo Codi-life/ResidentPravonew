@@ -10,8 +10,8 @@ RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # ── Clean URLs ────────────────────────────────────────────────────────────────
-# / → ResidentPravo.html  (Russian root)
-RewriteRule ^$ ResidentPravo.html [L]
+# / → index.html  (Russian root)
+RewriteRule ^$ index.html [L]
 
 # /en/ or /en → index-en.html  (English root)
 RewriteRule ^en/?$ index-en.html [L]
