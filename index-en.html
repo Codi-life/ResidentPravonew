@@ -436,16 +436,51 @@
 </style>
 
 <!-- Schema.org: LocalBusiness + ProfessionalService -->
+<!-- Schema.org: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://residentpravo.com/#organization",
+  "name": "ResidentPravo",
+  "url": "https://residentpravo.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://residentpravo.com/images/logo-new.png",
+    "width": 192,
+    "height": 192
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+35794440424",
+    "email": "residentpravo@gmail.com",
+    "contactType": "customer service",
+    "availableLanguage": ["Russian", "English"]
+  },
+  "sameAs": [
+    "https://wa.me/35794440424",
+    "https://t.me/ResidentPravo1",
+    "https://www.instagram.com/residentpravo_cyprus",
+    "https://www.facebook.com/share/1BLKihreY1/",
+    "https://www.linkedin.com/in/resident-pravo-785884414/"
+  ]
+}
+</script>
+
+<!-- Schema.org: LocalBusiness + ProfessionalService -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://residentpravo.com/#localbusiness",
   "name": "ResidentPravo",
   "description": "Company registration, residence permits, bank account opening, accounting and legal support for business and relocation in Cyprus.",
-  "url": "https://residentpravo.com/en",
+  "url": "https://residentpravo.com/en/",
   "telephone": "+35794440424",
   "email": "residentpravo@gmail.com",
   "image": "https://residentpravo.com/images/og-image.jpg",
+  "logo": "https://residentpravo.com/images/logo-new.png",
+  "priceRange": "€€",
   "address": { "@type": "PostalAddress", "addressLocality": "Limassol", "addressCountry": "CY" },
   "geo": { "@type": "GeoCoordinates", "latitude": "34.6841", "longitude": "33.0228" },
   "areaServed": ["CY", "AE", "UA", "AM", "RU", "GR"],
@@ -461,7 +496,13 @@
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Relocation to Cyprus"}}
     ]
   },
-  "sameAs": ["https://wa.me/35794440424","https://t.me/ResidentPravo1","https://www.instagram.com/residentpravo_cyprus","https://www.linkedin.com/in/resident-pravo-785884414/"]
+  "sameAs": [
+    "https://wa.me/35794440424",
+    "https://t.me/ResidentPravo1",
+    "https://www.instagram.com/residentpravo_cyprus",
+    "https://www.facebook.com/share/1BLKihreY1/",
+    "https://www.linkedin.com/in/resident-pravo-785884414/"
+  ]
 }
 </script>
 
