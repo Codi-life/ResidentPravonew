@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://residentpravo.com/sitemap.xml
+Sitemap: https://www.residentpravo.com/sitemap.xml

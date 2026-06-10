@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://residentpravo.com/</loc>
+    <loc>https://www.residentpravo.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://residentpravo.com/en/</loc>
+    <loc>https://www.residentpravo.com/en/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://residentpravo.com/privacy-policy</loc>
+    <loc>https://www.residentpravo.com/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://residentpravo.com/terms-of-use</loc>
+    <loc>https://www.residentpravo.com/terms-of-use</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://residentpravo.com/ru/privacy-policy</loc>
+    <loc>https://www.residentpravo.com/ru/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://residentpravo.com/ru/terms-of-use</loc>
+    <loc>https://www.residentpravo.com/ru/terms-of-use</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
