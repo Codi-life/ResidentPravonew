@@ -108,8 +108,9 @@
   @media(max-width:720px){.header-cta .btn-wa{display:none;}.burger{display:flex;}.footer-grid{grid-template-columns:1fr;}.footer-bottom{flex-direction:column;align-items:flex-start;gap:0.75rem;padding-top:1.75rem;}.footer-legal{flex-direction:column;gap:0.75rem;order:1;}.footer-copy{order:2;}.footer-credit{order:3;font-size:0.72rem;opacity:0.75;margin-top:0.25rem;}.footer-copy-br{display:inline;}.legal-hero{padding-top:calc(4.5rem + env(safe-area-inset-top,0px));padding-bottom:2rem;}}
   @media(max-width:430px){:root{--gutter:1.1rem;}.brand-tag{font-size:0.58rem;letter-spacing:0.12em;}.mobile-menu a{font-size:1.35rem;}}
   @media(max-width:375px){:root{--gutter:1rem;}.brand-tag{display:none;}.brand-name{font-size:1.2rem;}.mobile-menu a{font-size:1.2rem;}.footer-copy-br{display:inline;}footer{padding-block:2.5rem 2rem;}}
-  @media(max-width:320px){:root{--gutter:0.875rem;}.brand-tag{display:none;}.brand-name{font-size:1.1rem;}.mobile-menu a{font-size:1.1rem;}.mobile-menu{padding:2rem 1rem;}}
+  @media(max-width:320px){:root{--gutter:0.875rem;}.brand-tag{display:none;}.brand-name{font-size:1.1rem;}.mobile-menu a{font-size:1.1rem;}.mobile-menu{padding:2rem 1rem;}.legal-hero h1{font-size:1.55rem;}.btn-wa{font-size:.82rem;padding:.8rem 1rem;}}
 </style>
+<link rel="stylesheet" href="/css/header.css" />
 </head>
 <body>
 
@@ -144,8 +145,8 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu-close" id="menuClose" aria-label="Close menu">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  <button class="close-menu-btn" id="menuClose" aria-label="Close menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/></svg>
   </button>
   <a href="/en/#why">Why Us</a>
   <a href="/en/#services">Services</a>
@@ -348,5 +349,6 @@
   menuClose.addEventListener('click', closeMobileMenu);
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
 </script>
+<script src="/js/lang-switch.js"></script>
 </body>
 </html>
