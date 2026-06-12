@@ -3,24 +3,62 @@
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/en",               "destination": "/index-en.html" },
-    { "source": "/en/",              "destination": "/index-en.html" },
-    { "source": "/privacy-policy",   "destination": "/privacy-policy.html" },
-    { "source": "/terms-of-use",     "destination": "/terms-of-use.html" },
-    { "source": "/ru/privacy-policy","destination": "/ru/privacy-policy.html" },
-    { "source": "/ru/terms-of-use",  "destination": "/ru/terms-of-use.html" },
-    { "source": "/ru/residence-permit-cyprus", "destination": "/ru/residence-permit-cyprus.html" },
-    { "source": "/en/residence-permit-cyprus", "destination": "/en/residence-permit-cyprus.html" }
+    {
+      "source": "/en",
+      "destination": "/index-en.html"
+    },
+    {
+      "source": "/en/",
+      "destination": "/index-en.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/terms-of-use",
+      "destination": "/terms-of-use.html"
+    },
+    {
+      "source": "/ru/privacy-policy",
+      "destination": "/ru/privacy-policy.html"
+    },
+    {
+      "source": "/ru/terms-of-use",
+      "destination": "/ru/terms-of-use.html"
+    },
+    {
+      "source": "/ru/residence-permit-cyprus",
+      "destination": "/ru/residence-permit-cyprus.html"
+    },
+    {
+      "source": "/en/residence-permit-cyprus",
+      "destination": "/en/residence-permit-cyprus.html"
+    },
+    {
+      "source": "/ru/company-registration-cyprus",
+      "destination": "/ru/company-registration-cyprus.html"
+    },
+    {
+      "source": "/en/company-registration-cyprus",
+      "destination": "/en/company-registration-cyprus.html"
+    }
   ]
 }
