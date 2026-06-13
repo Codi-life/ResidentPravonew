@@ -74,7 +74,7 @@
     { "@type": "Question", "name": "Может ли иностранец быть директором и акционером кипрской компании?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Законодательство Кипра не ограничивает иностранцев в праве быть директорами и акционерами местных компаний. Директором и единственным акционером может быть одно лицо любой национальности. Однако для признания компании налоговым резидентом Кипра рекомендуется назначить хотя бы одного директора-резидента Кипра." } },
     { "@type": "Question", "name": "Нужен ли местный (кипрский) директор?", "acceptedAnswer": { "@type": "Answer", "text": "По закону — нет. Однако для подтверждения налогового резидентства компании на Кипре и соблюдения требований substance (реальное управление) рекомендуется назначить хотя бы одного директора-резидента Кипра. Это особенно важно для избежания переквалификации компании как резидента другой юрисдикции." } },
     { "@type": "Question", "name": "Какой налог на прибыль на Кипре?", "acceptedAnswer": { "@type": "Answer", "text": "Ставка корпоративного налога на Кипре составляет 12,5% — одна из самых низких в Европейском союзе. Для доходов от интеллектуальной собственности применяется режим IP Box со ставкой эффективного налогообложения от 2,5%. Дивиденды, выплачиваемые нерезидентам, не облагаются налогом у источника." } },
-    { "@type": "Question", "name": "Когда нужно регистрировать VAT на Кипре?", "acceptedAnswer": { "@type": "Answer", "text": "Обязательная регистрация VAT требуется при превышении годового оборота €15 600 от поставок товаров и услуг на Кипре, а также при интраЕС поставках независимо от оборота. Добровольная регистрация возможна с первого дня деятельности — это открывает возможность возврата входящего НДС." } },
+    { "@type": "Question", "name": "Когда нужно регистрировать VAT на Кипре?", "acceptedAnswer": { "@type": "Answer", "text": "Обязательная регистрация VAT требуется при превышении годового оборота €15&nbsp;600 от поставок товаров и услуг на Кипре, а также при интраЕС поставках независимо от оборота. Добровольная регистрация возможна с первого дня деятельности — это открывает возможность возврата входящего НДС." } },
     { "@type": "Question", "name": "Какие банки доступны для открытия корпоративного счёта?", "acceptedAnswer": { "@type": "Answer", "text": "Кипрским компаниям доступны традиционные банки — Bank of Cyprus, Eurobank, Alpha Bank Cyprus — а также ЕМИ: Wise Business, Revolut Business, Airwallex. Традиционные банки требуют личного визита и проводят комплаенс-проверку. ЕМИ открываются дистанционно. Возможность открытия счёта зависит от структуры компании, страны резидентства владельцев и характера деятельности." } },
     { "@type": "Question", "name": "Можно ли вести IT-бизнес через кипрскую компанию?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Кипр — одна из лучших юрисдикций для IT-компаний в ЕС. Режим IP Box позволяет облагать доходы от программного обеспечения, патентов и других объектов интеллектуальной собственности эффективной ставкой от 2,5%. Кипр не облагает налогом дивиденды при выплате нерезидентам, что делает его привлекательным для распределения прибыли." } },
     { "@type": "Question", "name": "Что такое «substance» и зачем он нужен?", "acceptedAnswer": { "@type": "Answer", "text": "Substance — это реальное экономическое присутствие компании на Кипре: местный директор, офис, сотрудники или хотя бы подтверждённая управленческая деятельность с острова. Без substance налоговые органы других стран вправе считать компанию резидентом иной юрисдикции. Минимальный substance достигается через назначение директора-резидента Кипра и проведение заседаний совета директоров на острове." } },
@@ -104,7 +104,7 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x:hidden; }
-  body { font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:var(--white); line-height:1.6; font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body { font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:var(--white); line-height:1.6; font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden; overflow-wrap:break-word; word-break:break-word; }
   a { color:inherit; text-decoration:none; }
   img { max-width:100%; display:block; }
   h1,h2,h3,h4 { font-weight:700; line-height:1.2; }
@@ -159,7 +159,7 @@
   .btn-ghost.light:hover { border-color:rgba(255,255,255,.7); }
   .btn-wa { background:var(--wa); color:#fff; box-shadow:0 12px 30px -10px rgba(37,211,102,0.55); }
   .btn-wa:hover { transform:translateY(-2px); box-shadow:0 18px 38px -10px rgba(37,211,102,0.6); }
-  .eyebrow { display:inline-flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); }
+  .eyebrow { display:inline-flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); flex-wrap:wrap; }
   .eyebrow::before { content:""; display:block; width:28px; height:2px; background:var(--blue); border-radius:2px; flex:none; }
   .section-head { margin-bottom:clamp(40px,6vh,64px); }
   .section-head h2 { margin-top:var(--s2); text-wrap:balance; }
@@ -200,7 +200,7 @@
   .sv-text p:first-child { color:#fff; font-weight:600; font-size:.95rem; margin-bottom:.25rem; }
   .sv-text p:last-child { color:rgba(255,255,255,.6); font-size:.88rem; }
   .timeline-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(10,37,64,.12); border:1px solid rgba(10,37,64,.12); border-radius:20px; overflow:hidden; }
-  .ts-step { background:var(--white); padding:clamp(24px,3vw,36px) clamp(20px,2vw,28px); position:relative; transition:background .3s; }
+  .ts-step { background:var(--white); padding:clamp(24px,3vw,36px) clamp(20px,2vw,28px); position:relative; transition:background .3s; min-width:0; overflow:hidden; }
   .ts-step:hover { background:#f4f7ff; }
   .ts-num { font-size:clamp(2rem,3.5vw,3rem); font-weight:700; letter-spacing:-.04em; color:var(--blue); line-height:1; margin-bottom:1.2rem; opacity:.35; }
   .ts-step h3 { font-size:1.1rem; color:var(--navy); margin-bottom:.5rem; }
@@ -209,14 +209,14 @@
   .timeline-trust { display:flex; flex-wrap:wrap; gap:.5rem 2rem; justify-content:center; margin-top:var(--s4); font-size:.83rem; color:var(--navy-55); }
   .timeline-trust span::before { content:"✓ "; color:var(--blue); font-weight:700; }
   .why-cy-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s3); }
-  .wcy-card { background:var(--mist); border-radius:var(--radius); padding:var(--card-pad); border:1px solid var(--line); transition:transform .3s,box-shadow .3s; }
+  .wcy-card { background:var(--mist); border-radius:var(--radius); padding:var(--card-pad); border:1px solid var(--line); transition:transform .3s,box-shadow .3s; min-width:0; overflow:hidden; }
   .wcy-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px -20px rgba(10,37,64,.18); }
   .wcy-card .wcy-icon { width:50px; height:50px; border-radius:13px; display:grid; place-items:center; background:rgba(29,78,216,.08); border:1px solid rgba(29,78,216,.14); color:var(--blue); margin-bottom:var(--s2); }
   .wcy-card .wcy-icon svg { width:24px; height:24px; }
   .wcy-card h3 { font-size:1.08rem; color:var(--navy); margin-bottom:.5rem; }
   .wcy-card p { color:var(--navy-70); font-size:.92rem; }
   .why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(10,37,64,.13); border:1px solid rgba(10,37,64,.15); border-radius:18px; overflow:hidden; box-shadow:0 24px 50px -38px rgba(10,37,64,.25); }
-  .why-item { background:#fff; padding:var(--card-pad); position:relative; transition:background .35s; }
+  .why-item { background:#fff; padding:var(--card-pad); position:relative; transition:background .35s; min-width:0; overflow:hidden; }
   .why-item:hover { background:#fcfdff; }
   .why-item.featured { background:var(--navy); }
   .why-item.featured:hover { background:#0d2d4f; }
@@ -288,7 +288,7 @@
 
   /* ── Services grid ── */
   .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
-  .svc-card { background:var(--white); border-radius:16px; padding:var(--card-pad); border:1px solid rgba(10,37,64,.07); box-shadow:0 2px 12px rgba(10,37,64,.05); display:flex; flex-direction:column; gap:.75rem; transition:transform .25s,box-shadow .25s; }
+  .svc-card { background:var(--white); border-radius:16px; padding:var(--card-pad); border:1px solid rgba(10,37,64,.07); box-shadow:0 2px 12px rgba(10,37,64,.05); display:flex; flex-direction:column; gap:.75rem; transition:transform .25s,box-shadow .25s; min-width:0; overflow:hidden; }
   .svc-card:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(10,37,64,.09); }
   .svc-num { font-size:.7rem; font-weight:700; letter-spacing:.1em; color:var(--blue); background:rgba(29,78,216,.07); border:1px solid rgba(29,78,216,.12); border-radius:999px; padding:.2em .8em; width:fit-content; }
   .svc-card h3 { font-size:1rem; font-weight:700; color:var(--navy); line-height:1.3; }
@@ -340,7 +340,9 @@
   .timeline-card { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:1rem 1.1rem; display:flex; flex-direction:column; gap:.35rem; }
   .timeline-card-num { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); margin-bottom:.1rem; }
   .timeline-card-label { font-size:.88rem; font-weight:700; color:var(--navy); line-height:1.35; }
-  .timeline-card-time { font-size:.95rem; font-weight:700; color:var(--blue); line-height:1.35; }
+  .timeline-card-time { font-size:.95rem; font-weight:700; color:var(--blue); line-height:1.35; white-space:nowrap; }
+  .seo-article li strong, .seo-article p strong { white-space:nowrap; }
+  .timeline-fees-body strong { display:block; margin-bottom:.25rem; font-size:.88rem; }
   .timeline-card-note { font-size:.8rem; color:var(--navy-70); line-height:1.45; margin-top:.1rem; }
   .timeline-fees { background:var(--mist); border:1px solid var(--line); border-radius:12px; padding:1rem 1.15rem; margin:.25rem 0 1.25rem; display:flex; gap:.75rem; align-items:flex-start; }
   .timeline-fees-icon { flex:none; width:32px; height:32px; background:rgba(29,78,216,.08); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--blue); }
@@ -365,7 +367,8 @@
   .bank-row:nth-child(even) { background:var(--mist); }
   .bank-row-name { font-weight:700; color:var(--navy); font-size:.9rem; }
   .bank-row-desc { color:var(--navy-70); font-size:.87rem; line-height:1.55; }
-  .seo-table { width:100%; border-collapse:collapse; font-size:.9rem; margin:1.2rem 0 1.6rem; }
+  .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1.2rem 0 1.6rem; border-radius:8px; }
+  .seo-table { width:100%; border-collapse:collapse; font-size:.9rem; margin:0; min-width:520px; }
   .seo-table th { background:var(--navy); color:#fff; padding:.7rem .9rem; text-align:left; font-size:.8rem; letter-spacing:.04em; }
   .seo-table td { padding:.7rem .9rem; border-bottom:1px solid var(--line); color:var(--navy-70); vertical-align:top; }
   .seo-table td:first-child { font-weight:600; color:var(--navy); }
@@ -374,6 +377,8 @@
   .seo-nav { background:var(--white); border:1px solid rgba(10,37,64,.11); border-radius:var(--radius); padding:1.4rem; box-shadow:0 2px 16px rgba(10,37,64,.06); }
   .seo-nav h4 { font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--blue); margin-bottom:1rem; display:flex; align-items:center; gap:.5rem; }
   .seo-nav h4::before { content:""; display:block; width:20px; height:2px; background:var(--blue); border-radius:2px; flex:none; }
+  .seo-nav-chevron { display:none; flex:none; margin-left:auto; transition:transform .3s ease; }
+  .seo-nav-body { overflow:hidden; }
   .seo-nav ul { list-style:none; display:flex; flex-direction:column; }
   .seo-nav a { font-size:.92rem; font-weight:500; color:var(--navy-70); transition:color .2s,padding-left .18s; padding:.45rem 0; display:block; border-bottom:1px solid var(--line-soft); line-height:1.35; }
   .seo-nav a:hover,.seo-nav a.active { color:var(--blue); padding-left:.3rem; }
@@ -400,10 +405,18 @@
     .split-visual { position:static; }
     .timeline-steps { grid-template-columns:repeat(2,1fr); }
     .seo-layout { grid-template-columns:1fr; }
-    .seo-sidebar { position:static; }
+    .seo-sidebar { position:static; order:-1; max-height:none; overflow-y:visible; }
+    .seo-cta-box { display:none; }
+    .seo-nav h4 { cursor:pointer; user-select:none; margin-bottom:0; }
+    .seo-nav-chevron { display:block; }
+    .seo-nav-body { max-height:0; transition:max-height .35s ease; }
+    .seo-nav.toc-open h4 { margin-bottom:1rem; }
+    .seo-nav.toc-open .seo-nav-body { max-height:600px; }
+    .seo-nav.toc-open .seo-nav-chevron { transform:rotate(180deg); }
   }
   @media (max-width:768px) {
     .header-cta .btn-wa { display:none; }
+    .faq-aside { display:none; }
     .services-grid { grid-template-columns:1fr; }
     .cases-v2-expert { flex-wrap:wrap; padding:1.25rem 1.4rem; }
     .cases-v2-expert .btn-wa { width:100%; justify-content:center; }
@@ -419,26 +432,57 @@
     .page-hero p { margin-bottom:1.5rem; line-height:1.5; }
     .footer-copy-br { display:inline; }
     .compare-cta-inner { flex-direction:column; align-items:flex-start; }
+    /* Prevent content overflow on mobile */
+    .timeline-card-time { white-space:normal; }
+    .seo-article li strong, .seo-article p strong { white-space:normal; }
+    .btn { max-width:100%; }
+    .ts-step h3, .ts-step p, .wcy-card h3, .wcy-card p, .why-item h3, .why-item p, .svc-card h3, .svc-card p { overflow-wrap:break-word; word-break:break-word; }
+    .case-c-val, .faq-a-inner { overflow-wrap:break-word; word-break:break-word; }
+    .seo-article, .seo-callout, .timeline-callout-body, .mistake-desc { overflow-wrap:break-word; word-break:break-word; }
+    .bank-row-desc { overflow-wrap:break-word; word-break:break-word; }
+    .split-content h2, .split-content p { overflow-wrap:break-word; }
   }
   @media (max-width:480px) {
     .footer-grid { grid-template-columns:1fr; }
     .footer-bottom { flex-direction:column; align-items:flex-start; }
+    .bank-row { grid-template-columns:1fr; gap:.15rem; }
+    .timeline-grid { grid-template-columns:1fr; }
+    .services-grid { grid-template-columns:1fr; }
+    .cases-v2-grid { grid-template-columns:1fr; }
+    .seo-cta-box { padding:1.25rem; }
+    .seo-nav { padding:1rem; }
+    .cases-v2-expert { gap:1rem; padding:1rem; }
+    .cases-v2-img { width:72px; height:72px; }
   }
   @media (max-width:430px) {
     :root { --gutter:1.1rem; }
-    .btn-wa { font-size:.92rem; padding:.9rem 1.4rem; }
-    .faq-q { font-size:1rem; }
+    .page-hero { padding-top:calc(5.5rem + env(safe-area-inset-top,0px)); padding-bottom:1.5rem; }
+    .breadcrumb { margin-bottom:var(--s2); }
     .page-hero h1 { font-size:clamp(1.9rem,7.5vw,2.4rem); }
+    .page-hero p { margin-bottom:1.2rem; }
+    .btn-wa { font-size:.92rem; padding:.9rem 1.4rem; }
+    .btn { white-space:normal; text-align:center; justify-content:center; }
+    .hero-actions .btn { width:100%; }
+    .faq-q { font-size:1rem; gap:var(--s2); }
     .btt { bottom:1.25rem; right:1.25rem; width:44px; height:44px; }
+    .split-visual { padding:1.25rem; }
+    .timeline-fees, .timeline-callout { flex-direction:column; gap:.5rem; }
   }
   @media (max-width:375px) {
     :root { --gutter:1rem; }
     .brand-name { font-size:1.2rem; }
     .page-hero { padding-top:calc(5rem + env(safe-area-inset-top,0px)); }
+    .page-hero p { margin-bottom:1rem; }
+    .hero-chips { margin-top:1.2rem; }
+    .page-hero .eyebrow { letter-spacing:.1em; }
     .btn-wa { font-size:.88rem; padding:.85rem 1.2rem; }
     .btn-wa svg { width:17px; height:17px; flex-shrink:0; }
     .page-hero h1 { font-size:clamp(1.75rem,8vw,2.1rem); }
     .btt { bottom:1rem; right:1rem; }
+    .ts-step { padding:1.25rem 1rem; }
+    .card-pad { padding:1.25rem; }
+    .mistake-card { grid-template-columns:32px 1fr; gap:.5rem .75rem; padding:.8rem .85rem; }
+    .sv-item { gap:.75rem; }
   }
   @media (max-width:320px) {
     :root { --gutter:0.875rem; }
@@ -448,9 +492,18 @@
     .btn-wa svg { width:16px; height:16px; flex-shrink:0; }
     .page-hero { padding-top:calc(4.5rem + env(safe-area-inset-top,0px)); padding-bottom:1.2rem; }
     .page-hero h1 { font-size:1.6rem; }
+    .page-hero p { margin-bottom:.75rem; }
+    .page-hero .eyebrow { letter-spacing:.02em; }
+    .hero-chips { margin-top:1rem; }
     .section-head h2 { font-size:1.5rem; }
     .bank-row { grid-template-columns:1fr; gap:.2rem; }
     .timeline-grid { grid-template-columns:1fr; }
+    .cases-v2-expert { padding:.85rem; gap:.75rem; }
+    .cases-v2-img { width:60px; height:60px; }
+    .ts-num { font-size:2rem; }
+    .mistake-icon { width:28px; height:28px; }
+    .faq-q { font-size:.95rem; gap:var(--s2); }
+    .seo-cta-box { padding:1rem; }
   }
 </style>
 <link rel="stylesheet" href="/css/header.css" />
@@ -516,7 +569,7 @@
         <span>Регистрация компании на Кипре</span>
       </nav>
       <div class="page-hero-inner reveal">
-        <span class="eyebrow" style="color:var(--sky);--eyebrow-color:var(--sky)">РЕГИСТРАЦИЯ КОМПАНИИ • КИПР 2026</span>
+        <span class="eyebrow" style="color:var(--sky);--eyebrow-color:var(--sky)">БИЗНЕС НА КИПРЕ • 2026</span>
         <h1>Регистрация компании<br>на <em>Кипре</em></h1>
         <p>Полное сопровождение регистрации кипрской компании: структура, документы, налоговый номер, VAT-номер, банковский счёт и дальнейшая поддержка бизнеса.</p>
         <div class="hero-actions">
@@ -930,19 +983,18 @@
           <p>Закон допускает совмещение функций директора, секретаря и акционера одним лицом. На практике функции секретаря и зарегистрированного офиса выполняет профессиональная сервисная компания.</p>
 
           <h2 id="local-director">Нужен ли местный (кипрский) директор</h2>
-          <p>Закон Кипра не требует обязательного назначения кипрского директора. Однако если владелец компании живёт в другой стране и самостоятельно принимает все ключевые решения, налоговые органы могут посчитать, что компания фактически управляется не с Кипра.</p>
-          <p>Чтобы подтвердить кипрское налоговое резидентство компании и снизить налоговые риски, обычно назначают местного директора-резидента.</p>
-          <p>Местный директор помогает подтвердить, что управление компанией осуществляется с Кипра, и участвует в корпоративных процедурах компании.</p>
-          <p>Обычно директор-резидент:</p>
+          <p>По закону — нет. Однако для подтверждения и сохранения налогового резидентства Кипра наличие директора-резидента настоятельно рекомендуется.</p>
+          <p>Налоговое резидентство компании определяется принципом фактического места управления (Place of Effective Management, POEM). Если все ключевые управленческие решения принимаются директором, находящимся в Германии, Великобритании или ОАЭ, налоговые органы этой страны могут посчитать, что компания фактически управляется оттуда — и, следовательно, является налоговым резидентом именно там, а не на Кипре.</p>
+          <p>Назначение директора-резидента Кипра с реальными управленческими полномочиями снижает этот риск. Директор не должен быть формальной фигурой — он должен реально участвовать в управлении компанией. Как минимум это означает:</p>
           <ul>
-            <li>Участвует в принятии ключевых решений компании</li>
-            <li>Подписывает корпоративные документы</li>
-            <li>Представляет компанию по вопросам корпоративного управления</li>
-            <li>Помогает подтвердить налоговое резидентство Кипра</li>
+            <li>Заседания совета директоров проводятся физически на Кипре</li>
+            <li>Директор-резидент подписывает документы и обладает реальными полномочиями по принятию решений</li>
+            <li>Управленческие функции осуществляются с территории Кипра</li>
           </ul>
-          <p>Для большинства международных компаний достаточно одного профессионального директора-резидента. В более крупных проектах могут дополнительно потребоваться офис, сотрудники и другие элементы присутствия на Кипре.</p>
+          <p>Для большинства небольших международных компаний одного профессионального директора-резидента с задокументированными полномочиями и регулярными заседаниями совета директоров на Кипре, как правило, достаточно для соответствия требованиям POEM. Для более крупных структур со значительными доходами от интеллектуальной собственности или сложной корпоративной структурой может потребоваться более существенное присутствие — офис, сотрудники и активное операционное управление с территории Кипра.</p>
 
           <h2 id="tax-system">Налоговая система Кипра: ключевые факты</h2>
+          <div class="table-scroll">
           <table class="seo-table">
             <thead><tr><th>Налог</th><th>Ставка</th><th>Комментарий</th></tr></thead>
             <tbody>
@@ -953,6 +1005,7 @@
               <tr><td>НДС (VAT)</td><td>19% / 9% / 5%</td><td>Стандартная ставка НДС — 19%. Для отдельных товаров и услуг применяются пониженные ставки 9% и 5%.</td></tr>
             </tbody>
           </table>
+          </div>
           <p>Кипр подписал более 60 соглашений об избежании двойного налогообложения, включая соглашения с ОАЭ, Израилем, Индией, Канадой, Китаем и большинством европейских государств. Это позволяет структурировать холдинговые схемы с минимальными потерями при трансграничном движении прибыли.</p>
           <p>Отдельно стоит отметить специальный налоговый режим для новых налоговых резидентов Кипра. Если владелец компании, директор или инвестор переезжает на Кипр и получает статус налогового резидента, он может воспользоваться льготным режимом налогообложения (льготный режим Non-Dom).</p>
           <p>В этом случае дивиденды и процентный доход могут быть освобождены от дополнительного налога на срок до 17 лет.</p>
@@ -961,16 +1014,15 @@
           <h2 id="vat">VAT на Кипре: когда регистрироваться</h2>
           <p>Кипрская компания обязана зарегистрироваться плательщиком НДС в следующих случаях:</p>
           <ul>
-            <li>Годовой оборот компании на Кипре превышает <strong>€15 600</strong></li>
+            <li>Годовой оборот компании на Кипре превышает <strong>€15&nbsp;600</strong></li>
             <li>Компания продаёт товары или услуги клиентам в других странах Европейского союза</li>
             <li>Компания оказывает цифровые или онлайн-услуги клиентам в странах Европейского союза</li>
           </ul>
           <p>Добровольная регистрация НДС возможна с первого дня работы компании и во многих случаях выгодна. Она позволяет возвращать НДС с расходов бизнеса, включая аренду офиса, оборудование, программное обеспечение и другие затраты.</p>
-          <p>После регистрации компания получает европейский НДС-номер для работы с клиентами и поставщиками в странах Европейского союза.</p>
-          <p>Отчётность по НДС подаётся ежеквартально.</p>
+          <p>После регистрации компания получает VAT-номер формата CY + 8 цифр + 1 буква. Номер можно проверить через систему VIES — это стандартный инструмент для подтверждения статуса плательщика НДС при расчётах внутри ЕС. Отчётность по НДС подаётся ежеквартально. За просрочку подачи декларации предусмотрен штраф €51 за каждый отчётный период плюс начисление процентов на неоплаченную сумму.</p>
 
           <h2 id="banking">Банковские счета для кипрской компании</h2>
-          <p>Открытие банковского счёта — один из ключевых этапов после регистрации компании. Важно заранее понять, какой вариант подходит вашему бизнесу: традиционный кипрский банк или электронное платёжное учреждение.</p>
+          <p>Открытие банковского счёта — один из наиболее критичных этапов после регистрации компании. Кипрские банки проводят углублённую проверку KYC/KYB, и без предварительной подготовки документов процесс может занять неожиданно много времени. Важно заранее понять, какой вариант подходит вашему бизнесу: традиционный кипрский банк или электронное платёжное учреждение.</p>
 
           <h3>Традиционные банки Кипра</h3>
           <div class="bank-list">
@@ -1049,7 +1101,7 @@
             <div class="timeline-fees-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
             <div class="timeline-fees-body">
               <strong>Государственные пошлины</strong>
-              Пошлина за регистрацию компании с уставным капиталом €1 000 составляет €105. При уставном капитале до €10 000 — €220. Дополнительно оплачиваются апостиль, нотариальные расходы и услуги по регистрации.
+              Пошлина за регистрацию компании с уставным капиталом €1&nbsp;000 составляет €105. При уставном капитале до €10&nbsp;000 — €220. Дополнительно оплачиваются апостиль, нотариальные расходы и услуги по регистрации.
             </div>
           </div>
 
@@ -1126,18 +1178,20 @@
         </div>
         <div class="seo-sidebar">
           <div class="seo-nav reveal">
-            <h4>Содержание</h4>
-            <ul>
-              <li><a href="#why-cyprus-article">Почему Кипр</a></li>
-              <li><a href="#requirements">Требования к директору</a></li>
-              <li><a href="#local-director">Нужен ли местный директор</a></li>
-              <li><a href="#tax-system">Налоговая система</a></li>
-              <li><a href="#vat">VAT на Кипре</a></li>
-              <li><a href="#banking">Банковские счета</a></li>
-              <li><a href="#timeline-cost">Сроки и стоимость</a></li>
-              <li><a href="#mistakes">Частые ошибки</a></li>
-              <li><a href="#after-registration">После регистрации</a></li>
-            </ul>
+            <h4>Содержание <svg class="seo-nav-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></h4>
+            <div class="seo-nav-body">
+              <ul>
+                <li><a href="#why-cyprus-article">Почему Кипр</a></li>
+                <li><a href="#requirements">Требования к директору</a></li>
+                <li><a href="#local-director">Нужен ли местный директор</a></li>
+                <li><a href="#tax-system">Налоговая система</a></li>
+                <li><a href="#vat">VAT на Кипре</a></li>
+                <li><a href="#banking">Банковские счета</a></li>
+                <li><a href="#timeline-cost">Сроки и стоимость</a></li>
+                <li><a href="#mistakes">Частые ошибки</a></li>
+                <li><a href="#after-registration">После регистрации</a></li>
+              </ul>
+            </div>
           </div>
           <div class="seo-cta-box reveal">
             <h3>Остались вопросы?</h3>
@@ -1164,7 +1218,7 @@
 
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Сколько стоит зарегистрировать компанию на Кипре?<span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-a" role="region"><div class="faq-a-inner">Государственная пошлина за регистрацию составляет от €105 (уставный капитал €1 000) до €220 (до €10 000). Дополнительно оплачиваются апостиль, нотариальные расходы и профессиональное сопровождение. Итоговая стоимость зависит от структуры компании и состава директоров. Запросите индивидуальный расчёт в WhatsApp — ответим в течение 15 минут.</div></div>
+            <div class="faq-a" role="region"><div class="faq-a-inner">Государственная пошлина за регистрацию составляет от €105 (уставный капитал €1&nbsp;000) до €220 (до €10&nbsp;000). Дополнительно оплачиваются апостиль, нотариальные расходы и профессиональное сопровождение. Итоговая стоимость зависит от структуры компании и состава директоров. Запросите индивидуальный расчёт в WhatsApp — ответим в течение 15 минут.</div></div>
           </div>
 
           <div class="faq-item">
@@ -1194,7 +1248,7 @@
 
           <div class="faq-item">
             <button class="faq-q" aria-expanded="false">Когда нужно регистрировать НДС на Кипре?<span class="faq-icon" aria-hidden="true"></span></button>
-            <div class="faq-a" role="region"><div class="faq-a-inner">Обязательная регистрация НДС (VAT) требуется при превышении порога €15 600 годового оборота от реализации товаров и услуг на Кипре, а также при поставках товаров в другие страны Европейского союза — независимо от объёма оборота. Добровольная регистрация возможна с первого дня работы компании и позволяет возмещать НДС с деловых расходов. Декларации подаются ежеквартально, стандартная ставка — 19%.</div></div>
+            <div class="faq-a" role="region"><div class="faq-a-inner">Обязательная регистрация НДС (VAT) требуется при превышении порога €15&nbsp;600 годового оборота от реализации товаров и услуг на Кипре, а также при поставках товаров в другие страны Европейского союза — независимо от объёма оборота. Добровольная регистрация возможна с первого дня работы компании и позволяет возмещать НДС с деловых расходов. Декларации подаются ежеквартально, стандартная ставка — 19%.</div></div>
           </div>
 
           <div class="faq-item">
@@ -1389,6 +1443,22 @@
   function tick() { btt.classList.toggle('visible', window.scrollY > 450); }
   window.addEventListener('scroll', tick, { passive: true });
   btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  // Сворачиваемое «Содержание» на мобиле
+  (function(){
+    var seoNav = document.querySelector('.seo-nav');
+    if (!seoNav) return;
+    var h4 = seoNav.querySelector('h4');
+    function isDesktop(){ return window.innerWidth > 1024; }
+    function syncState(){
+      if (isDesktop()) seoNav.classList.add('toc-open');
+    }
+    h4.addEventListener('click', function(){
+      if (!isDesktop()) seoNav.classList.toggle('toc-open');
+    });
+    syncState();
+    window.addEventListener('resize', syncState, { passive:true });
+  }());
 
   // Scroll spy for SEO sidebar nav
   (function () {

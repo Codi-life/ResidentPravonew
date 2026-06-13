@@ -104,7 +104,7 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x:hidden; }
-  body { font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:var(--white); line-height:1.6; font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body { font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:var(--white); line-height:1.6; font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden; overflow-wrap:break-word; word-break:break-word; }
   a { color:inherit; text-decoration:none; }
   img { max-width:100%; display:block; }
   h1,h2,h3,h4 { font-weight:700; line-height:1.2; }
@@ -200,7 +200,7 @@
   .sv-text p:first-child { color:#fff; font-weight:600; font-size:.95rem; margin-bottom:.25rem; }
   .sv-text p:last-child { color:rgba(255,255,255,.6); font-size:.88rem; }
   .timeline-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(10,37,64,.12); border:1px solid rgba(10,37,64,.12); border-radius:20px; overflow:hidden; }
-  .ts-step { background:var(--white); padding:clamp(24px,3vw,36px) clamp(20px,2vw,28px); position:relative; transition:background .3s; }
+  .ts-step { background:var(--white); padding:clamp(24px,3vw,36px) clamp(20px,2vw,28px); position:relative; transition:background .3s; min-width:0; overflow:hidden; }
   .ts-step:hover { background:#f4f7ff; }
   .ts-num { font-size:clamp(2rem,3.5vw,3rem); font-weight:700; letter-spacing:-.04em; color:var(--blue); line-height:1; margin-bottom:1.2rem; opacity:.35; }
   .ts-step h3 { font-size:1.1rem; color:var(--navy); margin-bottom:.5rem; }
@@ -209,14 +209,14 @@
   .timeline-trust { display:flex; flex-wrap:wrap; gap:.5rem 2rem; justify-content:center; margin-top:var(--s4); font-size:.83rem; color:var(--navy-55); }
   .timeline-trust span::before { content:"✓ "; color:var(--blue); font-weight:700; }
   .why-cy-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s3); }
-  .wcy-card { background:var(--mist); border-radius:var(--radius); padding:var(--card-pad); border:1px solid var(--line); transition:transform .3s,box-shadow .3s; }
+  .wcy-card { background:var(--mist); border-radius:var(--radius); padding:var(--card-pad); border:1px solid var(--line); transition:transform .3s,box-shadow .3s; min-width:0; overflow:hidden; }
   .wcy-card:hover { transform:translateY(-4px); box-shadow:0 20px 40px -20px rgba(10,37,64,.18); }
   .wcy-card .wcy-icon { width:50px; height:50px; border-radius:13px; display:grid; place-items:center; background:rgba(29,78,216,.08); border:1px solid rgba(29,78,216,.14); color:var(--blue); margin-bottom:var(--s2); }
   .wcy-card .wcy-icon svg { width:24px; height:24px; }
   .wcy-card h3 { font-size:1.08rem; color:var(--navy); margin-bottom:.5rem; }
   .wcy-card p { color:var(--navy-70); font-size:.92rem; }
   .why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(10,37,64,.13); border:1px solid rgba(10,37,64,.15); border-radius:18px; overflow:hidden; box-shadow:0 24px 50px -38px rgba(10,37,64,.25); }
-  .why-item { background:#fff; padding:var(--card-pad); position:relative; transition:background .35s; }
+  .why-item { background:#fff; padding:var(--card-pad); position:relative; transition:background .35s; min-width:0; overflow:hidden; }
   .why-item:hover { background:#fcfdff; }
   .why-item.featured { background:var(--navy); }
   .why-item.featured:hover { background:#0d2d4f; }
@@ -288,7 +288,7 @@
 
   /* ── Services grid ── */
   .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
-  .svc-card { background:var(--white); border-radius:16px; padding:var(--card-pad); border:1px solid rgba(10,37,64,.07); box-shadow:0 2px 12px rgba(10,37,64,.05); display:flex; flex-direction:column; gap:.75rem; transition:transform .25s,box-shadow .25s; }
+  .svc-card { background:var(--white); border-radius:16px; padding:var(--card-pad); border:1px solid rgba(10,37,64,.07); box-shadow:0 2px 12px rgba(10,37,64,.05); display:flex; flex-direction:column; gap:.75rem; transition:transform .25s,box-shadow .25s; min-width:0; overflow:hidden; }
   .svc-card:hover { transform:translateY(-2px); box-shadow:0 6px 24px rgba(10,37,64,.09); }
   .svc-num { font-size:.7rem; font-weight:700; letter-spacing:.1em; color:var(--blue); background:rgba(29,78,216,.07); border:1px solid rgba(29,78,216,.12); border-radius:999px; padding:.2em .8em; width:fit-content; }
   .svc-card h3 { font-size:1rem; font-weight:700; color:var(--navy); line-height:1.3; }
@@ -296,7 +296,7 @@
 
   /* ── Cases ── */
   .cases-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
-  .case-c { background:var(--white); border-radius:var(--radius); padding:var(--card-pad); border:1px solid var(--line); display:flex; flex-direction:column; gap:.75rem; transition:transform .3s,box-shadow .3s; box-shadow:0 2px 12px rgba(10,37,64,.05); }
+  .case-c { background:var(--white); border-radius:var(--radius); padding:var(--card-pad); border:1px solid var(--line); display:flex; flex-direction:column; gap:.75rem; transition:transform .3s,box-shadow .3s; box-shadow:0 2px 12px rgba(10,37,64,.05); min-width:0; overflow:hidden; }
   .case-c:hover { transform:translateY(-3px); box-shadow:0 16px 40px -20px rgba(10,37,64,.15); }
   .case-c-tag { font-size:.72rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); background:rgba(29,78,216,.07); border:1px solid rgba(29,78,216,.12); border-radius:999px; padding:.25em .85em; width:fit-content; }
   .case-c-body { display:flex; flex-direction:column; gap:.5rem; flex:1; }
@@ -311,13 +311,21 @@
   .cases-cta { margin-top:2.5rem; background:var(--navy); border-radius:var(--radius); padding:clamp(1.75rem,3vw,2.25rem) clamp(1.75rem,3vw,2.5rem); display:flex; align-items:center; justify-content:space-between; gap:2rem; flex-wrap:wrap; }
   .cases-cta-copy h3 { color:#fff; font-size:clamp(1.1rem,2vw,1.3rem); margin-bottom:.4rem; font-weight:700; }
   .cases-cta-copy p { color:rgba(255,255,255,.7); font-size:.95rem; max-width:48ch; line-height:1.55; margin:0; }
+  .cases-v2-expert { display:flex; align-items:center; gap:1.75rem; padding:1.5rem 2rem; background:var(--navy); border-radius:var(--radius); margin-top:2.75rem; box-shadow:0 8px 32px -12px rgba(10,37,64,.4); }
+  .cases-v2-img { flex:none; width:100px; height:100px; border-radius:12px; overflow:hidden; border:2.5px solid rgba(56,189,248,.3); }
+  .cases-v2-img img { width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block; }
+  .cases-v2-info { flex:1; min-width:0; }
+  .cases-v2-name { color:#fff; font-size:1.1rem; font-weight:700; margin-bottom:.2rem; letter-spacing:-.01em; }
+  .cases-v2-role { color:var(--sky); font-size:.8rem; font-weight:600; line-height:1.45; margin-bottom:.5rem; }
+  .cases-v2-bio { color:rgba(255,255,255,.58); font-size:.84rem; line-height:1.6; }
+  .cases-v2-expert .btn-wa { flex:none; align-self:center; font-size:.88rem; padding:.8rem 1.25rem; white-space:nowrap; }
 
   /* ── SEO content article ── */
   .seo-left { display:flex; flex-direction:column; min-width:0; }
   .seo-article h2#why-cyprus-article { font-size:var(--fs-lead); font-weight:500; color:var(--navy-70); margin:0 0 1.4rem; letter-spacing:0; line-height:1.65; max-width:58ch; text-wrap:pretty; }
-  .seo-article { max-width:75ch; }
+  .seo-article { max-width:75ch; min-width:0; }
   .seo-article h2 { font-size:clamp(1.25rem,2.2vw,1.88rem); font-weight:600; color:var(--navy); margin:2.5rem 0 1rem; text-wrap:balance; }
-  .seo-article h2:first-child { margin-top:1.5rem; }
+  .seo-article h2:first-child { margin-top:0; }
   .seo-article h3 { font-size:1.2rem; color:var(--navy); margin:1.8rem 0 .7rem; }
   .seo-article p { color:var(--navy-70); font-size:.98rem; margin-bottom:1.1rem; line-height:1.72; text-wrap:pretty; }
   .seo-article ul { list-style:none; display:flex; flex-direction:column; gap:.55rem; margin:1rem 0 1.4rem; }
@@ -333,7 +341,7 @@
   .bank-row { display:grid; grid-template-columns:170px 1fr; gap:1rem 1.25rem; padding:.75rem 1rem; border-bottom:1px solid var(--line); align-items:baseline; }
   .bank-row:last-child { border-bottom:none; }
   .bank-row:nth-child(even) { background:var(--mist); }
-  .bank-row-name { font-weight:700; color:var(--navy); font-size:.9rem; }
+  .bank-row-name { font-weight:700; color:var(--navy); font-size:.9rem; white-space:nowrap; }
   .bank-row-desc { color:var(--navy-70); font-size:.87rem; line-height:1.55; }
   .mistake-list { display:flex; flex-direction:column; gap:.7rem; margin:1.2rem 0 1.6rem; }
   .mistake-card { display:grid; grid-template-columns:38px 1fr; gap:.6rem 1rem; padding:.95rem 1.1rem; background:var(--white); border:1px solid rgba(220,38,38,.12); border-left:3px solid #DC2626; border-radius:10px; }
@@ -346,7 +354,8 @@
   .timeline-card { background:var(--white); border:1px solid var(--line); border-radius:12px; padding:1rem 1.1rem; display:flex; flex-direction:column; gap:.35rem; }
   .timeline-card-num { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); margin-bottom:.1rem; }
   .timeline-card-label { font-size:.88rem; font-weight:700; color:var(--navy); line-height:1.35; }
-  .timeline-card-time { font-size:.95rem; font-weight:700; color:var(--blue); line-height:1.35; }
+  .timeline-card-time { font-size:.95rem; font-weight:700; color:var(--blue); line-height:1.35; white-space:nowrap; }
+  .seo-article li strong, .seo-article p strong { white-space:nowrap; }
   .timeline-card-note { font-size:.8rem; color:var(--navy-70); line-height:1.45; margin-top:.1rem; }
   .timeline-fees { background:var(--mist); border:1px solid var(--line); border-radius:12px; padding:1rem 1.15rem; margin:.25rem 0 1.25rem; display:flex; gap:.75rem; align-items:flex-start; }
   .timeline-fees-icon { flex:none; width:32px; height:32px; background:rgba(29,78,216,.08); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--blue); }
@@ -358,7 +367,8 @@
   .timeline-callout-icon svg { width:16px; height:16px; }
   .timeline-callout-body { font-size:.87rem; color:var(--navy-70); line-height:1.6; }
   .timeline-callout-body strong { color:var(--blue); font-weight:700; display:block; margin-bottom:.25rem; font-size:.88rem; }
-  .seo-table { width:100%; border-collapse:collapse; font-size:.9rem; margin:1.2rem 0 1.6rem; }
+  .table-scroll { overflow-x:auto; -webkit-overflow-scrolling:touch; margin:1.2rem 0 1.6rem; border-radius:8px; }
+  .seo-table { width:100%; border-collapse:collapse; font-size:.9rem; margin:0; min-width:520px; }
   .seo-table th { background:var(--navy); color:#fff; padding:.7rem .9rem; text-align:left; font-size:.8rem; letter-spacing:.04em; }
   .seo-table td { padding:.7rem .9rem; border-bottom:1px solid var(--line); color:var(--navy-70); vertical-align:top; }
   .seo-table td:first-child { font-weight:600; color:var(--navy); }
@@ -372,12 +382,14 @@
   .seo-nav a:hover,.seo-nav a.active { color:var(--blue); padding-left:.3rem; }
   .seo-nav a.active { font-weight:600; }
   .seo-nav a:last-child { border-bottom:none; padding-bottom:0; }
+  .seo-nav-chevron { display:none; flex:none; margin-left:auto; transition:transform .3s ease; }
+  .seo-nav-body { overflow:hidden; }
   .seo-cta-box { background:var(--navy); border-radius:var(--radius); padding:1.75rem; color:#fff; box-shadow:0 8px 32px -12px rgba(10,37,64,.35); display:flex; flex-direction:column; }
   .seo-cta-box h3 { color:#fff; font-size:1.2rem; font-weight:700; line-height:1.25; margin-bottom:.6rem; }
   .seo-cta-box p { color:rgba(255,255,255,.7); font-size:.9rem; line-height:1.6; margin-bottom:0; }
   .seo-cta-box .btn-wa { display:flex; width:100%; justify-content:center; gap:.65rem; font-size:.95rem; padding:1rem 1.4rem; margin-top:1.75rem; }
   .seo-cta-box .btn-wa svg { width:18px; height:18px; flex:none; }
-  .seo-layout { display:grid; grid-template-columns:1fr 320px; gap:3rem; align-items:start; }
+  .seo-layout { display:grid; grid-template-columns:1fr 300px; gap:2rem; align-items:start; }
 
   /* ── Responsive ── */
   @media (max-width:1024px) {
@@ -392,43 +404,80 @@
     .split-visual { position:static; }
     .timeline-steps { grid-template-columns:repeat(2,1fr); }
     .seo-layout { grid-template-columns:1fr; }
-    .seo-sidebar { position:static; }
+    .seo-sidebar { position:static; order:-1; max-height:none; overflow-y:visible; }
+    .seo-cta-box { display:none; }
+    .seo-nav h4 { cursor:pointer; user-select:none; margin-bottom:0; }
+    .seo-nav-chevron { display:block; }
+    .seo-nav-body { max-height:0; transition:max-height .35s ease; }
+    .seo-nav.toc-open h4 { margin-bottom:1rem; }
+    .seo-nav.toc-open .seo-nav-body { max-height:600px; }
+    .seo-nav.toc-open .seo-nav-chevron { transform:rotate(180deg); }
   }
   @media (max-width:768px) {
     .header-cta .btn-wa { display:none; }
+    .faq-aside { display:none; }
     .services-grid { grid-template-columns:1fr; }
-    .bank-row { grid-template-columns:1fr; gap:.2rem; }
+    .cases-grid { grid-template-columns:1fr; }
+    .bank-row { grid-template-columns:1fr; gap:.15rem; }
     .timeline-grid { grid-template-columns:1fr; }
     .why-cy-grid { grid-template-columns:1fr; }
     .why-grid { grid-template-columns:1fr; }
     .timeline-steps { grid-template-columns:1fr; }
     .footer-grid { grid-template-columns:1fr 1fr; }
+    .cases-v2-expert { flex-wrap:wrap; padding:1.25rem 1.4rem; }
+    .cases-v2-expert .btn-wa { width:100%; justify-content:center; }
     .hero-actions { flex-direction:column; align-items:flex-start; }
     .final .hero-actions { align-items:center; }
     .hero-chips { gap:.4rem; margin-top:1.4rem; }
     .page-hero p { margin-bottom:1.5rem; line-height:1.5; }
     .footer-copy-br { display:inline; }
-    .compare-cta-inner { flex-direction:column; align-items:flex-start; }
+    /* Prevent content overflow on mobile */
+    .timeline-card-time { white-space:normal; }
+    .seo-article li strong, .seo-article p strong { white-space:normal; }
+    .btn { max-width:100%; }
+    .ts-step h3, .ts-step p, .wcy-card h3, .wcy-card p, .why-item h3, .why-item p, .svc-card h3, .svc-card p { overflow-wrap:break-word; word-break:break-word; }
+    .case-c-val, .faq-a-inner { overflow-wrap:break-word; word-break:break-word; }
+    .seo-article, .seo-callout, .timeline-callout-body, .mistake-desc { overflow-wrap:break-word; word-break:break-word; }
+    .bank-row-desc { overflow-wrap:break-word; word-break:break-word; }
+    .split-content h2, .split-content p { overflow-wrap:break-word; }
   }
   @media (max-width:480px) {
     .footer-grid { grid-template-columns:1fr; }
     .footer-bottom { flex-direction:column; align-items:flex-start; }
+    .cases-grid { grid-template-columns:1fr; }
+    .seo-cta-box { padding:1.25rem; }
+    .seo-nav { padding:1rem; }
+    .cases-v2-expert { gap:1rem; padding:1rem; }
+    .cases-v2-img { width:72px; height:72px; }
   }
   @media (max-width:430px) {
     :root { --gutter:1.1rem; }
-    .btn-wa { font-size:.92rem; padding:.9rem 1.4rem; }
-    .faq-q { font-size:1rem; }
+    .page-hero { padding-top:calc(5.5rem + env(safe-area-inset-top,0px)); padding-bottom:1.5rem; }
+    .breadcrumb { margin-bottom:var(--s2); }
     .page-hero h1 { font-size:clamp(1.9rem,7.5vw,2.4rem); }
+    .page-hero p { margin-bottom:1.2rem; }
+    .btn { white-space:normal; text-align:center; justify-content:center; }
+    .hero-actions .btn { width:100%; }
+    .btn-wa { font-size:.92rem; padding:.9rem 1.4rem; }
+    .faq-q { font-size:1rem; gap:var(--s2); }
     .btt { bottom:1.25rem; right:1.25rem; width:44px; height:44px; }
+    .split-visual { padding:1.25rem; }
+    .timeline-fees, .timeline-callout { flex-direction:column; gap:.5rem; }
   }
   @media (max-width:375px) {
     :root { --gutter:1rem; }
     .brand-name { font-size:1.2rem; }
     .page-hero { padding-top:calc(5rem + env(safe-area-inset-top,0px)); }
+    .page-hero p { margin-bottom:1rem; }
+    .hero-chips { margin-top:1.2rem; }
+    .page-hero .eyebrow { letter-spacing:.1em; }
     .btn-wa { font-size:.88rem; padding:.85rem 1.2rem; }
     .btn-wa svg { width:17px; height:17px; flex-shrink:0; }
     .page-hero h1 { font-size:clamp(1.75rem,8vw,2.1rem); }
     .btt { bottom:1rem; right:1rem; }
+    .ts-step { padding:1.25rem 1rem; }
+    .mistake-card { grid-template-columns:32px 1fr; gap:.5rem .75rem; padding:.8rem .85rem; }
+    .sv-item { gap:.75rem; }
   }
   @media (max-width:320px) {
     :root { --gutter:0.875rem; }
@@ -438,7 +487,14 @@
     .btn-wa svg { width:16px; height:16px; flex-shrink:0; }
     .page-hero { padding-top:calc(4.5rem + env(safe-area-inset-top,0px)); padding-bottom:1.2rem; }
     .page-hero h1 { font-size:1.6rem; }
+    .page-hero p { margin-bottom:.75rem; }
+    .page-hero .eyebrow { letter-spacing:.02em; }
+    .hero-chips { margin-top:1rem; }
     .section-head h2 { font-size:1.5rem; }
+    .ts-num { font-size:2rem; }
+    .mistake-icon { width:28px; height:28px; }
+    .faq-q { font-size:.95rem; gap:var(--s2); }
+    .seo-cta-box { padding:1rem; }
   }
 </style>
 <link rel="stylesheet" href="/css/header.css" />
@@ -504,13 +560,13 @@
         <span>Company Registration Cyprus</span>
       </nav>
       <div class="page-hero-inner reveal">
-        <span class="eyebrow" style="color:var(--sky);--eyebrow-color:var(--sky)">CYPRUS COMPANY FORMATION • 2026</span>
+        <span class="eyebrow" style="color:var(--sky);--eyebrow-color:var(--sky)">BUSINESS SETUP • CYPRUS 2026</span>
         <h1>Company Registration<br>in <em>Cyprus</em></h1>
-        <p>Full-service Cyprus company formation: name reservation, incorporation, tax number, VAT registration, corporate bank account and ongoing business support — handled for you.</p>
+        <p>Full-service Cyprus company formation: company structure, document preparation, incorporation, tax number, VAT registration, corporate bank account and ongoing business support.</p>
         <div class="hero-actions">
           <a href="#" class="btn btn-wa" data-wa>
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-            Speak With an Expert
+            Get a Free Consultation
           </a>
           <span class="micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> We respond within 15 minutes</span>
         </div>
@@ -518,7 +574,7 @@
           <li>12.5% Corporate Tax</li>
           <li>EU Member State</li>
           <li>From 5 working days</li>
-          <li>Fully remote</li>
+          <li>VAT registration</li>
           <li>Corporate bank account</li>
           <li>Residence permit for director</li>
         </ul>
@@ -531,8 +587,8 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Why Cyprus</span>
-        <h2>Why entrepreneurs choose Cyprus for business</h2>
-        <p>Cyprus is not just a low-tax EU jurisdiction — it is a stable, well-regulated business environment with a Common Law legal system, open banking access and a straightforward corporate framework that works for international businesses of all sizes.</p>
+        <h2>Why businesses choose Cyprus for company registration</h2>
+        <p>Cyprus combines a low corporate tax rate, EU jurisdiction status, a well-established legal system and practical infrastructure for international business.</p>
       </div>
       <div class="why-cy-grid">
         <div class="wcy-card reveal">
@@ -542,8 +598,8 @@
         </div>
         <div class="wcy-card reveal">
           <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
-          <h3>Full EU Membership</h3>
-          <p>A Cyprus-registered company carries a European legal address, EU VAT number and access to all EU market advantages. Cyprus has ratified over 60 double tax treaties — including with the UAE, Israel, UK, India and the US.</p>
+          <h3>A Company in the European Union</h3>
+          <p>A Cyprus-registered company carries a European legal address, access to EU markets and a credible international corporate identity.</p>
         </div>
         <div class="wcy-card reveal">
           <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
@@ -552,8 +608,8 @@
         </div>
         <div class="wcy-card reveal">
           <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <h3>Common Law Legal System</h3>
-          <p>Cypriot corporate law is derived from English Common Law — familiar, reliable and respected globally. Strong contract enforcement, property rights and shareholder protections make Cyprus a credible jurisdiction for serious businesses.</p>
+          <h3>English Common Law & Stability</h3>
+          <p>Cyprus law is based on English Common Law, making it familiar and predictable for international business, investors and foreign entrepreneurs. A stable regulatory framework and strong property and shareholder protections add further confidence.</p>
         </div>
         <div class="wcy-card reveal">
           <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
@@ -562,8 +618,8 @@
         </div>
         <div class="wcy-card reveal">
           <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <h3>Ideal for IT, SaaS &amp; E-Commerce</h3>
-          <p>The IP Box regime, zero withholding tax on dividends and straightforward VAT rules make Cyprus one of the best EU jurisdictions for technology companies, software developers, digital agencies and online businesses.</p>
+          <h3>IT, SaaS, E-Commerce & Holdings</h3>
+          <p>Cyprus is regularly chosen by technology companies, online businesses, marketing agencies, investors and holding structures. The IP Box regime and zero withholding tax on dividends make it one of the most competitive EU jurisdictions for these business types.</p>
         </div>
       </div>
     </div>
@@ -585,8 +641,8 @@
         </div>
         <div class="svc-card reveal">
           <span class="svc-num">02</span>
-          <h3>Memorandum &amp; Articles of Association</h3>
-          <p>Drafting of the M&amp;A tailored to your business activity, shareholder structure and governance requirements — compliant with Cyprus Companies Law Cap. 113.</p>
+          <h3>Preparation of Corporate Documents</h3>
+          <p>Drafting of the Memorandum &amp; Articles of Association tailored to your business activity, shareholder structure and governance requirements — compliant with Cyprus Companies Law Cap. 113.</p>
         </div>
         <div class="svc-card reveal">
           <span class="svc-num">03</span>
@@ -595,7 +651,7 @@
         </div>
         <div class="svc-card reveal">
           <span class="svc-num">04</span>
-          <h3>Certificate Pack &amp; Apostille</h3>
+          <h3>Corporate Registration Documents</h3>
           <p>Certificate of Incorporation, Certificate of Directors &amp; Secretary, Certificate of Shareholders, Certificate of Registered Office — apostilled and ready for use internationally.</p>
         </div>
         <div class="svc-card reveal">
@@ -637,61 +693,61 @@
     <div class="wrap">
       <div class="section-head reveal" id="timeline">
         <span class="eyebrow">How it works</span>
-        <h2>Seven steps from enquiry to operational company</h2>
+        <h2>Seven steps from enquiry to a fully operational company</h2>
         <p>A clear, structured process with defined timelines at every stage. No surprises, no chasing.</p>
       </div>
       <div class="timeline-steps">
         <div class="ts-step reveal">
           <div class="ts-num">01</div>
-          <h3>Free Consultation</h3>
+          <h3>Business Consultation</h3>
           <p>We assess your business model, recommend the right corporate structure and answer all questions on taxation, substance, banking and director requirements.</p>
           <span class="ts-badge">Day 1</span>
         </div>
         <div class="ts-step reveal">
           <div class="ts-num">02</div>
           <h3>Structure Design</h3>
-          <p>Directors, shareholders, share capital, nominee director considerations, substance planning and IP structuring — all agreed before a single document is drafted.</p>
+          <p>Directors, shareholders, shareholding structure, nominee director requirements and substance requirements for tax residency — all agreed before any documents are drafted.</p>
           <span class="ts-badge">Day 1–2</span>
         </div>
         <div class="ts-step reveal">
           <div class="ts-num">03</div>
           <h3>Document Preparation</h3>
-          <p>M&amp;A drafting, Power of Attorney (for remote incorporations), notarisation and apostille of any documents required from your home country.</p>
+          <p>Memorandum &amp; Articles of Association drafting, Power of Attorney (for remote incorporations), notarisation and apostille of any documents required from your home country.</p>
           <span class="ts-badge">Day 2–4</span>
         </div>
         <div class="ts-step reveal">
           <div class="ts-num">04</div>
-          <h3>Registrar Filing</h3>
+          <h3>Company Registration with the Cyprus Registrar</h3>
           <p>Full incorporation package submitted to the Cyprus Registrar of Companies. Standard processing: 5–10 working days. Express: 1–2 days at additional cost.</p>
           <span class="ts-badge">5–10 days</span>
         </div>
         <div class="ts-step reveal">
           <div class="ts-num">05</div>
-          <h3>Receive Certificate Pack</h3>
-          <p>Certificate of Incorporation, M&amp;A, director and shareholder certificates — apostilled and couriered or delivered electronically.</p>
+          <h3>Corporate Registration Documents</h3>
+          <p>Certificate of Incorporation, Memorandum &amp; Articles of Association, director and shareholder certificates — apostilled and couriered or delivered electronically.</p>
           <span class="ts-badge">Day 10–15</span>
         </div>
         <div class="ts-step reveal">
           <div class="ts-num">06</div>
           <h3>Tax &amp; VAT Registration</h3>
-          <p>Tax Identification Number from the Cyprus Tax Department, VAT number and VIES registration for EU intra-community transactions.</p>
+          <p>Tax Identification Number (TIN) from the Cyprus Tax Department, VAT number and VIES registration for EU intra-community transactions.</p>
           <span class="ts-badge">10–20 days</span>
         </div>
         <div class="ts-step reveal">
           <div class="ts-num">07</div>
           <h3>Business Launch</h3>
-          <p>Corporate bank account open, accounting set up, invoice templates ready. Your Cyprus company is fully operational and ready to trade.</p>
+          <p>Corporate bank account open, accounting set up, contract templates ready. Your Cyprus company is fully operational and ready to trade.</p>
           <span class="ts-badge">Ready</span>
         </div>
         <div class="ts-step reveal" style="background:var(--navy);">
           <div class="ts-num" style="opacity:.18; color:var(--sky);">+</div>
           <h3 style="color:#fff;">Ongoing Support</h3>
-          <p style="color:rgba(255,255,255,.65);">Bookkeeping, VAT returns, Annual Return, director changes, residence permit for your director and support as your business scales.</p>
+          <p style="color:rgba(255,255,255,.65);">Bookkeeping, tax returns, Annual Return, company structure changes, residence permit for your director and support as your business scales.</p>
           <span class="ts-badge">Ongoing</span>
         </div>
       </div>
       <div class="timeline-trust reveal">
-        <span>From 5 working days</span>
+        <span>Incorporation from 5 working days</span>
         <span>Fully remote</span>
         <span>350+ completed cases</span>
         <span>English &amp; Russian support</span>
@@ -723,7 +779,7 @@
           </a>
         </div>
         <div class="split-visual reveal">
-          <h3>Why Cyprus is not an offshore jurisdiction</h3>
+          <h3>Advantages of a Cyprus Company</h3>
           <div class="sv-item">
             <span class="sv-num">01</span>
             <div class="sv-text">
@@ -880,16 +936,23 @@
           </div>
         </div>
       </div>
-      <div class="cases-cta reveal">
-        <div class="cases-cta-copy">
-          <h3>Want the same for your business?</h3>
-          <p>Tell us about your project and we will recommend the right Cyprus company structure for you.</p>
+
+      <!-- Expert block -->
+      <div class="cases-v2-expert reveal">
+        <div class="cases-v2-img">
+          <img src="/images/svetlana-office.jpg" alt="Svetlana — Cyprus company registration expert" loading="lazy">
+        </div>
+        <div class="cases-v2-info">
+          <p class="cases-v2-name">Svetlana</p>
+          <p class="cases-v2-role">Cyprus Company Registration & Business Advisory Expert</p>
+          <p class="cases-v2-bio">Over 10 years of experience working with entrepreneurs, investors and international companies.</p>
         </div>
         <a href="#" class="btn btn-wa" data-wa>
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-          Get a Free Consultation
+          Book a Consultation
         </a>
       </div>
+
     </div>
   </section>
 
@@ -913,14 +976,15 @@
           </div>
 
           <h2 id="requirements">Director and shareholder requirements</h2>
-          <p>Cyprus company law — derived from the UK Companies Acts and codified in the Companies Law Cap. 113 — imposes no nationality or residency requirements on directors or shareholders. The key requirements for a Cyprus Ltd company are:</p>
+          <p>Cyprus law imposes no nationality or residency requirements on directors or shareholders. Any individual or legal entity, regardless of nationality, may serve as the sole director and sole shareholder of a Cyprus Ltd.</p>
+          <p>Minimum requirements:</p>
           <ul>
             <li>Minimum one director (individual or corporate body)</li>
             <li>Minimum one shareholder (individual or corporate body)</li>
             <li>A registered office in Cyprus</li>
             <li>A company secretary (may be a corporate entity)</li>
           </ul>
-          <p>The law permits one individual to act as director, company secretary and sole shareholder. In practice, the registered office and secretarial functions are typically provided by a licensed corporate service provider such as ResidentPravo.</p>
+          <p>The law permits one individual to act as director, company secretary and sole shareholder simultaneously. In practice, registered office and company secretarial services are usually provided by professional corporate service providers.</p>
 
           <h2 id="local-director">Do you need a local Cyprus director?</h2>
           <p>Not legally required. However, a Cyprus-resident director is generally recommended to establish and maintain Cyprus tax residence.</p>
@@ -934,6 +998,7 @@
           <p>For smaller companies, a professional nominee director with documented authority and regular board meetings in Cyprus typically satisfies POEM requirements. Larger operations with significant IP income or complex structures may need more substantial local presence — local staff, office space and active operational management from Cyprus.</p>
 
           <h2 id="tax-system">Cyprus tax system — the numbers that matter</h2>
+          <div class="table-scroll">
           <table class="seo-table">
             <thead><tr><th>Tax</th><th>Rate</th><th>Notes</th></tr></thead>
             <tbody>
@@ -944,6 +1009,7 @@
               <tr><td>VAT (standard rate)</td><td>19% / 9% / 5%</td><td>Standard rate 19%. Reduced rates of 9% and 5% apply to qualifying goods and services.</td></tr>
             </tbody>
           </table>
+          </div>
           <p>Cyprus has concluded 60+ double tax treaties covering most major jurisdictions — UAE, UK, Israel, India, Canada, China, Russia and the majority of EU member states. This makes it a practical base for royalty flows, inter-company lending and international dividend routing.</p>
           <p>Individuals who relocate to Cyprus as tax residents can benefit from the Non-Domiciled (Non-Dom) status. Under this regime, foreign-sourced dividend income and interest received by a non-dom individual are exempt from Special Defence Contribution (SDC) — a 17-year exemption available to qualifying individuals. This makes Cyprus one of the most attractive personal tax environments in the EU for business owners and investors who choose to live on the island.</p>
 
@@ -959,49 +1025,142 @@
 
           <h2 id="banking">Corporate banking for Cyprus companies</h2>
           <p>Opening a corporate bank account is often the most time-sensitive step after incorporation. Cypriot banks conduct thorough KYC/KYB due diligence and the process can be unexpectedly slow without proper preparation. Understanding the landscape in advance is essential.</p>
+
           <h3>Traditional Cypriot Banks</h3>
-          <ul>
-            <li><strong>Bank of Cyprus</strong> — largest bank on the island; full SEPA and SWIFT; comprehensive online banking. High substance and compliance expectations</li>
-            <li><strong>Eurobank</strong> — part of the European Eurobank Group; SEPA accounts; works with international corporate structures</li>
-            <li><strong>Alpha Bank Cyprus</strong> — subsidiary of Alpha Bank Group; EU banking access; corporate accounts for international clients</li>
-          </ul>
+          <div class="bank-list">
+            <div class="bank-row">
+              <span class="bank-row-name">Bank of Cyprus</span>
+              <span class="bank-row-desc">Largest bank on the island. Full SEPA and SWIFT, comprehensive online banking. Requires a personal visit from at least one director for account opening and compliance review.</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-row-name">Eurobank</span>
+              <span class="bank-row-desc">Part of the European Eurobank Group. Works with international corporate structures; SEPA accounts for EU transactions.</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-row-name">Alpha Bank Cyprus</span>
+              <span class="bank-row-desc">Subsidiary of Alpha Bank Group. Corporate accounts with access to the EU banking network.</span>
+            </div>
+          </div>
+          <p>Traditional banks are the right choice for official operations, larger counterparties and companies that need a full-service banking relationship.</p>
+
           <h3>Electronic Money Institutions (EMIs)</h3>
           <p>For tech and SaaS companies, an EMI is often the more practical first step — faster, fully remote and well-integrated with modern payment infrastructure:</p>
-          <ul>
-            <li><strong>Wise Business</strong> — multi-currency accounts, low FX fees, accounting integrations</li>
-            <li><strong>Revolut Business</strong> — real-time FX, expense cards, API access</li>
-            <li><strong>Airwallex</strong> — strong for e-commerce and cross-border payments</li>
-          </ul>
-          <p>Our recommended approach: an EMI for day-one operational banking, supplemented by a traditional bank account once the company has a trading history for compliance review.</p>
-          <div class="seo-callout"><strong>Note:</strong> Account opening eligibility depends on the business structure, the country of residence of the owners, the nature of business activity and the outcome of compliance screening.</div>
+          <div class="bank-list">
+            <div class="bank-row">
+              <span class="bank-row-name">Wise Business</span>
+              <span class="bank-row-desc">Multi-currency account with low FX fees. Well-suited for international payments and accounting integrations.</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-row-name">Revolut Business</span>
+              <span class="bank-row-desc">Corporate cards, real-time currency conversion, API integrations and expense management tools.</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-row-name">Airwallex</span>
+              <span class="bank-row-desc">International transfers without unnecessary intermediaries. Ideal for e-commerce and SaaS companies with a global audience.</span>
+            </div>
+            <div class="bank-row">
+              <span class="bank-row-name">Viva Wallet</span>
+              <span class="bank-row-desc">European payment provider suited for online payments, card issuing and working with EU customers.</span>
+            </div>
+          </div>
+          <div class="seo-callout"><strong>Recommended approach:</strong> Use an EMI for day-one operational banking and a faster start. A traditional Cyprus bank account is better suited for official operations and larger counterparties. Account opening eligibility depends on your business structure and the nature of your activity.</div>
 
           <h2 id="timeline-cost">Timeline and cost of Cyprus company formation</h2>
-          <p>Cyprus company registration follows a predictable timeline:</p>
-          <ul>
-            <li><strong>Document preparation:</strong> 2–4 working days</li>
-            <li><strong>Registrar of Companies (standard):</strong> 5–10 working days</li>
-            <li><strong>Registrar of Companies (express):</strong> 1–2 working days</li>
-            <li><strong>Tax Identification Number:</strong> 5–10 working days after incorporation</li>
-            <li><strong>VAT registration:</strong> 10–20 working days</li>
-            <li><strong>Bank account (EMI):</strong> 3–7 working days</li>
-            <li><strong>Bank account (traditional bank):</strong> 4–8 weeks</li>
-          </ul>
-          <p>Government fees for registration start at €105 (€1,000 share capital) and reach €220 (up to €10,000 share capital). Annual Return filing costs €20 when submitted by 31 December each year. Professional fees for the complete incorporation service vary depending on the complexity of the structure chosen.</p>
+          <p>Cyprus company registration is a predictable process with clear timeframes at each stage.</p>
 
-          <div class="seo-callout">
-            <strong>Annual Return:</strong> Every Cyprus company must file an Annual Return with the Registrar of Companies each year. Missing this filing — even for a dormant company — leads to penalties and eventual striking-off. We track deadlines for all clients and file automatically.
+          <div class="timeline-grid">
+            <div class="timeline-card">
+              <span class="timeline-card-num">Step 01</span>
+              <span class="timeline-card-label">Document preparation</span>
+              <span class="timeline-card-time">2–4 working days</span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-card-num">Step 02</span>
+              <span class="timeline-card-label">Registration with the Registrar of Companies</span>
+              <span class="timeline-card-time">5–10 working days</span>
+              <span class="timeline-card-note">Express registration available in 1–2 working days</span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-card-num">Step 03</span>
+              <span class="timeline-card-label">Tax Identification Number (TIC)</span>
+              <span class="timeline-card-time">5–10 working days</span>
+              <span class="timeline-card-note">After the Certificate of Incorporation is issued</span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-card-num">Step 04</span>
+              <span class="timeline-card-label">VAT registration</span>
+              <span class="timeline-card-time">10–20 working days</span>
+            </div>
+            <div class="timeline-card">
+              <span class="timeline-card-num">Step 05</span>
+              <span class="timeline-card-label">Corporate bank account</span>
+              <span class="timeline-card-time">1 week to 4–8 weeks</span>
+              <span class="timeline-card-note">EMI — faster; traditional bank — longer due diligence</span>
+            </div>
+          </div>
+
+          <div class="timeline-fees">
+            <div class="timeline-fees-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+            <div class="timeline-fees-body">
+              <strong>Government fees</strong>
+              Registration fee for a company with €1&nbsp;000 share capital is €105. For share capital up to €10&nbsp;000 — €220. Apostille, notarial fees and professional service fees are additional.
+            </div>
+          </div>
+
+          <div class="timeline-callout">
+            <div class="timeline-callout-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+            <div class="timeline-callout-body">
+              <strong>Important after incorporation</strong>
+              Every Cyprus company must file an Annual Return with the Registrar of Companies each year. The filing fee is €20 when submitted by 31 December. Late or missed filings result in penalties and risk administrative strike-off.
+            </div>
           </div>
 
           <h2 id="mistakes">Common mistakes when setting up a Cyprus company</h2>
-          <p>After working through 350+ incorporations, we have seen the same avoidable mistakes repeatedly. Here are the most costly ones:</p>
-          <ul>
-            <li><strong>No substance planning.</strong> Registering a company in Cyprus but running it entirely from abroad. The POEM risk means your home country's tax authority may claim the company — and you pay tax twice.</li>
-            <li><strong>Leaving the bank account for later.</strong> Without a working bank account, the company cannot function. Bank due diligence takes time — start the process immediately after incorporation.</li>
-            <li><strong>Ignoring bookkeeping from day one.</strong> Cyprus law requires accounting records to be maintained from the date of incorporation. Reconstructing records years later is expensive and creates audit risk.</li>
-            <li><strong>Wrong ownership structure.</strong> Direct personal ownership by an individual from a high-risk jurisdiction creates KYC complications at every bank, payment processor and future investor. A clean holding structure prevents these problems.</li>
-            <li><strong>Forgetting the Annual Return.</strong> A single missed Annual Return triggers a €200 penalty. Persistent non-filing leads to administrative strike-off within 18 months.</li>
-            <li><strong>Voluntary VAT without understanding the quarterly obligations.</strong> Registering for VAT is straightforward; staying compliant with quarterly returns, correct invoicing and VIES reporting requires ongoing discipline or a good accountant.</li>
-          </ul>
+          <p>After 350+ incorporations, we have seen the same avoidable mistakes repeatedly. Each one costs time and money. Here are the most common:</p>
+          <div class="mistake-list">
+            <div class="mistake-card">
+              <div class="mistake-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div class="mistake-body">
+                <p class="mistake-title">No substance — risk of losing Cyprus tax residency</p>
+                <p class="mistake-desc">The company is incorporated in Cyprus but all key decisions are made from another country. This can result in the company being treated as a tax resident of another jurisdiction.</p>
+              </div>
+            </div>
+            <div class="mistake-card">
+              <div class="mistake-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div class="mistake-body">
+                <p class="mistake-title">Leaving the bank account for later</p>
+                <p class="mistake-desc">Without a working bank account the company cannot operate. Bank compliance review and document preparation can take months — start immediately after incorporation.</p>
+              </div>
+            </div>
+            <div class="mistake-card">
+              <div class="mistake-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div class="mistake-body">
+                <p class="mistake-title">Ignoring bookkeeping from day one</p>
+                <p class="mistake-desc">Cyprus law requires accounting records from the date of incorporation. Reconstructing neglected records is expensive and creates serious problems during the statutory audit.</p>
+              </div>
+            </div>
+            <div class="mistake-card">
+              <div class="mistake-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div class="mistake-body">
+                <p class="mistake-title">Wrong ownership structure</p>
+                <p class="mistake-desc">Direct personal ownership by an individual from certain jurisdictions creates KYC complications at banks, payment processors and future investors. A proper holding structure prevents these issues.</p>
+              </div>
+            </div>
+            <div class="mistake-card">
+              <div class="mistake-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div class="mistake-body">
+                <p class="mistake-title">Missing the Annual Return deadline</p>
+                <p class="mistake-desc">Late or non-submission of the Annual Return results in penalties and ultimately in the company being struck off the register.</p>
+              </div>
+            </div>
+            <div class="mistake-card">
+              <div class="mistake-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div class="mistake-body">
+                <p class="mistake-title">VAT registration without understanding the obligations</p>
+                <p class="mistake-desc">VAT registration means mandatory quarterly filings. Missing deadlines triggers automatic penalties and additional scrutiny.</p>
+              </div>
+            </div>
+          </div>
 
           <h2 id="after-registration">What to do after your Cyprus company is registered</h2>
           <p>Receiving the Certificate of Incorporation is the beginning of the process, not the end. A practical post-incorporation checklist for a Cyprus company:</p>
@@ -1009,29 +1168,32 @@
             <li>Obtain Tax Identification Number (TIN/TIC) from the Cyprus Tax Department</li>
             <li>Register for VAT (mandatory if required, voluntary if beneficial)</li>
             <li>Open a corporate bank account</li>
-            <li>Appoint a licensed accountant and establish a bookkeeping system</li>
+            <li>Appoint an accountant and establish a bookkeeping system</li>
             <li>Prepare standard contract templates and invoice formats</li>
+            <li>If required, apply for a Cyprus residence permit for the director</li>
             <li>File Annual Return on time each year (deadline 31 December)</li>
             <li>File annual financial statements and corporation tax return</li>
-            <li>If employing staff: register with Social Insurance Services</li>
+            <li>If employing staff: register with Social Insurance Services and obtain work permits for non-EU nationals where required</li>
           </ul>
-          <p>If the director intends to live in Cyprus, a <a href="/en/residence-permit-cyprus" style="color:var(--blue)">Category E residence permit</a> can be applied for once the company is active. ResidentPravo manages the complete post-incorporation setup — from your first VAT return to your director's residency card. Find out more about our <a href="/en/#services" style="color:var(--blue)">accounting and banking services</a>.</p>
+          <p>ResidentPravo can assist with the entire post-incorporation process, from VAT registration and bookkeeping setup to ongoing compliance and reporting. Find out more about <a href="/en/residence-permit-cyprus" style="color:var(--blue)">residence permits for directors</a> or <a href="/en/#services" style="color:var(--blue)">accounting and banking services</a> for your company.</p>
 
         </div>
         <div class="seo-sidebar">
           <div class="seo-nav reveal">
-            <h4>Contents</h4>
-            <ul>
-              <li><a href="#why-cyprus-article">Why Cyprus</a></li>
-              <li><a href="#requirements">Director requirements</a></li>
-              <li><a href="#local-director">Local director</a></li>
-              <li><a href="#tax-system">Tax system</a></li>
-              <li><a href="#vat">VAT registration</a></li>
-              <li><a href="#banking">Corporate banking</a></li>
-              <li><a href="#timeline-cost">Timeline &amp; cost</a></li>
-              <li><a href="#mistakes">Common mistakes</a></li>
-              <li><a href="#after-registration">After registration</a></li>
-            </ul>
+            <h4>Contents <svg class="seo-nav-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></h4>
+            <div class="seo-nav-body">
+              <ul>
+                <li><a href="#why-cyprus-article">Why Cyprus</a></li>
+                <li><a href="#requirements">Director requirements</a></li>
+                <li><a href="#local-director">Local director</a></li>
+                <li><a href="#tax-system">Tax system</a></li>
+                <li><a href="#vat">VAT registration</a></li>
+                <li><a href="#banking">Corporate banking</a></li>
+                <li><a href="#timeline-cost">Timeline &amp; cost</a></li>
+                <li><a href="#mistakes">Common mistakes</a></li>
+                <li><a href="#after-registration">After registration</a></li>
+              </ul>
+            </div>
           </div>
           <div class="seo-cta-box reveal">
             <h3>Have a question?</h3>
@@ -1222,6 +1384,22 @@
   function tick() { btt.classList.toggle('visible', window.scrollY > 450); }
   window.addEventListener('scroll', tick, { passive: true });
   btt.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+  // Collapsible Contents (TOC) on mobile
+  (function(){
+    var seoNav = document.querySelector('.seo-nav');
+    if (!seoNav) return;
+    var h4 = seoNav.querySelector('h4');
+    function isDesktop(){ return window.innerWidth > 1024; }
+    function syncState(){
+      if (isDesktop()) seoNav.classList.add('toc-open');
+    }
+    h4.addEventListener('click', function(){
+      if (!isDesktop()) seoNav.classList.toggle('toc-open');
+    });
+    syncState();
+    window.addEventListener('resize', syncState, { passive:true });
+  }());
 
   // Scroll spy for SEO sidebar nav
   (function () {
