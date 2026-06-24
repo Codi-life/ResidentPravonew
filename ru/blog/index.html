@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCRR0HFHLC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HCRR0HFHLC');
+  </script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Блог ResidentPravo — визы, ВНЖ, ПМЖ и бизнес на Кипре</title>
-<meta name="description" content="Статьи о визах, ВНЖ, ПМЖ, регистрации компаний и переезде на Кипр. Актуальные гиды и руководства от команды ResidentPravo." />
+<title>Блог ResidentPravo — визы, ВНЖ, бизнес и переезд на Кипр</title>
+<meta name="description" content="Актуальные статьи о визах, ВНЖ, ПМЖ, регистрации компаний и переезде на Кипр. Официальные данные, практические советы и кейсы от команды ResidentPravo." />
 <link rel="canonical" href="https://www.residentpravo.com/ru/blog" />
 <link rel="alternate" hreflang="ru" href="https://www.residentpravo.com/ru/blog" />
 <link rel="alternate" hreflang="en" href="https://www.residentpravo.com/en/blog" />
@@ -12,140 +20,218 @@
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ru_RU" />
 <meta property="og:site_name" content="ResidentPravo" />
-<meta property="og:title" content="Блог ResidentPravo — визы, ВНЖ, ПМЖ и бизнес на Кипре" />
-<meta property="og:description" content="Статьи о визах, ВНЖ, ПМЖ, регистрации компаний и переезде на Кипр. Актуальные гиды и руководства от команды ResidentPravo." />
+<meta property="og:title" content="Блог ResidentPravo — визы, ВНЖ, бизнес и переезд на Кипр" />
+<meta property="og:description" content="Актуальные статьи о визах, ВНЖ, ПМЖ, регистрации компаний и переезде на Кипр. Официальные данные и практические советы." />
 <meta property="og:url" content="https://www.residentpravo.com/ru/blog" />
-<meta property="og:image" content="https://www.residentpravo.com/images/og-image.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Главная", "item": "https://www.residentpravo.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Блог", "item": "https://www.residentpravo.com/ru/blog" }
-  ]
-}
-</script>
-
 <style>
   :root {
-    --navy:#0A2540; --blue:#1D4ED8; --sky:#38BDF8; --ink:#111827;
-    --mist:#F5F7FA; --white:#FFFFFF;
-    --navy-90:rgba(10,37,64,.90); --navy-70:rgba(10,37,64,.70);
-    --navy-55:rgba(10,37,64,.55); --navy-12:rgba(10,37,64,.12);
-    --navy-06:rgba(10,37,64,.06); --line:rgba(10,37,64,.10);
-    --wa:#25D366;
-    --maxw:1400px; --gutter:clamp(1.25rem,5vw,5rem); --radius:18px;
-    --s1:8px;--s2:16px;--s3:24px;--s4:32px;--s5:40px;--s6:48px;--s7:64px;--s8:80px;
+    --navy:   #0A2540;
+    --blue:   #1D4ED8;
+    --sky:    #38BDF8;
+    --ink:    #111827;
+    --mist:   #F5F7FA;
+    --white:  #FFFFFF;
+    --navy-70: rgba(10,37,64,.70);
+    --navy-55: rgba(10,37,64,.55);
+    --navy-12: rgba(10,37,64,.12);
+    --line:    rgba(10,37,64,.10);
+    --line-soft: rgba(10,37,64,.07);
+    --wa: #25D366;
+    --fs-h2:   clamp(2rem,4.2vw,3.5rem);
+    --fs-h3:   clamp(1.3rem,2vw,1.75rem);
+    --fs-lead: clamp(1.05rem,1.5vw,1.4rem);
+    --maxw: 1400px;
+    --gutter: clamp(1.25rem,5vw,5rem);
+    --radius: 18px;
+    --s3:24px; --s4:32px; --s7:64px; --s8:80px;
+    --card-pad: clamp(24px,2.4vw,32px);
   }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;}
-  body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--white);line-height:1.7;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
-  a{color:inherit;text-decoration:none;}
-  img{max-width:100%;display:block;}
-  h1,h2,h3,h4{font-weight:700;line-height:1.25;}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x:hidden; }
+  body { font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:var(--white); line-height:1.6; font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a { color:inherit; text-decoration:none; }
+  img { max-width:100%; display:block; }
+  h1,h2,h3,h4 { font-weight:700; line-height:1.2; }
+  .wrap { max-width:var(--maxw); margin:0 auto; padding-inline:var(--gutter); }
+  .section-pad { padding-block: clamp(4rem,8vh,6rem); }
 
-  /* Header */
-  header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .35s,padding .35s,border-color .35s;border-bottom:1px solid transparent;padding-top:calc(.9rem + env(safe-area-inset-top,0px));padding-bottom:.9rem;}
-  header.scrolled{background:rgba(9,28,50,.88);backdrop-filter:saturate(150%) blur(13px);-webkit-backdrop-filter:saturate(150%) blur(13px);border-color:rgba(255,255,255,.09);padding-top:calc(.5rem + env(safe-area-inset-top,0px));padding-bottom:.5rem;}
-  .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2rem;}
-  .brand{display:flex;align-items:center;gap:.85rem;}
-  .brand-text{display:flex;flex-direction:column;line-height:1.05;}
-  .brand-name{font-weight:700;font-size:1.36rem;color:#fff;letter-spacing:-.015em;}
-  .brand-tag{font-size:.62rem;font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.6);margin-top:3px;}
-  .menu{display:flex;justify-content:center;gap:2rem;}
-  .menu a{font-size:.88rem;font-weight:500;color:rgba(255,255,255,.78);position:relative;padding:.3rem 0;transition:color .2s;}
-  .menu a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:1.5px;background:var(--sky);transition:width .28s;}
-  .menu a:hover,.menu a.current{color:#fff;}
-  .menu a:hover::after,.menu a.current::after{width:100%;}
-  .header-cta{display:flex;justify-content:flex-end;align-items:center;gap:.9rem;}
-  .lang-switch{display:flex;align-items:center;gap:.35rem;font-size:.74rem;font-weight:700;letter-spacing:.1em;margin-right:.4rem;}
-  .lang-switch a{color:rgba(255,255,255,.6);transition:color .2s;}
-  .lang-switch a:hover,.lang-switch a.current{color:#fff;}
-  .lang-switch-sep{color:rgba(255,255,255,.3);}
-  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.4rem;border-radius:8px;font-weight:600;font-size:.92rem;cursor:pointer;border:none;transition:transform .2s,box-shadow .2s;}
-  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 4px 14px -6px rgba(37,211,102,.45);}
-  .btn-wa:hover{transform:translateY(-1px);box-shadow:0 7px 18px -7px rgba(37,211,102,.5);}
-  .header-cta .btn{padding:.58rem 1.05rem;font-size:.85rem;}
-  .header-cta .btn-wa svg{width:17px;height:17px;}
-  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
-  .burger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s;}
-  .mobile-menu{position:fixed;inset:0;z-index:99;background:var(--white);transform:translateY(-100%);transition:transform .45s cubic-bezier(.7,0,.2,1);display:flex;flex-direction:column;padding-top:calc(76px + env(safe-area-inset-top,0px));padding-right:clamp(1.5rem,6vw,2.5rem);padding-bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));padding-left:clamp(1.5rem,6vw,2.5rem);gap:0;overflow-y:auto;}
-  .mobile-menu.open{transform:translateY(0);z-index:110;}
-  .mobile-menu a{font-size:1.5rem;font-weight:600;color:var(--navy);padding:.6rem 0;border-bottom:1px solid rgba(10,37,64,.1);}
-  .mobile-menu .btn-wa{margin-top:auto;justify-content:center;padding:.85rem 1.4rem;font-size:.92rem;}
-  .mobile-menu-lang{display:flex;align-items:center;gap:.5rem;padding:.5rem 0;border-bottom:1px solid rgba(10,37,64,.1);margin-top:.25rem;}
-  .mobile-menu-lang a{font-size:.9rem;font-weight:700;color:var(--navy-55);padding:.3rem 0;border-bottom:none;}
-  .mobile-menu-lang a.current{color:var(--navy);}
-  .mobile-menu-lang-sep{color:rgba(10,37,64,.3);}
-  .close-menu-btn{position:absolute;top:16px;right:16px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:none;border:none;cursor:pointer;padding:0;}
+  /* ── Header ── */
+  header { position:fixed; inset:0 0 auto 0; z-index:100; transition:background .35s,box-shadow .35s,padding .35s,border-color .35s; border-bottom:1px solid transparent; padding-top:calc(.9rem + env(safe-area-inset-top,0px)); padding-bottom:.9rem; }
+  header.scrolled { background:rgba(9,28,50,.88); backdrop-filter:saturate(150%) blur(13px); -webkit-backdrop-filter:saturate(150%) blur(13px); border-color:rgba(255,255,255,.09); padding-top:calc(.5rem + env(safe-area-inset-top,0px)); padding-bottom:.5rem; }
+  .nav { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:2rem; }
+  .brand { display:flex; align-items:center; gap:.85rem; }
+  .brand-text { display:flex; flex-direction:column; line-height:1.05; }
+  .brand-name { font-weight:700; font-size:1.36rem; color:var(--navy); letter-spacing:-.015em; }
+  .brand-tag  { font-size:.62rem; font-weight:600; letter-spacing:.2em; color:var(--navy-55); margin-top:3px; }
+  .menu { display:flex; justify-content:center; gap:2.3rem; }
+  .menu a { font-size:.92rem; font-weight:500; color:var(--navy-70); position:relative; padding:.3rem 0; transition:color .2s; }
+  .menu a::after { content:""; position:absolute; left:0; bottom:-2px; width:0; height:1.5px; background:var(--blue); transition:width .28s; }
+  .menu a:hover,.menu a.current { color:var(--navy); }
+  .menu a:hover::after,.menu a.current::after { width:100%; }
+  header .brand-name { color:#fff; }
+  header .brand-tag  { color:rgba(255,255,255,.6); }
+  header .menu a     { color:rgba(255,255,255,.78); }
+  header .menu a:hover,.menu a.current { color:#fff; }
+  header .burger span { background:#fff; }
+  .header-cta { display:flex; justify-content:flex-end; align-items:center; gap:.9rem; }
+  .header-cta .btn { padding:.58rem 1.05rem; font-size:.85rem; }
+  .header-cta .btn-wa { background:var(--wa); box-shadow:0 4px 14px -6px rgba(37,211,102,.45); }
+  .header-cta .btn-wa svg { width:17px; height:17px; }
+  .header-cta .btn-wa:hover { transform:translateY(-1px); }
+  .burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+  .burger span { width:24px; height:2px; background:var(--navy); border-radius:2px; transition:.3s; }
+  .mobile-menu { position:fixed; inset:0; z-index:99; background:var(--white); transform:translateY(-100%); transition:transform .45s cubic-bezier(.7,0,.2,1); display:flex; flex-direction:column; gap:0; overflow-y:auto; padding:5rem var(--gutter) 3rem; }
+  .mobile-menu.open { transform:translateY(0); }
+  .mobile-menu a { font-size:1.5rem; font-weight:600; color:var(--navy); padding:.6rem 0; border-bottom:1px solid var(--line); }
+  .mobile-menu .btn-wa { margin-top:2rem; justify-content:center; padding:.85rem 1.4rem; font-size:.92rem; }
+  .close-menu-btn { position:absolute; top:16px; right:16px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:none; border:none; cursor:pointer; padding:0; }
+  .mobile-menu-lang { display:flex; align-items:center; gap:.5rem; padding:.5rem 0; border-bottom:1px solid var(--line); margin-top:.25rem; }
+  .mobile-menu-lang a { font-size:.82rem; font-weight:700; letter-spacing:.1em; color:var(--navy-55); padding:0; border-bottom:none; transition:color .2s; }
+  .mobile-menu-lang a:hover,.mobile-menu-lang a.current { color:var(--navy); }
+  .mobile-menu-lang-sep { color:var(--navy-12); font-size:.82rem; user-select:none; }
+  .lang-switch { display:flex; align-items:center; gap:.35rem; font-size:.74rem; font-weight:700; letter-spacing:.1em; margin-right:.4rem; }
+  .lang-switch a { color:rgba(255,255,255,.6); transition:color .2s; }
+  .lang-switch a:hover,.lang-switch a.current { color:#fff; }
+  .lang-switch-sep { color:rgba(255,255,255,.3); }
 
-  /* Blog Hero */
-  .blog-hero{background:var(--navy);padding-top:calc(100px + env(safe-area-inset-top,0px));padding-bottom:clamp(3rem,5vw,4.5rem);}
-  .breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;font-size:.8rem;color:rgba(255,255,255,.5);margin-bottom:var(--s4);}
-  .breadcrumb a{color:rgba(255,255,255,.55);transition:color .2s;}
-  .breadcrumb a:hover{color:#fff;}
-  .breadcrumb-sep{color:rgba(255,255,255,.3);}
-  .blog-hero h1{font-size:clamp(2rem,4.5vw,3.25rem);color:#fff;margin-bottom:var(--s3);}
-  .blog-hero p{font-size:clamp(1rem,1.4vw,1.15rem);color:rgba(255,255,255,.65);max-width:600px;}
+  /* ── Buttons ── */
+  .btn { display:inline-flex; align-items:center; gap:0.65rem; font-family:inherit; font-weight:600; font-size:0.98rem; letter-spacing:0.01em; padding:1rem 1.6rem; border-radius:999px; border:1px solid transparent; cursor:pointer; transition:transform 0.25s ease,box-shadow 0.25s ease,background 0.25s ease; white-space:nowrap; }
+  .btn svg { width:19px; height:19px; flex:none; }
+  .btn-primary { background:var(--blue); color:#fff; box-shadow:0 4px 18px -8px rgba(29,78,216,.55); }
+  .btn-primary:hover { transform:translateY(-2px); }
+  .btn-wa { background:var(--wa); color:#fff; box-shadow:0 12px 30px -10px rgba(37,211,102,0.55); }
+  .btn-wa:hover { transform:translateY(-2px); }
+  .btn-outline { background:transparent; color:var(--navy); border-color:var(--line); }
+  .btn-outline:hover { border-color:var(--blue); color:var(--blue); }
 
-  /* Blog grid */
-  .blog-section{padding-block:clamp(3rem,6vh,5rem);}
-  .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:var(--s4);}
+  /* ── Eyebrow ── */
+  .eyebrow { display:inline-flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); }
+  .eyebrow::before { content:""; display:block; width:28px; height:2px; background:var(--blue); border-radius:2px; flex:none; }
 
-  /* Article card */
-  .article-card{background:var(--white);border:1px solid rgba(10,37,64,.1);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s;}
-  .article-card:hover{border-color:rgba(29,78,216,.25);box-shadow:0 8px 30px -10px rgba(10,37,64,.12);}
-  .card-img{aspect-ratio:16/9;background:linear-gradient(135deg,#0A2540 0%,#1D4ED8 60%,#38BDF8 100%);position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:var(--s3);}
-  .card-img-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.65);}
-  .card-body{padding:var(--s3) var(--s4) var(--s4);flex:1;display:flex;flex-direction:column;}
-  .card-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:var(--s2);}
-  .card-cat{display:inline-flex;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.2);border-radius:5px;padding:.15em .6em;}
-  .card-date{font-size:.78rem;color:var(--navy-55);}
-  .card-body h2{font-size:1.1rem;color:var(--navy);margin-bottom:var(--s2);line-height:1.35;}
-  .card-body p{font-size:.88rem;color:var(--navy-55);line-height:1.6;flex:1;margin-bottom:var(--s3);}
-  .card-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.85rem;font-weight:600;color:var(--blue);margin-top:auto;}
-  .card-link svg{transition:transform .2s;}
-  .article-card:hover .card-link svg{transform:translateX(3px);}
+  /* ── Breadcrumb ── */
+  .breadcrumb { display:flex; align-items:center; gap:.5rem; font-size:.82rem; color:rgba(255,255,255,.6); flex-wrap:wrap; margin-bottom:2.5rem; }
+  .breadcrumb a { color:rgba(255,255,255,.7); transition:color .2s; }
+  .breadcrumb a:hover { color:#fff; }
+  .breadcrumb-sep { color:rgba(255,255,255,.35); }
 
-  /* Footer */
-  footer{background:var(--navy);color:rgba(255,255,255,.65);padding-top:clamp(3rem,5vw,4.5rem);}
-  .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.1);}
-  .footer-brand .brand-name{color:#fff;}
-  .footer-brand .brand-tag{color:rgba(255,255,255,.4);}
-  .footer-brand p{font-size:.85rem;line-height:1.6;margin-top:.85rem;max-width:260px;}
-  .footer-col h4{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem;}
-  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
-  .footer-col a{font-size:.88rem;color:rgba(255,255,255,.6);transition:color .2s;}
-  .footer-col a:hover{color:#fff;}
-  .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-block:1.5rem;font-size:.8rem;}
-  .footer-legal{display:flex;gap:1.5rem;}
-  .footer-legal a{color:rgba(255,255,255,.45);transition:color .2s;}
-  .footer-legal a:hover{color:#fff;}
-  .btt{position:fixed;bottom:1.5rem;right:1.5rem;width:48px;height:48px;background:var(--navy);color:#fff;border:none;border-radius:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;box-shadow:0 4px 16px rgba(10,37,64,.25);z-index:50;}
-  .btt.visible{opacity:1;transform:translateY(0);}
+  /* ── Back to top ── */
+  .btt { position:fixed; bottom:2rem; right:2rem; z-index:80; width:48px; height:48px; border-radius:50%; background:var(--blue); color:#fff; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px -8px rgba(29,78,216,.55); opacity:0; pointer-events:none; transform:translateY(14px); transition:opacity .35s ease,transform .35s ease; }
+  .btt.visible { opacity:1; pointer-events:auto; transform:translateY(0); }
+  .btt:hover { background:#1a45c4; }
 
-  /* Reveal */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
-  .reveal.in{opacity:1;transform:none;}
-
-  @media(max-width:900px){
-    .footer-grid{grid-template-columns:1fr 1fr;}
-    .menu{display:none;}
-    .burger{display:flex;}
-    .lbl{display:none;}
+  /* ── Page Hero ── */
+  .page-hero {
+    position:relative;
+    padding-top:clamp(8rem,16vh,11rem);
+    padding-bottom:clamp(4rem,8vh,6rem);
+    overflow:hidden; color:#fff;
+    background:
+      radial-gradient(90% 80% at 78% 10%, #133a61 0%, rgba(19,58,97,0) 58%),
+      linear-gradient(158deg, #061726 0%, var(--navy) 48%, #08233f 100%);
   }
-  @media(max-width:600px){
-    .footer-grid{grid-template-columns:1fr;}
-    .footer-bottom{flex-direction:column;align-items:flex-start;gap:.75rem;}
-    .blog-grid{grid-template-columns:1fr;}
+  .page-hero-inner { max-width:64ch; }
+  .page-hero h1 { font-size:clamp(2.2rem,4.5vw,3.8rem); font-weight:800; line-height:1.1; margin:1.25rem 0 1rem; text-wrap:balance; }
+  .page-hero h1 em { font-style:normal; color:var(--sky); }
+  .hero-lead { font-size:clamp(1rem,1.5vw,1.2rem); color:rgba(255,255,255,.75); max-width:52ch; line-height:1.65; }
+
+  /* ── Blog grid ── */
+  .blog-section { padding-block:clamp(3.5rem,7vh,5.5rem); }
+  .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.2rem,2.5vw,2rem); }
+
+  /* ── Blog card ── */
+  .blog-card { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:transform .25s,box-shadow .3s; display:flex; flex-direction:column; }
+  .blog-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px -18px rgba(10,37,64,.2); }
+  .blog-card-img { aspect-ratio:16/9; background:linear-gradient(135deg,#0A2540 0%,#1D4ED8 55%,#38BDF8 100%); position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:1.25rem; }
+  .blog-card-img-overlay { position:absolute; inset:0; background:rgba(10,37,64,.25); }
+  .blog-card-cat { position:relative; z-index:1; display:inline-flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:rgba(29,78,216,.8); border-radius:999px; padding:.3em .9em; }
+  .blog-card-body { padding:var(--card-pad); flex:1; display:flex; flex-direction:column; }
+  .blog-card-meta { display:flex; align-items:center; gap:.85rem; font-size:.76rem; color:var(--navy-55); margin-bottom:.9rem; }
+  .blog-card-meta span { display:flex; align-items:center; gap:.3rem; }
+  .blog-card-meta svg { width:13px; height:13px; flex:none; }
+  .blog-card h3 { font-size:clamp(1.05rem,1.6vw,1.2rem); color:var(--navy); line-height:1.3; margin-bottom:.75rem; text-wrap:balance; }
+  .blog-card p { font-size:.88rem; color:var(--navy-70); line-height:1.65; margin-bottom:1.4rem; flex:1; }
+  .blog-card .btn-outline { font-size:.82rem; padding:.6rem 1.2rem; align-self:flex-start; }
+
+  /* ── Featured card (wide, first) ── */
+  .blog-card-featured { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; }
+  .blog-card-featured .blog-card-img { aspect-ratio:unset; min-height:320px; }
+  .blog-card-featured .blog-card-body { padding:clamp(2rem,4vw,3rem); justify-content:center; }
+  .blog-card-featured h3 { font-size:clamp(1.3rem,2.2vw,1.7rem); }
+
+  /* ── Topic filters ── */
+  .blog-filters { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2.5rem; }
+  .filter-btn { font-family:inherit; font-size:.8rem; font-weight:600; letter-spacing:.04em; padding:.45rem 1.1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--navy-70); cursor:pointer; transition:border-color .2s,color .2s,background .2s; }
+  .filter-btn.active,.filter-btn:hover { border-color:var(--blue); color:var(--blue); background:rgba(29,78,216,.05); }
+
+  /* ── Section head ── */
+  .section-head { margin-bottom:clamp(2rem,4vw,3rem); }
+  .section-head h2 { color:var(--navy); margin-top:.75rem; }
+
+  /* ── Why / Stats bar ── */
+  .stats-bar { background:var(--mist); border-radius:var(--radius); padding:clamp(1.75rem,4vw,2.5rem) clamp(1.5rem,3vw,3rem); display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; margin-block:clamp(3rem,6vh,5rem); }
+  .stat-item { text-align:center; }
+  .stat-number { font-size:clamp(1.6rem,3vw,2.4rem); font-weight:800; color:var(--navy); line-height:1; }
+  .stat-label { font-size:.8rem; color:var(--navy-55); margin-top:.4rem; }
+
+  /* ── Final CTA ── */
+  .final { background:linear-gradient(155deg,var(--navy) 0%,#0d2f56 60%,var(--blue) 175%); color:#fff; position:relative; overflow:hidden; }
+  .final::before { content:""; position:absolute; top:-40%; left:50%; width:70vw; height:70vw; max-width:900px; transform:translateX(-50%); background:radial-gradient(circle,rgba(56,189,248,.22),transparent 62%); pointer-events:none; }
+  .final-inner { position:relative; z-index:2; text-align:center; max-width:50ch; margin:0 auto; }
+  .final h2 { color:#fff; font-size:var(--fs-h2); margin:1.4rem 0; text-wrap:balance; }
+  .final p { color:rgba(255,255,255,.78); font-size:var(--fs-lead); margin-bottom:2.4rem; }
+  .final .hero-actions { display:flex; flex-wrap:wrap; gap:1.2rem; align-items:center; justify-content:center; }
+  .final .eyebrow { color:var(--sky); }
+  .final .eyebrow::before { background:var(--sky); }
+  .micro { font-size:.85rem; color:rgba(255,255,255,.62); display:inline-flex; align-items:center; gap:.5rem; }
+  .micro svg { width:15px; height:15px; flex:none; }
+
+  /* ── Footer ── */
+  footer { background:var(--ink); color:rgba(255,255,255,.7); padding-top:clamp(3.5rem,7vh,5.5rem); padding-bottom:calc(2.5rem + env(safe-area-inset-bottom,0px)); }
+  .footer-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:clamp(2rem,4vw,3.5rem); padding-bottom:3.5rem; border-bottom:1px solid rgba(255,255,255,.1); }
+  .footer-brand .brand-name { color:#fff; }
+  .footer-brand .brand-tag  { color:rgba(255,255,255,.5); }
+  .footer-brand p { font-size:.92rem; margin:1.4rem 0; max-width:32ch; color:rgba(255,255,255,.6); }
+  .footer-col h4 { color:#fff; font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1.3rem; font-weight:600; }
+  .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:.85rem; }
+  .footer-col a { font-size:.92rem; color:rgba(255,255,255,.65); transition:color .2s; }
+  .footer-col a:hover { color:var(--sky); }
+  .footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-top:2rem; font-size:.82rem; color:rgba(255,255,255,.45); }
+  .footer-legal { display:flex; gap:1.5rem; }
+  .footer-legal a { font-size:.82rem; color:rgba(255,255,255,.45); transition:color .2s; }
+  .footer-social { display:flex; gap:10px; margin-top:24px; }
+  .footer-social a { width:36px; height:36px; border-radius:10px; display:grid; place-items:center; background:rgba(255,255,255,.07); color:rgba(255,255,255,.65); transition:background .2s,color .2s; }
+  .footer-social a:hover { background:var(--blue); color:#fff; }
+  .footer-social svg { width:18px; height:18px; }
+
+  /* ── Reveal ── */
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .55s ease,transform .55s ease; }
+  .reveal.in { opacity:1; transform:none; }
+
+  /* ── Responsive ── */
+  @media (max-width:1024px) {
+    .blog-grid { grid-template-columns:repeat(2,1fr); }
+    .blog-card-featured { grid-template-columns:1fr; }
+    .blog-card-featured .blog-card-img { min-height:220px; }
+    .stats-bar { grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width:768px) {
+    .burger { display:flex; }
+    .menu { display:none; }
+    .lbl { display:none; }
+    .footer-grid { grid-template-columns:1fr 1fr; }
+    .blog-grid { grid-template-columns:1fr; }
+    .blog-card-featured { grid-column:auto; }
+  }
+  @media (max-width:600px) {
+    .footer-grid { grid-template-columns:1fr; }
+    .footer-bottom { flex-direction:column; align-items:flex-start; }
+    .stats-bar { grid-template-columns:repeat(2,1fr); }
   }
 </style>
+<link rel="stylesheet" href="/css/header.css" />
 </head>
 <body>
 
@@ -172,7 +258,7 @@
         <a href="/en/blog" hreflang="en">EN</a>
       </nav>
       <a href="#" class="btn btn-wa" data-wa aria-label="Написать в WhatsApp">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="17" height="17"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
         <span class="lbl">WhatsApp</span>
       </a>
       <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
@@ -199,63 +285,209 @@
 </div>
 
 <main>
-  <section class="blog-hero">
-    <div class="wrap">
-      <nav class="breadcrumb" aria-label="Навигация">
-        <a href="/">Главная</a>
-        <span class="breadcrumb-sep">›</span>
-        <span>Блог</span>
-      </nav>
-      <h1>Блог ResidentPravo</h1>
-      <p>Актуальные руководства по визам, ВНЖ, ПМЖ, регистрации компаний и переезду на Кипр — на основе официальных источников.</p>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="breadcrumb" aria-label="Навигация">
+      <a href="/">Главная</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>Блог</span>
+    </nav>
+    <div class="page-hero-inner reveal">
+      <span class="eyebrow" style="color:var(--sky)">ЭКСПЕРТНЫЕ МАТЕРИАЛЫ</span>
+      <h1>Блог <em>ResidentPravo</em></h1>
+      <p class="hero-lead">Актуальные статьи о визах, ВНЖ, ПМЖ, регистрации компаний и переезде на Кипр. Официальные данные, практические советы и разборы кейсов от практикующих специалистов.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="blog-section">
-    <div class="wrap">
-      <div class="blog-grid">
+<!-- ══════════════ BLOG ══════════════ -->
+<section class="blog-section">
+  <div class="wrap">
 
-        <!-- Карточка 1 -->
-        <a href="/ru/blog/cyprus-visas-2026" class="article-card reveal">
-          <div class="card-img">
-            <span class="card-img-label">Визы и переезд</span>
+    <!-- Фильтры -->
+    <div class="blog-filters reveal">
+      <button class="filter-btn active">Все статьи</button>
+      <button class="filter-btn">Визы</button>
+      <button class="filter-btn">ВНЖ и ПМЖ</button>
+      <button class="filter-btn">Бизнес</button>
+      <button class="filter-btn">Налоги</button>
+      <button class="filter-btn">Переезд</button>
+    </div>
+
+    <!-- Карточки -->
+    <div class="blog-grid">
+
+      <!-- Главная статья -->
+      <article class="blog-card blog-card-featured reveal">
+        <div class="blog-card-img">
+          <div class="blog-card-img-overlay"></div>
+          <span class="blog-card-cat">Визы</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>24 июня 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>10 мин</span>
           </div>
-          <div class="card-body">
-            <div class="card-meta">
-              <span class="card-cat">Визы и переезд</span>
-              <span class="card-date">24 июня 2026</span>
-            </div>
-            <h2>Визы на Кипр в 2026 году: полное руководство по въезду в Республику Кипр</h2>
-            <p>Виды виз, документы, сроки, стоимость и правила въезда — всё, что нужно знать, на основе официальных данных правительства Кипра.</p>
-            <span class="card-link">
-              Читать статью
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 18l6-6-6-6"/></svg>
-            </span>
+          <h3>Визы на Кипр в 2026 году: виды, документы, сроки и правила въезда</h3>
+          <p>Полный гид по всем типам виз на Кипр: туристическая, транзитная, долгосрочная. Кому нужна виза, как подать документы и сколько это стоит — по официальным данным правительства Кипра.</p>
+          <a href="/ru/blog/cyprus-visas-2026" class="btn btn-outline">Читать статью →</a>
+        </div>
+      </article>
+
+      <!-- Карточка 2 -->
+      <article class="blog-card reveal">
+        <div class="blog-card-img">
+          <div class="blog-card-img-overlay"></div>
+          <span class="blog-card-cat">ВНЖ и ПМЖ</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
           </div>
+          <h3>ВНЖ на Кипре в 2026 году: все способы получения</h3>
+          <p>Пинк-слип, ВНЖ через компанию, ПМЖ через инвестиции — разбираем каждый способ: документы, сроки и стоимость.</p>
+          <a href="/ru/residence-permit-cyprus" class="btn btn-outline">Подробнее →</a>
+        </div>
+      </article>
+
+      <!-- Карточка 3 -->
+      <article class="blog-card reveal">
+        <div class="blog-card-img">
+          <div class="blog-card-img-overlay"></div>
+          <span class="blog-card-cat">Бизнес</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
+          </div>
+          <h3>Регистрация компании на Кипре: пошаговое руководство</h3>
+          <p>Как открыть Cyprus Ltd за 5–10 дней: пакет документов, нотариус, регистратор и банковский счёт. Налоговые преимущества ЕС.</p>
+          <a href="/ru/company-registration-cyprus" class="btn btn-outline">Подробнее →</a>
+        </div>
+      </article>
+
+      <!-- Карточка 4 -->
+      <article class="blog-card reveal">
+        <div class="blog-card-img">
+          <div class="blog-card-img-overlay"></div>
+          <span class="blog-card-cat">Налоги</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
+          </div>
+          <h3>Налоги на Кипре в 2026 году: полный обзор для физлиц и компаний</h3>
+          <p>Налог на прибыль 12,5%, отсутствие налога на дивиденды, режим Non-Dom — почему Кипр остаётся одним из лучших налоговых юрисдикций ЕС.</p>
+          <a href="/#services" class="btn btn-outline">Подробнее →</a>
+        </div>
+      </article>
+
+      <!-- Карточка 5 -->
+      <article class="blog-card reveal">
+        <div class="blog-card-img">
+          <div class="blog-card-img-overlay"></div>
+          <span class="blog-card-cat">Переезд</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
+          </div>
+          <h3>Переезд на Кипр из России: полное руководство 2026</h3>
+          <p>Пошаговый план переезда: виза, жильё, банковский счёт, оформление ВНЖ, перевозка имущества. Личный опыт и практические советы.</p>
+          <a href="/#faq" class="btn btn-outline">Подробнее →</a>
+        </div>
+      </article>
+
+      <!-- Карточка 6 -->
+      <article class="blog-card reveal">
+        <div class="blog-card-img">
+          <div class="blog-card-img-overlay"></div>
+          <span class="blog-card-cat">ВНЖ и ПМЖ</span>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
+          </div>
+          <h3>ПМЖ на Кипре через инвестиции от €300 000</h3>
+          <p>Бессрочное постоянное место жительства в ЕС за инвестиции в недвижимость. Условия, сроки и преимущества программы Fast Track PRP.</p>
+          <a href="/ru/residence-permit-cyprus#pmzh" class="btn btn-outline">Подробнее →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ STATS ══════════════ -->
+<div class="wrap">
+  <div class="stats-bar reveal">
+    <div class="stat-item">
+      <div class="stat-number">12+</div>
+      <div class="stat-label">лет опыта на рынке Кипра</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">успешных кейсов</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">98%</div>
+      <div class="stat-label">положительных решений</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">15 мин</div>
+      <div class="stat-label">время ответа в WhatsApp</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FINAL CTA ══════════════ -->
+<section class="final section-pad">
+  <div class="wrap">
+    <div class="final-inner reveal">
+      <span class="eyebrow">Начать сейчас</span>
+      <h2>Получите ВНЖ или ПМЖ на Кипре</h2>
+      <p>Бесплатная консультация — анализируем вашу ситуацию, выбираем оптимальный путь и рассчитываем стоимость.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-wa" data-wa>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+          Связаться с экспертом
         </a>
-
+        <span class="micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Ответим в течение 15 минут</span>
       </div>
     </div>
-  </section>
-</main>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="brand-text">
-          <span class="brand-name">ResidentPravo</span>
-          <span class="brand-tag">BUSINESS&nbsp;•&nbsp;RESIDENCY&nbsp;•&nbsp;IMMIGRATION</span>
+        <a href="/" class="brand">
+          <div class="brand-text">
+            <span class="brand-name">ResidentPravo</span>
+            <span class="brand-tag">BUSINESS&nbsp;•&nbsp;RESIDENCY&nbsp;•&nbsp;IMMIGRATION</span>
+          </div>
+        </a>
+        <p>Открытие компаний, ВНЖ, банковские счета и сопровождение бизнеса на Кипре.</p>
+        <div class="footer-social">
+          <a href="https://wa.me/35794440424" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg></a>
+          <a href="https://t.me/ResidentPravo1" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.6l-3.32 15.66c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.4 6.9c.4-.36-.09-.56-.62-.2L6.21 13.5l-4.97-1.56c-1.08-.34-1.1-1.08.22-1.6L20.55 3.02c.9-.34 1.69.2 1.39 1.58z"/></svg></a>
+          <a href="https://www.instagram.com/residentpravo_cyprus" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/share/1BLKihreY1/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.93 0-3.5 1.57-3.5 3.5V11H8v3h2.5v7h3v-7H16l.5-3h-3V9.5c0-.28.22-.5.5-.5z"/></svg></a>
+          <a href="https://www.linkedin.com/in/resident-pravo-785884414/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5v9H4v-9h2.5zM5.25 4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM20 17.5h-2.5v-4.7c0-1.1-.4-1.9-1.4-1.9-.77 0-1.2.52-1.4 1.02-.07.18-.09.43-.09.68v4.9H12.1s.03-7.95 0-8.78v-.22h2.5v1.1c.33-.51.92-1.24 2.25-1.24 1.64 0 2.9 1.07 2.9 3.38v5.76z"/></svg></a>
         </div>
-        <p>Помогаем предпринимателям, инвесторам и специалистам получить ВНЖ и ПМЖ на Кипре.</p>
       </div>
       <div class="footer-col">
         <h4>Услуги</h4>
         <ul>
-          <li><a href="/ru/company-registration-cyprus">Регистрация компании</a></li>
+          <li><a href="/#services">Регистрация компании</a></li>
           <li><a href="/ru/residence-permit-cyprus">ВНЖ и ПМЖ на Кипре</a></li>
           <li><a href="/#services">Гражданство Кипра</a></li>
           <li><a href="/#services">Бухгалтерия и аудит</a></li>
+          <li><a href="/#services">Открытие банковских счетов</a></li>
+          <li><a href="/#services">Юридическое сопровождение</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -263,6 +495,7 @@
         <ul>
           <li><a href="/#why">Почему выбирают нас</a></li>
           <li><a href="/#process">Процесс работы</a></li>
+          <li><a href="/#cases">Кейсы клиентов</a></li>
           <li><a href="/ru/blog">Блог</a></li>
           <li><a href="/#faq">FAQ</a></li>
         </ul>
@@ -277,7 +510,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 ResidentPravo. Все права защищены.</span>
+      <span>© 2026 ResidentPravo Cyprus. Все права защищены.</span>
       <nav class="footer-legal">
         <a href="/ru/privacy-policy">Политика конфиденциальности</a>
         <a href="/ru/terms-of-use">Условия использования</a>
@@ -286,29 +519,39 @@
   </div>
 </footer>
 
+</main>
+
 <button class="btt" id="btt" aria-label="Наверх">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
 </button>
 
 <script>
-  const WA_URL = 'https://wa.me/35794440424';
-  const WA_TEXT = encodeURIComponent('Здравствуйте! Хочу бесплатную консультацию ResidentPravo по ВНЖ/ПМЖ на Кипре.');
-  document.querySelectorAll('[data-wa]').forEach(el => {
-    el.addEventListener('click', e => { e.preventDefault(); window.open(WA_URL + '?text=' + WA_TEXT, '_blank', 'noopener'); });
+  const WA='https://wa.me/35794440424';
+  const WA_TEXT=encodeURIComponent('Здравствуйте! Хочу бесплатную консультацию ResidentPravo по ВНЖ/ПМЖ на Кипре.');
+  document.querySelectorAll('[data-wa]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();window.open(WA+'?text='+WA_TEXT,'_blank','noopener');}));
+
+  const hdr=document.getElementById('header');
+  window.addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>24),{passive:true});
+
+  const burger=document.getElementById('burger'),menu=document.getElementById('mobileMenu'),close=document.getElementById('menuClose');
+  burger.addEventListener('click',()=>{menu.classList.add('open');burger.setAttribute('aria-expanded','true');});
+  close.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false');});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false');}));
+
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
   });
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 24), { passive: true });
-  const burger = document.getElementById('burger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuClose = document.getElementById('menuClose');
-  burger.addEventListener('click', () => { mobileMenu.classList.add('open'); burger.setAttribute('aria-expanded','true'); });
-  menuClose.addEventListener('click', () => { mobileMenu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }));
-  const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  const btt = document.getElementById('btt');
-  window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 300), { passive: true });
-  btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  const btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>btt.classList.toggle('visible',scrollY>450),{passive:true});
+  btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
+<script src="/js/lang-switch.js"></script>
 </body>
 </html>
