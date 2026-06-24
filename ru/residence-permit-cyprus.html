@@ -348,6 +348,20 @@
   #company-vnzh .btn-wa { width:auto; }
   #company-vnzh .pmzh-fits { margin-top:var(--s5); padding-top:var(--s4); }
   #company-vnzh .pmzh-fits h4 { color:var(--navy-70); }
+  /* mobile reorder: fits + cta вынесены как отдельные дети grid */
+  #company-vnzh .cov-fits,
+  #company-vnzh .cov-cta { min-width:0; }
+  @media (min-width:1025px) {
+    #company-vnzh .split-visual { grid-row:1/-1; }
+    #company-vnzh .cov-fits { grid-column:2/3; }
+    #company-vnzh .cov-fits .pmzh-fits { margin-top:0; }
+    #company-vnzh .cov-cta  { grid-column:2/3; }
+  }
+  @media (max-width:1024px) {
+    #company-vnzh .split-section { row-gap:var(--s4); }
+    #company-vnzh .cov-fits .pmzh-fits { margin-top:0; }
+    #company-vnzh { padding-bottom:var(--s5); }
+  }
   .vnzh-trust { margin-top:.55rem; font-size:.78rem; color:var(--navy-55); display:flex; align-items:center; gap:.35rem; }
   .vnzh-trust::before { content:"✓"; color:var(--wa); font-weight:700; flex:none; }
   #company-vnzh .sv-icon {
@@ -358,6 +372,30 @@
     color:var(--blue);
   }
   #company-vnzh .sv-icon svg { width:22px; height:22px; }
+
+  /* ── BCS-ВНЖ: компактная карточка гражданства ── */
+  #bcs-vnzh .split-visual { padding:clamp(1.1rem,1.8vw,1.6rem); }
+  #bcs-vnzh .split-visual h3 { font-size:1.2rem; margin-bottom:.7rem; }
+  #bcs-vnzh .sv-item { padding:.65rem 0; }
+  .bcs-citizenship-label { display:block; font-size:.65rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.38); margin-bottom:.5rem; }
+  .bcs-badge { display:inline-flex; align-items:center; gap:.32rem; font-size:.73rem; font-weight:600; color:rgba(255,255,255,.78); background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:5px; padding:.15em .6em; }
+  .sv-period { font-weight:600; font-size:.9rem; color:rgba(255,255,255,.88); margin-bottom:.4rem; }
+  .sv-reqs { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.28rem; }
+  .sv-reqs li { font-size:.79rem; color:rgba(255,255,255,.56); padding-left:1rem; position:relative; line-height:1.45; }
+  .sv-reqs li::before { content:"•"; position:absolute; left:0; color:var(--sky); font-weight:700; }
+  /* bcs mobile reorder */
+  #bcs-vnzh .bcs-mobl { display:none; }
+  #bcs-vnzh .bcs-fits,
+  #bcs-vnzh .bcs-cta { min-width:0; }
+  @media (max-width:1024px) {
+    #bcs-vnzh .bcs-dtop { display:none; }
+    #bcs-vnzh .bcs-mobl { display:block; }
+    #bcs-vnzh .split-section { row-gap:var(--s4); }
+    #bcs-vnzh .bcs-fits .pmzh-fits { margin-top:0; }
+    #bcs-vnzh .bcs-cta .btn-wa { margin-top:0; }
+    #bcs-vnzh .bcs-cta .vnzh-trust { margin-top:.875rem; }
+    #bcs-vnzh { padding-bottom:var(--s5); }
+  }
 
   /* ── ПМЖ: key stats grid ── */
   .pmzh-stats { display:grid; grid-template-columns:repeat(2,1fr); gap:.75rem; margin-bottom:var(--s3); padding:1.1rem 1.2rem; background:var(--mist); border-radius:12px; border:1px solid rgba(10,37,64,.07); }
@@ -734,10 +772,10 @@
         <div class="type-card reveal">
           <div class="tc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <h3>ВНЖ через компанию</h3>
-          <p>Для владельцев бизнеса, директоров и сотрудников кипрской компании. Один из самых доступных путей для предпринимателей.</p>
+          <p>Для владельцев бизнеса, директоров и сотрудников кипрской компании, включая BCS-компании с правом найма специалистов из стран вне ЕС.</p>
           <ul class="tc-meta">
             <li><b>Срок:</b> от 2 месяцев</li>
-            <li><b>Условия:</b> регистрация компании и подтверждение деятельности</li>
+            <li><b>Условия:</b> регистрация компании или трудоустройство в кипрской компании</li>
           </ul>
         </div>
 
@@ -1022,22 +1060,6 @@
             <li>Продление ВНЖ при действующей компании</li>
             <li>Возможность для всей семьи</li>
           </ul>
-
-          <div class="pmzh-fits">
-            <h4>Кому подходит</h4>
-            <ul>
-              <li>Владельцам бизнеса</li>
-              <li>Онлайн-предпринимателям</li>
-              <li>IT-компаниям</li>
-              <li>Международным инвесторам</li>
-            </ul>
-          </div>
-
-          <a href="#" class="btn btn-wa" data-wa style="margin-top:var(--s4)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-            Получить консультацию
-          </a>
-          <p class="vnzh-trust">Ответим в течение 15 минут в рабочее время</p>
         </div>
         <div class="split-visual reveal">
           <h3>Этапы оформления</h3>
@@ -1070,12 +1092,136 @@
             </div>
           </div>
         </div>
+        <div class="cov-fits reveal">
+          <div class="pmzh-fits">
+            <h4>Кому подходит</h4>
+            <ul>
+              <li>Владельцам бизнеса</li>
+              <li>Онлайн-предпринимателям</li>
+              <li>IT-компаниям</li>
+              <li>Международным инвесторам</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cov-cta">
+          <a href="#" class="btn btn-wa" data-wa style="margin-top:var(--s4)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+            Получить консультацию
+          </a>
+          <p class="vnzh-trust">Ответим в течение 15 минут в рабочее время</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ ВНЖ THROUGH BCS COMPANY ══════════════ -->
+  <section class="section-pad" id="bcs-vnzh">
+    <div class="wrap">
+      <div class="split-section">
+        <div class="split-content reveal">
+          <span class="eyebrow">ВНЖ для специалистов</span>
+          <h2>ВНЖ через трудоустройство<br>в BCS-компанию</h2>
+          <p>Компании со статусом BCS (Business Facilitation Unit) имеют право нанимать сотрудников из стран, не входящих в Европейский Союз.</p>
+          <p>Официальное трудоустройство в такой компании позволяет сотруднику получить рабочий ВНЖ на Кипре, а также оформить ВНЖ для супруга/супруги и детей.</p>
+
+          <div class="pmzh-stats">
+            <div>
+              <div class="pmzh-stat-label">Срок оформления</div>
+              <div class="pmzh-stat-value">1–3 месяца</div>
+            </div>
+            <div>
+              <div class="pmzh-stat-label">Основание</div>
+              <div class="pmzh-stat-value">трудовой договор с BCS-компанией</div>
+            </div>
+            <div>
+              <div class="pmzh-stat-label">Продление</div>
+              <div class="pmzh-stat-value">на период трудоустройства</div>
+            </div>
+            <div>
+              <div class="pmzh-stat-label">Семья</div>
+              <div class="pmzh-stat-value">супруг(а) и дети</div>
+            </div>
+          </div>
+
+          <ul class="feature-list">
+            <li>Легальная работа на Кипре</li>
+            <li>ВНЖ для всей семьи</li>
+            <li>Перспектива получения гражданства Кипра</li>
+            <li>Возможность проживания на Кипре круглый год</li>
+            <li>Работа в международной компании</li>
+            <li>Возможность продления статуса</li>
+          </ul>
+
+          <div class="pmzh-fits bcs-dtop">
+            <h4>Кому подходит</h4>
+            <ul>
+              <li>IT-специалистам</li>
+              <li>Маркетологам</li>
+              <li>Финансовым специалистам</li>
+              <li>Менеджерам</li>
+              <li>Инженерам</li>
+              <li>Специалистам международных компаний</li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-wa bcs-dtop" data-wa style="margin-top:var(--s4)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+            Получить консультацию
+          </a>
+          <p class="vnzh-trust bcs-dtop">Ответим в течение 15 минут в рабочее время</p>
+        </div>
+        <div class="split-visual reveal">
+          <span class="bcs-citizenship-label">Перспектива получения гражданства</span>
+          <h3>Ускоренный путь к гражданству Кипра</h3>
+          <p style="margin-bottom:var(--s2);"><span class="bcs-badge">✓&nbsp;Для высококвалифицированных специалистов BCS-компаний</span></p>
+          <p style="color:rgba(255,255,255,.68);font-size:.88rem;margin-bottom:var(--s3);line-height:1.55;">Высококвалифицированные специалисты BCS-компаний могут претендовать на ускоренную натурализацию при соблюдении требований законодательства Республики Кипр.</p>
+          <div class="sv-item">
+            <span class="sv-num">A2</span>
+            <div class="sv-text">
+              <p class="sv-period">Через 4 года законного проживания</p>
+              <ul class="sv-reqs">
+                <li>Подтверждённое знание греческого языка на уровне A2</li>
+                <li>Успешная сдача экзамена по знаниям о Кипре</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sv-item">
+            <span class="sv-num">B1</span>
+            <div class="sv-text">
+              <p class="sv-period">Через 3 года законного проживания</p>
+              <ul class="sv-reqs">
+                <li>Подтверждённое знание греческого языка на уровне B1</li>
+                <li>Успешная сдача экзамена по знаниям о Кипре</li>
+              </ul>
+            </div>
+          </div>
+          <p class="legal-note" style="color:rgba(255,255,255,.42);margin-top:var(--s3);">Гражданство не гарантировано. Требования к ВНЖ и натурализации могут изменяться. Актуальные условия необходимо проверять на момент подачи заявления.</p>
+        </div>
+        <div class="bcs-fits bcs-mobl reveal">
+          <div class="pmzh-fits">
+            <h4>Кому подходит</h4>
+            <ul>
+              <li>IT-специалистам</li>
+              <li>Маркетологам</li>
+              <li>Финансовым специалистам</li>
+              <li>Менеджерам</li>
+              <li>Инженерам</li>
+              <li>Специалистам международных компаний</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bcs-cta bcs-mobl">
+          <a href="#" class="btn btn-wa" data-wa>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+            Получить консультацию
+          </a>
+          <p class="vnzh-trust">Ответим в течение 15 минут в рабочее время</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ══════════════ DOCUMENTS ══════════════ -->
-  <section class="section-pad" id="documents">
+  <section class="section-pad" style="background:var(--mist);" id="documents">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Документы</span>
@@ -1151,7 +1297,7 @@
   </section>
 
   <!-- ══════════════ TIMELINE ══════════════ -->
-  <section class="section-pad" style="background:var(--mist);" id="timeline">
+  <section class="section-pad" id="timeline">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Процесс оформления</span>
@@ -1193,7 +1339,7 @@
   </section>
 
   <!-- ══════════════ WHY CYPRUS ══════════════ -->
-  <section class="section-pad" id="why-cyprus">
+  <section class="section-pad" style="background:var(--mist);" id="why-cyprus">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Почему Кипр</span>
@@ -1236,7 +1382,7 @@
   </section>
 
   <!-- ══════════════ WHY RESIDENTPRAVO ══════════════ -->
-  <section class="section-pad" style="background:var(--mist);" id="why-us">
+  <section class="section-pad" id="why-us">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Почему ResidentPravo</span>
@@ -1273,7 +1419,7 @@
   </section>
 
   <!-- ══════════════ FAQ ══════════════ -->
-  <section class="section-pad" id="faq">
+  <section class="section-pad" style="background:var(--mist);" id="faq">
     <div class="wrap">
       <div class="faq-layout">
         <div>

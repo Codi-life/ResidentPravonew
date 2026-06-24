@@ -259,10 +259,47 @@
   #company-rp .btn-wa{width:auto;}
   #company-rp .pmzh-fits{margin-top:var(--s5);padding-top:var(--s4);}
   #company-rp .pmzh-fits h4{color:var(--navy-70);}
+  /* mobile reorder */
+  #company-rp .cov-fits,
+  #company-rp .cov-cta{min-width:0;}
+  @media (min-width:1025px){
+    #company-rp .split-visual{grid-row:1/-1;}
+    #company-rp .cov-fits{grid-column:2/3;}
+    #company-rp .cov-fits .pmzh-fits{margin-top:0;}
+    #company-rp .cov-cta{grid-column:2/3;}
+  }
+  @media (max-width:1024px){
+    #company-rp .split-section{row-gap:var(--s4);}
+    #company-rp .cov-fits .pmzh-fits{margin-top:0;}
+    #company-rp{padding-bottom:var(--s5);}
+  }
   .vnzh-trust{margin-top:.55rem;font-size:.78rem;color:var(--navy-55);display:flex;align-items:center;gap:.35rem;}
   .vnzh-trust::before{content:"✓";color:var(--wa);font-weight:700;flex:none;}
   #company-rp .sv-icon{width:44px;height:44px;border-radius:12px;flex-shrink:0;display:grid;place-items:center;background:rgba(29,78,216,.07);border:1px solid rgba(29,78,216,.11);color:var(--blue);}
   #company-rp .sv-icon svg{width:22px;height:22px;}
+  /* ── BCS-RP: compact citizenship card ── */
+  #bcs-rp .split-visual{padding:clamp(1.1rem,1.8vw,1.6rem);}
+  #bcs-rp .split-visual h3{font-size:1.2rem;margin-bottom:.7rem;}
+  #bcs-rp .sv-item{padding:.65rem 0;}
+  .bcs-citizenship-label{display:block;font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.5rem;}
+  .bcs-badge{display:inline-flex;align-items:center;gap:.32rem;font-size:.73rem;font-weight:600;color:rgba(255,255,255,.78);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:5px;padding:.15em .6em;}
+  .sv-period{font-weight:600;font-size:.9rem;color:rgba(255,255,255,.88);margin-bottom:.4rem;}
+  .sv-reqs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.28rem;}
+  .sv-reqs li{font-size:.79rem;color:rgba(255,255,255,.56);padding-left:1rem;position:relative;line-height:1.45;}
+  .sv-reqs li::before{content:"•";position:absolute;left:0;color:var(--sky);font-weight:700;}
+  /* bcs mobile reorder */
+  #bcs-rp .bcs-mobl{display:none;}
+  #bcs-rp .bcs-fits,
+  #bcs-rp .bcs-cta{min-width:0;}
+  @media (max-width:1024px){
+    #bcs-rp .bcs-dtop{display:none;}
+    #bcs-rp .bcs-mobl{display:block;}
+    #bcs-rp .split-section{row-gap:var(--s4);}
+    #bcs-rp .bcs-fits .pmzh-fits{margin-top:0;}
+    #bcs-rp .bcs-cta .btn-wa{margin-top:0;}
+    #bcs-rp .bcs-cta .vnzh-trust{margin-top:.875rem;}
+    #bcs-rp{padding-bottom:var(--s5);}
+  }
   .pmzh-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:var(--s3);padding:1.1rem 1.2rem;background:var(--mist);border-radius:12px;border:1px solid rgba(10,37,64,.07);}
   .pmzh-stat-label{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--navy-55);margin-bottom:.25rem;}
   .pmzh-stat-value{font-size:.96rem;font-weight:700;color:var(--navy);}
@@ -467,10 +504,10 @@
         <div class="type-card reveal">
           <div class="tc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
           <h3>Residence via Company</h3>
-          <p>For business owners, directors and employees of a Cyprus-registered company. One of the most accessible routes for entrepreneurs.</p>
+          <p>For business owners, directors and employees of a Cyprus company, including BCS companies authorised to hire specialists from non-EU countries.</p>
           <ul class="tc-meta">
             <li><b>Timeline:</b> from 2 months</li>
-            <li><b>Requirements:</b> company registration and proof of business activity</li>
+            <li><b>Requirements:</b> company registration or employment by a Cyprus company</li>
           </ul>
         </div>
 
@@ -674,22 +711,6 @@
             <li>Annual renewal while company remains active</li>
             <li>Covers the whole family</li>
           </ul>
-
-          <div class="pmzh-fits">
-            <h4>Who this suits</h4>
-            <ul>
-              <li>Business owners</li>
-              <li>Online entrepreneurs</li>
-              <li>IT companies</li>
-              <li>International investors</li>
-            </ul>
-          </div>
-
-          <a href="#" class="btn btn-wa" data-wa style="margin-top:var(--s4)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-            Speak With an Expert
-          </a>
-          <p class="vnzh-trust">We respond within 15 minutes during business hours</p>
         </div>
         <div class="split-visual reveal">
           <h3>Application Steps</h3>
@@ -710,11 +731,135 @@
             <div class="sv-text"><p>Receive Your Residence Permit Card</p><p>We accompany you to biometrics and card collection</p></div>
           </div>
         </div>
+        <div class="cov-fits reveal">
+          <div class="pmzh-fits">
+            <h4>Who this suits</h4>
+            <ul>
+              <li>Business owners</li>
+              <li>Online entrepreneurs</li>
+              <li>IT companies</li>
+              <li>International investors</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cov-cta">
+          <a href="#" class="btn btn-wa" data-wa style="margin-top:var(--s4)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+            Speak With an Expert
+          </a>
+          <p class="vnzh-trust">We respond within 15 minutes during business hours</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section-pad" id="documents">
+  <!-- ══════════════ RESIDENCE PERMIT VIA BCS COMPANY ══════════════ -->
+  <section class="section-pad" id="bcs-rp">
+    <div class="wrap">
+      <div class="split-section">
+        <div class="split-content reveal">
+          <span class="eyebrow">Employment-Based Permit</span>
+          <h2>Residence Permit Through<br>Employment in a BCS Company</h2>
+          <p>Companies with BCS (Business Facilitation Unit) status are authorised to hire employees from countries outside the European Union.</p>
+          <p>Official employment at such a company entitles the employee to a work-based residence permit in Cyprus, and also allows them to obtain permits for their spouse and children.</p>
+
+          <div class="pmzh-stats">
+            <div>
+              <div class="pmzh-stat-label">Processing Time</div>
+              <div class="pmzh-stat-value">1–3 months</div>
+            </div>
+            <div>
+              <div class="pmzh-stat-label">Basis</div>
+              <div class="pmzh-stat-value">employment contract with a BCS company</div>
+            </div>
+            <div>
+              <div class="pmzh-stat-label">Renewal</div>
+              <div class="pmzh-stat-value">for the duration of employment</div>
+            </div>
+            <div>
+              <div class="pmzh-stat-label">Family</div>
+              <div class="pmzh-stat-value">spouse and children</div>
+            </div>
+          </div>
+
+          <ul class="feature-list">
+            <li>Legal right to work in Cyprus</li>
+            <li>Residence permits for the whole family</li>
+            <li>Potential path to Cypriot citizenship</li>
+            <li>Year-round residency on the island</li>
+            <li>Employment in an international company</li>
+            <li>Residence permit renewable for the duration of employment</li>
+          </ul>
+
+          <div class="pmzh-fits bcs-dtop">
+            <h4>Who this suits</h4>
+            <ul>
+              <li>IT Professionals</li>
+              <li>Marketing Specialists</li>
+              <li>Finance Professionals</li>
+              <li>Managers</li>
+              <li>Engineers</li>
+              <li>Employees of International Companies</li>
+            </ul>
+          </div>
+          <a href="#" class="btn btn-wa bcs-dtop" data-wa style="margin-top:var(--s4)">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+            Get a Consultation
+          </a>
+          <p class="vnzh-trust bcs-dtop">We respond within 15 minutes during business hours</p>
+        </div>
+        <div class="split-visual reveal">
+          <span class="bcs-citizenship-label">Citizenship Opportunity</span>
+          <h3>Fast-Track Path to Cypriot Citizenship</h3>
+          <p style="margin-bottom:var(--s2);"><span class="bcs-badge">✓&nbsp;For Highly Qualified Professionals Working for BCS Companies</span></p>
+          <p style="color:rgba(255,255,255,.68);font-size:.88rem;margin-bottom:var(--s3);line-height:1.55;">Highly qualified professionals employed by BCS companies may be eligible for accelerated naturalisation, subject to the requirements of Cyprus law.</p>
+          <div class="sv-item">
+            <span class="sv-num">A2</span>
+            <div class="sv-text">
+              <p class="sv-period">After 4 years of lawful residence</p>
+              <ul class="sv-reqs">
+                <li>Confirmed Greek language proficiency at A2 level</li>
+                <li>Successful completion of the Cyprus knowledge examination</li>
+              </ul>
+            </div>
+          </div>
+          <div class="sv-item">
+            <span class="sv-num">B1</span>
+            <div class="sv-text">
+              <p class="sv-period">After 3 years of lawful residence</p>
+              <ul class="sv-reqs">
+                <li>Confirmed Greek language proficiency at B1 level</li>
+                <li>Successful completion of the Cyprus knowledge examination</li>
+              </ul>
+            </div>
+          </div>
+          <p class="legal-note" style="color:rgba(255,255,255,.42);margin-top:var(--s3);">Citizenship is not guaranteed. Residence permit and naturalisation requirements are subject to change. Conditions should be verified at the time of application.</p>
+        </div>
+        <div class="bcs-fits bcs-mobl reveal">
+          <div class="pmzh-fits">
+            <h4>Who this suits</h4>
+            <ul>
+              <li>IT Professionals</li>
+              <li>Marketing Specialists</li>
+              <li>Finance Professionals</li>
+              <li>Managers</li>
+              <li>Engineers</li>
+              <li>Employees of International Companies</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bcs-cta bcs-mobl">
+          <a href="#" class="btn btn-wa" data-wa>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+            Get a Consultation
+          </a>
+          <p class="vnzh-trust">We respond within 15 minutes during business hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" style="background:var(--mist);" id="documents">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Documents</span>
@@ -789,7 +934,7 @@
     </div>
   </section>
 
-  <section class="section-pad" style="background:var(--mist);" id="timeline">
+  <section class="section-pad" id="timeline">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Application Process</span>
@@ -810,7 +955,7 @@
     </div>
   </section>
 
-  <section class="section-pad" id="why-cyprus">
+  <section class="section-pad" style="background:var(--mist);" id="why-cyprus">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Why Cyprus</span>
@@ -828,7 +973,7 @@
     </div>
   </section>
 
-  <section class="section-pad" style="background:var(--mist);" id="why-us">
+  <section class="section-pad" id="why-us">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Why ResidentPravo</span>
@@ -844,7 +989,7 @@
     </div>
   </section>
 
-  <section class="section-pad" id="faq">
+  <section class="section-pad" style="background:var(--mist);" id="faq">
     <div class="wrap">
       <div class="faq-layout">
         <div>
