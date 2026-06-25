@@ -32,7 +32,8 @@
 <meta property="article:section" content="Визы и переезд" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
 <script type="application/ld+json">
 {
@@ -481,7 +482,8 @@
   .warn-card-list li { padding-left:1.05rem; position:relative; font-size:.86rem; color:#78350f; line-height:1.6; }
   .warn-card-list li::before { content:''; position:absolute; left:.12rem; top:.57rem; width:.3rem; height:.3rem; border-radius:50%; background:#F59E0B; opacity:.8; }
 </style>
-<link rel="stylesheet" href="/css/header.css" />
+<link rel="preload" href="/css/header.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="/css/header.css" /></noscript>
 </head>
 <body>
 
@@ -1363,6 +1365,6 @@
   window.addEventListener('scroll',()=>btt.classList.toggle('visible',scrollY>450),{passive:true});
   btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
-<script src="/js/lang-switch.js"></script>
+<script src="/js/lang-switch.js" defer></script>
 </body>
 </html>
