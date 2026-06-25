@@ -142,7 +142,7 @@
   .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.2rem,2.5vw,2rem); }
 
   /* ── Blog card ── */
-  .blog-card { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:transform .25s,box-shadow .3s; display:flex; flex-direction:column; }
+  .blog-card { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:transform .25s,box-shadow .3s; display:flex; flex-direction:column; position:relative; cursor:pointer; }
   .blog-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px -18px rgba(10,37,64,.2); }
   .blog-card-img { aspect-ratio:16/9; background:linear-gradient(135deg,#0A2540 0%,#1D4ED8 55%,#38BDF8 100%); position:relative; overflow:hidden; display:flex; align-items:flex-end; padding:1.25rem; }
   .blog-card-img-overlay { position:absolute; inset:0; background:rgba(10,37,64,.25); }
@@ -156,10 +156,15 @@
   .blog-card .btn-outline { font-size:.82rem; padding:.6rem 1.2rem; align-self:flex-start; }
 
   /* ── Featured card (wide, first) ── */
-  .blog-card-featured { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; }
+  .blog-card-featured { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; position:relative; }
   .blog-card-featured .blog-card-img { aspect-ratio:unset; min-height:320px; }
   .blog-card-featured .blog-card-body { padding:clamp(2rem,4vw,3rem); justify-content:center; }
   .blog-card-featured h3 { font-size:clamp(1.3rem,2.2vw,1.7rem); }
+  /* Clickable card overlay */
+  .blog-card-overlay { position:absolute; inset:0; z-index:0; display:block; border-radius:var(--radius); }
+  .blog-card .btn { position:relative; z-index:1; }
+  /* Real photo inside card */
+  .blog-card-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
 
   /* ── Topic filters ── */
   .blog-filters { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2.5rem; }
@@ -321,7 +326,15 @@
 
       <!-- Главная статья -->
       <article class="blog-card blog-card-featured reveal">
+        <a class="blog-card-overlay" href="/ru/blog/cyprus-visas-2026" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
+          <img
+            class="blog-card-photo"
+            src="/images/larnaca-passport-control.jpg"
+            alt="Паспортный контроль в аэропорту Ларнаки, Кипр"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="blog-card-img-overlay"></div>
           <span class="blog-card-cat">Визы</span>
         </div>
@@ -338,15 +351,24 @@
 
       <!-- Карточка 2 -->
       <article class="blog-card reveal">
+        <a class="blog-card-overlay" href="/ru/residence-permit-cyprus" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
+          <img
+            class="blog-card-photo"
+            src="/images/blog-vnj-pmj-cyprus-2026.png"
+            alt="ВНЖ и ПМЖ на Кипре — паспорта, документы, вид на побережье"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="blog-card-img-overlay"></div>
-          <span class="blog-card-cat">ВНЖ и ПМЖ</span>
+          <span class="blog-card-cat">ВНЖ И ПМЖ</span>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>25 июня 2026</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>7 мин</span>
           </div>
-          <h3>ВНЖ на Кипре в 2026 году: все способы получения</h3>
+          <h3>ВНЖ и ПМЖ на Кипре в 2026 году: все способы получения</h3>
           <p>Пинк-слип, ВНЖ через компанию, ПМЖ через инвестиции — разбираем каждый способ: документы, сроки и стоимость.</p>
           <a href="/ru/residence-permit-cyprus" class="btn btn-outline">Подробнее →</a>
         </div>

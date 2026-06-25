@@ -61,4 +61,28 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://www.residentpravo.com/ru/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.residentpravo.com/en/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.residentpravo.com/ru/blog/cyprus-visas-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.residentpravo.com/en/blog/cyprus-visas-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
