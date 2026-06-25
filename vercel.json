@@ -59,6 +59,14 @@
     {
       "source": "/en/company-registration-cyprus",
       "destination": "/en/company-registration-cyprus.html"
+    },
+    {
+      "source": "/ru/blog/cyprus-visas-2026",
+      "destination": "/ru/blog/cyprus-visas-2026.html"
+    },
+    {
+      "source": "/en/blog/cyprus-visas-2026",
+      "destination": "/en/blog/cyprus-visas-2026.html"
     }
   ]
 }
