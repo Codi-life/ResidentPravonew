@@ -306,13 +306,19 @@
       <article class="blog-card blog-card-featured reveal">
         <a class="blog-card-overlay" href="/en/blog/cyprus-visas-2026" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
-          <img
-            class="blog-card-photo"
-            src="/images/larnaca-passport-control.jpg"
-            alt="Passport control at Larnaca Airport, Cyprus"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source type="image/webp"
+              srcset="/images/larnaca-passport-control-640.webp 640w, /images/larnaca-passport-control-1024.webp 1024w"
+              sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 660px" />
+            <img
+              class="blog-card-photo"
+              src="/images/larnaca-passport-control.jpg"
+              srcset="/images/larnaca-passport-control-640.jpg 640w, /images/larnaca-passport-control-1024.jpg 1024w"
+              sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 660px"
+              alt="Passport control at Larnaca Airport, Cyprus"
+              loading="eager" decoding="async"
+            />
+          </picture>
           <div class="blog-card-img-overlay"></div>
           <span class="blog-card-cat">Visas</span>
         </div>
@@ -330,13 +336,19 @@
       <article class="blog-card reveal">
         <a class="blog-card-overlay" href="/en/residence-permit-cyprus" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
-          <img
-            class="blog-card-photo"
-            src="/images/blog-vnj-pmj-cyprus-2026.png"
-            alt="Cyprus Residency & PR — passports, documents and coastal view"
-            loading="lazy"
-            decoding="async"
-          />
+          <picture>
+            <source type="image/webp"
+              srcset="/images/blog-vnj-pmj-cyprus-2026-640.webp 640w, /images/blog-vnj-pmj-cyprus-2026-1024.webp 1024w"
+              sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 400px" />
+            <img
+              class="blog-card-photo"
+              src="/images/blog-vnj-pmj-cyprus-2026.png"
+              srcset="/images/blog-vnj-pmj-cyprus-2026-640.jpg 640w, /images/blog-vnj-pmj-cyprus-2026-1024.jpg 1024w"
+              sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 400px"
+              alt="Cyprus Residency & PR — passports, documents and coastal view"
+              loading="lazy" decoding="async"
+            />
+          </picture>
           <div class="blog-card-img-overlay"></div>
           <span class="blog-card-cat">Residency &amp; PR</span>
         </div>
