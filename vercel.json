@@ -85,6 +85,14 @@
     {
       "source": "/en/blog/cyprus-visas-2026",
       "destination": "/en/blog/cyprus-visas-2026.html"
+    },
+    {
+      "source": "/ru/experts/artur-mardanyan",
+      "destination": "/ru/experts/artur-mardanyan.html"
+    },
+    {
+      "source": "/en/experts/artur-mardanyan",
+      "destination": "/en/experts/artur-mardanyan.html"
     }
   ]
 }
