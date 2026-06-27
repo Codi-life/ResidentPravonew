@@ -967,6 +967,12 @@
     .section-head { margin-bottom: 2rem; }
     /* ── Fix: footer social overflow ── */
     .footer-social { flex-wrap: wrap; }
+    /* ── Hero mobile: trust strip → CTA (display:contents reorder, desktop untouched) ── */
+    .hero-wrap { display: flex; flex-direction: column; }
+    .hero-grid { display: contents; }
+    .hero-copy { display: contents; }
+    .hero-wrap .trust-strip { order: 4; margin-top: 1.25rem; }
+    .hero-wrap .hero-actions { order: 5; margin-top: 1.25rem; }
   }
 
   /* ── 480px: shrink tagline to fit mobile header ── */

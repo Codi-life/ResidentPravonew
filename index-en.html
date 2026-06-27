@@ -383,6 +383,12 @@
     .final .hero-actions { align-items: stretch; }
     .section-head { margin-bottom: 2rem; }
     .footer-social { flex-wrap: wrap; }
+    /* ── Hero mobile: trust strip → CTA (display:contents reorder, desktop untouched) ── */
+    .hero-wrap { display: flex; flex-direction: column; }
+    .hero-grid { display: contents; }
+    .hero-copy { display: contents; }
+    .hero-wrap .trust-strip { order: 4; margin-top: 1.25rem; }
+    .hero-wrap .hero-actions { order: 5; margin-top: 1.25rem; }
   }
   @media (max-width: 460px) {
     .process-steps { grid-template-columns: 1fr; }
