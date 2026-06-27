@@ -320,23 +320,46 @@
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .lang-trust { display: none; }
   }
-  /* ═══ Tablet — dedicated layout (768–1024px, portrait + landscape) ═══ */
+  /* ═══ Tablet — mirrors mobile hero (768–1024px) ═══ */
   @media (min-width: 768px) and (max-width: 1024px) {
-    /* ── Hero: no photo on tablet ── */
-    .hero { padding-top: clamp(7rem, 13vh, 9rem); padding-bottom: clamp(2rem, 4vh, 3rem); }
+    /* ── Header: burger visible, small WA icon hidden ── */
+    .burger { display: flex; }
+    .header-cta .btn-wa { display: none; }
+
+    /* ── Hero: full-width, no photo ── */
+    .hero { padding-top: clamp(5.5rem, 10vh, 7.5rem); padding-bottom: 1.5rem; }
     .hero-photo { display: none; }
-    .hero-copy { max-width: 65%; }
-    .hero h1 { max-width: 22ch; }
-    .hero-lead { max-width: 38ch; }
-    /* ── Statistics: hidden on tablet ── */
-    .trust-strip { display: none; }
-    /* ── Why section: hide duplicate WA button ── */
+    .hero-copy { max-width: 100%; }
+    .hero h1 { max-width: 100%; margin: 0.7rem 0 0.75rem; }
+    .hero-lead { max-width: 100%; margin-bottom: 1rem; }
+    .h1-badge { transform: none; }
+
+    /* ── Text: mobile variants (compact h1, short lead, 10+ in trust strip) ── */
+    .h1-desktop { display: none; }
+    .h1-mobile  { display: inline; }
+    .h1-mobile .h1-badge { display: block; margin-left: 0; margin-top: 0.35em; width: fit-content; }
+
+    /* ── Trust strip: restore (undo display:none), style like mobile ── */
+    .trust-strip { display: grid; margin-top: 1.75rem; padding-top: 1.25rem; }
+
+    /* ── Hero reorder: trust before CTA (same as ≤720px) ── */
+    .hero-wrap { display: flex; flex-direction: column; }
+    .hero-grid { display: contents; }
+    .hero-copy { display: contents; }
+    .hero-wrap .trust-strip { order: 4; margin-top: 1.25rem; }
+    .hero-wrap .hero-actions { order: 5; margin-top: 1.25rem; }
+
+    /* ── Hero actions: stacked full-width ── */
+    .hero-actions { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+    .hero-actions .btn { width: 100%; justify-content: center; white-space: normal; text-align: center; }
+    .hero-actions .micro { justify-content: center; width: 100%; }
+    .btn-wa { white-space: normal; text-align: center; }
+
+    /* ── Why section ── */
     .why-wa { display: none; }
+
     /* ── Section spacing ── */
     .section-head { margin-bottom: clamp(28px, 4vh, 48px); }
-    /* ── Header: no hamburger on tablet — scroll-only navigation ── */
-    .burger { display: none; }
-    .mobile-menu { display: none; }
   }
 
   @media (max-width: 768px) {
