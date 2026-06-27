@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+<!--
+  Language detection — runs before paint, no flash.
+  URL /en/* → data-lang="en" + lang="en"
+-->
+<script>(function(){var e=location.pathname.startsWith('/en');if(e){document.documentElement.setAttribute('data-lang','en');document.documentElement.setAttribute('lang','en');}}());</script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<!-- Dual-language title via JS below -->
+<title>404 — Страница не найдена | ResidentPravo</title>
+
+<meta name="robots" content="noindex, nofollow" />
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/footer.css" />
+
+<style>
+  /* ── Design tokens (identical to all site pages) ── */
+  :root {
+    --navy:   #0A2540;
+    --blue:   #1D4ED8;
+    --sky:    #38BDF8;
+    --ink:    #111827;
+    --mist:   #F5F7FA;
+    --white:  #FFFFFF;
+    --navy-90: rgba(10,37,64,.90);
+    --navy-70: rgba(10,37,64,.70);
+    --navy-55: rgba(10,37,64,.55);
+    --navy-12: rgba(10,37,64,.12);
+    --navy-06: rgba(10,37,64,.06);
+    --line:    rgba(10,37,64,.10);
+    --wa:  #25D366;
+    --fs-hero: clamp(2.6rem,6.2vw,5.4rem);
+    --fs-h2:   clamp(2rem,4.2vw,3.5rem);
+    --fs-h3:   clamp(1.3rem,2vw,1.75rem);
+    --fs-lead: clamp(1.05rem,1.5vw,1.4rem);
+    --maxw:   1400px;
+    --gutter: clamp(1.25rem,5vw,5rem);
+    --radius: 18px;
+    --s1:8px; --s2:16px; --s3:24px; --s4:32px;
+    --s5:40px; --s6:48px; --s7:64px; --s8:80px;
+    --card-pad: clamp(24px,2.4vw,32px);
+  }
+
+  /* ── Language toggle ── */
+  .en-only { display: none; }
+  [data-lang="en"] .en-only { display: revert; }
+  [data-lang="en"] .ru-only { display: none !important; }
+
+  /* ── Reset & base ── */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x:hidden; }
+  body {
+    font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink); background:var(--white);
+    line-height:1.6; font-weight:400;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+    display:flex; flex-direction:column; min-height:100dvh;
+  }
+  ::selection { background:var(--sky); color:var(--navy); }
+  a { color:inherit; text-decoration:none; }
+  .wrap { max-width:var(--maxw); margin:0 auto; padding-inline:var(--gutter); }
+
+  /* ── Eyebrow ── */
+  .eyebrow {
+    font-size:.78rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--blue); display:inline-flex; align-items:center; gap:.7rem;
+  }
+  .eyebrow::before { content:""; width:28px; height:1px; background:var(--blue); display:inline-block; }
+  .eyebrow.light { color:var(--sky); }
+  .eyebrow.light::before { background:var(--sky); }
+
+  h1,h2,h3 { font-weight:700; line-height:1.08; letter-spacing:-.02em; color:var(--navy); }
+
+  /* ── Buttons ── */
+  .btn {
+    display:inline-flex; align-items:center; gap:.65rem;
+    font-family:inherit; font-weight:600; font-size:.98rem; letter-spacing:.01em;
+    padding:1rem 1.6rem; border-radius:999px; border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn svg { width:19px; height:19px; flex:none; }
+  .btn-wa { background:var(--wa); color:var(--white); box-shadow:0 12px 30px -10px rgba(37,211,102,.55); }
+  .btn-wa:hover { transform:translateY(-2px); box-shadow:0 18px 38px -10px rgba(37,211,102,.6); }
+  .btn-primary { background:var(--blue); color:var(--white); box-shadow:0 14px 34px -12px rgba(29,78,216,.6); }
+  .btn-primary:hover { transform:translateY(-2px); background:#1a45c4; }
+  .btn-ghost { background:transparent; color:var(--navy); border-color:var(--navy-12); }
+  .btn-ghost:hover { border-color:var(--navy); transform:translateY(-2px); }
+  .btn-ghost.light { color:var(--white); border-color:rgba(255,255,255,.25); }
+  .btn-ghost.light:hover { border-color:rgba(255,255,255,.7); }
+
+  /* ── Header ── */
+  header {
+    position:fixed; inset:0 0 auto 0; z-index:100;
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease, border-color .35s ease;
+    border-bottom:1px solid transparent;
+    padding-top:calc(0.9rem + env(safe-area-inset-top,0px)); padding-bottom:.9rem;
+  }
+  header.scrolled {
+    background:rgba(9,28,50,.88); backdrop-filter:saturate(150%) blur(13px);
+    -webkit-backdrop-filter:saturate(150%) blur(13px);
+    box-shadow:none; border-color:rgba(255,255,255,.09);
+    padding-top:calc(0.5rem + env(safe-area-inset-top,0px)); padding-bottom:.5rem;
+  }
+  .nav { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:2rem; }
+  .brand { display:flex; align-items:center; gap:.85rem; }
+  .brand-text { display:flex; flex-direction:column; line-height:1.05; }
+  .brand-name { font-weight:700; font-size:1.36rem; color:var(--navy); letter-spacing:-.015em; }
+  .brand-tag  { font-size:.62rem; font-weight:600; letter-spacing:.2em; color:var(--navy-55); margin-top:3px; }
+  .menu { display:flex; justify-content:center; gap:2.3rem; }
+  .menu a {
+    font-size:.92rem; font-weight:500; color:var(--navy-70); position:relative;
+    padding:.3rem 0; transition:color .2s ease;
+  }
+  .menu a::after {
+    content:""; position:absolute; left:0; bottom:-2px;
+    width:0; height:1.5px; background:var(--blue); transition:width .28s ease;
+  }
+  .menu a:hover { color:var(--navy); }
+  .menu a:hover::after { width:100%; }
+  header .brand-name { color:#fff; }
+  header .brand-tag  { color:rgba(255,255,255,.6); }
+  header .menu a     { color:rgba(255,255,255,.78); }
+  header .menu a:hover { color:#fff; }
+  header .burger span { background:#fff; }
+  .header-cta { display:flex; justify-content:flex-end; align-items:center; gap:.9rem; }
+  .header-cta .btn { padding:.58rem 1.05rem; font-size:.85rem; }
+  .header-cta .btn-wa { background:var(--wa); box-shadow:0 4px 14px -6px rgba(37,211,102,.45); }
+  .header-cta .btn-wa svg { width:17px; height:17px; }
+  .header-cta .btn-wa:hover { transform:translateY(-1px); box-shadow:0 7px 18px -7px rgba(37,211,102,.5); }
+  .burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+  .burger span { width:24px; height:2px; background:var(--navy); border-radius:2px; transition:.3s; }
+
+  /* lang switch */
+  .lang-switch { display:flex; align-items:center; gap:.55rem; }
+  .lang-switch a { font-size:.82rem; font-weight:600; color:rgba(255,255,255,.65); letter-spacing:.06em; transition:color .2s; }
+  .lang-switch a:hover, .lang-switch a.active { color:#fff; }
+  .lang-switch-sep { color:rgba(255,255,255,.25); font-size:.8rem; user-select:none; }
+
+  /* ── Mobile menu ── */
+  .mobile-menu {
+    position:fixed; inset:0; z-index:99; background:var(--white);
+    transform:translateY(-100%); transition:transform .45s cubic-bezier(.7,0,.2,1);
+    display:flex; flex-direction:column; justify-content:center;
+    padding-top:calc(var(--gutter) + env(safe-area-inset-top,0px));
+    padding-right:var(--gutter); padding-bottom:calc(var(--gutter) + env(safe-area-inset-bottom,0px));
+    padding-left:var(--gutter); gap:.4rem;
+  }
+  .mobile-menu.open { transform:translateY(0); }
+  .mobile-menu a {
+    font-size:1.5rem; font-weight:600; color:var(--navy);
+    padding:.55rem 0; border-bottom:1px solid var(--line); transition:color .2s;
+  }
+  .mobile-menu a:last-of-type { border-bottom:none; }
+  .mobile-menu a:hover { color:var(--blue); }
+  .mobile-menu .btn-wa { margin-top:1.5rem; justify-content:center; padding:.75rem 1.4rem; font-size:.92rem; }
+  .close-menu-btn {
+    position:absolute; top:calc(1.25rem + env(safe-area-inset-top,0px)); right:var(--gutter);
+    background:none; border:none; cursor:pointer; padding:.5rem; border-radius:8px; color:var(--navy); transition:background .2s;
+  }
+  .close-menu-btn:hover { background:var(--navy-06); }
+  .close-menu-btn svg { width:22px; height:22px; }
+  .mobile-menu-lang {
+    display:flex; align-items:center; gap:.6rem;
+    margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--line);
+  }
+  .mobile-menu-lang a { font-size:.92rem; font-weight:600; color:var(--navy-55); border-bottom:none; padding:.2rem 0; }
+  .mobile-menu-lang a:hover, .mobile-menu-lang a.active { color:var(--navy); }
+  .mobile-menu-lang-sep { color:var(--navy-12); font-size:.82rem; user-select:none; }
+
+  /* ── Micro / pulse ── */
+  .hero-actions { display:flex; align-items:center; gap:1.1rem; flex-wrap:wrap; }
+  .micro { display:inline-flex; align-items:center; gap:.55rem; font-size:.82rem; font-weight:500; color:rgba(255,255,255,.65); }
+  .dot-live { width:8px; height:8px; border-radius:50%; background:var(--wa); box-shadow:0 0 0 0 rgba(37,211,102,.5); animation:pulse 2.2s infinite; }
+  @keyframes pulse {
+    0%   { box-shadow:0 0 0 0 rgba(37,211,102,.45); }
+    70%  { box-shadow:0 0 0 8px rgba(37,211,102,0); }
+    100% { box-shadow:0 0 0 0 rgba(37,211,102,0); }
+  }
+
+  /* ── Reveal ── */
+  .reveal { opacity:0; transform:translateY(28px); transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+  /* ══════════════════════════════════════
+     404 HERO SECTION
+  ══════════════════════════════════════ */
+  .nf-hero {
+    flex:1; position:relative; overflow:hidden;
+    background:linear-gradient(155deg, var(--navy) 0%, #0d2f56 60%, var(--blue) 175%);
+    display:flex; align-items:center;
+    padding-top:calc(9rem + env(safe-area-inset-top,0px));
+    padding-bottom:clamp(4rem,9vh,7rem);
+    min-height:100dvh;
+  }
+  /* primary glow — matches .final::before */
+  .nf-hero::before {
+    content:""; position:absolute; top:-30%; left:50%;
+    width:80vw; height:80vw; max-width:1000px; max-height:1000px;
+    transform:translateX(-50%);
+    background:radial-gradient(circle, rgba(56,189,248,.18), transparent 60%);
+    pointer-events:none;
+  }
+  /* secondary glow — bottom-right */
+  .nf-hero::after {
+    content:""; position:absolute; bottom:-10%; right:-5%;
+    width:45vw; height:45vw; max-width:600px; max-height:600px;
+    background:radial-gradient(circle, rgba(29,78,216,.25), transparent 65%);
+    pointer-events:none;
+  }
+  /* ghosted watermark number */
+  .nf-watermark {
+    position:absolute; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    pointer-events:none; user-select:none;
+    font-size:clamp(10rem,28vw,22rem); font-weight:800; letter-spacing:-.05em;
+    color:rgba(255,255,255,.035); line-height:1; z-index:1;
+  }
+  .nf-inner {
+    position:relative; z-index:2; text-align:center;
+    max-width:52ch; margin:0 auto;
+  }
+  /* compass icon */
+  .nf-icon {
+    width:80px; height:80px; border-radius:50%;
+    background:rgba(56,189,248,.12); border:1.5px solid rgba(56,189,248,.25);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 2rem; color:var(--sky);
+  }
+  .nf-icon svg { width:36px; height:36px; }
+  /* large 404 number */
+  .nf-code {
+    display:block; font-size:clamp(5rem,16vw,10rem); font-weight:800;
+    letter-spacing:-.04em; line-height:.95; color:var(--sky); margin-bottom:1.5rem;
+  }
+  .nf-inner h1 { color:var(--white); font-size:clamp(1.6rem,3.5vw,2.6rem); margin-bottom:1rem; text-wrap:balance; }
+  .nf-inner p  { color:rgba(255,255,255,.72); font-size:var(--fs-lead); margin-bottom:2.5rem; text-wrap:pretty; }
+  .nf-inner .hero-actions { justify-content:center; }
+
+  /* ══════════════════════════════════════
+     QUICK LINKS SECTION
+  ══════════════════════════════════════ */
+  .nf-links { background:var(--mist); padding-block:clamp(3.5rem,7vh,5.5rem); }
+  .nf-links-head { text-align:center; margin-bottom:clamp(2rem,4vh,3rem); }
+  .nf-links-head .eyebrow { margin-bottom:.9rem; }
+  .nf-links-head h2 { font-size:clamp(1.45rem,3vw,2rem); margin-top:.6rem; color:var(--navy); }
+  .nf-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; }
+  .nf-card {
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:var(--card-pad); display:flex; flex-direction:column; gap:.75rem;
+    transition:transform .25s,box-shadow .3s; color:var(--navy);
+  }
+  .nf-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px -18px rgba(10,37,64,.16); }
+  .nf-card-icon {
+    width:44px; height:44px; border-radius:11px; background:rgba(29,78,216,.07);
+    display:flex; align-items:center; justify-content:center; color:var(--blue); flex:none;
+  }
+  .nf-card-icon svg { width:22px; height:22px; }
+  .nf-card h3 { font-size:.95rem; font-weight:700; line-height:1.3; color:var(--navy); letter-spacing:-.01em; }
+  .nf-card p  { font-size:.83rem; color:var(--navy-55); line-height:1.55; flex:1; }
+  .nf-card-arrow { display:flex; align-items:center; gap:.4rem; font-size:.8rem; font-weight:600; color:var(--blue); margin-top:auto; }
+  .nf-card-arrow svg { width:14px; height:14px; transition:transform .2s; }
+  .nf-card:hover .nf-card-arrow svg { transform:translateX(3px); }
+
+  /* ── Responsive ── */
+  @media (max-width:1024px) {
+    .menu { display:none; }
+    .burger { display:flex; }
+    .nav { grid-template-columns:auto 1fr auto; }
+    .nf-grid { grid-template-columns:1fr 1fr; }
+  }
+  @media (min-width:768px) and (max-width:1024px) {
+    .burger { display:flex; }
+    .header-cta .btn-wa { display:none; }
+  }
+  @media (max-width:768px) { .header-cta .btn-wa { display:none; } }
+  @media (max-width:720px) {
+    .nav { gap:.75rem; }
+    .header-cta { flex-shrink:0; gap:.7rem; }
+    .lang-switch { white-space:nowrap; flex-shrink:0; }
+    .burger { display:flex; flex-shrink:0; }
+    .nf-hero { padding-top:calc(7rem + env(safe-area-inset-top,0px)); }
+    .hero-actions { flex-direction:column; align-items:stretch; gap:.75rem; }
+    .hero-actions .btn { width:100%; justify-content:center; white-space:normal; text-align:center; }
+    .hero-actions .micro { justify-content:center; width:100%; }
+    .btn-wa { white-space:normal; text-align:center; }
+    .nf-grid { grid-template-columns:1fr; gap:1rem; }
+    .nf-code { font-size:clamp(4.5rem,20vw,8rem); }
+    .nf-icon { width:64px; height:64px; margin-bottom:1.5rem; }
+  }
+  @media (max-width:480px) { .brand-tag { font-size:.56rem; letter-spacing:.06em; } }
+  @media (max-width:375px) { :root { --gutter:1rem; } .brand-name { font-size:1.2rem; } }
+</style>
+</head>
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header id="header">
+  <div class="wrap nav">
+
+    <!-- Logo — href set by JS to / or /en/ -->
+    <a href="/" class="brand js-home" aria-label="ResidentPravo">
+      <div class="brand-text">
+        <span class="brand-name">ResidentPravo</span>
+        <span class="brand-tag">BUSINESS&nbsp;•&nbsp;RESIDENCY&nbsp;•&nbsp;IMMIGRATION</span>
+      </div>
+    </a>
+
+    <nav class="menu" aria-label="Navigation">
+      <a class="js-nav-why"      href="/#why"><span class="ru-only">Почему мы</span><span class="en-only">Why Us</span></a>
+      <a class="js-nav-services" href="/#services"><span class="ru-only">Услуги</span><span class="en-only">Services</span></a>
+      <a class="js-nav-process"  href="/#process"><span class="ru-only">Процесс</span><span class="en-only">Process</span></a>
+      <a class="js-nav-cases"    href="/#cases"><span class="ru-only">Кейсы</span><span class="en-only">Cases</span></a>
+      <a class="js-nav-blog"     href="/ru/blog"><span class="ru-only">Блог</span><span class="en-only">Blog</span></a>
+      <a class="js-nav-faq"      href="/#faq">FAQ</a>
+    </nav>
+
+    <div class="header-cta">
+      <nav class="lang-switch" aria-label="Language / Язык">
+        <a href="/" class="js-lang-ru" hreflang="ru">RU</a>
+        <span class="lang-switch-sep">|</span>
+        <a href="/en/" class="js-lang-en" hreflang="en">EN</a>
+      </nav>
+      <a href="#" class="btn btn-wa" data-wa aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+        <span class="lbl">WhatsApp</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<!-- ══════════ MOBILE MENU ══════════ -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true">
+  <button class="close-menu-btn" id="menuClose" aria-label="Закрыть меню">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <line x1="5" y1="5" x2="19" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="19" y1="5" x2="5" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <a class="js-nav-why"      href="/#why"><span class="ru-only">Почему мы</span><span class="en-only">Why Us</span></a>
+  <a class="js-nav-services" href="/#services"><span class="ru-only">Услуги</span><span class="en-only">Services</span></a>
+  <a class="js-nav-process"  href="/#process"><span class="ru-only">Процесс</span><span class="en-only">Process</span></a>
+  <a class="js-nav-cases"    href="/#cases"><span class="ru-only">Кейсы</span><span class="en-only">Cases</span></a>
+  <a class="js-nav-blog"     href="/ru/blog"><span class="ru-only">Блог</span><span class="en-only">Blog</span></a>
+  <a class="js-nav-faq"      href="/#faq">FAQ</a>
+  <nav class="mobile-menu-lang" aria-label="Language">
+    <a href="/" class="js-lang-ru" hreflang="ru">RU</a>
+    <span class="mobile-menu-lang-sep">|</span>
+    <a href="/en/" class="js-lang-en" hreflang="en">EN</a>
+  </nav>
+  <a href="#" class="btn btn-wa" data-wa>
+    <span class="ru-only">Написать в WhatsApp</span><span class="en-only">Write on WhatsApp</span>
+  </a>
+</div>
+
+<!-- ══════════ MAIN ══════════ -->
+<main>
+
+  <!-- 404 HERO -->
+  <section class="nf-hero" aria-labelledby="nf-heading">
+    <div class="nf-watermark" aria-hidden="true">404</div>
+
+    <div class="wrap">
+      <div class="nf-inner">
+
+        <div class="nf-icon reveal" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88" fill="currentColor" opacity=".25" stroke="none"/>
+            <polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+
+        <span class="eyebrow light reveal" data-delay="50">
+          <span class="ru-only">Ошибка 404</span>
+          <span class="en-only">Error 404</span>
+        </span>
+
+        <span class="nf-code reveal" data-delay="100" aria-hidden="true">404</span>
+
+        <h1 id="nf-heading" class="reveal" data-delay="150">
+          <span class="ru-only">Страница не найдена</span>
+          <span class="en-only">Page Not Found</span>
+        </h1>
+
+        <p class="reveal" data-delay="200">
+          <span class="ru-only">Возможно, страница была удалена, перемещена или вы ввели неверный адрес. Вернитесь на главную или свяжитесь с нами — поможем разобраться.</span>
+          <span class="en-only">The page you're looking for may have been removed, moved, or the address was typed incorrectly. Return to the homepage or contact us — we'll help.</span>
+        </p>
+
+        <div class="hero-actions reveal" data-delay="260">
+          <a href="/" class="btn btn-ghost light js-home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            <span class="ru-only">На главную</span>
+            <span class="en-only">Back to Home</span>
+          </a>
+          <a href="#" class="btn btn-wa" data-wa>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+            <span class="ru-only">Написать в WhatsApp</span>
+            <span class="en-only">Write on WhatsApp</span>
+          </a>
+          <span class="micro">
+            <span class="dot-live"></span>
+            <span class="ru-only">Бесплатная консультация</span>
+            <span class="en-only">Free consultation</span>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="nf-links" aria-label="Popular sections">
+    <div class="wrap">
+
+      <div class="nf-links-head reveal">
+        <span class="eyebrow">
+          <span class="ru-only">Популярные разделы</span>
+          <span class="en-only">Popular sections</span>
+        </span>
+        <h2>
+          <span class="ru-only">Возможно, вы искали это</span>
+          <span class="en-only">Perhaps you were looking for this</span>
+        </h2>
+      </div>
+
+      <div class="nf-grid">
+
+        <!-- Card 1: VNJ / Residence Permit -->
+        <a class="nf-card reveal js-card-vnj" href="/ru/residence-permit-cyprus">
+          <div class="nf-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <h3>
+            <span class="ru-only">ВНЖ и ПМЖ на Кипре</span>
+            <span class="en-only">Cyprus Residence Permit</span>
+          </h3>
+          <p>
+            <span class="ru-only">Пинк-слип, ВНЖ через компанию, ПМЖ через инвестиции и семейная релокация.</span>
+            <span class="en-only">Pink Slip, company-based permit, permanent residency via investment and family relocation.</span>
+          </p>
+          <span class="nf-card-arrow">
+            <span class="ru-only">Подробнее</span><span class="en-only">Learn more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <!-- Card 2: Company Registration -->
+        <a class="nf-card reveal js-card-company" href="/ru/company-registration-cyprus" data-delay="70">
+          <div class="nf-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><path d="M12 12v4M10 14h4"/></svg>
+          </div>
+          <h3>
+            <span class="ru-only">Регистрация компании</span>
+            <span class="en-only">Company Registration</span>
+          </h3>
+          <p>
+            <span class="ru-only">Открытие кипрской компании под ключ: TIN, VAT, корпоративный счёт и поддержка.</span>
+            <span class="en-only">Turnkey Cyprus company setup: TIN, VAT registration, corporate account and ongoing support.</span>
+          </p>
+          <span class="nf-card-arrow">
+            <span class="ru-only">Подробнее</span><span class="en-only">Learn more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <!-- Card 3: Accounting (RU) / Visas article (EN — since EN accounting page doesn't exist yet) -->
+        <a class="nf-card reveal js-card-third" href="/ru/accounting-audit-cyprus" data-delay="140">
+          <div class="nf-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>
+            <span class="ru-only">Бухгалтерия и аудит</span>
+            <span class="en-only">Cyprus Visas 2026</span>
+          </h3>
+          <p>
+            <span class="ru-only">Ведение учёта, VAT, payroll и ежегодный аудит кипрской компании.</span>
+            <span class="en-only">Complete guide to Cyprus visas: types, documents, fees and entry rules.</span>
+          </p>
+          <span class="nf-card-arrow">
+            <span class="ru-only">Подробнее</span><span class="en-only">Learn more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+        <!-- Card 4: Blog -->
+        <a class="nf-card reveal js-card-blog" href="/ru/blog" data-delay="210">
+          <div class="nf-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <h3>
+            <span class="ru-only">Блог ResidentPravo</span>
+            <span class="en-only">ResidentPravo Blog</span>
+          </h3>
+          <p>
+            <span class="ru-only">Визы, ВНЖ, налоги и переезд на Кипр — актуальные гиды от команды.</span>
+            <span class="en-only">Visas, residency, taxes and relocation to Cyprus — up-to-date guides from the team.</span>
+          </p>
+          <span class="nf-card-arrow">
+            <span class="ru-only">Подробнее</span><span class="en-only">Learn more</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="brand js-home">
+          <div class="brand-text">
+            <span class="brand-name">ResidentPravo</span>
+            <span class="brand-tag">BUSINESS&nbsp;•&nbsp;RESIDENCY&nbsp;•&nbsp;IMMIGRATION</span>
+          </div>
+        </a>
+        <p>
+          <span class="ru-only">Открытие компаний, ВНЖ, банковские счета и сопровождение бизнеса на Кипре.</span>
+          <span class="en-only">Company registration, residency, banking and business support in Cyprus.</span>
+        </p>
+        <div class="footer-social">
+          <a href="https://wa.me/35794440424" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+          </a>
+          <a href="https://t.me/ResidentPravo1" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.94 4.6l-3.32 15.66c-.25 1.1-.9 1.38-1.83.86l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.02.5l.36-5.14L17.4 6.9c.4-.36-.09-.56-.62-.2L6.21 13.5l-4.97-1.56c-1.08-.34-1.1-1.08.22-1.6L20.55 3.02c.9-.34 1.69.2 1.39 1.58z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/residentpravo_cyprus" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1BLKihreY1/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.93 0-3.5 1.57-3.5 3.5V11H8v3h2.5v7h3v-7H16l.5-3h-3V9.5c0-.28.22-.5.5-.5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/resident-pravo-785884414/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8.5v9H4v-9h2.5zM5.25 4a1.5 1.5 0 110 3 1.5 1.5 0 010-3zM20 17.5h-2.5v-4.7c0-1.1-.4-1.9-1.4-1.9-.77 0-1.2.52-1.4 1.02-.07.18-.09.43-.09.68v4.9H12.1s.03-7.95 0-8.78v-.22h2.5v1.1c.33-.51.92-1.24 2.25-1.24 1.64 0 2.9 1.07 2.9 3.38v5.76z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4><span class="ru-only">Услуги</span><span class="en-only">Services</span></h4>
+        <ul>
+          <li><a class="js-card-company" href="/ru/company-registration-cyprus"><span class="ru-only">Регистрация компании на Кипре</span><span class="en-only">Company Registration in Cyprus</span></a></li>
+          <li><a class="js-card-vnj"     href="/ru/residence-permit-cyprus"><span class="ru-only">ВНЖ и ПМЖ на Кипре</span><span class="en-only">Residence &amp; Permanent Permit</span></a></li>
+          <li><a class="js-nav-services" href="/#services"><span class="ru-only">Гражданство Кипра</span><span class="en-only">Cyprus Citizenship</span></a></li>
+          <li><a class="js-card-third"   href="/ru/accounting-audit-cyprus"><span class="ru-only">Бухгалтерия и аудит</span><span class="en-only">Accounting &amp; Audit</span></a></li>
+          <li><a class="js-nav-services" href="/#services"><span class="ru-only">Открытие банковских счетов</span><span class="en-only">Bank Account Opening</span></a></li>
+          <li><a class="js-nav-services" href="/#services"><span class="ru-only">Юридическое сопровождение</span><span class="en-only">Legal Services</span></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><span class="ru-only">Компания</span><span class="en-only">Company</span></h4>
+        <ul>
+          <li><a class="js-nav-why"     href="/#why"><span class="ru-only">Почему выбирают нас</span><span class="en-only">Why Choose Us</span></a></li>
+          <li><a class="js-nav-process" href="/#process"><span class="ru-only">Процесс работы</span><span class="en-only">How We Work</span></a></li>
+          <li><a class="js-nav-cases"   href="/#cases"><span class="ru-only">Кейсы клиентов</span><span class="en-only">Client Cases</span></a></li>
+          <li><a class="js-card-blog"   href="/ru/blog"><span class="ru-only">Блог</span><span class="en-only">Blog</span></a></li>
+          <li><a class="js-nav-faq"     href="/#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4><span class="ru-only">Контакты</span><span class="en-only">Contact</span></h4>
+        <ul>
+          <li><a href="#" data-wa>WhatsApp · <span class="ru-only">написать</span><span class="en-only">write us</span></a></li>
+          <li><a href="mailto:residentpravo@gmail.com">residentpravo@gmail.com</a></li>
+          <li><a href="#">Limassol, Cyprus</a></li>
+        </ul>
+        <div class="footer-langs">
+          <span class="footer-langs-label"><span class="ru-only">Говорим на вашем языке</span><span class="en-only">We speak your language</span></span>
+          <div class="footer-flags">
+            <span class="flag" title="Армянский"  aria-label="Армения"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="6.67" y="0" fill="#D90012"/><rect width="30" height="6.67" y="6.67" fill="#0033A0"/><rect width="30" height="6.66" y="13.33" fill="#F2A800"/></svg></span>
+            <span class="flag" title="Английский" aria-label="UK"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="20" fill="#012169"/><polygon points="0,0 3.5,0 30,17.5 30,20 26.5,20 0,2.5" fill="#fff"/><polygon points="30,0 26.5,0 0,17.5 0,20 3.5,20 30,2.5" fill="#fff"/><polygon points="0,0 2,0 30,18.75 30,20 28,20 0,1.25" fill="#C8102E"/><polygon points="30,0 28,0 0,18.75 0,20 2,20 30,1.25" fill="#C8102E"/><rect x="12" y="0" width="6" height="20" fill="#fff"/><rect x="0" y="7.5" width="30" height="5" fill="#fff"/><rect x="13" y="0" width="4" height="20" fill="#C8102E"/><rect x="0" y="8.75" width="30" height="2.5" fill="#C8102E"/></svg></span>
+            <span class="flag" title="Украинский" aria-label="Украина"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="10" y="0" fill="#0057B7"/><rect width="30" height="10" y="10" fill="#FFD700"/></svg></span>
+            <span class="flag" title="Греческий"  aria-label="Греция"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="20" fill="#0D5EAF"/><rect y="2.222" width="30" height="2.222" fill="#fff"/><rect y="6.667" width="30" height="2.222" fill="#fff"/><rect y="11.111" width="30" height="2.222" fill="#fff"/><rect y="15.556" width="30" height="2.222" fill="#fff"/><rect width="11.111" height="11.111" fill="#0D5EAF"/><rect x="4.444" width="2.222" height="11.111" fill="#fff"/><rect y="4.444" width="11.111" height="2.222" fill="#fff"/></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 ResidentPravo. <span class="ru-only">Все права защищены.</span><span class="en-only">All rights reserved.</span></span>
+      <span class="footer-credit"><span class="ru-only">Сайт разработан</span><span class="en-only">Website by</span> <a href="https://codilife.com/" target="_blank" rel="noopener">Codilife</a></span>
+      <nav class="footer-legal">
+        <a href="/privacy-policy"><span class="ru-only">Политика конфиденциальности</span><span class="en-only">Privacy Policy</span></a>
+        <a href="/terms-of-use"><span class="ru-only">Условия использования</span><span class="en-only">Terms of Use</span></a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ── Language routing ── */
+  var isEN = location.pathname.startsWith('/en');
+  var HOME  = isEN ? '/en/' : '/';
+  var BLOG  = isEN ? '/en/blog' : '/ru/blog';
+  var VNJ   = isEN ? '/en/residence-permit-cyprus'    : '/ru/residence-permit-cyprus';
+  var COMP  = isEN ? '/en/company-registration-cyprus' : '/ru/company-registration-cyprus';
+  var THIRD = isEN ? '/en/blog/cyprus-visas-2026'      : '/ru/accounting-audit-cyprus';
+  var WHY   = isEN ? '/en/#why'      : '/#why';
+  var SERV  = isEN ? '/en/#services' : '/#services';
+  var PROC  = isEN ? '/en/#process'  : '/#process';
+  var CASES = isEN ? '/en/#cases'    : '/#cases';
+  var FAQ   = isEN ? '/en/#faq'      : '/#faq';
+
+  /* update page title */
+  if (isEN) document.title = '404 — Page Not Found | ResidentPravo';
+
+  /* update links */
+  document.querySelectorAll('.js-home').forEach(function(el){ el.setAttribute('href', HOME); });
+  document.querySelectorAll('.js-card-vnj').forEach(function(el){ el.setAttribute('href', VNJ); });
+  document.querySelectorAll('.js-card-company').forEach(function(el){ el.setAttribute('href', COMP); });
+  document.querySelectorAll('.js-card-third').forEach(function(el){ el.setAttribute('href', THIRD); });
+  document.querySelectorAll('.js-card-blog').forEach(function(el){ el.setAttribute('href', BLOG); });
+  document.querySelectorAll('.js-nav-why').forEach(function(el){ el.setAttribute('href', WHY); });
+  document.querySelectorAll('.js-nav-services').forEach(function(el){ el.setAttribute('href', SERV); });
+  document.querySelectorAll('.js-nav-process').forEach(function(el){ el.setAttribute('href', PROC); });
+  document.querySelectorAll('.js-nav-cases').forEach(function(el){ el.setAttribute('href', CASES); });
+  document.querySelectorAll('.js-nav-faq').forEach(function(el){ el.setAttribute('href', FAQ); });
+
+  /* lang-switch: mark active language */
+  document.querySelectorAll('.js-lang-ru').forEach(function(el){ if (!isEN) el.classList.add('active'); });
+  document.querySelectorAll('.js-lang-en').forEach(function(el){ if (isEN)  el.classList.add('active'); });
+
+  /* ── WhatsApp ── */
+  var WA_URL = 'https://wa.me/35794440424';
+  document.querySelectorAll('[data-wa]').forEach(function(a){
+    a.setAttribute('href', WA_URL);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+  });
+
+  /* ── Sticky header ── */
+  var header = document.getElementById('header');
+  function onScroll(){ header.classList.toggle('scrolled', window.scrollY > 24); }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ── Mobile menu ── */
+  var burger     = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuClose  = document.getElementById('menuClose');
+
+  function closeMobileMenu(){
+    mobileMenu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', isEN ? 'Open menu' : 'Открыть меню');
+    document.body.style.overflow = '';
+  }
+  burger.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? (isEN ? 'Close menu' : 'Закрыть меню') : (isEN ? 'Open menu' : 'Открыть меню'));
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  menuClose.addEventListener('click', closeMobileMenu);
+  mobileMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobileMenu); });
+
+  /* ── Reveal on scroll ── */
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e, i){
+        if (e.isIntersecting){
+          e.target.style.transitionDelay = (e.target.dataset.delay || (Math.min(i, 4) * 70)) + 'ms';
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -5% 0px' });
+    reveals.forEach(function(el){ io.observe(el); });
+    setTimeout(function(){ reveals.forEach(function(el){ el.classList.add('in'); }); }, 2000);
+  } else {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  }
+
+}());
+</script>
+
+<script src="/js/lang-switch.js"></script>
+</body>
+</html>
