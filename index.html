@@ -292,7 +292,7 @@
     position: fixed;
     inset: 0;
     z-index: 99;
-    background: var(--white);
+    background: #0A2540;
     transform: translateY(-100%);
     transition: transform 0.45s cubic-bezier(.7,0,.2,1);
     display: flex;
@@ -308,26 +308,26 @@
   .mobile-menu a {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--navy);
+    color: #ffffff;
     padding: 0.5rem 0;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   .mobile-menu .btn-wa { margin-top: 1.5rem; justify-content: center; padding: 0.75rem 1.4rem; font-size: 0.92rem; }
 
   /* ── Mobile menu: close button ── */
-  .mobile-menu-close {
+  .close-menu-btn {
     position: absolute;
     top: calc(var(--gutter) + env(safe-area-inset-top, 0px));
     right: var(--gutter);
     width: 44px; height: 44px;
     background: none; border: none; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    color: var(--navy);
+    color: #ffffff;
     border-radius: 10px;
     transition: background 0.2s ease;
   }
-  .mobile-menu-close:hover { background: var(--navy-06); }
-  .mobile-menu-close svg { width: 22px; height: 22px; }
+  .close-menu-btn:hover { background: rgba(255,255,255,0.08); }
+  .close-menu-btn svg { width: 22px; height: 22px; }
 
   /* ── Mobile menu: language switcher ── */
   .mobile-menu-lang {
@@ -335,21 +335,21 @@
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 0;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     margin-top: 0.25rem;
   }
   .mobile-menu-lang a {
     font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 0.1em;
-    color: var(--navy-55);
+    color: rgba(255,255,255,0.6);
     padding: 0;
     border-bottom: none;
     transition: color 0.2s;
   }
-  .mobile-menu-lang a:hover { color: var(--navy); }
-  .mobile-menu-lang a.current { color: var(--navy); }
-  .mobile-menu-lang-sep { color: var(--navy-12); font-size: 0.82rem; user-select: none; }
+  .mobile-menu-lang a:hover { color: #ffffff; }
+  .mobile-menu-lang a.current { color: var(--sky); }
+  .mobile-menu-lang-sep { color: rgba(255,255,255,0.3); font-size: 0.82rem; user-select: none; }
 
   /* ============ HERO ============ */
   .hero {
@@ -1372,7 +1372,7 @@
 <!-- mobile menu -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu-btn" id="menuClose" aria-label="Закрыть меню">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
   </button>
   <a href="#why">Почему мы</a>
   <a href="#services">Услуги</a>
