@@ -94,6 +94,8 @@
   .btn svg { width: 19px; height: 19px; flex: none; }
   .btn-wa { background: var(--wa); color: var(--white); box-shadow: 0 12px 30px -10px rgba(37, 211, 102, 0.55); }
   .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 18px 38px -10px rgba(37, 211, 102, 0.6); }
+  .btn-outline { background: transparent; color: #fff; border-color: rgba(255,255,255,0.42); }
+  .btn-outline:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.72); transform: translateY(-1px); }
   .btn-primary { background: var(--blue); color: var(--white); box-shadow: 0 14px 34px -12px rgba(29, 78, 216, 0.6); }
   .btn-primary:hover { transform: translateY(-2px); background: #1a45c4; }
   .btn-ghost { background: transparent; color: var(--navy); border-color: var(--navy-12); }
@@ -142,6 +144,11 @@
   .hero { position: relative; min-height: 680px; padding-top: clamp(7rem, 13vh, 9rem); padding-bottom: clamp(2rem, 4vh, 3.5rem); overflow: hidden; color: #fff; display: flex; align-items: center; background: radial-gradient(90% 80% at 78% 10%, #133a61 0%, rgba(19,58,97,0) 58%), linear-gradient(158deg, #061726 0%, var(--navy) 48%, #08233f 100%); }
   .hero::before { content: ""; position: absolute; inset: 0; background-image: url("/images/limassol-dark.webp"); background-position: 130% 26%; background-size: 58% auto; background-repeat: no-repeat; filter: blur(28px) saturate(0.9); opacity: 0.3; z-index: 0; pointer-events: none; }
   .hero-photo { position: absolute; right: 0; bottom: 0; top: 0; width: 42%; max-width: 720px; z-index: 1; background: url("/images/arthur-hero.webp") no-repeat right bottom; background-size: contain; pointer-events: none; }
+  .hero-caption { position: absolute; right: 0; bottom: 30%; width: 42%; max-width: 720px; z-index: 3; padding-left: 2.5rem; pointer-events: none; }
+  .hero-caption-inner { display: inline-flex; flex-direction: column; gap: 0.16rem; background: rgba(8,22,44,0.46); backdrop-filter: blur(12px) saturate(160%); -webkit-backdrop-filter: blur(12px) saturate(160%); border: 1px solid rgba(255,255,255,0.10); border-radius: 7px; padding: 0.45rem 0.72rem; box-shadow: 0 8px 28px rgba(0,0,0,0.28), 0 1px 4px rgba(0,0,0,0.16); pointer-events: auto; }
+  .hc-name { font-size: 0.80rem; font-weight: 600; color: #fff; line-height: 1.2; letter-spacing: 0.01em; text-decoration: none; transition: color 0.18s ease, opacity 0.18s ease; cursor: pointer; }
+  .hc-name:hover { color: var(--sky); opacity: 0.92; }
+  .hc-role { font-size: 0.48rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
   .hero-wrap { position: relative; z-index: 2; width: 100%; }
   .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0, 60%); gap: clamp(2rem, 4.5vw, 4rem); align-items: center; }
   .hero h1 { font-size: clamp(2rem, 3.6vw, 3.5rem); font-weight: 700; line-height: 1.14; margin: 1.2rem 0 1.3rem; max-width: 17ch; text-wrap: balance; color: #fff; }
@@ -328,6 +335,7 @@
   .footer-flags { display: flex; gap: 0.45rem; }
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1); }
   .reveal.in { opacity: 1; transform: none; }
+  .trust-strip.reveal { opacity: 1; transform: none; transition: none; }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
   @media (max-width: 1024px) {
     .menu { display: none; }
@@ -356,6 +364,7 @@
     /* ── Hero: full-width, no photo ── */
     .hero { padding-top: clamp(5.5rem, 10vh, 7.5rem); padding-bottom: 1.5rem; }
     .hero-photo { display: none; }
+    .hero-caption { display: none; }
     .hero-copy { max-width: 100%; }
     .hero h1 { max-width: 100%; margin: 0.7rem 0 0.75rem; }
     .hero-lead { max-width: 100%; margin-bottom: 1rem; }
@@ -401,6 +410,7 @@
     .hero::before { filter: blur(14px) saturate(0.9); }
     .hero { padding-top: calc(5.5rem + env(safe-area-inset-top, 0px)); padding-bottom: 1.5rem; }
     .hero-photo { display: none; }
+    .hero-caption { display: none; }
     .hero-copy { max-width: 100%; }
     .hero-grid { grid-template-columns: 1fr; }
     .h1-badge { transform: none; }
@@ -512,6 +522,37 @@
   .btt svg { width: 20px; height: 20px; flex: none; }
   @media (max-width: 430px) { .btt { bottom: 1.25rem; right: 1.25rem; width: 44px; height: 44px; } }
   @media (max-width: 375px) { .btt { bottom: 1rem; right: 1rem; } }
+
+  /* ── Contact Modal ── */
+  .modal { position: fixed; inset: 0; z-index: 9000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .modal[hidden] { display: none; }
+  .modal-overlay { position: absolute; inset: 0; background: rgba(6,18,34,0.70); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); cursor: pointer; }
+  .modal-wrap { position: relative; z-index: 1; background: #fff; border-radius: 18px; max-width: 500px; width: 100%; padding: 2rem 2.25rem 2.25rem; max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.12); }
+  .modal-close { position: absolute; top: 1rem; right: 1rem; width: 34px; height: 34px; border: none; background: rgba(10,37,64,0.07); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--navy); transition: background 0.15s; flex: none; }
+  .modal-close:hover { background: rgba(10,37,64,0.14); }
+  .modal-title { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin: 0 2rem 1.5rem 0; line-height: 1.2; }
+  .form-grid { display: flex; flex-direction: column; gap: 0.95rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.3rem; }
+  .form-label { font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+  .form-label .req { color: var(--blue); margin-left: 0.1em; }
+  .form-control { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid #d1d5db; border-radius: 9px; font-size: 0.92rem; font-family: inherit; color: var(--navy); background: #fff; transition: border-color 0.15s, box-shadow 0.15s; appearance: none; -webkit-appearance: none; }
+  .form-control:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(29,78,216,0.11); }
+  .form-control.invalid { border-color: #dc2626; }
+  .form-control.invalid:focus { box-shadow: 0 0 0 3px rgba(220,38,38,0.10); }
+  textarea.form-control { resize: vertical; min-height: 78px; }
+  .form-err { font-size: 0.74rem; color: #dc2626; display: none; }
+  .form-err.show { display: block; }
+  .form-honeypot { position: absolute; left: -9999px; top: -9999px; opacity: 0; height: 0; overflow: hidden; }
+  .form-submit-row { margin-top: 0.4rem; }
+  .form-submit-row .btn { width: 100%; justify-content: center; }
+  .form-note { font-size: 0.71rem; color: rgba(10,37,64,0.42); text-align: center; margin-top: 0.6rem; }
+  .form-note a { color: var(--blue); text-decoration: none; }
+  .modal-success { display: none; text-align: center; padding: 1rem 0 0.5rem; }
+  .modal-success.show { display: block; }
+  .modal-success-icon { font-size: 2.8rem; line-height: 1; margin-bottom: 0.75rem; }
+  .modal-success h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+  .modal-success p { color: rgba(10,37,64,0.60); font-size: 0.88rem; line-height: 1.6; }
+  @media (max-width: 540px) { .modal { align-items: flex-end; padding: 0; } .modal-wrap { border-radius: 18px 18px 0 0; max-height: 92vh; padding: 1.5rem 1.25rem 2rem; } }
 </style>
 <link rel="stylesheet" href="/css/header.css" />
 
@@ -664,6 +705,12 @@
   <!-- HERO -->
   <section class="hero" aria-label="Hero">
     <div class="hero-photo" aria-hidden="true"></div>
+    <div class="hero-caption">
+      <div class="hero-caption-inner">
+        <a href="/en/experts/artur-mardanyan.html" class="hc-name">Artur Mardanyan</a>
+        <span class="hc-role">Founder &amp; Managing Partner</span>
+      </div>
+    </div>
     <div class="wrap hero-wrap">
       <div class="hero-grid">
         <div class="hero-copy">
@@ -671,12 +718,13 @@
           <h1 class="reveal">
             Company Registration &amp; Residence Permit in Cyprus — <em>Full Legal Support</em> <span class="h1-badge">Turnkey Solution</span>
           </h1>
-          <p class="hero-lead reveal">We help you register a company, obtain residence permits, arrange accounting services and banking support in Cyprus.</p>
+          <p class="hero-lead reveal">We register Cyprus companies in&nbsp;7&nbsp;days, obtain residence and permanent permits, manage accounting and open bank accounts. Trusted by clients from 15+&nbsp;countries since 2016.</p>
           <div class="hero-actions reveal">
             <a href="#" class="btn btn-wa" data-wa>
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
               Speak With an Expert
             </a>
+            <a href="#" class="btn btn-outline" data-modal="contact">Request a Callback</a>
             <span class="micro"><span class="dot-live"></span> Free consultation</span>
           </div>
           <!-- Social proof — placeholders, replace with real data -->
@@ -696,7 +744,7 @@
         </div>
       </div>
 
-      <div class="trust-strip reveal">
+      <div class="trust-strip reveal in">
         <div class="trust-item">
           <span class="ti-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 4.4-3 8.3-7 10-4-1.7-7-5.6-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
@@ -994,7 +1042,7 @@
   </section>
 
   <!-- FINAL CTA -->
-  <section class="final section-pad" aria-label="Free Consultation">
+  <section class="final section-pad" id="contact" aria-label="Free Consultation">
     <div class="wrap">
       <div class="final-inner">
         <span class="eyebrow light" style="justify-content:center">Free Consultation</span>
@@ -1180,5 +1228,219 @@
 </script>
 
 <script src="/js/lang-switch.js"></script>
+
+<!-- ══ CONTACT MODAL — EN ══ -->
+<div id="modal-contact" class="modal" role="dialog" aria-modal="true" aria-labelledby="mct-title" hidden>
+  <div class="modal-overlay" id="mct-overlay"></div>
+  <div class="modal-wrap">
+    <button class="modal-close" id="mct-close" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 3L3 13M3 3l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <div id="mct-form-wrap">
+      <h2 class="modal-title" id="mct-title">Free Consultation</h2>
+      <form id="mct-form" novalidate autocomplete="on">
+
+        <div class="form-honeypot" aria-hidden="true">
+          <label>Do not fill this field<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label" for="mct-name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input class="form-control" type="text" id="mct-name" name="name" autocomplete="given-name" placeholder="How should we address you?" required>
+            <span class="form-err" id="mct-err-name" role="alert">Please enter your name</span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="mct-phone">Phone / WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <input class="form-control" type="tel" id="mct-phone" name="phone" autocomplete="tel" placeholder="+357 99 123 456" required>
+            <span class="form-err" id="mct-err-phone" role="alert">Please enter your phone or WhatsApp number</span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="mct-email">Email</label>
+            <input class="form-control" type="email" id="mct-email" name="email" autocomplete="email" placeholder="your@email.com">
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="mct-service">Service of Interest <span class="req" aria-hidden="true">*</span></label>
+            <select class="form-control" id="mct-service" name="service" required>
+              <option value="">Select a service...</option>
+              <option value="Company Registration">Company Registration</option>
+              <option value="Residence Permit">Residence Permit</option>
+              <option value="Permanent Residency">Permanent Residency</option>
+              <option value="Bank Account">Bank Account</option>
+              <option value="Accounting">Accounting</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="form-err" id="mct-err-service" role="alert">Please select a service</span>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="mct-comment">Message</label>
+            <textarea class="form-control" id="mct-comment" name="comment" rows="3" placeholder="Describe your situation or ask a question..."></textarea>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-wa" id="mct-submit">Submit Request</button>
+          </div>
+
+          <p class="form-note">
+            By submitting, you agree to our <a href="/en/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div id="mct-success" class="modal-success">
+      <div class="modal-success-icon">✅</div>
+      <h3>Request Received!</h3>
+      <p>Thank you! We have received your request.<br>Our specialist will contact you<br>during business hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var FORM_ENDPOINT = '/api/contact';
+  var MIN_MS = 3000;
+
+  var modal    = document.getElementById('modal-contact');
+  var overlay  = document.getElementById('mct-overlay');
+  var closeBtn = document.getElementById('mct-close');
+  var form     = document.getElementById('mct-form');
+  var submitBtn= document.getElementById('mct-submit');
+  var formWrap = document.getElementById('mct-form-wrap');
+  var successEl= document.getElementById('mct-success');
+
+  var openTime = 0;
+  var busy     = false;
+
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    openTime = Date.now();
+    setTimeout(function () {
+      var first = form.querySelector('input:not([tabindex="-1"])');
+      if (first) first.focus();
+    }, 60);
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('[data-modal="contact"]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
+  });
+
+  overlay.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+
+  function validate(id, errId) {
+    var el  = document.getElementById(id);
+    var err = document.getElementById(errId);
+    if (!el.value.trim()) {
+      el.classList.add('invalid');
+      if (err) err.classList.add('show');
+      return false;
+    }
+    el.classList.remove('invalid');
+    if (err) err.classList.remove('show');
+    return true;
+  }
+
+  ['mct-name','mct-phone','mct-service'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    ['input','change'].forEach(function (ev) {
+      el.addEventListener(ev, function () {
+        this.classList.remove('invalid');
+        var err = document.getElementById('mct-err-' + id.replace('mct-',''));
+        if (err) err.classList.remove('show');
+      });
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (busy) return;
+
+    var hp = form.querySelector('[name="_gotcha"]');
+    if (hp && hp.value) { fakeSuccess(); return; }
+    if (Date.now() - openTime < MIN_MS) { fakeSuccess(); return; }
+
+    var ok = validate('mct-name','mct-err-name')
+           & validate('mct-phone','mct-err-phone')
+           & validate('mct-service','mct-err-service');
+    if (!ok) return;
+
+    busy = true;
+    submitBtn.disabled = true;
+    var origLabel = submitBtn.textContent;
+    submitBtn.textContent = 'Sending…';
+
+    var payload = {
+      name:    document.getElementById('mct-name').value.trim(),
+      phone:   document.getElementById('mct-phone').value.trim(),
+      email:   document.getElementById('mct-email').value.trim(),
+      service: document.getElementById('mct-service').value,
+      comment: document.getElementById('mct-comment').value.trim(),
+      lang:    'EN',
+      page:    window.location.href,
+      sent_at: new Date().toLocaleString('en-GB', { timeZone: 'Asia/Nicosia' }),
+      _gotcha: hp ? hp.value : ''
+    };
+
+    fetch(FORM_ENDPOINT, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body:    JSON.stringify(payload)
+    })
+    .then(function (r) {
+      if (r.ok) { showSuccess(); }
+      else { throw new Error('server'); }
+    })
+    .catch(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = origLabel;
+      busy = false;
+      alert('Submission error. Please contact us via WhatsApp or residentpravo@gmail.com');
+    });
+  });
+
+  function showSuccess() {
+    formWrap.style.display = 'none';
+    successEl.classList.add('show');
+  }
+
+  function fakeSuccess() { showSuccess(); }
+
+  function resetAfterClose() {
+    setTimeout(function () {
+      form.reset();
+      formWrap.style.display = '';
+      successEl.classList.remove('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit Request';
+      busy = false;
+      form.querySelectorAll('.invalid').forEach(function (el) { el.classList.remove('invalid'); });
+      form.querySelectorAll('.form-err.show').forEach(function (el) { el.classList.remove('show'); });
+    }, 300);
+  }
+
+  closeBtn.addEventListener('click', resetAfterClose);
+  overlay.addEventListener('click', resetAfterClose);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') resetAfterClose(); });
+
+}());
+</script>
 </body>
 </html>
