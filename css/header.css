@@ -45,14 +45,23 @@
   color: rgba(255,255,255,0.3);
 }
 
-/* ── WA button: anchored to bottom, matches base .btn dimensions ── */
-.mobile-menu .btn-wa {
+/* ── CTA block: anchored to bottom, two buttons stacked ── */
+.mobile-menu-cta {
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.mobile-menu-cta .btn {
   padding: .85rem 1.4rem;
   font-size: .92rem;
   border-radius: 10px;
   width: 100%;
   justify-content: center;
+}
+.mobile-menu-cta .btn-outline {
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
 /* ── Close button: unified for both class variants ── */
