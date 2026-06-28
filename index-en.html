@@ -150,6 +150,33 @@
   .hero-lead { font-size: var(--fs-lead); color: rgba(255,255,255,0.72); max-width: 42ch; font-weight: 400; margin-bottom: 1.9rem; text-wrap: pretty; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; }
   .hero-actions .micro { font-size: 0.85rem; color: rgba(255,255,255,0.62); display: flex; align-items: center; gap: 0.5rem; }
+  .hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.65rem;
+    margin-top: 1.1rem;
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.52);
+    line-height: 1.5;
+  }
+  .hero-proof .proof-star { color: #FFC107; margin-right: 0.1em; }
+  .hero-proof .proof-sep  { color: rgba(255,255,255,0.20); }
+  .hero-proof .proof-muted { opacity: 0.80; }
+  .hero-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin-top: 0.75rem;
+  }
+  .hero-services a {
+    font-size: 0.78rem;
+    color: rgba(56,189,248,0.72);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.15s;
+  }
+  .hero-services a:hover { color: #38BDF8; text-decoration: underline; }
   .h1-mobile { display: none; }
   .h1-desktop { display: inline; }
   .ti-langs-num { display: none; }
@@ -161,7 +188,7 @@
   @media (max-width: 320px) { .lang-switch { display: none; } }
   .dot-live { width: 8px; height: 8px; border-radius: 50%; background: var(--wa); box-shadow: 0 0 0 0 rgba(37,211,102,0.5); animation: pulse 2.2s infinite; }
   @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.45); } 70% { box-shadow: 0 0 0 9px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
-  .trust-strip { position: relative; z-index: 2; margin-top: clamp(2.5rem, 5vh, 4rem); padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.14); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; max-width: 60%; }
+  .trust-strip { position: relative; z-index: 2; margin-top: clamp(1.25rem, 2.5vh, 2rem); padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.14); display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; max-width: 60%; }
   .trust-item { display: flex; gap: 0.95rem; align-items: flex-start; }
   .ti-icon { flex: none; width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center; color: var(--sky); background: rgba(56,189,248,0.10); border: 1px solid rgba(56,189,248,0.22); }
   .ti-icon svg { width: 22px; height: 22px; }
@@ -337,7 +364,6 @@
     /* ── Text: mobile variants (compact h1, short lead, 10+ in trust strip) ── */
     .h1-desktop { display: none; }
     .h1-mobile  { display: inline; }
-    .h1-mobile .h1-badge { display: block; margin-left: 0; margin-top: 0.35em; width: fit-content; }
 
     /* ── Trust strip: restore (undo display:none), style like mobile ── */
     .trust-strip { display: grid; margin-top: 1.75rem; padding-top: 1.25rem; }
@@ -346,8 +372,10 @@
     .hero-wrap { display: flex; flex-direction: column; }
     .hero-grid { display: contents; }
     .hero-copy { display: contents; }
-    .hero-wrap .trust-strip { order: 4; margin-top: 1.25rem; }
-    .hero-wrap .hero-actions { order: 5; margin-top: 1.25rem; }
+    .hero-wrap .trust-strip   { order: 4; margin-top: 1.25rem; }
+    .hero-wrap .hero-actions  { order: 5; margin-top: 1.25rem; }
+    .hero-wrap .hero-proof    { order: 6; }
+    .hero-wrap .hero-services { order: 7; }
 
     /* ── Hero actions: stacked full-width ── */
     .hero-actions { flex-direction: column; align-items: stretch; gap: 0.75rem; }
@@ -365,7 +393,7 @@
   @media (max-width: 768px) {
     .h1-desktop { display: none; }
     .h1-mobile  { display: inline; }
-    .h1-mobile .h1-badge { display: block; margin-left: 0; transform: none; margin-top: 0.35em; width: fit-content; }
+    .hero .eyebrow { font-size: 0.70rem; letter-spacing: 0.10em; white-space: nowrap; }
   }
   @media (max-width: 720px) {
     .header-cta .btn-wa { display: none; }
@@ -411,8 +439,10 @@
     .hero-wrap { display: flex; flex-direction: column; }
     .hero-grid { display: contents; }
     .hero-copy { display: contents; }
-    .hero-wrap .trust-strip { order: 4; margin-top: 1.25rem; }
-    .hero-wrap .hero-actions { order: 5; margin-top: 1.25rem; }
+    .hero-wrap .hero-proof    { order: 2; }
+    .hero-wrap .hero-services { order: 3; }
+    .hero-wrap .hero-actions  { order: 4; margin-top: 1.25rem; }
+    .hero-wrap .trust-strip   { order: 8; margin-top: 1.25rem; }
   }
   @media (max-width: 460px) {
     .process-steps { grid-template-columns: 1fr; }
@@ -639,10 +669,7 @@
         <div class="hero-copy">
           <span class="eyebrow light reveal">Business • Residency • Immigration</span>
           <h1 class="reveal">
-            <span class="h1-desktop">Relocation &amp; Business in Cyprus with <em>Professional Support</em> <span class="h1-badge">Turnkey Solution</span></span>
-            <span class="h1-mobile">Relocation &amp; Business<br>in Cyprus with <em>Professional Support</em>
-              <span class="h1-badge">Turnkey Solution</span>
-            </span>
+            Relocation &amp; Business in Cyprus with <em>Professional Support</em> <span class="h1-badge">Turnkey Solution</span>
           </h1>
           <p class="hero-lead reveal">We help you register a company, obtain residence permits, arrange accounting services and banking support in Cyprus.</p>
           <div class="hero-actions reveal">
@@ -651,6 +678,20 @@
               Speak With an Expert
             </a>
             <span class="micro"><span class="dot-live"></span> Free consultation</span>
+          </div>
+          <!-- Social proof — placeholders, replace with real data -->
+          <div class="hero-proof reveal">
+            <span><span class="proof-star">★</span> Google&nbsp;4.9 <span class="proof-muted">(100+ reviews)</span></span>
+            <span class="proof-sep">•</span>
+            <span>✓ 350+ cases</span>
+            <span class="proof-sep">•</span>
+            <span>✓ 15+ countries</span>
+          </div>
+          <!-- Quick service links -->
+          <div class="hero-services reveal">
+            <a href="/en/company-registration-cyprus">→&nbsp;Company Registration</a>
+            <a href="/en/residence-permit-cyprus">→&nbsp;Residency &amp; PR</a>
+            <a href="#">→&nbsp;Bank Account</a>
           </div>
         </div>
       </div>
