@@ -774,7 +774,11 @@
     margin-bottom: 1.6rem;
   }
   .pstep h3 { font-size: 1.25rem; margin-bottom: var(--s1); }
-  .pstep p { color: rgba(255,255,255,0.65); font-size: 0.92rem; margin-top: auto; }
+  .pstep p { color: rgba(255,255,255,0.65); font-size: 0.92rem; margin-top: 10px; }
+  .pstep-time { display: flex; align-items: center; gap: 5px; margin-top: 10px; font-size: 0.75rem; color: rgba(255,255,255,0.38); letter-spacing: 0.02em; }
+  .pstep-time svg { flex: none; }
+  .process-note { font-size: 0.82rem; color: rgba(255,255,255,0.45); margin-top: 10px; }
+  .process-cta { margin-top: var(--s7); display: flex; justify-content: center; }
 
   /* ============ CASES ============ */
   .cases { background: var(--mist); }
@@ -1638,30 +1642,41 @@
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow light">Процесс работы</span>
-        <h2>4 шага к результату</h2>
-        <p>Прозрачный процесс с понятными сроками, стоимостью и следующими шагами на каждом этапе.</p>
+        <h2>Как мы работаем с клиентами на Кипре</h2>
+        <p>Прозрачный процесс от первой консультации до готового результата — компания, ВНЖ или банковский счёт на Кипре.</p>
+        <p class="process-note">Работаем с клиентами из 15+ стран удалённо и очно в Лимасоле.</p>
       </div>
       <div class="process-steps">
         <div class="pstep reveal">
           <div class="pnum">01</div>
           <h3>Консультация</h3>
-          <p>Бесплатно анализируем вашу задачу и предлагаем оптимальное решение для бизнеса, ВНЖ или релокации на Кипр.</p>
+          <p>Бесплатно разбираем вашу задачу и предлагаем решение — регистрация компании, ВНЖ или банковский счёт на Кипре.</p>
+          <span class="pstep-time"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1 день</span>
         </div>
         <div class="pstep reveal">
           <div class="pnum">02</div>
           <h3>План и стоимость</h3>
-          <p>Согласовываем перечень услуг, сроки выполнения, стоимость и список необходимых документов.</p>
+          <p>Согласовываем фиксированную стоимость, сроки и список документов. Никаких скрытых платежей.</p>
+          <span class="pstep-time"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>1–2 дня</span>
         </div>
         <div class="pstep reveal">
           <div class="pnum">03</div>
           <h3>Оформление документов</h3>
-          <p>Берём на себя подготовку и подачу документов, взаимодействие с государственными органами и банками.</p>
+          <p>Берём на себя подготовку и подачу документов, взаимодействие с госорганами и банками Кипра.</p>
+          <span class="pstep-time"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>7–21 день</span>
         </div>
         <div class="pstep reveal">
           <div class="pnum">04</div>
           <h3>Сопровождение</h3>
-          <p>Остаёмся на связи после завершения проекта: бухгалтерия, продления, банковские вопросы и поддержка бизнеса.</p>
+          <p>Остаёмся на связи после завершения: бухгалтерия, продления ВНЖ, банковские вопросы и поддержка бизнеса на Кипре.</p>
+          <span class="pstep-time"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>на постоянной основе</span>
         </div>
+      </div>
+      <div class="process-cta">
+        <a href="#" class="btn btn-wa" data-wa>
+          <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+          Начать с консультации
+        </a>
       </div>
     </div>
   </section>
