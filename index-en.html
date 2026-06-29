@@ -214,24 +214,25 @@
   .section-head p { font-size: var(--fs-lead); color: var(--navy-70); margin-top: var(--s3); font-weight: 400; max-width: 52ch; }
   .section-head.center { margin-inline: auto; text-align: center; }
   .section-head.center .eyebrow { justify-content: center; }
-  .services { color: #fff; overflow: hidden; background: radial-gradient(80% 70% at 85% 8%, #123a61 0%, rgba(18,58,97,0) 60%), linear-gradient(168deg, #08233f 0%, var(--navy) 55%, #061726 100%); }
-  .services .eyebrow { color: var(--sky); }
-  .services .eyebrow::before { background: var(--sky); }
-  .services .section-head h2 { color: #fff; }
-  .services .section-head p { color: rgba(255,255,255,0.7); }
-  .service-list { border-top: 1px solid rgba(255,255,255,0.14); }
-  .service { display: grid; grid-template-columns: 5rem 1fr auto; gap: 1.5rem; align-items: center; padding: clamp(1.6rem, 3.5vh, 2.6rem) 0; border-bottom: 1px solid rgba(255,255,255,0.12); position: relative; transition: padding-left 0.35s ease; }
-  .service::before { content: ""; position: absolute; left: -2rem; right: -2rem; top: 0; bottom: 0; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 16px; opacity: 0; transform: scale(0.97); transition: opacity 0.35s ease, transform 0.35s ease; z-index: 0; }
+  .services { color: var(--navy); overflow: hidden; background: #ffffff; }
+  .services .eyebrow { color: var(--blue); }
+  .services .eyebrow::before { background: var(--blue); }
+  .services .section-head h2 { color: var(--navy); font-size: clamp(1.75rem, 3.7vw, 3.1rem); }
+  .services .section-head p { color: var(--navy-70); }
+  .service-list { border-top: 1px solid rgba(0,0,0,0.1); }
+  .service { display: grid; grid-template-columns: 5rem 1fr auto; gap: 1.5rem; align-items: center; padding: clamp(1.6rem, 3.5vh, 2.6rem) 0; border-bottom: 1px solid rgba(0,0,0,0.1); position: relative; transition: padding-left 0.35s ease; }
+  .service::before { content: ""; position: absolute; left: -2rem; right: -2rem; top: 0; bottom: 0; background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; opacity: 0; transform: scale(0.97); transition: opacity 0.35s ease, transform 0.35s ease; z-index: 0; }
   .service:hover::before { opacity: 1; transform: scale(1); }
   .service:hover { padding-left: 2rem; }
   .service > * { position: relative; z-index: 1; }
-  .service-num { font-size: 1rem; font-weight: 600; color: var(--sky); font-variant-numeric: tabular-nums; }
-  .service-body h3 { font-size: var(--fs-h3); margin-bottom: 0.5rem; color: #fff; }
-  .service-body p { color: rgba(255,255,255,0.68); font-size: 0.98rem; max-width: 60ch; }
-  .service-arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.22); display: grid; place-items: center; color: #fff; transition: 0.3s; flex: none; }
+  .service-num { font-size: 1rem; font-weight: 600; color: var(--blue); font-variant-numeric: tabular-nums; }
+  .service-body h3 { font-size: var(--fs-h3); margin-bottom: 0.5rem; color: var(--navy); }
+  .service-body p { color: var(--navy-70); font-size: 0.98rem; max-width: 60ch; }
+  .service-arrow { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--navy-12); display: grid; place-items: center; color: var(--navy); transition: 0.3s; flex: none; }
   .service-arrow svg { width: 18px; height: 18px; transition: transform 0.3s ease; }
   .service:hover .service-arrow { background: var(--blue); border-color: var(--blue); color: var(--white); }
   .service:hover .service-arrow svg { transform: rotate(-45deg); }
+  .why { background: #F8F9FA; }
   .why-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(40px, 5vw, 80px); align-items: start; }
   .why-intro h2 { font-size: var(--fs-h2); margin-top: var(--s3); text-wrap: balance; }
   .why-sub { color: var(--navy-70); font-size: 1.08rem; margin-top: var(--s3); max-width: 38ch; text-wrap: pretty; }
@@ -801,6 +802,68 @@
     </div>
   </section>
 
+  <!-- SERVICES -->
+  <section class="services section-pad" id="services" aria-label="Services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Services</span>
+        <h2>Company Registration, Residency &amp; Business Support in Cyprus</h2>
+        <p>We register companies, obtain residence and permanent permits, manage accounting and open bank accounts in Cyprus. One partner — no intermediaries.</p>
+      </div>
+
+      <div class="service-list">
+        <a class="service reveal" href="/en/company-registration-cyprus">
+          <span class="service-num">01</span>
+          <div class="service-body">
+            <h3>Company Registration in Cyprus</h3>
+            <p>Cyprus company registration from 7 days: LTD, FIC, Holding. Tax number, VAT and corporate bank account — turnkey.</p>
+          </div>
+          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="service reveal" href="/en/residence-permit-cyprus">
+          <span class="service-num">02</span>
+          <div class="service-body">
+            <h3>Residence Permit &amp; Permanent Residency</h3>
+            <p>Residence and permanent permits in Cyprus by property, business or investment from €300,000. For you and your family.</p>
+          </div>
+          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="service reveal" href="#" data-wa>
+          <span class="service-num">03</span>
+          <div class="service-body">
+            <h3>Cyprus Citizenship</h3>
+            <p>Cyprus citizenship by naturalization, descent or marriage. EU passport for you and your family.</p>
+          </div>
+          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="service reveal" href="#" data-wa>
+          <span class="service-num">04</span>
+          <div class="service-body">
+            <h3>Accounting &amp; Audit</h3>
+            <p>Accounting, audit and tax planning in Cyprus. Non-Dom status, VAT, corporate tax 12.5%.</p>
+          </div>
+          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="service reveal" href="#" data-wa>
+          <span class="service-num">05</span>
+          <div class="service-body">
+            <h3>Bank Account Opening</h3>
+            <p>Corporate and personal bank account opening in Cyprus for residents and non-residents. Full support until active.</p>
+          </div>
+          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="service reveal" href="#" data-wa>
+          <span class="service-num">06</span>
+          <div class="service-body">
+            <h3>Legal Services</h3>
+            <p>Corporate contracts, Due Diligence, Compliance and Legal Opinion in Cyprus. Licensed lawyers.</p>
+          </div>
+          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- WHY -->
   <section class="section-pad why" id="why" aria-label="Why Choose Us">
     <div class="wrap why-layout">
@@ -815,7 +878,7 @@
             <span class="flag" title="English" aria-label="United Kingdom"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="20" fill="#012169"/><polygon points="0,0 3.5,0 30,17.5 30,20 26.5,20 0,2.5" fill="#fff"/><polygon points="30,0 26.5,0 0,17.5 0,20 3.5,20 30,2.5" fill="#fff"/><polygon points="0,0 2,0 30,18.75 30,20 28,20 0,1.25" fill="#C8102E"/><polygon points="30,0 28,0 0,18.75 0,20 2,20 30,1.25" fill="#C8102E"/><rect x="12" y="0" width="6" height="20" fill="#fff"/><rect x="0" y="7.5" width="30" height="5" fill="#fff"/><rect x="13" y="0" width="4" height="20" fill="#C8102E"/><rect x="0" y="8.75" width="30" height="2.5" fill="#C8102E"/></svg></span>
             <span class="flag" title="Ukrainian" aria-label="Ukraine"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="10" y="0" fill="#0057B7"/><rect width="30" height="10" y="10" fill="#FFD700"/></svg></span>
             <span class="flag" title="Greek" aria-label="Greece"><svg viewBox="0 0 30 20" preserveAspectRatio="none"><rect width="30" height="20" fill="#0D5EAF"/><rect y="2.222" width="30" height="2.222" fill="#fff"/><rect y="6.667" width="30" height="2.222" fill="#fff"/><rect y="11.111" width="30" height="2.222" fill="#fff"/><rect y="15.556" width="30" height="2.222" fill="#fff"/><rect width="11.111" height="11.111" fill="#0D5EAF"/><rect x="4.444" width="2.222" height="11.111" fill="#fff"/><rect y="4.444" width="11.111" height="2.222" fill="#fff"/></svg></span>
-            
+
           </div>
           <p class="lang-trust-names">Armenian&thinsp;·&thinsp;English&thinsp;·&thinsp;Ukrainian&thinsp;·&thinsp;Greek</p>
         </div>
@@ -849,68 +912,6 @@
           <h3>Complete Support at Every Stage</h3>
           <p>From your first consultation to company registration, residence permit application and bank account opening — we guide you through every step of the process.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services section-pad" id="services" aria-label="Services">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Services</span>
-        <h2>Business, Legal &amp; Relocation Services in Cyprus</h2>
-        <p>Everything you need to live and do business in Cyprus — company registration, residence permits, banking assistance and ongoing business support.</p>
-      </div>
-
-      <div class="service-list">
-        <a class="service reveal" href="/en/company-registration-cyprus">
-          <span class="service-num">01</span>
-          <div class="service-body">
-            <h3>Company Registration in Cyprus</h3>
-            <p>Complete company registration service: company structure, incorporation documents, registration, tax number and VAT registration.</p>
-          </div>
-          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service reveal" href="/en/residence-permit-cyprus">
-          <span class="service-num">02</span>
-          <div class="service-body">
-            <h3>Residence Permit &amp; Permanent Residency</h3>
-            <p>Temporary and permanent residence permits in Cyprus for you and your family members.</p>
-          </div>
-          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service reveal" href="#" data-wa>
-          <span class="service-num">03</span>
-          <div class="service-body">
-            <h3>Cyprus Citizenship</h3>
-            <p>Eligibility assessment, document preparation and full support through the citizenship application process.</p>
-          </div>
-          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service reveal" href="#" data-wa>
-          <span class="service-num">04</span>
-          <div class="service-body">
-            <h3>Accounting &amp; Audit</h3>
-            <p>Bookkeeping, financial reporting, tax planning and annual audits in accordance with Cyprus regulations.</p>
-          </div>
-          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service reveal" href="#" data-wa>
-          <span class="service-num">05</span>
-          <div class="service-body">
-            <h3>Bank Account Opening</h3>
-            <p>Bank selection, document preparation and full support until your personal or corporate account is open and active.</p>
-          </div>
-          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="service reveal" href="#" data-wa>
-          <span class="service-num">06</span>
-          <div class="service-body">
-            <h3>Legal Services</h3>
-            <p>Contracts, transactions, compliance and comprehensive legal support for your business and relocation at every stage.</p>
-          </div>
-          <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
       </div>
     </div>
   </section>
