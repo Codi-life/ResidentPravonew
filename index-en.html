@@ -234,8 +234,14 @@
   .service:hover .service-arrow svg { transform: rotate(-45deg); }
   .why { background: #F8F9FA; }
   .why-layout { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(40px, 5vw, 80px); align-items: start; }
-  .why-intro h2 { font-size: var(--fs-h2); margin-top: var(--s3); text-wrap: balance; }
+  .why-intro h2 { font-size: clamp(1.55rem, 3.25vw, 2.75rem); margin-top: var(--s3); text-wrap: balance; }
   .why-sub { color: var(--navy-70); font-size: 1.08rem; margin-top: var(--s3); max-width: 38ch; text-wrap: pretty; }
+  .why-stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 32px; margin-bottom: 32px; border: 1px solid rgba(0,0,0,0.08); border-radius: 12px; overflow: hidden; background: rgba(255,255,255,0.7); }
+  .why-stat { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 18px 10px; position: relative; }
+  .why-stat + .why-stat::before { content: ""; position: absolute; left: 0; top: 20%; height: 60%; width: 1px; background: rgba(0,0,0,0.1); }
+  .why-stat svg { color: #38BDF8; margin-bottom: 8px; flex: none; }
+  .why-stat strong { font-size: 1.6rem; font-weight: 700; color: var(--navy); line-height: 1; letter-spacing: -0.02em; }
+  .why-stat span { font-size: 0.72rem; color: rgba(10,37,64,0.55); margin-top: 4px; line-height: 1.35; }
   .why-wa { margin-top: var(--s5); }
   .why-trust { display: flex; flex-wrap: wrap; gap: clamp(24px, 2.5vw, 40px); margin-top: var(--s4); padding-top: var(--s4); border-top: 1px solid var(--line); }
   .why-trust .wt b { display: block; font-size: 1.65rem; font-weight: 700; color: var(--navy); letter-spacing: -0.03em; line-height: 1; }
@@ -465,6 +471,9 @@
     .case-card-body { padding: 1.1rem; }
     .case-results li { font-size: 0.9rem; }
     .why-grid { border-radius: 12px; }
+    .why-stats { grid-template-columns: repeat(2, 1fr); }
+    .why-stat:nth-child(3)::before { display: none; }
+    .why-stat:nth-child(3), .why-stat:nth-child(4) { border-top: 1px solid rgba(0,0,0,0.1); }
   }
   @media (max-width: 430px) {
     :root { --gutter: 1.1rem; }
@@ -869,8 +878,30 @@
     <div class="wrap why-layout">
       <div class="why-intro reveal">
         <span class="eyebrow">Why Choose Us</span>
-        <h2>Your Trusted Partner for Business and Relocation in Cyprus</h2>
-        <p class="why-sub">We guide clients from the first consultation to a registered company, open bank account and residence permit — with no intermediaries and no wasted time.</p>
+        <h2>Licensed Specialists for Business and Residency in Cyprus</h2>
+        <p class="why-sub">Licensed lawyers and auditors in Cyprus — we register companies, obtain residence permits and manage accounting. One partner for everything.</p>
+        <div class="why-stats">
+          <div class="why-stat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            <strong>350+</strong>
+            <span>cases</span>
+          </div>
+          <div class="why-stat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <strong>10+</strong>
+            <span>years<br>of practice</span>
+          </div>
+          <div class="why-stat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <strong>98%</strong>
+            <span>visa approvals<br>on first try</span>
+          </div>
+          <div class="why-stat">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <strong>15+</strong>
+            <span>countries</span>
+          </div>
+        </div>
         <div class="lang-trust">
           <p class="lang-trust-head">We speak your language</p>
           <div class="lang-trust-flags">
