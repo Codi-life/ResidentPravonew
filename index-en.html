@@ -368,7 +368,7 @@
   .faq-toggle:hover { gap: .75rem; }
   .faq-toggle svg { width: 16px; height: 16px; flex: none; transition: transform .35s ease; }
   .faq-toggle.open svg { transform: rotate(180deg); }
-  .faq-aside { background: var(--navy); border-radius: 22px; padding: var(--card-pad); color: var(--white); position: sticky; top: 100px; }
+  .faq-aside { background: var(--navy); border-radius: 22px; padding: var(--card-pad); color: var(--white); position: sticky; top: 100px; margin-top: 2.5rem; }
   .faq-aside h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 0.8rem; }
   .faq-aside p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 1.6rem; }
   .faq-aside .btn-wa { width: 100%; justify-content: center; }
@@ -533,7 +533,7 @@
     /* ── FAQ mobile: title → questions → consultation card ── */
     .faq-grid { display: flex; flex-direction: column; gap: 0; }
     .faq-grid > div:first-child { display: contents; }
-    .faq-grid .faq-aside { order: 1; }
+    .faq-grid .faq-aside { order: 1; margin-top: 0; margin-bottom: var(--s4); }
     .faq-grid .section-head { order: 2; margin-bottom: var(--s3); }
     .faq-grid .faq-list { order: 3; }
   }
@@ -1305,7 +1305,7 @@
             <span class="eyebrow">FAQ</span>
             <h2>Frequently Asked Questions</h2>
           </div>
-          <div class="faq-aside reveal" style="margin-top:2.5rem">
+          <div class="faq-aside reveal">
             <h3>Get a Free Consultation</h3>
             <p>Message us on WhatsApp — we'll answer all your questions and review your situation free of charge.</p>
             <a href="#" class="btn btn-wa" data-wa>

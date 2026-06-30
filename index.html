@@ -974,6 +974,7 @@
     color: var(--white);
     position: sticky;
     top: 100px;
+    margin-top: 2.5rem;
   }
   .faq-aside h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 0.8rem; }
   .faq-aside p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 1.6rem; }
@@ -1205,7 +1206,7 @@
     /* ── FAQ mobile: заголовок → вопросы → карточка консультации ── */
     .faq-grid { display: flex; flex-direction: column; gap: 0; }
     .faq-grid > div:first-child { display: contents; }
-    .faq-grid .faq-aside { order: 1; }
+    .faq-grid .faq-aside { order: 1; margin-top: 0; margin-bottom: var(--s4); }
     .faq-grid .section-head { order: 2; margin-bottom: var(--s3); }
     .faq-grid .faq-list { order: 3; }
   }
@@ -2101,7 +2102,7 @@
             <span class="eyebrow">FAQ</span>
             <h2>Частые вопросы</h2>
           </div>
-          <div class="faq-aside reveal" style="margin-top:2.5rem">
+          <div class="faq-aside reveal">
             <h3>Получить консультацию</h3>
             <p>Напишите нам в WhatsApp — ответим на всё и бесплатно разберём вашу ситуацию.</p>
             <a href="#" class="btn btn-wa" data-wa>
