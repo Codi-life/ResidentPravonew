@@ -5,6 +5,9 @@
   "engines": {
     "node": ">=18"
   },
+  "scripts": {
+    "build": "node scripts/build-blog-preview.js"
+  },
   "dependencies": {
     "nodemailer": "^6.9.9"
   }
