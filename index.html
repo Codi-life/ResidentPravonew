@@ -714,15 +714,12 @@
     position: relative;
     transition: background 0.35s ease;
   }
-  .why-item:hover { background: #fcfdff; }
   /* Featured (primary) advantage — navy, draws the eye first */
   .why-item.featured { background: var(--navy); }
-  .why-item.featured:hover { background: #0d2d4f; }
   .why-item.featured h3 { color: #fff; }
   .why-item.featured p { color: rgba(255,255,255,0.72); }
   .why-item.featured .wi-num { color: rgba(255,255,255,0.22); }
   .why-item.featured .wi-icon { background: rgba(56,189,248,0.16); border-color: rgba(56,189,248,0.4); color: var(--sky); }
-  .why-item.featured:hover .wi-icon { background: var(--sky); color: var(--navy); }
   .wi-icon {
     width: 54px; height: 54px;
     border-radius: 14px;
@@ -733,7 +730,13 @@
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   }
   .wi-icon svg { width: 27px; height: 27px; }
-  .why-item:hover .wi-icon { background: var(--blue); color: #fff; transform: translateY(-2px); }
+  /* Hover effects only on devices with true pointer hover (not touch) */
+  @media (hover: hover) {
+    .why-item:hover { background: #fcfdff; }
+    .why-item.featured:hover { background: #0d2d4f; }
+    .why-item.featured:hover .wi-icon { background: var(--sky); color: var(--navy); }
+    .why-item:hover .wi-icon { background: var(--blue); color: #fff; transform: translateY(-2px); }
+  }
   .why-item .wi-num {
     position: absolute; top: var(--card-pad); right: var(--card-pad);
     font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em;
