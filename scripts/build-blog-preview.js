@@ -71,7 +71,7 @@ function attr(html, attrName) {
 
 // ─── Parse blog index ─────────────────────────────────────────────────────────
 
-function parseBlogIndex(html, lang) {
+function parseBlogIndex(html, lang, limit = 3) {
   const articles = [];
 
   // Match every <article … </article> block (articles don't nest)
@@ -127,9 +127,8 @@ function parseBlogIndex(html, lang) {
     articles.push({ href, category, dateText, readingTime, parsedDate, title, excerpt, webpSrcset, jpgSrc, jpgSrcset, imgAlt, imgSizes });
   }
 
-  // Newest first, top 3
   articles.sort((a, b) => b.parsedDate - a.parsedDate);
-  return articles.slice(0, 3);
+  return articles.slice(0, limit);
 }
 
 // ─── Render bp-card HTML ──────────────────────────────────────────────────────
@@ -206,6 +205,75 @@ function inject(indexPath, blogIndexPath, lang, readLabel, startMarker, endMarke
   articles.forEach(a => console.log(`       ${a.dateText}  ${a.title}`));
 }
 
+// ─── Sitemap auto-update ──────────────────────────────────────────────────────
+
+function formatDate(d) {
+  return d.toISOString().split('T')[0]; // YYYY-MM-DD
+}
+
+function updateSitemap(sitemapPath, ruBlogHtml, enBlogHtml) {
+  const BASE = 'https://www.residentpravo.com';
+
+  // ALL published articles (no limit)
+  const ruAll = parseBlogIndex(ruBlogHtml, 'ru', Infinity);
+  const enAll = parseBlogIndex(enBlogHtml, 'en', Infinity);
+  const enByHref = new Map(enAll.map(a => [a.href, a]));
+
+  // Only /ru/blog/* — service pages stay as static sitemap entries
+  const pairs = [];
+  for (const ru of ruAll) {
+    if (!ru.href.startsWith('/ru/blog/')) continue;
+    const slug  = ru.href.replace('/ru/blog/', '');
+    const enUrl = `${BASE}/en/blog/${slug}`;
+    const ruUrl = `${BASE}${ru.href}`;
+    const date  = formatDate(ru.parsedDate);
+    pairs.push({ ruUrl, enUrl, date });
+  }
+
+  if (pairs.length === 0) {
+    console.log('[SITEMAP] No /ru/blog/ articles found.');
+    return;
+  }
+
+  const entries = pairs.flatMap(({ ruUrl, enUrl, date }) => [
+`  <url>
+    <loc>${ruUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="ru"        href="${ruUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="${enUrl}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}"/>
+    <lastmod>${date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>`,
+`  <url>
+    <loc>${enUrl}</loc>
+    <xhtml:link rel="alternate" hreflang="ru"        href="${ruUrl}"/>
+    <xhtml:link rel="alternate" hreflang="en"        href="${enUrl}"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}"/>
+    <lastmod>${date}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>`,
+  ]).join('\n\n');
+
+  const startMarker = '  <!-- SITEMAP:BLOG:START -->';
+  const endMarker   = '  <!-- SITEMAP:BLOG:END -->';
+  const startEsc    = startMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const endEsc      = endMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const markerRe    = new RegExp(`(${startEsc})[\\s\\S]*?(${endEsc})`, 'g');
+
+  let sitemap  = fs.readFileSync(sitemapPath, 'utf8');
+  const updated = sitemap.replace(markerRe, `$1\n${entries}\n  $2`);
+
+  if (updated !== sitemap) {
+    fs.writeFileSync(sitemapPath, updated, 'utf8');
+    console.log(`[SITEMAP] Updated ${pairs.length} blog article pair(s)`);
+    pairs.forEach(p => console.log(`       ${p.date}  ${p.ruUrl}`));
+  } else {
+    console.log('[SITEMAP] Blog entries unchanged.');
+  }
+}
+
 // ─── Run ──────────────────────────────────────────────────────────────────────
 
 inject(
@@ -223,5 +291,10 @@ inject(
   '<!-- BLOG:EN:START -->',
   '<!-- BLOG:EN:END -->'
 );
+
+// Update sitemap.xml with all published blog articles
+const ruBlogForSitemap = fs.readFileSync(path.join(ROOT, 'ru', 'blog', 'index.html'), 'utf8');
+const enBlogForSitemap = fs.readFileSync(path.join(ROOT, 'en', 'blog', 'index.html'), 'utf8');
+updateSitemap(path.join(ROOT, 'sitemap.xml'), ruBlogForSitemap, enBlogForSitemap);
 
 console.log('\nBlog preview build complete.');
