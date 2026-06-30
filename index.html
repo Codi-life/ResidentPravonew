@@ -956,6 +956,12 @@
   .faq-item.open .faq-icon::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
   .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .faq-a-inner { padding-bottom: var(--s3); color: var(--navy-70); font-size: 0.98rem; max-width: 60ch; }
+  .faq-more { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+  .faq-more.open { max-height: 2000px; }
+  .faq-toggle { display: inline-flex; align-items: center; gap: .45rem; margin-top: var(--s3); padding: .65rem 0; background: none; border: none; cursor: pointer; color: var(--blue); font-weight: 600; font-size: .95rem; font-family: inherit; transition: gap .25s ease; }
+  .faq-toggle:hover { gap: .75rem; }
+  .faq-toggle svg { width: 16px; height: 16px; flex: none; transition: transform .35s ease; }
+  .faq-toggle.open svg { transform: rotate(180deg); }
 
   .faq-aside {
     background: var(--navy);
@@ -1443,6 +1449,54 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Да. Мы сопровождаем оформление документов для супругов, детей и родителей в рамках доступных иммиграционных программ Кипра."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какой налог на прибыль компании на Кипре?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Корпоративный налог на Кипре составляет 12,5% — один из самых низких в Евросоюзе. При грамотном структурировании бизнеса эффективная ставка может быть ниже за счёт налоговых льгот, включая IP Box режим."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какие документы нужны для регистрации компании?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Базовый пакет включает копию паспорта, подтверждение адреса проживания и краткое описание деятельности компании. Остальные документы — учредительные, корпоративные — готовим мы."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "На сколько лет выдаётся ВНЖ на Кипре?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Стандартный временный ВНЖ выдаётся на 2 года с возможностью продления. ПМЖ за инвестиции (Category F) даёт постоянный статус без необходимости регулярного продления."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли получить ВНЖ через открытие компании?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, регистрация Foreign Interest Company (FIC) позволяет получить ВНЖ для владельца компании и для иностранных сотрудников."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько стоит обслуживание компании после регистрации?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Стоимость годового обслуживания зависит от объёма операций и оборота компании. Точную сумму рассчитываем индивидуально на бесплатной консультации."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Работаете ли вы с клиентами удалённо?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, большинство процессов — от консультации до получения готовых документов — можно провести полностью удалённо, без необходимости приезжать на Кипр лично."
       }
     }
   ]
@@ -2069,6 +2123,36 @@
             <button class="faq-q" aria-expanded="false" aria-controls="faq-a-6">Можно ли оформить документы для всей семьи?<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" id="faq-a-6"><div class="faq-a-inner">Да. Мы сопровождаем оформление документов для супругов, детей и родителей в рамках доступных иммиграционных программ Кипра.</div></div>
           </div>
+          <div class="faq-more" id="faq-more">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-7">Какой налог на прибыль компании на Кипре?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-7"><div class="faq-a-inner">Корпоративный налог на Кипре составляет 12,5% — один из самых низких в Евросоюзе. При грамотном структурировании бизнеса эффективная ставка может быть ниже за счёт налоговых льгот, включая IP Box режим.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-8">Какие документы нужны для регистрации компании?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-8"><div class="faq-a-inner">Базовый пакет включает копию паспорта, подтверждение адреса проживания и краткое описание деятельности компании. Остальные документы — учредительные, корпоративные — готовим мы.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-9">На сколько лет выдаётся ВНЖ на Кипре?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-9"><div class="faq-a-inner">Стандартный временный ВНЖ выдаётся на 2 года с возможностью продления. ПМЖ за инвестиции (Category F) даёт постоянный статус без необходимости регулярного продления.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-10">Можно ли получить ВНЖ через открытие компании?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-10"><div class="faq-a-inner">Да, регистрация Foreign Interest Company (FIC) позволяет получить ВНЖ для владельца компании и для иностранных сотрудников.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-11">Сколько стоит обслуживание компании после регистрации?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-11"><div class="faq-a-inner">Стоимость годового обслуживания зависит от объёма операций и оборота компании. Точную сумму рассчитываем индивидуально на бесплатной консультации.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-12">Работаете ли вы с клиентами удалённо?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-12"><div class="faq-a-inner">Да, большинство процессов — от консультации до получения готовых документов — можно провести полностью удалённо, без необходимости приезжать на Кипр лично.</div></div>
+            </div>
+          </div>
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-more" data-more="Показать ещё вопросы" data-less="Скрыть">
+            <span>Показать ещё вопросы</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -2235,6 +2319,17 @@
     });
   });
 
+  // ---- FAQ show more ----
+  const faqMore = document.getElementById('faq-more');
+  const faqToggle = document.querySelector('.faq-toggle');
+  if (faqMore && faqToggle) {
+    faqToggle.addEventListener('click', () => {
+      const isOpen = faqMore.classList.toggle('open');
+      faqToggle.classList.toggle('open', isOpen);
+      faqToggle.setAttribute('aria-expanded', String(isOpen));
+      faqToggle.querySelector('span').textContent = isOpen ? faqToggle.dataset.less : faqToggle.dataset.more;
+    });
+  }
 
   // ---- Reveal on scroll ----
   const reveals = document.querySelectorAll('.reveal');

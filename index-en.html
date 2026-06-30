@@ -358,6 +358,12 @@
   .faq-item.open .faq-icon::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
   .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
   .faq-a-inner { padding-bottom: var(--s3); color: var(--navy-70); font-size: 0.98rem; max-width: 60ch; }
+  .faq-more { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+  .faq-more.open { max-height: 2000px; }
+  .faq-toggle { display: inline-flex; align-items: center; gap: .45rem; margin-top: var(--s3); padding: .65rem 0; background: none; border: none; cursor: pointer; color: var(--blue); font-weight: 600; font-size: .95rem; font-family: inherit; transition: gap .25s ease; }
+  .faq-toggle:hover { gap: .75rem; }
+  .faq-toggle svg { width: 16px; height: 16px; flex: none; transition: transform .35s ease; }
+  .faq-toggle.open svg { transform: rotate(180deg); }
   .faq-aside { background: var(--navy); border-radius: 22px; padding: var(--card-pad); color: var(--white); position: sticky; top: 100px; }
   .faq-aside h3 { color: var(--white); font-size: 1.5rem; margin-bottom: 0.8rem; }
   .faq-aside p { color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-bottom: 1.6rem; }
@@ -705,7 +711,13 @@
     {"@type":"Question","name":"How long does it take to obtain a Residence Permit or Permanent Residency?","acceptedAnswer":{"@type":"Answer","text":"Timelines depend on the type of permit and completeness of your documents. We assess your situation during the consultation and provide realistic processing timeframes."}},
     {"@type":"Question","name":"Can you help me open a bank account in Cyprus?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support the full process of opening personal and corporate bank accounts — from document preparation to account activation."}},
     {"@type":"Question","name":"Do you provide ongoing accounting services?","acceptedAnswer":{"@type":"Answer","text":"Yes. We work with licensed accountants and auditors in Cyprus and can arrange full bookkeeping and compliance support after your company is registered."}},
-    {"@type":"Question","name":"Can you handle applications for my whole family?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support documentation for spouses, children and parents under the available immigration programmes in Cyprus."}}
+    {"@type":"Question","name":"Can you handle applications for my whole family?","acceptedAnswer":{"@type":"Answer","text":"Yes. We support documentation for spouses, children and parents under the available immigration programmes in Cyprus."}},
+    {"@type":"Question","name":"What is the corporate tax rate in Cyprus?","acceptedAnswer":{"@type":"Answer","text":"Cyprus has a corporate tax rate of 12.5% — one of the lowest in the European Union. With proper business structuring, the effective rate can be lower thanks to tax incentives, including the IP Box regime."}},
+    {"@type":"Question","name":"What documents are required to register a company?","acceptedAnswer":{"@type":"Answer","text":"The basic package includes a copy of your passport, proof of residential address, and a brief description of the company's activity. We prepare all incorporation and corporate documents for you."}},
+    {"@type":"Question","name":"How long is a residence permit valid in Cyprus?","acceptedAnswer":{"@type":"Answer","text":"A standard temporary residence permit is issued for 2 years with the option to renew. Permanent Residency through investment (Category F) grants a permanent status with no need for regular renewal."}},
+    {"@type":"Question","name":"Can I get a residence permit by opening a company?","acceptedAnswer":{"@type":"Answer","text":"Yes, registering a Foreign Interest Company (FIC) allows the owner and foreign employees to obtain a residence permit."}},
+    {"@type":"Question","name":"How much does company maintenance cost after registration?","acceptedAnswer":{"@type":"Answer","text":"Annual maintenance costs depend on the company's volume of operations and turnover. We calculate the exact amount individually during a free consultation."}},
+    {"@type":"Question","name":"Do you work with clients remotely?","acceptedAnswer":{"@type":"Answer","text":"Yes, most processes — from consultation to receiving the final documents — can be completed entirely remotely, without the need to visit Cyprus in person."}}
   ]
 }
 </script>
@@ -1315,6 +1327,36 @@
             <button class="faq-q" aria-expanded="false" aria-controls="faq-a-6">Can you handle applications for my whole family?<span class="faq-icon" aria-hidden="true"></span></button>
             <div class="faq-a" id="faq-a-6"><div class="faq-a-inner">Yes. We support documentation for spouses, children and parents under the available immigration programmes in Cyprus.</div></div>
           </div>
+          <div class="faq-more" id="faq-more">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-7">What is the corporate tax rate in Cyprus?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-7"><div class="faq-a-inner">Cyprus has a corporate tax rate of 12.5% — one of the lowest in the European Union. With proper business structuring, the effective rate can be lower thanks to tax incentives, including the IP Box regime.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-8">What documents are required to register a company?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-8"><div class="faq-a-inner">The basic package includes a copy of your passport, proof of residential address, and a brief description of the company's activity. We prepare all incorporation and corporate documents for you.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-9">How long is a residence permit valid in Cyprus?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-9"><div class="faq-a-inner">A standard temporary residence permit is issued for 2 years with the option to renew. Permanent Residency through investment (Category F) grants a permanent status with no need for regular renewal.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-10">Can I get a residence permit by opening a company?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-10"><div class="faq-a-inner">Yes, registering a Foreign Interest Company (FIC) allows the owner and foreign employees to obtain a residence permit.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-11">How much does company maintenance cost after registration?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-11"><div class="faq-a-inner">Annual maintenance costs depend on the company's volume of operations and turnover. We calculate the exact amount individually during a free consultation.</div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false" aria-controls="faq-a-12">Do you work with clients remotely?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-a" id="faq-a-12"><div class="faq-a-inner">Yes, most processes — from consultation to receiving the final documents — can be completed entirely remotely, without the need to visit Cyprus in person.</div></div>
+            </div>
+          </div>
+          <button class="faq-toggle" aria-expanded="false" aria-controls="faq-more" data-more="Show more questions" data-less="Show less">
+            <span>Show more questions</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1474,6 +1516,18 @@
       }
     });
   });
+
+  // ---- FAQ show more ----
+  const faqMore = document.getElementById('faq-more');
+  const faqToggle = document.querySelector('.faq-toggle');
+  if (faqMore && faqToggle) {
+    faqToggle.addEventListener('click', () => {
+      const isOpen = faqMore.classList.toggle('open');
+      faqToggle.classList.toggle('open', isOpen);
+      faqToggle.setAttribute('aria-expanded', String(isOpen));
+      faqToggle.querySelector('span').textContent = isOpen ? faqToggle.dataset.less : faqToggle.dataset.more;
+    });
+  }
 
 
   const reveals = document.querySelectorAll('.reveal');
