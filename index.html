@@ -930,6 +930,7 @@
 
   /* ============ FAQ ============ */
   .faq-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(32px, 5vw, 64px); align-items: start; }
+  .faq-grid .section-head { margin-bottom: 0; }
   .faq-list { border-top: 1px solid var(--line); }
   .faq-item { border-bottom: 1px solid var(--line); }
   .faq-q {
@@ -1198,6 +1199,15 @@
     .hero-wrap .hero-services { order: 3; }
     .hero-wrap .hero-actions { order: 4; margin-top: 1.25rem; }
     .hero-wrap .trust-strip  { order: 8; margin-top: 1.25rem; }
+    /* ── FAQ mobile: уменьшить отступ Blog→FAQ ── */
+    .blog-preview.section-pad { padding-bottom: 3rem; }
+    #faq.section-pad { padding-top: 3rem; }
+    /* ── FAQ mobile: заголовок → вопросы → карточка консультации ── */
+    .faq-grid { display: flex; flex-direction: column; gap: 0; }
+    .faq-grid > div:first-child { display: contents; }
+    .faq-grid .section-head { order: 1; margin-bottom: var(--s3); }
+    .faq-grid .faq-list { order: 2; }
+    .faq-grid .faq-aside { order: 3; }
   }
 
   /* ── 480px: shrink tagline to fit mobile header ── */
@@ -2087,7 +2097,7 @@
     <div class="wrap">
       <div class="faq-grid">
         <div>
-          <div class="section-head reveal" style="margin-bottom:0">
+          <div class="section-head reveal">
             <span class="eyebrow">FAQ</span>
             <h2>Частые вопросы</h2>
           </div>
