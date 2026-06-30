@@ -30,3 +30,4 @@ User-agent: Bytespider
 Allow: /
 
 Sitemap: https://www.residentpravo.com/sitemap.xml
+LLMs: https://www.residentpravo.com/llms.txt
