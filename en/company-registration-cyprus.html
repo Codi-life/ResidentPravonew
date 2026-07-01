@@ -242,6 +242,12 @@
   .wcy-card .wcy-icon svg { width:24px; height:24px; }
   .wcy-card h3 { font-size:1.08rem; color:var(--navy); margin-bottom:.5rem; }
   .wcy-card p { color:var(--navy-70); font-size:.92rem; }
+  .card-badge-rec { display:inline-block; font-size:.71rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.22em .7em; background:rgba(5,150,105,.1); color:#059669; border-radius:999px; border:1px solid rgba(5,150,105,.22); margin-bottom:.55rem; }
+  .biz-form-note { margin-top:1.5rem; font-size:.89rem; color:var(--navy-55); line-height:1.5; }
+  .wcy-card-cta { background:#fff; border-color:rgba(29,78,216,.2); display:flex; flex-direction:column; }
+  .wcy-cta-icon { width:44px; height:44px; border-radius:11px; display:grid; place-items:center; background:rgba(29,78,216,.07); border:1px solid rgba(29,78,216,.14); color:var(--blue); margin-bottom:var(--s2); flex:none; }
+  .wcy-cta-icon svg { width:22px; height:22px; }
+  .wcy-card-cta .btn-wa { align-self:flex-start; margin-top:auto; font-size:.88rem; padding:.75rem 1.2rem; }
   /* ── Jurisdiction comparison table ── */
   .jur-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .jur-table { width:100%; border-collapse:collapse; font-size:.93rem; border-radius:var(--radius); overflow:hidden; min-width:540px; }
@@ -774,6 +780,24 @@
               <td><span class="jur-good">✓ 80+ treaties</span><span class="jur-sub">Broad network, higher substance requirements</span></td>
               <td><span class="jur-low">Limited network</span><span class="jur-sub">Free zone entities have restricted treaty access</span></td>
             </tr>
+            <tr>
+              <td>Registration time and cost</td>
+              <td class="jur-col-cy"><span class="jur-good">5–10 days / from €1,300</span><span class="jur-sub">Expedited procedure available — 1–2 days</span></td>
+              <td>2–4 weeks<span class="jur-sub">Requires a more extensive compliance package, cost depends on structure</span></td>
+              <td>1–2 weeks<span class="jur-sub">Cost depends on free zone and licence type</span></td>
+            </tr>
+            <tr>
+              <td>VAT</td>
+              <td class="jur-col-cy">19%<span class="jur-sub">Reduced rates of 9% and 5% for certain categories</span></td>
+              <td>18%<span class="jur-sub">Reduced rates of 7% and 5% for certain categories</span></td>
+              <td><span class="jur-good">5%</span><span class="jur-sub">Not applicable in most free zones</span></td>
+            </tr>
+            <tr>
+              <td>Currency and banking zone</td>
+              <td class="jur-col-cy"><span class="jur-good">Euro, SEPA zone</span><span class="jur-sub">Direct SEPA transfers within the EU</span></td>
+              <td><span class="jur-good">Euro, SEPA zone</span><span class="jur-sub">Direct SEPA transfers within the EU</span></td>
+              <td>UAE Dirham (AED)<span class="jur-sub">International transfers via SWIFT, currency conversion required</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -790,6 +814,52 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS FORM -->
+  <section class="section-pad" id="business-forms" style="background:var(--mist);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Choosing a Legal Form</span>
+        <h2>Which Business Form to Choose in Cyprus</h2>
+        <p>Cyprus law allows for several types of business structures. For most international companies, IT, e-commerce, and holding structures, the optimal choice is a Private Limited Company (Ltd).</p>
+      </div>
+      <div class="why-cy-grid">
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg></div>
+          <span class="card-badge-rec">Recommended</span>
+          <h3>Ltd — Private Company Limited by Shares</h3>
+          <p>The primary form for international business. Shareholder liability is limited to their share in the capital. Suitable for IT, e-commerce, consulting, and holding structures. The recommended option in 95% of cases.</p>
+        </div>
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></div>
+          <h3>PLC — Public Company Limited by Shares</h3>
+          <p>For larger structures with the ability to raise capital publicly. Requires a minimum of 7 shareholders, 2 directors, and a separate company secretary.</p>
+        </div>
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
+          <h3>Partnership / Joint Venture</h3>
+          <p>A structure for joint projects between several participants. Profit and liability are distributed among partners according to the partnership agreement.</p>
+        </div>
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+          <h3>Branch of a Foreign Company</h3>
+          <p>Allows a presence in Cyprus without establishing a separate legal entity. Suitable for companies that want a local presence while retaining the parent company's structure.</p>
+        </div>
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg></div>
+          <h3>Sole Trader</h3>
+          <p>A simplified status for local activity by a single individual. Does not create a separate legal entity, and liability is unlimited.</p>
+        </div>
+        <div class="wcy-card wcy-card-cta reveal">
+          <div class="wcy-cta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+          <h3>Not sure which form fits?</h3>
+          <p>We'll help you choose between Ltd, partnership, and a branch based on your business structure.</p>
+          <a href="#" class="btn btn-wa" data-wa><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>Get a Free Consultation</a>
+        </div>
+      </div>
+      <p class="biz-form-note">The rest of this guide covers Ltd registration — the most common and recommended form for international business in Cyprus.</p>
     </div>
   </section>
 
@@ -810,7 +880,7 @@
         <div class="svc-card reveal">
           <span class="svc-num">02</span>
           <h3>Preparation of Corporate Documents</h3>
-          <p>Drafting of the Memorandum &amp; Articles of Association tailored to your business activity, shareholder structure and governance requirements — compliant with Cyprus Companies Law Cap. 113.</p>
+          <p>Drafting of the Memorandum &amp; Articles of Association tailored to your business activity, shareholder structure and governance requirements — compliant with Cyprus Companies Law Cap. 113. The package includes forms HE1 (lawyer's statement of compliance), HE2 (registered office details) and HE3 (director and secretary details).</p>
         </div>
         <div class="svc-card reveal">
           <span class="svc-num">03</span>
@@ -825,7 +895,7 @@
         <div class="svc-card reveal">
           <span class="svc-num">05</span>
           <h3>Tax Identification Number (TIN)</h3>
-          <p>Obtaining a Tax Identification Number from the Cyprus Tax Department — required for business activity, invoicing and tax reporting.</p>
+          <p>Obtaining a Tax Identification Number via form T.D.2001 from the Cyprus Tax Department — required for business activity, invoicing and tax reporting. VAT registration additionally requires filing form T.D.1101.</p>
         </div>
         <div class="svc-card reveal">
           <span class="svc-num">06</span>

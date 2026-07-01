@@ -242,6 +242,12 @@
   .wcy-card .wcy-icon svg { width:24px; height:24px; }
   .wcy-card h3 { font-size:1.08rem; color:var(--navy); margin-bottom:.5rem; }
   .wcy-card p { color:var(--navy-70); font-size:.92rem; }
+  .card-badge-rec { display:inline-block; font-size:.71rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; padding:.22em .7em; background:rgba(5,150,105,.1); color:#059669; border-radius:999px; border:1px solid rgba(5,150,105,.22); margin-bottom:.55rem; }
+  .biz-form-note { margin-top:1.5rem; font-size:.89rem; color:var(--navy-55); line-height:1.5; }
+  .wcy-card-cta { background:#fff; border-color:rgba(29,78,216,.2); display:flex; flex-direction:column; }
+  .wcy-cta-icon { width:44px; height:44px; border-radius:11px; display:grid; place-items:center; background:rgba(29,78,216,.07); border:1px solid rgba(29,78,216,.14); color:var(--blue); margin-bottom:var(--s2); flex:none; }
+  .wcy-cta-icon svg { width:22px; height:22px; }
+  .wcy-card-cta .btn-wa { align-self:flex-start; margin-top:auto; font-size:.88rem; padding:.75rem 1.2rem; }
   /* ── Jurisdiction comparison table ── */
   .jur-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .jur-table { width:100%; border-collapse:collapse; font-size:.93rem; border-radius:var(--radius); overflow:hidden; min-width:540px; }
@@ -783,6 +789,24 @@
               <td><span class="jur-good">✓ 80+ соглашений</span><span class="jur-sub">Широкая сеть, но выше требования к субстанции</span></td>
               <td><span class="jur-low">Ограниченный список</span><span class="jur-sub">Free zone-компании имеют ограниченный доступ к льготам</span></td>
             </tr>
+            <tr>
+              <td>Сроки и стоимость регистрации</td>
+              <td class="jur-col-cy"><span class="jur-good">От 5–10 дней / от €1 300</span><span class="jur-sub">Ускоренная процедура — 1–2 дня</span></td>
+              <td>От 2–4 недель<span class="jur-sub">Требуется более полный комплаенс-пакет, стоимость зависит от структуры</span></td>
+              <td>От 1–2 недель<span class="jur-sub">Стоимость зависит от free zone и типа лицензии</span></td>
+            </tr>
+            <tr>
+              <td>НДС (VAT)</td>
+              <td class="jur-col-cy">19%<span class="jur-sub">Пониженные ставки 9% и 5% для отдельных категорий</span></td>
+              <td>18%<span class="jur-sub">Пониженные ставки 7% и 5% для отдельных категорий</span></td>
+              <td><span class="jur-good">5%</span><span class="jur-sub">Отсутствует в большинстве свободных зон</span></td>
+            </tr>
+            <tr>
+              <td>Валюта и банковская зона</td>
+              <td class="jur-col-cy"><span class="jur-good">Евро, зона SEPA</span><span class="jur-sub">Прямые SEPA-переводы внутри ЕС</span></td>
+              <td><span class="jur-good">Евро, зона SEPA</span><span class="jur-sub">Прямые SEPA-переводы внутри ЕС</span></td>
+              <td>Дирхам ОАЭ (AED)<span class="jur-sub">Международные переводы через SWIFT, конвертация валют</span></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -799,6 +823,52 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS FORM -->
+  <section class="section-pad" id="business-forms" style="background:var(--mist);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Выбор формы</span>
+        <h2>Какую форму бизнеса выбрать на Кипре</h2>
+        <p>Кипрское законодательство допускает несколько форм ведения бизнеса. Для большинства международных компаний, IT, e-commerce и холдингов оптимальный выбор — Private Limited Company (Ltd).</p>
+      </div>
+      <div class="why-cy-grid">
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><polyline points="9 15 11 17 15 13"/></svg></div>
+          <span class="card-badge-rec">Рекомендуем</span>
+          <h3>Ltd — частная компания с ограниченной ответственностью</h3>
+          <p>Основная форма для международного бизнеса. Ответственность акционеров ограничена долей в капитале. Подходит для IT, e-commerce, консалтинга и холдинговых структур. Рекомендуемый вариант в 95% случаев.</p>
+        </div>
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4"/></svg></div>
+          <h3>PLC — публичная компания с ограниченной ответственностью</h3>
+          <p>Для крупных структур с возможностью публичного привлечения капитала. Требует минимум 7 акционеров, 2 директоров и отдельного секретаря компании.</p>
+        </div>
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
+          <h3>Партнёрство / совместное предприятие</h3>
+          <p>Форма для совместных проектов нескольких участников. Прибыль и ответственность распределяются между партнёрами согласно партнёрскому соглашению.</p>
+        </div>
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></div>
+          <h3>Филиал иностранной компании</h3>
+          <p>Позволяет присутствовать на Кипре без создания отдельного юридического лица. Подходит компаниям, которые хотят представительство на острове при сохранении структуры материнской компании.</p>
+        </div>
+        <div class="wcy-card reveal">
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="7" r="4"/><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/></svg></div>
+          <h3>Индивидуальный предприниматель</h3>
+          <p>Упрощённый статус для локальной деятельности одного лица. Не создаёт отдельного юридического лица, ответственность не ограничена.</p>
+        </div>
+        <div class="wcy-card wcy-card-cta reveal">
+          <div class="wcy-cta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></div>
+          <h3>Не уверены, какая форма подходит?</h3>
+          <p>Поможем выбрать между Ltd, партнёрством и филиалом с учётом вашей структуры бизнеса.</p>
+          <a href="#" class="btn btn-wa" data-wa><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>Получить консультацию</a>
+        </div>
+      </div>
+      <p class="biz-form-note">Далее в статье речь идёт о регистрации Ltd — самой распространённой и рекомендуемой форме для международного бизнеса на Кипре.</p>
     </div>
   </section>
 
@@ -819,7 +889,7 @@
         <div class="svc-card reveal">
           <span class="svc-num">02</span>
           <h3>Подготовка уставных документов</h3>
-          <p>Меморандум и Устав компании (Memorandum & Articles of Association), решения директоров, структура акционеров — подготовка полного пакета в соответствии с законодательством.</p>
+          <p>Меморандум и Устав компании (Memorandum & Articles of Association), решения директоров, структура акционеров — подготовка полного пакета в соответствии с Законом о компаниях Кипра (Cap. 113). Пакет включает формы HE1 (заявление юриста о соответствии документов закону), HE2 (сведения о зарегистрированном офисе) и HE3 (сведения о директорах и секретаре).</p>
         </div>
         <div class="svc-card reveal">
           <span class="svc-num">03</span>
@@ -834,7 +904,7 @@
         <div class="svc-card reveal">
           <span class="svc-num">05</span>
           <h3>Получение налогового номера (TIN)</h3>
-          <p>Получение налогового номера (Tax Identification Number, TIN) в Налоговом департаменте Кипра (Tax Department of Cyprus) — обязательное условие для ведения деятельности, выставления счетов и налоговой отчётности.</p>
+          <p>Получение налогового номера (Tax Identification Number, TIN) в Налоговом департаменте Кипра (Tax Department of Cyprus) по форме T.D.2001 — обязательное условие для ведения деятельности, выставления счетов и налоговой отчётности. При регистрации VAT дополнительно подаётся форма T.D.1101.</p>
         </div>
         <div class="svc-card reveal">
           <span class="svc-num">06</span>
