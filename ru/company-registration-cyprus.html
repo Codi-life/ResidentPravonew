@@ -192,9 +192,13 @@
   .hero-actions { display:flex; flex-wrap:wrap; gap:1.2rem; align-items:center; }
   .micro { font-size:.85rem; color:rgba(255,255,255,.62); display:flex; align-items:center; gap:.5rem; }
   .micro svg { width:16px; height:16px; flex:none; }
-  .hero-chips { list-style:none; display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.6rem; }
-  .hero-chips li { font-size:.84rem; font-weight:500; color:rgba(255,255,255,.88); display:flex; align-items:center; gap:.4rem; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.13); border-radius:999px; padding:.3em 1em .3em .85em; letter-spacing:.01em; }
+  .hero-chips { list-style:none; display:flex; flex-wrap:wrap; gap:.45rem 1.4rem; margin-top:1.6rem; }
+  .hero-chips li { font-size:.84rem; font-weight:500; color:rgba(255,255,255,.88); display:flex; align-items:center; gap:.4rem; letter-spacing:.01em; }
   .hero-chips li::before { content:"✓"; color:var(--sky); font-weight:700; flex:none; font-size:.88em; line-height:1; align-self:center; }
+  .hero-price { display:inline-flex; align-items:center; gap:.45rem; background:rgba(255,255,255,.07); border:1px solid rgba(34,197,94,.22); border-radius:999px; padding:.42em 1.1em .42em .9em; margin-bottom:1.1rem; align-self:flex-start; font-size:.88rem; font-weight:500; color:rgba(255,255,255,.88); letter-spacing:.01em; }
+  .hero-price-badge { color:#4ade80; font-weight:700; flex:none; font-size:.88em; line-height:1; align-self:center; }
+  .hero-price-sep { color:rgba(255,255,255,.35); flex:none; padding:0 .1rem; }
+  .hero-price-amount { color:#4ade80; font-weight:700; font-size:1.1em; letter-spacing:-.01em; }
   /* Service Hero — expert photo + caption + proof */
   .ph-expert { position:absolute; right:0; bottom:0; top:0; width:40%; max-width:580px; z-index:1; pointer-events:none; overflow:hidden; }
   .ph-expert img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; -webkit-mask-image:linear-gradient(to right,transparent 0%,black 32%); mask-image:linear-gradient(to right,transparent 0%,black 32%); }
@@ -238,6 +242,27 @@
   .wcy-card .wcy-icon svg { width:24px; height:24px; }
   .wcy-card h3 { font-size:1.08rem; color:var(--navy); margin-bottom:.5rem; }
   .wcy-card p { color:var(--navy-70); font-size:.92rem; }
+  /* ── Jurisdiction comparison table ── */
+  .jur-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .jur-table { width:100%; border-collapse:collapse; font-size:.93rem; border-radius:var(--radius); overflow:hidden; min-width:540px; }
+  .jur-table thead th { background:var(--navy); color:#fff; padding:1rem 1.2rem; text-align:left; font-size:.81rem; font-weight:600; letter-spacing:.04em; }
+  .jur-table thead th:first-child { min-width:138px; }
+  .jur-col-cy-head { background:var(--blue) !important; }
+  .jur-table tbody tr:nth-child(even) td { background:var(--mist); }
+  .jur-table tbody td { padding:.9rem 1.2rem; border-bottom:1px solid var(--line); color:var(--ink); vertical-align:top; }
+  .jur-table tbody td:first-child { font-weight:600; color:var(--navy); }
+  .jur-table tbody tr:last-child td { border-bottom:none; }
+  .jur-col-cy { background:rgba(29,78,216,.04) !important; }
+  .jur-table tbody tr:nth-child(even) td.jur-col-cy { background:rgba(29,78,216,.07) !important; }
+  .jur-good { color:#059669; font-weight:600; }
+  .jur-low { color:#B45309; font-weight:500; }
+  .jur-badge-cy { display:inline-flex; align-items:center; font-size:.6rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; background:rgba(255,255,255,.18); color:#fff; border-radius:999px; padding:.15em .55em; vertical-align:middle; margin-left:.3rem; }
+  .jur-sub { display:block; font-size:.79rem; color:var(--navy-55); line-height:1.4; margin-top:.22rem; }
+  .jur-conclusion { margin-top:1.25rem; background:#fff; border:1px solid #E5E7EB; border-radius:var(--radius); padding:clamp(1.4rem,3vw,2rem) clamp(1.4rem,3vw,2.5rem); box-shadow:0 2px 16px rgba(10,37,64,.06); }
+  .jur-conclusion-inner { display:flex; align-items:center; justify-content:space-between; gap:2rem; }
+  .jur-conclusion-title { font-size:clamp(1.05rem,2vw,1.2rem); font-weight:700; color:var(--navy); margin-bottom:.5rem; line-height:1.25; letter-spacing:-.01em; }
+  .jur-conclusion p { font-size:.9rem; color:#374151; max-width:52ch; line-height:1.55; margin-bottom:0; }
+  .jur-note { display:block; font-size:.76rem; color:var(--navy-55); margin-top:.6rem; }
   .why-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:rgba(10,37,64,.13); border:1px solid rgba(10,37,64,.15); border-radius:18px; overflow:hidden; box-shadow:0 24px 50px -38px rgba(10,37,64,.25); }
   .why-item { background:#fff; padding:var(--card-pad); position:relative; transition:background .35s; min-width:0; overflow:hidden; }
   .why-item:hover { background:#fcfdff; }
@@ -459,7 +484,8 @@
     .page-hero-inner { display:flex; flex-direction:column; }
     .page-hero-inner .ph-proof { order:1; margin-top:0; padding-bottom:.85rem; }
     .page-hero-inner .hero-chips { order:2; }
-    .page-hero-inner .hero-actions { order:3; margin-top:1.1rem; }
+    .page-hero-inner .hero-price { order:3; margin-bottom:.8rem; }
+    .page-hero-inner .hero-actions { order:4; margin-top:0; }
     /* Hero chips → plain checklist (no pill capsule) */
     .hero-chips { flex-direction:column; flex-wrap:nowrap; gap:0; }
     .hero-chips li { background:none; border:none; border-radius:0; padding:.3em 0; }
@@ -478,6 +504,8 @@
     .seo-article, .seo-callout, .timeline-callout-body, .mistake-desc { overflow-wrap:break-word; word-break:break-word; }
     .bank-row-desc { overflow-wrap:break-word; word-break:break-word; }
     .split-content h2, .split-content p { overflow-wrap:break-word; }
+    /* Jurisdiction table — tablet */
+    .jur-table th, .jur-table td { padding:.75rem .8rem; }
   }
   @media (max-width:480px) {
     .footer-grid { grid-template-columns:1fr; }
@@ -504,6 +532,11 @@
     .btt { bottom:1.25rem; right:1.25rem; width:44px; height:44px; }
     .split-visual { padding:1.25rem; }
     .timeline-fees, .timeline-callout { flex-direction:column; gap:.5rem; }
+    /* Jurisdiction table — small mobile */
+    .jur-table th, .jur-table td { padding:.65rem .7rem; font-size:.83rem; }
+    .jur-sub { font-size:.73rem; }
+    .jur-conclusion-inner { flex-direction:column; align-items:flex-start; }
+    .jur-conclusion-inner .btn-wa { width:100%; justify-content:center; }
   }
   @media (max-width:375px) {
     :root { --gutter:1rem; }
@@ -622,12 +655,20 @@
       <div class="page-hero-inner reveal">
         <span class="eyebrow" style="color:var(--sky);--eyebrow-color:var(--sky)">БИЗНЕС НА КИПРЕ • 2026</span>
         <h1>Регистрация компании<br>на <em>Кипре</em></h1>
-        <p>Полное сопровождение регистрации кипрской компании: структура, документы, налоговый номер, VAT-номер, банковский счёт и дальнейшая поддержка бизнеса.</p>
+        <p>Полное сопровождение регистрации кипрской компании (Ltd): структура, документы, налоговый номер, VAT-номер, банковский счёт и дальнейшая поддержка бизнеса.</p>
+        <div class="hero-price">
+          <span class="hero-price-badge" aria-hidden="true">✓</span>
+          <span class="hero-price-label">Регистрация компании</span>
+          <span class="hero-price-sep" aria-hidden="true">·</span>
+          <span class="hero-price-amount">от €1 300</span>
+        </div>
         <div class="hero-actions">
+          <!-- TODO: заменить href="#" на реальный wa.me-номер для fallback без JS, например href="https://wa.me/35799123456" -->
           <a href="#" class="btn btn-wa" data-wa>
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
             Получить консультацию
           </a>
+          <!-- "Оставить заявку" → якорь к секции #contact (форма внизу страницы) -->
           <a href="#contact" class="btn btn-ghost light">Оставить заявку</a>
           <span class="micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Ответим в течение 15 минут</span>
         </div>
@@ -662,7 +703,7 @@
         <div class="wcy-card reveal">
           <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
           <h3>Корпоративный налог 12,5%</h3>
-          <p>Одна из самых конкурентных ставок корпоративного налога в ЕС. Для IT и технологических компаний доступны дополнительные преимущества, включая режим IP Box и эффективное налогообложение доходов от интеллектуальной собственности.</p>
+          <p>Одна из самых конкурентных ставок корпоративного налога в ЕС. Для IT и технологических компаний доступны дополнительные преимущества, включая режим IP Box, льготу NID (Notional Interest Deduction) и эффективное налогообложение доходов от интеллектуальной собственности.</p>
         </div>
         <div class="wcy-card reveal">
           <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
@@ -685,9 +726,77 @@
           <p>Правовая система Кипра основана на английском праве (Common Law), что делает её понятной и предсказуемой для международного бизнеса, инвесторов и иностранных предпринимателей.</p>
         </div>
         <div class="wcy-card reveal">
-          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <h3>IT, SaaS, e-commerce и холдинги</h3>
-          <p>Кипр часто выбирают технологические компании, онлайн-бизнес, маркетинговые агентства, инвесторы и холдинговые структуры.</p>
+          <div class="wcy-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M1 21h22"/></svg></div>
+          <h3>Удалённая регистрация без визита на Кипр</h3>
+          <p>Минимальный уставный капитал — от €1, полностью дистанционная регистрация через нотариальную доверенность. Личное присутствие не требуется — процесс проходит без визита на остров.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JURISDICTION COMPARE -->
+  <section class="section-pad" id="jurisdiction-compare">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Сравнение юрисдикций</span>
+        <h2>Кипр, Мальта или ОАЭ: что выбрать для международного бизнеса</h2>
+        <p>Сравните ключевые параметры — и выберите юрисдикцию, которая подходит вашей структуре.</p>
+      </div>
+      <div class="jur-table-wrap reveal">
+        <table class="jur-table">
+          <thead>
+            <tr>
+              <th>Критерий</th>
+              <th class="jur-col-cy-head">Кипр <span class="jur-badge-cy">Наш выбор</span></th>
+              <th>Мальта</th>
+              <th>ОАЭ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Корпоративный налог</td>
+              <td class="jur-col-cy"><span class="jur-good">12,5%</span> / IP Box от 2,5%<span class="jur-sub">Для доходов от интеллектуальной собственности</span></td>
+              <td>~5% эффективная<span class="jur-sub">35% номинально; full imputation, возврат 6/7 акционеру</span></td>
+              <td>9% / <span class="jur-good">0%</span> для квалиф. free zone</td>
+            </tr>
+            <tr>
+              <td>Статус и репутация</td>
+              <td class="jur-col-cy"><span class="jur-good">✓ ЕС, не офшор</span><span class="jur-sub">Без ограничений для европейских контрагентов</span></td>
+              <td><span class="jur-good">✓ ЕС, не офшор</span><span class="jur-sub">Полноправный член ЕС</span></td>
+              <td><span class="jur-low">Не ЕС</span><span class="jur-sub">Доп. проверки при открытии счетов в европейских банках</span></td>
+            </tr>
+            <tr>
+              <td>Банковский счёт</td>
+              <td class="jur-col-cy">Средняя сложность<span class="jur-sub">EMI + традиционные банки, SEPA</span></td>
+              <td>Средняя сложность<span class="jur-sub">Требования к субстанции выше</span></td>
+              <td><span class="jur-low">Часто сложнее</span><span class="jur-sub">Особенно для нерезидентов</span></td>
+            </tr>
+            <tr>
+              <td>ВНЖ через компанию</td>
+              <td class="jur-col-cy"><span class="jur-good">✓ Да</span><span class="jur-sub">Через директорство, без инвестиционного порога</span></td>
+              <td><span class="jur-good">✓ Да</span><span class="jur-sub">Требуются реальная субстанция и инвестиции</span></td>
+              <td><span class="jur-good">✓ Да</span><span class="jur-sub">Свободная зона, привязка к конкретному эмирату</span></td>
+            </tr>
+            <tr>
+              <td>Налоговые соглашения</td>
+              <td class="jur-col-cy"><span class="jur-good">✓ 60+ соглашений</span><span class="jur-sub">Один из наиболее широких списков в ЕС</span></td>
+              <td><span class="jur-good">✓ 80+ соглашений</span><span class="jur-sub">Широкая сеть, но выше требования к субстанции</span></td>
+              <td><span class="jur-low">Ограниченный список</span><span class="jur-sub">Free zone-компании имеют ограниченный доступ к льготам</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="jur-conclusion reveal">
+        <div class="jur-conclusion-inner">
+          <div>
+            <p class="jur-conclusion-title">Не уверены, какая юрисдикция подходит вашему бизнесу?</p>
+            <p>Каждая ситуация индивидуальна. Мы поможем выбрать оптимальную юрисдикцию с учётом вашей структуры, налоговых целей и планов развития.</p>
+            <span class="jur-note">Данные актуальны на 2026 год. Ставки и условия могут меняться — рекомендуем индивидуальную консультацию.</span>
+          </div>
+          <a href="#" class="btn btn-wa" data-wa style="flex-shrink:0;">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+            Получить консультацию
+          </a>
         </div>
       </div>
     </div>
@@ -993,12 +1102,12 @@
         <!-- Блок эксперта -->
         <div class="cases-v2-expert">
           <div class="cases-v2-img">
-            <img src="/images/svetlana-office.jpg" alt="Светлана — эксперт по регистрации компаний на Кипре" loading="lazy">
+            <img src="/images/team-artur-mardanyan.jpg" alt="Артур Марданян — специалист по регистрации компаний на Кипре" loading="lazy">
           </div>
           <div class="cases-v2-info">
-            <p class="cases-v2-name">Светлана</p>
-            <p class="cases-v2-role">Эксперт по регистрации компаний и сопровождению бизнеса на Кипре</p>
-            <p class="cases-v2-bio">Более 10 лет опыта работы с предпринимателями, инвесторами и международными компаниями.</p>
+            <p class="cases-v2-name">Артур Марданян</p>
+            <p class="cases-v2-role">Специалист по регистрации компаний на Кипре</p>
+            <p class="cases-v2-bio">Более 10 лет опыта работы с предпринимателями, инвесторами и международными компаниями. Лично сопровождает регистрацию компаний с 2016 года.</p>
           </div>
           <a href="#" class="btn btn-wa" data-wa>
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
