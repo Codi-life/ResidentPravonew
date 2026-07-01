@@ -195,6 +195,16 @@
   .hero-chips { list-style:none; display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.6rem; }
   .hero-chips li { font-size:.84rem; font-weight:500; color:rgba(255,255,255,.88); display:flex; align-items:center; gap:.4rem; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.13); border-radius:999px; padding:.3em 1em .3em .85em; letter-spacing:.01em; }
   .hero-chips li::before { content:"✓"; color:var(--sky); font-weight:700; flex:none; font-size:.88em; line-height:1; align-self:center; }
+  /* Service Hero — expert photo + caption + proof */
+  .ph-expert { position:absolute; right:0; bottom:0; top:0; width:40%; max-width:580px; z-index:1; pointer-events:none; overflow:hidden; }
+  .ph-expert img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; -webkit-mask-image:linear-gradient(to right,transparent 0%,black 32%); mask-image:linear-gradient(to right,transparent 0%,black 32%); }
+  .ph-caption { position:absolute; right:0; bottom:16%; width:40%; max-width:640px; z-index:3; padding-left:1.5rem; pointer-events:none; }
+  .ph-caption-inner { display:inline-flex; flex-direction:column; gap:.16rem; background:rgba(8,22,44,.46); backdrop-filter:blur(12px) saturate(160%); -webkit-backdrop-filter:blur(12px) saturate(160%); border:1px solid rgba(255,255,255,.10); border-radius:7px; padding:.45rem .72rem; box-shadow:0 8px 28px rgba(0,0,0,.28); }
+  .phc-name { font-size:.80rem; font-weight:600; color:#fff; line-height:1.2; text-decoration:none; }
+  .phc-role { font-size:.48rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,.55); }
+  .ph-proof { display:flex; flex-wrap:wrap; align-items:center; gap:.4rem .55rem; margin-top:1.1rem; font-size:.82rem; color:rgba(255,255,255,.80); }
+  .ph-proof .proof-star { color:#FFC107; }
+  .ph-proof .proof-sep { color:rgba(255,255,255,.25); }
   .split-section { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:clamp(2.5rem,5vw,5rem); align-items:start; }
   .split-section.reverse { direction:rtl; }
   .split-section.reverse > * { direction:ltr; }
@@ -428,6 +438,8 @@
     .seo-nav.toc-open .seo-nav-chevron { transform:rotate(180deg); }
   }
   @media (max-width:768px) {
+    .ph-expert { display:none; }
+    .ph-caption { display:none; }
     .header-cta .btn-wa { display:none; }
     .faq-aside { display:none; }
     .services-grid { grid-template-columns:1fr; }
@@ -534,8 +546,8 @@
       </div>
     </a>
     <nav class="menu">
-      <a href="/#why">Почему мы</a>
       <a href="/#services">Услуги</a>
+      <a href="/#why">Почему мы</a>
       <a href="/#process">Процесс</a>
       <a href="/#cases">Кейсы</a>
       <a href="/ru/blog">Блог</a>
@@ -560,8 +572,8 @@
   <button class="close-menu-btn" id="menuClose" aria-label="Закрыть меню">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/></svg>
   </button>
-  <a href="/#why">Почему мы</a>
   <a href="/#services">Услуги</a>
+  <a href="/#why">Почему мы</a>
   <a href="/#process">Процесс</a>
   <a href="/#cases">Кейсы</a>
   <a href="/ru/blog">Блог</a>
@@ -578,6 +590,15 @@
 
   <!-- HERO -->
   <section class="page-hero">
+    <div class="ph-expert" aria-hidden="true">
+      <img src="/images/team-artur-mardanyan.jpg" alt="" width="580" height="870" />
+    </div>
+    <div class="ph-caption">
+      <div class="ph-caption-inner">
+        <a href="/ru/experts/artur-mardanyan" class="phc-name">Артур Марданян</a>
+        <span class="phc-role">Специалист по регистрации компаний</span>
+      </div>
+    </div>
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Навигация">
         <a href="/">Главная</a>
@@ -596,6 +617,13 @@
             Получить консультацию
           </a>
           <span class="micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Ответим в течение 15 минут</span>
+        </div>
+        <div class="ph-proof">
+          <span><span class="proof-star">★</span> Google&nbsp;4.9 <span style="opacity:.78">(100+ отзывов)</span></span>
+          <span class="proof-sep">·</span>
+          <span>350+ кейсов</span>
+          <span class="proof-sep">·</span>
+          <span>с 2016 года</span>
         </div>
         <ul class="hero-chips" aria-label="Ключевые преимущества">
           <li>Корпоративный налог 12,5%</li>

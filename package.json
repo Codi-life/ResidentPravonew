@@ -6,7 +6,7 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "node scripts/build-blog-preview.js"
+    "build": "node scripts/sync-nav.js && node scripts/build-blog-preview.js"
   },
   "dependencies": {
     "nodemailer": "^6.9.9"
