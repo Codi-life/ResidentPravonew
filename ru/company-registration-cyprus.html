@@ -581,6 +581,38 @@
     .faq-q { font-size:.95rem; gap:var(--s2); }
     .seo-cta-box { padding:1rem; }
   }
+  .modal { position: fixed; inset: 0; z-index: 9000; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+  .modal[hidden] { display: none; }
+  .modal-overlay { position: absolute; inset: 0; background: rgba(6,18,34,0.70); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); cursor: pointer; }
+  .modal-wrap { position: relative; z-index: 1; background: #fff; border-radius: 18px; max-width: 500px; width: 100%; padding: 2rem 2.25rem 2.25rem; max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,0.35), 0 4px 16px rgba(0,0,0,0.12); }
+  .modal-close { position: absolute; top: 1rem; right: 1rem; width: 34px; height: 34px; border: none; background: rgba(10,37,64,0.07); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--navy); transition: background 0.15s; flex: none; }
+  .modal-close:hover { background: rgba(10,37,64,0.14); }
+  .modal-title { font-size: 1.3rem; font-weight: 700; color: var(--navy); margin: 0 2rem 1.5rem 0; line-height: 1.2; }
+  .form-grid { display: flex; flex-direction: column; gap: 0.95rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.3rem; }
+  .form-label { font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+  .form-label .req { color: var(--blue); margin-left: 0.1em; }
+  .form-control { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid #d1d5db; border-radius: 9px; font-size: 0.92rem; font-family: inherit; color: var(--navy); background: #fff; transition: border-color 0.15s, box-shadow 0.15s; appearance: none; -webkit-appearance: none; }
+  .form-control:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(29,78,216,0.11); }
+  .form-control.invalid { border-color: #dc2626; }
+  .form-control.invalid:focus { box-shadow: 0 0 0 3px rgba(220,38,38,0.10); }
+  textarea.form-control { resize: vertical; min-height: 78px; }
+  .form-err { font-size: 0.74rem; color: #dc2626; display: none; }
+  .form-err.show { display: block; }
+  .form-honeypot { position: absolute; left: -9999px; top: -9999px; opacity: 0; height: 0; overflow: hidden; }
+  .form-submit-row { margin-top: 0.4rem; }
+  .form-submit-row .btn { width: 100%; justify-content: center; }
+  .form-note { font-size: 0.71rem; color: rgba(10,37,64,0.42); text-align: center; margin-top: 0.6rem; }
+  .form-note a { color: var(--blue); text-decoration: none; }
+  .modal-success { display: none; text-align: center; padding: 1rem 0 0.5rem; }
+  .modal-success.show { display: block; }
+  .modal-success-icon { font-size: 2.8rem; line-height: 1; margin-bottom: 0.75rem; }
+  .modal-success h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+  .modal-success p { color: rgba(10,37,64,0.60); font-size: 0.88rem; line-height: 1.6; }
+  @media (max-width: 540px) {
+    .modal { align-items: flex-end; padding: 0; }
+    .modal-wrap { border-radius: 18px 18px 0 0; max-height: 92vh; padding: 1.5rem 1.25rem 2rem; }
+  }
 </style>
 <link rel="stylesheet" href="/css/header.css" />
   <link rel="stylesheet" href="/footer.css">
@@ -674,8 +706,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
             Получить консультацию
           </a>
-          <!-- "Оставить заявку" → якорь к секции #contact (форма внизу страницы) -->
-          <a href="#contact" class="btn btn-ghost light">Оставить заявку</a>
+          <a href="#" class="btn btn-ghost light" data-modal="contact">Оставить заявку</a>
           <span class="micro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Ответим в течение 15 минут</span>
         </div>
         <div class="ph-proof">
@@ -1734,5 +1765,193 @@
   }());
 </script>
 <script src="/js/lang-switch.js"></script>
+
+<div id="modal-contact" class="modal" role="dialog" aria-modal="true" aria-labelledby="mct-title" hidden>
+  <div class="modal-overlay" id="mct-overlay"></div>
+  <div class="modal-wrap">
+    <button class="modal-close" id="mct-close" aria-label="Закрыть">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 3L3 13M3 3l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <div id="mct-form-wrap">
+      <h2 class="modal-title" id="mct-title">Бесплатная консультация</h2>
+      <form id="mct-form" novalidate autocomplete="on">
+        <div class="form-honeypot" aria-hidden="true">
+          <label>Не заполняйте это поле<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label" for="mct-name">Имя <span class="req" aria-hidden="true">*</span></label>
+            <input class="form-control" type="text" id="mct-name" name="name" autocomplete="given-name" placeholder="Как к вам обращаться?" required>
+            <span class="form-err" id="mct-err-name" role="alert">Введите ваше имя</span>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="mct-phone">Телефон / WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <input class="form-control" type="tel" id="mct-phone" name="phone" autocomplete="tel" placeholder="+7 999 123-45-67" required>
+            <span class="form-err" id="mct-err-phone" role="alert">Введите телефон или WhatsApp</span>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="mct-email">Email</label>
+            <input class="form-control" type="email" id="mct-email" name="email" autocomplete="email" placeholder="your@email.com">
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="mct-service">Интересующая услуга <span class="req" aria-hidden="true">*</span></label>
+            <select class="form-control" id="mct-service" name="service" required>
+              <option value="">Выберите услугу...</option>
+              <option value="Регистрация компании" selected>Регистрация компании</option>
+              <option value="ВНЖ">ВНЖ</option>
+              <option value="ПМЖ">ПМЖ</option>
+              <option value="Банковский счёт">Банковский счёт</option>
+              <option value="Бухгалтерия">Бухгалтерия</option>
+              <option value="Другое">Другое</option>
+            </select>
+            <span class="form-err" id="mct-err-service" role="alert">Выберите интересующую услугу</span>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="mct-comment">Комментарий</label>
+            <textarea class="form-control" id="mct-comment" name="comment" rows="3" placeholder="Опишите вашу ситуацию или задайте вопрос..."></textarea>
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-wa" id="mct-submit">Отправить заявку</button>
+          </div>
+          <p class="form-note">
+            Нажимая кнопку, вы соглашаетесь с <a href="/ru/privacy-policy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>
+          </p>
+        </div>
+      </form>
+    </div>
+    <div id="mct-success" class="modal-success">
+      <div class="modal-success-icon">✅</div>
+      <h3>Заявка отправлена!</h3>
+      <p>Спасибо! Мы получили вашу заявку.<br>Наш специалист свяжется с вами<br>в ближайшее рабочее время.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var FORM_ENDPOINT = '/api/contact';
+  var MIN_MS = 3000;
+  var modal    = document.getElementById('modal-contact');
+  var overlay  = document.getElementById('mct-overlay');
+  var closeBtn = document.getElementById('mct-close');
+  var form     = document.getElementById('mct-form');
+  var submitBtn= document.getElementById('mct-submit');
+  var formWrap = document.getElementById('mct-form-wrap');
+  var successEl= document.getElementById('mct-success');
+  var openTime = 0;
+  var busy     = false;
+  function openModal() {
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    openTime = Date.now();
+    setTimeout(function () {
+      var first = form.querySelector('input:not([tabindex="-1"])');
+      if (first) first.focus();
+    }, 60);
+  }
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-modal="contact"]').forEach(function (el) {
+    el.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
+  });
+  overlay.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+  function validate(id, errId) {
+    var el  = document.getElementById(id);
+    var err = document.getElementById(errId);
+    if (!el.value.trim()) {
+      el.classList.add('invalid');
+      if (err) err.classList.add('show');
+      return false;
+    }
+    el.classList.remove('invalid');
+    if (err) err.classList.remove('show');
+    return true;
+  }
+  ['mct-name','mct-phone','mct-service'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener('input', function () {
+      this.classList.remove('invalid');
+      var err = document.getElementById('mct-err-' + id.replace('mct-',''));
+      if (err) err.classList.remove('show');
+    });
+    el.addEventListener('change', function () {
+      this.classList.remove('invalid');
+      var err = document.getElementById('mct-err-' + id.replace('mct-',''));
+      if (err) err.classList.remove('show');
+    });
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (busy) return;
+    var hp = form.querySelector('[name="_gotcha"]');
+    if (hp && hp.value) { fakeSuccess(); return; }
+    if (Date.now() - openTime < MIN_MS) { fakeSuccess(); return; }
+    var ok = validate('mct-name','mct-err-name')
+           & validate('mct-phone','mct-err-phone')
+           & validate('mct-service','mct-err-service');
+    if (!ok) return;
+    busy = true;
+    submitBtn.disabled = true;
+    var origLabel = submitBtn.textContent;
+    submitBtn.textContent = 'Отправляем…';
+    var payload = {
+      name:    document.getElementById('mct-name').value.trim(),
+      phone:   document.getElementById('mct-phone').value.trim(),
+      email:   document.getElementById('mct-email').value.trim(),
+      service: document.getElementById('mct-service').value,
+      comment: document.getElementById('mct-comment').value.trim(),
+      lang:    'RU',
+      page:    window.location.href,
+      sent_at: new Date().toLocaleString('ru-RU', { timeZone: 'Asia/Nicosia' }),
+      _gotcha: hp ? hp.value : ''
+    };
+    fetch(FORM_ENDPOINT, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body:    JSON.stringify(payload)
+    })
+    .then(function (r) {
+      if (r.ok) { showSuccess(); }
+      else { throw new Error('server'); }
+    })
+    .catch(function () {
+      busy = false;
+      submitBtn.disabled = false;
+      submitBtn.textContent = origLabel;
+      alert('Ошибка отправки. Пожалуйста, напишите нам в WhatsApp или на residentpravo@gmail.com');
+    });
+  });
+  function showSuccess() {
+    formWrap.style.display = 'none';
+    successEl.classList.add('show');
+  }
+  function fakeSuccess() { showSuccess(); }
+  closeBtn.addEventListener('click', resetAfterClose);
+  overlay.addEventListener('click', resetAfterClose);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') resetAfterClose();
+  });
+  function resetAfterClose() {
+    setTimeout(function () {
+      form.reset();
+      formWrap.style.display = '';
+      successEl.classList.remove('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Отправить заявку';
+      busy = false;
+      form.querySelectorAll('.invalid').forEach(function (el) { el.classList.remove('invalid'); });
+      form.querySelectorAll('.form-err.show').forEach(function (el) { el.classList.remove('show'); });
+    }, 300);
+  }
+}());
+</script>
 </body>
 </html>
