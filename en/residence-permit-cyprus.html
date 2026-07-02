@@ -409,7 +409,8 @@
   <link rel="stylesheet" href="/footer.css" media="print" onload="this.onload=null;this.media='all'">
   <noscript><link rel="stylesheet" href="/footer.css"></noscript>
 <!-- Contentsquare -->
-<script src="https://t.contentsquare.net/uxa/dfbca00b711ef.js" defer></script>
+<script>(function(){function l(){var s=document.createElement('script');s.src='https://t.contentsquare.net/uxa/dfbca00b711ef.js';document.head.appendChild(s);}
+'requestIdleCallback'in window?requestIdleCallback(l,{timeout:5000}):setTimeout(l,3000);})();</script>
 </head>
 <body>
 
@@ -1155,7 +1156,7 @@
   const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } }); }, { threshold: 0.12 });
   revealEls.forEach(el => obs.observe(el));
 </script>
-<script src="/js/lang-switch.js"></script>
+<script src="/js/lang-switch.js" defer></script>
 
 <button class="btt" id="btt" aria-label="Back to top">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
