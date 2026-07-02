@@ -390,8 +390,8 @@
   .seo-article h3 { font-size:1.2rem; color:var(--navy); margin:1.8rem 0 .7rem; }
   .seo-article p { color:var(--navy-70); font-size:.98rem; margin-bottom:1.1rem; line-height:1.72; text-wrap:pretty; }
   .seo-article ul { list-style:none; display:flex; flex-direction:column; gap:.55rem; margin:1rem 0 1.4rem; }
-  .seo-article ul li { display:flex; align-items:flex-start; gap:.65rem; font-size:.95rem; color:var(--navy-70); line-height:1.55; }
-  .seo-article ul li::before { content:"—"; color:var(--blue); font-weight:700; flex:none; margin-top:.05em; }
+  .seo-article ul li { position:relative; padding-left:1.3rem; font-size:.95rem; color:var(--navy-70); line-height:1.55; }
+  .seo-article ul li::before { content:"—"; color:var(--blue); font-weight:700; position:absolute; left:0; top:.05em; }
   .seo-article .seo-callout { background:var(--mist); border:1px solid var(--line); border-radius:12px; padding:1.1rem 1.3rem; margin:1.4rem 0; font-size:.95rem; color:var(--navy); line-height:1.6; }
   .seo-article .seo-callout strong { color:var(--blue); }
   .seo-article h2[id] { scroll-margin-top:88px; }
@@ -416,7 +416,7 @@
   .timeline-card-num { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--blue); margin-bottom:.1rem; }
   .timeline-card-label { font-size:.88rem; font-weight:700; color:var(--navy); line-height:1.35; }
   .timeline-card-time { font-size:.95rem; font-weight:700; color:var(--blue); line-height:1.35; white-space:nowrap; }
-  .seo-article li strong, .seo-article p strong { white-space:nowrap; }
+  .seo-article li strong, .seo-article p strong { white-space:normal; }
   .timeline-card-note { font-size:.8rem; color:var(--navy-70); line-height:1.45; margin-top:.1rem; }
   .timeline-fees { background:var(--mist); border:1px solid var(--line); border-radius:12px; padding:1rem 1.15rem; margin:.25rem 0 1.25rem; display:flex; gap:.75rem; align-items:flex-start; }
   .timeline-fees-icon { flex:none; width:32px; height:32px; background:rgba(29,78,216,.08); border-radius:8px; display:flex; align-items:center; justify-content:center; color:var(--blue); }
@@ -509,7 +509,6 @@
     .page-hero .hero-actions .micro { align-self:center; }
     /* Prevent content overflow on mobile */
     .timeline-card-time { white-space:normal; }
-    .seo-article li strong, .seo-article p strong { white-space:normal; }
     .btn { max-width:100%; }
     .ts-step h3, .ts-step p, .wcy-card h3, .wcy-card p, .why-item h3, .why-item p, .svc-card h3, .svc-card p { overflow-wrap:break-word; word-break:break-word; }
     .case-c-val, .faq-a-inner { overflow-wrap:break-word; word-break:break-word; }
