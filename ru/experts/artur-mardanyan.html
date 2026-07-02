@@ -586,7 +586,8 @@
   @media (max-width:320px) { :root { --gutter:0.875rem; } .lang-switch { display:none; } .brand-tag { font-size:.52rem; letter-spacing:.04em; } .mobile-menu { padding-right:1rem; padding-left:1rem; } }
 </style>
 
-  <link rel="stylesheet" href="/footer.css">
+  <link rel="stylesheet" href="/footer.css" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link rel="stylesheet" href="/footer.css"></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

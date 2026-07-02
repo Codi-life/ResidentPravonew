@@ -28,7 +28,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" /></noscript>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HCRR0HFHLC"></script>
@@ -396,8 +397,10 @@
     .seo-cta-box { padding:1rem; }
   }
 </style>
-<link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/footer.css">
+<link rel="preload" href="/css/header.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="/css/header.css" /></noscript>
+  <link rel="stylesheet" href="/footer.css" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link rel="stylesheet" href="/footer.css"></noscript>
 <!-- Contentsquare -->
 <script src="https://t.contentsquare.net/uxa/dfbca00b711ef.js" defer></script>
 </head>

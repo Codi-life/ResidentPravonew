@@ -27,7 +27,8 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" /></noscript>
 <style>
   :root{--navy:#0A2540;--blue:#1D4ED8;--sky:#38BDF8;--ink:#111827;--mist:#F5F7FA;--white:#FFFFFF;--navy-70:rgba(10,37,64,0.70);--navy-55:rgba(10,37,64,0.55);--navy-12:rgba(10,37,64,0.12);--navy-06:rgba(10,37,64,0.06);--line:rgba(10,37,64,0.10);--wa:#25D366;--maxw:1400px;--gutter:clamp(1.25rem,5vw,5rem);}
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -123,8 +124,10 @@
   @media(max-width:375px){:root{--gutter:1rem;}.brand-tag{display:none;}.brand-name{font-size:1.2rem;}.mobile-menu a{font-size:1.2rem;}.footer-copy-br{display:inline;}footer{padding-block:2.5rem 2rem;}}
   @media(max-width:320px){:root{--gutter:0.875rem;}.brand-tag{display:none;}.brand-name{font-size:1.1rem;}.mobile-menu a{font-size:1.1rem;}.mobile-menu{padding:2rem 1rem;}.legal-hero h1{font-size:1.55rem;}.btn-wa{font-size:.82rem;padding:.8rem 1rem;}}
 </style>
-<link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/footer.css">
+<link rel="preload" href="/css/header.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="/css/header.css" /></noscript>
+  <link rel="stylesheet" href="/footer.css" media="print" onload="this.onload=null;this.media='all'">
+  <noscript><link rel="stylesheet" href="/footer.css"></noscript>
 <!-- Contentsquare -->
 <script src="https://t.contentsquare.net/uxa/dfbca00b711ef.js" defer></script>
 </head>
