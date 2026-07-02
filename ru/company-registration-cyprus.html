@@ -35,6 +35,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/fonts/montserrat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/images/team-artur-mardanyan.webp" as="image" type="image/webp" fetchpriority="high">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -706,7 +707,10 @@
   <!-- HERO -->
   <section class="page-hero">
     <div class="ph-expert" aria-hidden="true">
-      <img src="/images/team-artur-mardanyan.jpg" alt="" width="580" height="870" />
+      <picture>
+        <source srcset="/images/team-artur-mardanyan.webp" type="image/webp">
+        <img src="/images/team-artur-mardanyan-opt.jpg" alt="Артур Марданян, эксперт по регистрации компаний на Кипре — ResidentPravo" width="607" height="910" fetchpriority="high">
+      </picture>
     </div>
     <div class="ph-caption">
       <div class="ph-caption-inner">
@@ -1247,7 +1251,10 @@
         <!-- Блок эксперта -->
         <div class="cases-v2-expert">
           <div class="cases-v2-img">
-            <img src="/images/team-artur-mardanyan.jpg" alt="Артур Марданян — специалист по регистрации компаний на Кипре" loading="lazy">
+            <picture>
+              <source srcset="/images/team-artur-mardanyan.webp" type="image/webp">
+              <img src="/images/team-artur-mardanyan-opt.jpg" alt="Артур Марданян — специалист по регистрации компаний на Кипре" loading="lazy">
+            </picture>
           </div>
           <div class="cases-v2-info">
             <p class="cases-v2-name">Артур Марданян</p>
