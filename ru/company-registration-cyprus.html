@@ -35,7 +35,7 @@
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/fonts/montserrat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/images/team-artur-mardanyan.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="/images/team-artur-mardanyan.webp" as="image" type="image/webp" fetchpriority="high" media="(min-width:769px)">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -194,7 +194,8 @@
   .btn-ghost:hover { border-color:var(--navy); transform:translateY(-2px); }
   .btn-ghost.light { color:#fff; border-color:rgba(255,255,255,.25); }
   .btn-ghost.light:hover { border-color:rgba(255,255,255,.7); }
-  .btn-wa { background:var(--wa); color:#fff; box-shadow:0 12px 30px -10px rgba(37,211,102,0.55); }
+  .btn-wa { background:var(--wa); color:var(--navy); box-shadow:0 12px 30px -10px rgba(37,211,102,0.55); }
+  .btn-wa svg { color:#fff; }
   .btn-wa:hover { transform:translateY(-2px); box-shadow:0 18px 38px -10px rgba(37,211,102,0.6); }
   .eyebrow { display:inline-flex; align-items:center; gap:.6rem; font-size:.78rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); flex-wrap:wrap; }
   .eyebrow::before { content:""; display:block; width:28px; height:2px; background:var(--blue); border-radius:2px; flex:none; }
@@ -760,7 +761,7 @@
     <div class="ph-expert" aria-hidden="true">
       <picture>
         <source srcset="/images/team-artur-mardanyan.webp" type="image/webp">
-        <img src="/images/team-artur-mardanyan-opt.jpg" alt="Артур Марданян, эксперт по регистрации компаний на Кипре — ResidentPravo" width="607" height="910" fetchpriority="high">
+        <img src="/images/team-artur-mardanyan-opt.jpg" alt="Артур Марданян, эксперт по регистрации компаний на Кипре — ResidentPravo" width="607" height="910" loading="lazy">
       </picture>
     </div>
     <div class="ph-caption">
@@ -1930,19 +1931,21 @@
       }
     });
   });
-  const revealEls = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  const obsEarly = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obsEarly.unobserve(e.target); } });
-  }, { threshold: 0.01 });
-  revealEls.forEach(el => {
-    if (el.classList.contains('seo-article') || el.classList.contains('seo-guide-head')) {
-      obsEarly.observe(el);
-    } else {
-      obs.observe(el);
-    }
+  requestAnimationFrame(function() {
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    const obsEarly = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obsEarly.unobserve(e.target); } });
+    }, { threshold: 0.01 });
+    revealEls.forEach(el => {
+      if (el.classList.contains('seo-article') || el.classList.contains('seo-guide-head')) {
+        obsEarly.observe(el);
+      } else {
+        obs.observe(el);
+      }
+    });
   });
   var btt = document.getElementById('btt');
   function tick() { btt.classList.toggle('visible', window.scrollY > 450); }
