@@ -86,6 +86,10 @@
       "destination": "/ru/company-registration-cyprus.html"
     },
     {
+      "source": "/ru/accounting-audit-cyprus",
+      "destination": "/ru/accounting-audit-cyprus.html"
+    },
+    {
       "source": "/en/company-registration-cyprus",
       "destination": "/en/company-registration-cyprus.html"
     },

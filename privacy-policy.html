@@ -48,7 +48,8 @@
   .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
   .btn{display:inline-flex;align-items:center;gap:0.65rem;font-family:inherit;font-weight:600;font-size:0.98rem;padding:1rem 1.6rem;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s,background 0.25s;white-space:nowrap;}
   .btn svg{width:19px;height:19px;flex:none;}
-  .btn-wa{background:var(--wa);color:#fff;box-shadow:0 12px 30px -10px rgba(37,211,102,0.55);}
+  .btn-wa{background:var(--wa);color:var(--navy);box-shadow:0 12px 30px -10px rgba(37,211,102,0.55);}
+  .btn-wa svg { color:#fff; }
   .btn-wa:hover{transform:translateY(-2px);}
 
   /* Header */
@@ -174,7 +175,18 @@
       </div>
     </a>
     <nav class="menu" aria-label="Main navigation">
-      <a href="/en/#services">Services</a>
+      <div class="svc-drop" id="svcDrop">
+  <button class="svc-drop-btn" id="svcBtn" aria-haspopup="true" aria-expanded="false" aria-controls="svcPanel">Services<svg class="svc-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button>
+  <div class="svc-panel" id="svcPanel" role="menu">
+    <a href="/en/company-registration-cyprus" role="menuitem">Company Registration</a>
+    <a href="/en/residence-permit-cyprus" role="menuitem">Residence Permit</a>
+    <div class="svc-div" role="separator"></div>
+    <a href="/en/#services" role="menuitem">Accounting &amp; Audit</a>
+    <a href="/en/#services" role="menuitem">Cyprus Citizenship</a>
+    <a href="/en/#services" role="menuitem">Bank Account Opening</a>
+    <a href="/en/#services" role="menuitem">Legal Support</a>
+  </div>
+</div>
       <a href="/en/#why">Why Us</a>
       <a href="/en/#process">Process</a>
       <a href="/en/#cases">Cases</a>
@@ -200,7 +212,17 @@
   <button class="close-menu-btn" id="menuClose" aria-label="Close menu">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/></svg>
   </button>
-  <a href="/en/#services">Services</a>
+  <div class="mm-svc-wrap">
+  <button class="mm-svc-btn" id="mmSvcBtn" aria-expanded="false" aria-controls="mmSvcList">Services<svg class="mm-svc-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button>
+  <div class="mm-svc-list" id="mmSvcList">
+    <a href="/en/company-registration-cyprus">Company Registration</a>
+    <a href="/en/residence-permit-cyprus">Residence Permit</a>
+    <a href="/en/#services">Accounting &amp; Audit</a>
+    <a href="/en/#services">Cyprus Citizenship</a>
+    <a href="/en/#services">Bank Account Opening</a>
+    <a href="/en/#services">Legal Support</a>
+  </div>
+</div>
   <a href="/en/#why">Why Us</a>
   <a href="/en/#process">Process</a>
   <a href="/en/#cases">Cases</a>
@@ -445,5 +467,6 @@
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
 </script>
 <script src="/js/lang-switch.js" defer></script>
+<script src="/js/nav-dropdown.js" defer></script>
 </body>
 </html>

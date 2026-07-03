@@ -153,6 +153,7 @@
   .header-cta { display:flex; justify-content:flex-end; align-items:center; gap:.9rem; }
   .header-cta .btn { padding:.58rem 1.05rem; font-size:.85rem; }
   .header-cta .btn-wa { background:var(--wa); box-shadow:0 4px 14px -6px rgba(37,211,102,.45); }
+  .btn-wa svg { color:#fff; }
   .header-cta .btn-wa svg { width:17px; height:17px; }
   .header-cta .btn-wa:hover { transform:translateY(-1px); box-shadow:0 7px 18px -7px rgba(37,211,102,0.5); }
   .burger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
@@ -176,11 +177,11 @@
   .btn svg { width:19px; height:19px; flex:none; }
   .btn-primary { background:var(--blue); color:#fff; box-shadow:0 4px 18px -8px rgba(29,78,216,.55); }
   .btn-primary:hover { transform:translateY(-2px); background:#1a45c4; }
-  .btn-wa { background:var(--wa); color:#fff; box-shadow:0 6px 18px -6px rgba(37,211,102,0.38); }
+  .btn-wa { background:var(--wa); color:var(--navy); box-shadow:0 6px 18px -6px rgba(37,211,102,0.38); }
   .btn-wa:hover { transform:translateY(-2px); box-shadow:0 10px 24px -8px rgba(37,211,102,0.45); }
   /* Prevent .article-body a from overriding button styles */
   .article-body .btn { text-decoration:none; color:inherit; }
-  .article-body .btn-wa { color:#fff; }
+  .article-body .btn-wa { color:var(--navy); }
   .article-body .btn svg { color:#fff; }
 
   /* ── Eyebrow ── */
@@ -512,7 +513,18 @@
       </div>
     </a>
     <nav class="menu">
-      <a href="/#services">Услуги</a>
+      <div class="svc-drop" id="svcDrop">
+  <button class="svc-drop-btn" id="svcBtn" aria-haspopup="true" aria-expanded="false" aria-controls="svcPanel">Услуги<svg class="svc-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button>
+  <div class="svc-panel" id="svcPanel" role="menu">
+    <a href="/ru/company-registration-cyprus" role="menuitem">Регистрация компаний</a>
+    <a href="/ru/residence-permit-cyprus" role="menuitem">ВНЖ и ПМЖ</a>
+    <a href="/ru/accounting-audit-cyprus" role="menuitem">Бухгалтерия и аудит</a>
+    <div class="svc-div" role="separator"></div>
+    <a href="/#services" role="menuitem">Гражданство Кипра</a>
+    <a href="/#services" role="menuitem">Открытие банковских счетов</a>
+    <a href="/#services" role="menuitem">Юридическое сопровождение</a>
+  </div>
+</div>
       <a href="/#why">Почему мы</a>
       <a href="/#process">Процесс</a>
       <a href="/#cases">Кейсы</a>
@@ -538,7 +550,17 @@
   <button class="close-menu-btn" id="menuClose" aria-label="Закрыть меню">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/></svg>
   </button>
-  <a href="/#services">Услуги</a>
+  <div class="mm-svc-wrap">
+  <button class="mm-svc-btn" id="mmSvcBtn" aria-expanded="false" aria-controls="mmSvcList">Услуги<svg class="mm-svc-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button>
+  <div class="mm-svc-list" id="mmSvcList">
+    <a href="/ru/company-registration-cyprus">Регистрация компаний</a>
+    <a href="/ru/residence-permit-cyprus">ВНЖ и ПМЖ</a>
+    <a href="/ru/accounting-audit-cyprus">Бухгалтерия и аудит</a>
+    <a href="/#services">Гражданство Кипра</a>
+    <a href="/#services">Открытие банковских счетов</a>
+    <a href="/#services">Юридическое сопровождение</a>
+  </div>
+</div>
   <a href="/#why">Почему мы</a>
   <a href="/#process">Процесс</a>
   <a href="/#cases">Кейсы</a>
@@ -1454,5 +1476,6 @@
   btt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
 <script src="/js/lang-switch.js" defer></script>
+<script src="/js/nav-dropdown.js" defer></script>
 </body>
 </html>
