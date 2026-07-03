@@ -65,6 +65,26 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "Offer",
+  "@id": "https://www.residentpravo.com/en/company-registration-cyprus#offer",
+  "itemOffered": { "@id": "https://www.residentpravo.com/en/company-registration-cyprus#service" },
+  "name": "Cyprus Company Registration",
+  "description": "Full-service Cyprus company formation: document preparation, registration with the Registrar of Companies, apostilled certificates, company stamp and 2+2 hours of consultations.",
+  "priceCurrency": "EUR",
+  "priceSpecification": {
+    "@type": "PriceSpecification",
+    "priceCurrency": "EUR",
+    "minPrice": 1300,
+    "valueAddedTaxIncluded": false
+  },
+  "seller": { "@id": "https://www.residentpravo.com/#organization" },
+  "url": "https://www.residentpravo.com/en/company-registration-cyprus#pricing"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.residentpravo.com/en/" },
@@ -639,16 +659,19 @@
   /* ── Pricing card ─────────────────────────────────────────────── */
   .price-card { background:var(--white); border-radius:20px; border:1px solid rgba(10,37,64,.09); box-shadow:0 4px 28px rgba(10,37,64,.07); padding:2.25rem 2.5rem; display:grid; grid-template-columns:1fr 1fr; gap:2rem 3rem; align-items:start; max-width:860px; margin:0 auto; }
   .price-card-left { display:flex; flex-direction:column; gap:1.25rem; }
-  .price-card-amount { font-size:clamp(2.4rem,5vw,3.2rem); font-weight:800; color:var(--navy); letter-spacing:-.03em; line-height:1; }
+  .price-card-amount { font-size:clamp(2.1rem,4vw,2.8rem); font-weight:800; color:var(--navy); letter-spacing:-.03em; line-height:1.15; white-space:nowrap; }
+  .price-from { display:block; font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--navy-55); margin-bottom:.3rem; white-space:normal; }
   .price-card-amount span { color:var(--blue); }
   .price-card-note { font-size:.88rem; color:var(--navy-55); line-height:1.5; border-top:1px solid var(--line); padding-top:.9rem; }
   .price-card-cta { margin-top:auto; }
-  .price-card-right { display:flex; flex-direction:column; gap:.55rem; }
+  .price-card-right { display:flex; flex-direction:column; gap:.55rem; border-left:1px solid var(--line); padding-left:2.5rem; }
   .price-card-right-label { font-size:.72rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--blue); margin-bottom:.3rem; }
   .price-card-right ul { list-style:none; display:flex; flex-direction:column; gap:.42rem; }
   .price-card-right ul li { font-size:.88rem; color:var(--navy-70); line-height:1.45; padding-left:1.2rem; position:relative; }
   .price-card-right ul li::before { content:"✓"; position:absolute; left:0; color:var(--blue); font-weight:700; font-size:.8rem; top:.07em; }
-  @media (max-width:720px) { .price-card { grid-template-columns:1fr; gap:1.5rem; padding:1.6rem 1.4rem; } }
+  @media (max-width:720px) { .price-card { grid-template-columns:1fr; gap:1.5rem; padding:1.6rem 1.4rem; } .price-card-right { border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:1.25rem; } }
+  .seo-article .price-card { grid-template-columns:1fr; gap:1.5rem; padding:1.6rem 1.75rem; margin:1.75rem 0; }
+  .seo-article .price-card-right { border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:1.25rem; }
 </style>
 <link rel="stylesheet" href="/footer.css" media="print" onload="this.onload=null;this.media='all'">
 <noscript><link rel="stylesheet" href="/footer.css"></noscript>
@@ -737,8 +760,7 @@
         <div class="hero-price">
           <span class="hero-price-badge" aria-hidden="true">✓</span>
           <span class="hero-price-label">Company registration</span>
-          <span class="hero-price-sep" aria-hidden="true">·</span>
-          <span class="hero-price-amount">from €1,300</span>
+          <span class="hero-price-amount">from €1,300 <span style="color:rgba(255,255,255,.65);font-weight:500;">+ VAT</span></span>
         </div>
         <div class="hero-actions">
           <!-- TODO: replace href="#" with real wa.me number for no-JS fallback, e.g. href="https://wa.me/35799123456" -->
@@ -1019,8 +1041,56 @@
     </div>
   </section>
 
+  <!-- PRICING CARD -->
+  <section class="section-pad" id="pricing" style="background:var(--mist);">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Service pricing</span>
+        <h2>Cyprus company registration cost</h2>
+        <p>How much does it cost to open a company in Cyprus — below is what's included in the price and what determines the final fee.</p>
+      </div>
+      <div class="price-card reveal">
+
+        <div class="price-card-left">
+          <div>
+            <div class="price-card-amount"><span class="price-from">from</span><span>€1&nbsp;300</span>&nbsp;+&nbsp;VAT</div>
+            <p class="price-card-note">Exact cost for your structure calculated individually during consultation</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.6rem;">
+            <a href="#" class="btn btn-wa price-card-cta" data-wa>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+              Get a Quote
+            </a>
+            <a href="#" class="btn btn-ghost" data-modal="contact">Submit a Request</a>
+          </div>
+          <div class="timeline-trust" style="justify-content:flex-start;margin-top:.9rem;">
+            <span>From 5 working days</span>
+            <span>350+ cases</span>
+            <span>Google&nbsp;4.9 (100+ reviews)</span>
+          </div>
+        </div>
+
+        <div class="price-card-right">
+          <p class="price-card-right-label">What's included</p>
+          <ul>
+            <li>Certificate of Incorporation</li>
+            <li>Certificate of Directors and Secretary</li>
+            <li>Certificate of Registered Address</li>
+            <li>Certificate of Shareholders</li>
+            <li>Letters of Appointment</li>
+            <li>Decisions on Appointment of Directors and Secretary</li>
+            <li>Memorandum and Articles of Association</li>
+            <li>Company Stamp</li>
+            <li>Consultations: 2 hours before registration + 2 hours after</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- PROCESS -->
-  <section class="section-pad" id="process-steps" style="background:var(--mist);">
+  <section class="section-pad" id="process-steps">
     <div class="wrap">
       <div class="section-head reveal" id="timeline">
         <span class="eyebrow">How it works</span>
@@ -1087,7 +1157,7 @@
   </section>
 
   <!-- WHO IT'S FOR -->
-  <section class="section-pad" id="who-for">
+  <section class="section-pad" id="who-for" style="background:var(--mist);">
     <div class="wrap">
       <div class="split-section">
         <div class="split-content reveal">
@@ -1145,7 +1215,7 @@
   </section>
 
   <!-- WHY US -->
-  <section class="section-pad" id="why-us" style="background:var(--mist);">
+  <section class="section-pad" id="why-us">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Why ResidentPravo</span>
@@ -1195,7 +1265,7 @@
   </section>
 
   <!-- CASES -->
-  <section class="section-pad" id="cases">
+  <section class="section-pad" id="cases" style="background:var(--mist);">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Client cases</span>
@@ -1290,48 +1360,9 @@
     </div>
   </section>
 
-  <!-- PRICING CARD -->
-  <section class="section-pad" id="pricing">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">Service pricing</span>
-        <h2>Cyprus company registration cost</h2>
-        <p>How much does it cost to open a company in Cyprus — below is what's included in the price and what determines the final fee.</p>
-      </div>
-      <div class="price-card reveal">
-
-        <div class="price-card-left">
-          <div>
-            <div class="price-card-amount">from <span>€1&nbsp;300</span> + VAT</div>
-            <p class="price-card-note">· exact cost for your structure calculated individually during consultation</p>
-          </div>
-          <a href="#" class="btn btn-wa price-card-cta" data-wa>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
-            Get a Quote
-          </a>
-        </div>
-
-        <div class="price-card-right">
-          <p class="price-card-right-label">What's included</p>
-          <ul>
-            <li>Certificate of Incorporation</li>
-            <li>Certificate of Directors and Secretary</li>
-            <li>Certificate of Registered Address</li>
-            <li>Certificate of Shareholders</li>
-            <li>Letters of Appointment</li>
-            <li>Decisions on Appointment of Directors and Secretary</li>
-            <li>Memorandum and Articles of Association</li>
-            <li>Company Stamp</li>
-            <li>Consultations: 2 hours before registration + 2 hours after</li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- SEO CONTENT -->
-  <section class="section-pad" id="seo-guide" style="background:var(--mist);">
+  <section class="section-pad" id="seo-guide">
     <div class="wrap">
       <div class="seo-guide-head reveal">
         <span class="eyebrow">Complete guide 2026</span>
@@ -1500,6 +1531,42 @@
             </div>
           </div>
 
+
+          <div class="price-card reveal">
+            <div class="price-card-left">
+              <div>
+                <div class="price-card-amount"><span class="price-from">from</span><span>€1&nbsp;300</span>&nbsp;+&nbsp;VAT</div>
+                <p class="price-card-note">Exact cost for your structure calculated individually during consultation</p>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:.6rem;">
+                <a href="#" class="btn btn-wa" data-wa>
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.04c-.24.68-1.42 1.31-1.95 1.36-.5.05-.96.24-3.23-.67-2.72-1.07-4.45-3.86-4.59-4.04-.13-.18-1.1-1.47-1.1-2.8s.7-1.98.95-2.25c.24-.27.53-.34.71-.34.18 0 .36 0 .51.01.16.01.39-.06.6.46.24.59.81 2.03.88 2.18.07.15.12.32.02.51-.09.18-.14.3-.27.46-.14.15-.29.35-.41.47-.14.13-.28.28-.12.55.16.27.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.36.27.14.43.12.59-.07.15-.18.68-.79.86-1.07.18-.27.36-.22.6-.13.24.09 1.55.73 1.81.86.27.14.45.2.51.31.07.11.07.64-.17 1.32z"/></svg>
+                  Get a Quote
+                </a>
+                <a href="#" class="btn btn-ghost" data-modal="contact">Submit a Request</a>
+              </div>
+              <div class="timeline-trust" style="justify-content:flex-start;margin-top:.9rem;">
+                <span>From 5 working days</span>
+                <span>350+ cases</span>
+                <span>Google&nbsp;4.9 (100+ reviews)</span>
+              </div>
+            </div>
+            <div class="price-card-right">
+              <p class="price-card-right-label">What's included</p>
+              <ul>
+                <li>Certificate of Incorporation</li>
+                <li>Certificate of Directors and Secretary</li>
+                <li>Certificate of Registered Address</li>
+                <li>Certificate of Shareholders</li>
+                <li>Letters of Appointment</li>
+                <li>Decisions on Appointment of Directors and Secretary</li>
+                <li>Memorandum and Articles of Association</li>
+                <li>Company Stamp</li>
+                <li>Consultations: 2 hours before registration + 2 hours after</li>
+              </ul>
+            </div>
+          </div>
+
           <h2 id="mistakes">Common mistakes when setting up a Cyprus company</h2>
           <p>After 350+ incorporations, we have seen the same avoidable mistakes repeatedly. Each one costs time and money. Here are the most common:</p>
           <div class="mistake-list">
@@ -1594,7 +1661,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="section-pad" id="faq">
+  <section class="section-pad" id="faq" style="background:var(--mist);">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">FAQ</span>
