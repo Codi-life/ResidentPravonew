@@ -542,6 +542,18 @@
     .split-content h2, .split-content p { overflow-wrap:break-word; }
     /* Jurisdiction table — tablet */
     .jur-table th, .jur-table td { padding:.75rem .8rem; }
+    /* Tax table — card view on mobile */
+    .table-scroll { overflow-x:visible; }
+    .seo-table { min-width:unset; display:block; }
+    .seo-table thead { display:none; }
+    .seo-table tbody { display:flex; flex-direction:column; gap:.6rem; }
+    .seo-table tr { display:block; border:1px solid var(--line); border-radius:10px; padding:.85rem 1rem; background:var(--white); }
+    .seo-table tr:nth-child(even) td { background:transparent; }
+    .seo-table td { display:block; padding:.18rem 0; border-bottom:none; word-break:normal; overflow-wrap:break-word; }
+    .seo-table td:first-child { font-size:.92rem; color:var(--navy); font-weight:700; padding-bottom:.5rem; margin-bottom:.35rem; border-bottom:1px solid var(--line); }
+    .seo-table td:not(:first-child)::before { display:block; font-size:.68rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--navy-55); margin-top:.4rem; margin-bottom:.12rem; }
+    .seo-table td:nth-child(2)::before { content:"Ставка"; }
+    .seo-table td:nth-child(3)::before { content:"Комментарий"; }
   }
   @media (max-width:480px) {
     .footer-grid { grid-template-columns:1fr; }
