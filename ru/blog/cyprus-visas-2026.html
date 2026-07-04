@@ -123,7 +123,7 @@
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; overflow-x:hidden; }
-  body { font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:#0A2540; line-height:1.6; font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body { font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; color:var(--ink); background:var(--white); line-height:1.6; font-weight:400; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
   a { color:inherit; text-decoration:none; }
   img { max-width:100%; display:block; }
   h1,h2,h3,h4 { font-weight:700; line-height:1.2; }
@@ -346,7 +346,7 @@
 
   /* ── Related articles ── */
   .related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.25rem; }
-  .related-card { background:#0A2540; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:transform .25s,box-shadow .25s; text-decoration:none; display:block; }
+  .related-card { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:transform .25s,box-shadow .25s; text-decoration:none; display:block; }
   .related-card:hover { transform:translateY(-3px); box-shadow:0 12px 30px -15px rgba(10,37,64,.18); }
   .related-card-img { aspect-ratio:16/9; background:linear-gradient(135deg,#0A2540 0%,#1D4ED8 55%,#38BDF8 100%); display:flex; align-items:flex-end; padding:1rem; position:relative; overflow:hidden; }
   .related-card-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
