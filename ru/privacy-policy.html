@@ -36,7 +36,7 @@
     :root{--navy:#0A2540;--blue:#1D4ED8;--sky:#38BDF8;--ink:#111827;--mist:#F5F7FA;--white:#FFFFFF;--navy-70:rgba(10,37,64,0.70);--navy-55:rgba(10,37,64,0.55);--navy-12:rgba(10,37,64,0.12);--navy-06:rgba(10,37,64,0.06);--line:rgba(10,37,64,0.10);--wa:#25D366;--maxw:1400px;--gutter:clamp(1.25rem,5vw,5rem);}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;}
-  body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  body{font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--ink);background:#0A2540;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--gutter);}
   .btn{display:inline-flex;align-items:center;gap:0.65rem;font-family:inherit;font-weight:600;font-size:0.98rem;padding:1rem 1.6rem;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform 0.25s,box-shadow 0.25s,background 0.25s;white-space:nowrap;}
@@ -72,7 +72,7 @@
   .mobile-menu-close:hover{background:var(--navy-06);}
   .mobile-menu-close svg{width:22px;height:22px;}
   .mobile-menu-lang{display:flex;align-items:center;gap:0.5rem;padding:0.5rem 0;border-bottom:1px solid var(--line);margin-top:0.25rem;}
-  .mobile-menu-lang a{font-size:0.82rem;font-weight:700;letter-spacing:0.1em;color:var(--navy-55);padding:0;border-bottom:none;transition:color 0.2s;}
+  .mobile-menu-lang a{font-size:0.82rem;font-weight:700;letter-spacing:0.1em;color:rgba(255,255,255,0.6);padding:0;border-bottom:none;transition:color 0.2s;}
   .mobile-menu-lang a.current{color:var(--navy);}
   .mobile-menu-lang-sep{color:var(--navy-12);font-size:0.82rem;user-select:none;}
   .legal-hero{background:var(--navy);padding-top:calc(5.5rem + env(safe-area-inset-top,0px));padding-bottom:3rem;color:#fff;}
@@ -82,7 +82,7 @@
   .legal-breadcrumb-sep{color:rgba(255,255,255,0.22);}
   .legal-hero h1{font-size:clamp(1.75rem,4vw,2.8rem);color:#fff;font-weight:700;margin-bottom:1rem;letter-spacing:-0.02em;line-height:1.1;}
   .legal-updated{display:inline-block;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--sky);background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.3);padding:0.3em 0.9em;border-radius:999px;}
-  .legal-content{background:var(--white);padding-block:clamp(2.5rem,7vh,5rem);}
+  .legal-content{background:#0A2540;padding-block:clamp(2.5rem,7vh,5rem);}
   .legal-wrap{max-width:900px;margin:0 auto;padding-inline:var(--gutter);}
   .legal-wrap h2{font-size:clamp(1.1rem,2.2vw,1.4rem);color:var(--navy);font-weight:700;margin:2.75rem 0 0.8rem;padding-bottom:0.6rem;border-bottom:1px solid var(--line);letter-spacing:-0.01em;}
   .legal-wrap h2:first-child{margin-top:0;}
@@ -182,7 +182,7 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-menu-btn" id="menuClose" aria-label="Закрыть меню">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="#0A2540" stroke-width="2.5" stroke-linecap="round"/></svg>
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><line x1="19" y1="5" x2="5" y2="19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
   </button>
   <div class="mm-svc-wrap">
   <button class="mm-svc-btn" id="mmSvcBtn" aria-expanded="false" aria-controls="mmSvcList">Услуги<svg class="mm-svc-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg></button>
@@ -205,7 +205,24 @@
     <span class="mobile-menu-lang-sep">|</span>
     <a href="../privacy-policy.html" hreflang="en">EN</a>
   </nav>
-  <a href="#" class="btn btn-wa" data-wa>Написать в WhatsApp</a>
+  <div class="mobile-menu-contacts">
+    <span class="mmc-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+      Лимасол, Кипр
+    </span>
+    <a href="tel:+35794440424" class="mmc-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12.11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.49h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.08a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+      +357 94 440 424
+    </a>
+    <a href="https://t.me/ResidentPravo1" class="mmc-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      Telegram
+    </a>
+  </div>
+  <div class="mobile-menu-cta">
+    <a href="#" class="btn btn-wa" data-wa>Написать в WhatsApp</a>
+    <a href="/#contact" class="btn btn-outline">Оставить заявку</a>
+  </div>
 </div>
 
 <main>

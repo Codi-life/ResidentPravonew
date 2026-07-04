@@ -156,6 +156,7 @@
 
 /* ── Mobile menu: top-aligned layout with close-button clearance ── */
 .mobile-menu {
+  background: #0A2540;
   justify-content: flex-start;
   padding-top: calc(76px + env(safe-area-inset-top, 0px));
   padding-right: clamp(1.5rem, 6vw, 2.5rem);
