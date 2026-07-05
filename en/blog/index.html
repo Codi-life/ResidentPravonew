@@ -424,12 +424,19 @@
       <article class="blog-card reveal" data-cat="tax">
         <a class="blog-card-overlay" href="/en/blog/nalogi-na-kipre-2026-stavki" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
-          <img
-            class="blog-card-photo"
-            src="/images/blog-nalogi-kipre-2026-hero.jpg"
-            alt="An investor reviewing Cyprus's tax system — island map, books and calculator"
-            loading="lazy" decoding="async"
-          />
+          <picture>
+            <source type="image/webp"
+              srcset="/images/blog-nalogi-kipre-2026-hero-640.webp 640w, /images/blog-nalogi-kipre-2026-hero-1024.webp 1024w"
+              sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 400px" />
+            <img
+              class="blog-card-photo"
+              src="/images/blog-nalogi-kipre-2026-hero.jpg"
+              srcset="/images/blog-nalogi-kipre-2026-hero-640.jpg 640w, /images/blog-nalogi-kipre-2026-hero-1024.jpg 1024w"
+              sizes="(max-width:768px) 100vw, (max-width:1024px) 50vw, 400px"
+              alt="An investor reviewing Cyprus's tax system — island map, books and calculator"
+              loading="lazy" decoding="async"
+            />
+          </picture>
           <div class="blog-card-img-overlay"></div>
           <span class="blog-card-cat">Taxes</span>
         </div>
