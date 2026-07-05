@@ -63,6 +63,48 @@
 }
 </script>
 
+<!-- Schema.org: Service + Offer catalog -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.residentpravo.com/en/residence-permit-cyprus#service",
+  "name": "Cyprus Residence Permit & Permanent Residency",
+  "description": "Full support obtaining a Cyprus residence permit and permanent residency: Pink Slip, residence via company registration, and Permanent Residency through investment from €300,000.",
+  "provider": { "@id": "https://www.residentpravo.com/#organization" },
+  "areaServed": ["CY","UA","AM","AE","IL","RU","GR"],
+  "serviceType": "Residence Permit",
+  "url": "https://www.residentpravo.com/en/residence-permit-cyprus",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Cyprus residence and permanent residency routes",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Pink Slip (temporary residence permit)",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "minPrice": 500, "valueAddedTaxIncluded": false },
+        "seller": { "@id": "https://www.residentpravo.com/#organization" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Residence permit via company registration",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "minPrice": 1300, "valueAddedTaxIncluded": false },
+        "seller": { "@id": "https://www.residentpravo.com/#organization" }
+      },
+      {
+        "@type": "Offer",
+        "name": "Permanent Residency through investment (Category F)",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "minPrice": 300000, "valueAddedTaxIncluded": false },
+        "seller": { "@id": "https://www.residentpravo.com/#organization" }
+      }
+    ]
+  }
+}
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -220,6 +262,22 @@
   .compare-cta-inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;}
   .compare-cta-title{font-size:clamp(1.05rem,2vw,1.2rem);font-weight:700;color:var(--navy);margin-bottom:.5rem;line-height:1.25;letter-spacing:-.01em;}
   .compare-cta p{font-size:.9rem;color:#374151;max-width:52ch;line-height:1.55;margin-bottom:0;}
+  .jur-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .jur-table{width:100%;border-collapse:collapse;font-size:.93rem;border-radius:var(--radius);overflow:hidden;min-width:620px;}
+  .jur-table thead th{background:var(--navy);color:#fff;padding:1rem 1.2rem;text-align:left;font-size:.81rem;font-weight:600;letter-spacing:.04em;}
+  .jur-table thead th:first-child{min-width:138px;}
+  .jur-col-cy-head{background:var(--blue) !important;}
+  .jur-table tbody tr:nth-child(even) td{background:var(--mist);}
+  .jur-table tbody td{padding:.9rem 1.2rem;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:top;word-break:normal;overflow-wrap:break-word;}
+  .jur-table tbody td:first-child{font-weight:600;color:var(--navy);}
+  .jur-table tbody tr:last-child td{border-bottom:none;}
+  .jur-col-cy{background:rgba(29,78,216,.04) !important;}
+  .jur-table tbody tr:nth-child(even) td.jur-col-cy{background:rgba(29,78,216,.07) !important;}
+  .jur-good{color:#059669;font-weight:600;}
+  .jur-low{color:#B45309;font-weight:500;}
+  .jur-badge-cy{display:inline-flex;align-items:center;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:rgba(255,255,255,.18);color:#fff;border-radius:999px;padding:.15em .55em;vertical-align:middle;margin-left:.3rem;white-space:nowrap;}
+  .jur-sub{display:block;font-size:.79rem;color:var(--navy-55);line-height:1.4;margin-top:.22rem;}
+  @media (max-width:640px){.jur-table th,.jur-table td{padding:.65rem .7rem;font-size:.83rem;}.jur-sub{font-size:.73rem;}}
   .split-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2.5rem,5vw,5rem);align-items:start;}
   .split-section.reverse{direction:rtl;}
   .split-section.reverse>*{direction:ltr;}
@@ -663,6 +721,68 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- JURISDICTION COMPARE -->
+  <section class="section-pad" style="background:var(--mist);" id="jurisdiction-compare">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Jurisdiction comparison</span>
+        <h2>Cyprus, Malta, UAE or Portugal: which fits your residency plans</h2>
+        <p>Compare the key parameters of getting residency — and choose the country that fits you. Data current as of July 2026.</p>
+      </div>
+      <div class="jur-table-wrap reveal">
+        <table class="jur-table">
+          <thead>
+            <tr>
+              <th>Criterion</th>
+              <th class="jur-col-cy-head">Cyprus <span class="jur-badge-cy">Our pick</span></th>
+              <th>Malta</th>
+              <th>UAE</th>
+              <th>Portugal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Residency threshold</td>
+              <td class="jur-col-cy"><span class="jur-good">From €300,000</span><span class="jur-sub">Investment in real estate or qualifying assets</span></td>
+              <td>From €375,000 (purchase) or €14,000/year (rent)<span class="jur-sub">Plus government contribution and admin fee — from €98,000 combined</span></td>
+              <td>From AED 2,000,000 (~€510,000)<span class="jur-sub">Real estate, mortgage-financed property included</span></td>
+              <td>From €500,000 (fund route) or from €200,000 (donation)<span class="jur-sub">Direct real-estate route for residency was discontinued in 2023</span></td>
+            </tr>
+            <tr>
+              <td>Schengen & EU entry</td>
+              <td><span class="jur-low">Not yet</span><span class="jur-sub">Cyprus is an EU member but not in Schengen; accession is targeted for 2026, with a decision expected by year-end</span></td>
+              <td class="jur-col-cy"><span class="jur-good">✓ Yes</span><span class="jur-sub">Full Schengen member</span></td>
+              <td><span class="jur-low">No</span><span class="jur-sub">Not part of the EU or Schengen</span></td>
+              <td><span class="jur-good">✓ Yes</span><span class="jur-sub">Full Schengen member</span></td>
+            </tr>
+            <tr>
+              <td>Personal taxation</td>
+              <td class="jur-col-cy"><span class="jur-good">Non-dom — 17 years</span><span class="jur-sub">No tax on dividends and interest for non-domiciled residents</span></td>
+              <td>Non-dom (remittance basis)<span class="jur-sub">Foreign income taxed only if remitted to Malta; minimum tax €5,000/year if foreign income exceeds €35,000</span></td>
+              <td class="jur-col-cy"><span class="jur-good">0%</span><span class="jur-sub">No personal income tax</span></td>
+              <td><span class="jur-low">Up to 53%</span><span class="jur-sub">The IFICI regime (NHR's 2025 replacement) applies only to tech/science/healthcare professionals, not passive investors</span></td>
+            </tr>
+            <tr>
+              <td>Residency status</td>
+              <td class="jur-col-cy"><span class="jur-good">Permanent immediately</span><span class="jur-sub">Permanent Residency via investment — no intermediate temporary permit</span></td>
+              <td>Permanent, once conditions are met<span class="jur-sub">Requires maintaining the investment and residence conditions</span></td>
+              <td>10-year renewable visa<span class="jur-sub">Not a permanent status or citizenship</span></td>
+              <td>Renewable residence permit<span class="jur-sub">Investment must be held for at least 5 years</span></td>
+            </tr>
+            <tr>
+              <td>Path to citizenship</td>
+              <td class="jur-col-cy">Available<span class="jur-sub">Subject to Cyprus naturalisation requirements</span></td>
+              <td>Via naturalisation<span class="jur-sub">Additional requirements beyond permanent residency</span></td>
+              <td><span class="jur-low">Very limited</span><span class="jur-sub">Naturalisation of foreign investors is essentially not practised</span></td>
+              <td><span class="jur-low">10 years</span><span class="jur-sub">Tightened in May 2026 (previously 5 years; 7 years for EU/CPLP nationals)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.82rem;color:var(--navy-55);margin-top:1rem;">Malta, UAE and Portugal figures are compiled from public sources as of July 2026 and are subject to change — confirm current terms with us during a consultation.</p>
     </div>
   </section>
 

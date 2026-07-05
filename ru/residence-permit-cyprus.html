@@ -66,6 +66,48 @@
 }
 </script>
 
+<!-- Schema.org: Service + Offer catalog -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.residentpravo.com/ru/residence-permit-cyprus#service",
+  "name": "ВНЖ и ПМЖ на Кипре",
+  "description": "Полное сопровождение получения вида на жительство и постоянного места жительства на Кипре: Пинк-слип, ВНЖ через компанию, ПМЖ через инвестиции от €300 000.",
+  "provider": { "@id": "https://www.residentpravo.com/#organization" },
+  "areaServed": ["CY","UA","AM","AE","IL","RU","GR"],
+  "serviceType": "Residence Permit",
+  "url": "https://www.residentpravo.com/ru/residence-permit-cyprus",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Варианты ВНЖ и ПМЖ на Кипре",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Пинк-слип (временный ВНЖ)",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "minPrice": 500, "valueAddedTaxIncluded": false },
+        "seller": { "@id": "https://www.residentpravo.com/#organization" }
+      },
+      {
+        "@type": "Offer",
+        "name": "ВНЖ через регистрацию компании",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "minPrice": 1300, "valueAddedTaxIncluded": false },
+        "seller": { "@id": "https://www.residentpravo.com/#organization" }
+      },
+      {
+        "@type": "Offer",
+        "name": "ПМЖ через инвестиции (Category F)",
+        "priceCurrency": "EUR",
+        "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "EUR", "minPrice": 300000, "valueAddedTaxIncluded": false },
+        "seller": { "@id": "https://www.residentpravo.com/#organization" }
+      }
+    ]
+  }
+}
+</script>
+
 <!-- Schema.org: BreadcrumbList -->
 <script type="application/ld+json">
 {
@@ -303,6 +345,27 @@
   .compare-cta-inner { display:flex; align-items:center; justify-content:space-between; gap:2rem; }
   .compare-cta-title { font-size:clamp(1.05rem,2vw,1.2rem); font-weight:700; color:var(--navy); margin-bottom:.5rem; line-height:1.25; letter-spacing:-.01em; }
   .compare-cta p { font-size:.9rem; color:#374151; max-width:52ch; line-height:1.55; margin-bottom:0; }
+
+  /* ── Jurisdiction compare (Cyprus vs Malta/UAE/Portugal) ── */
+  .jur-table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .jur-table { width:100%; border-collapse:collapse; font-size:.93rem; border-radius:var(--radius); overflow:hidden; min-width:620px; }
+  .jur-table thead th { background:var(--navy); color:#fff; padding:1rem 1.2rem; text-align:left; font-size:.81rem; font-weight:600; letter-spacing:.04em; }
+  .jur-table thead th:first-child { min-width:138px; }
+  .jur-col-cy-head { background:var(--blue) !important; }
+  .jur-table tbody tr:nth-child(even) td { background:var(--mist); }
+  .jur-table tbody td { padding:.9rem 1.2rem; border-bottom:1px solid var(--line); color:var(--ink); vertical-align:top; word-break:normal; overflow-wrap:break-word; }
+  .jur-table tbody td:first-child { font-weight:600; color:var(--navy); }
+  .jur-table tbody tr:last-child td { border-bottom:none; }
+  .jur-col-cy { background:rgba(29,78,216,.04) !important; }
+  .jur-table tbody tr:nth-child(even) td.jur-col-cy { background:rgba(29,78,216,.07) !important; }
+  .jur-good { color:#059669; font-weight:600; }
+  .jur-low { color:#B45309; font-weight:500; }
+  .jur-badge-cy { display:inline-flex; align-items:center; font-size:.6rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; background:rgba(255,255,255,.18); color:#fff; border-radius:999px; padding:.15em .55em; vertical-align:middle; margin-left:.3rem; white-space:nowrap; }
+  .jur-sub { display:block; font-size:.79rem; color:var(--navy-55); line-height:1.4; margin-top:.22rem; }
+  @media (max-width: 640px) {
+    .jur-table th, .jur-table td { padding:.65rem .7rem; font-size:.83rem; }
+    .jur-sub { font-size:.73rem; }
+  }
 
   /* ── Two-column content sections ── */
   .split-section {
@@ -987,6 +1050,68 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- JURISDICTION COMPARE -->
+  <section class="section-pad" style="background:var(--mist);" id="jurisdiction-compare">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Сравнение юрисдикций</span>
+        <h2>Кипр, Мальта, ОАЭ или Португалия: что выбрать для ВНЖ и ПМЖ</h2>
+        <p>Сравните ключевые параметры получения резидентства — и выберите страну, которая подходит именно вам. Данные актуальны на июль 2026 года.</p>
+      </div>
+      <div class="jur-table-wrap reveal">
+        <table class="jur-table">
+          <thead>
+            <tr>
+              <th>Критерий</th>
+              <th class="jur-col-cy-head">Кипр <span class="jur-badge-cy">Наш выбор</span></th>
+              <th>Мальта</th>
+              <th>ОАЭ</th>
+              <th>Португалия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Порог для резидентства</td>
+              <td class="jur-col-cy"><span class="jur-good">От €300 000</span><span class="jur-sub">Инвестиции в недвижимость или квалифицированные активы</span></td>
+              <td>От €375 000 (покупка) или от €14 000/год (аренда)<span class="jur-sub">Плюс гос. взнос и админ. сбор — от €98 000 совокупно</span></td>
+              <td>От AED 2 000 000 (~€510 000)<span class="jur-sub">Недвижимость, включая ипотечную</span></td>
+              <td>От €500 000 (инвестфонд) или от €200 000 (донат)<span class="jur-sub">Прямая покупка недвижимости для резидентства больше не действует с 2023 года</span></td>
+            </tr>
+            <tr>
+              <td>Шенген и въезд в ЕС</td>
+              <td><span class="jur-low">Пока нет</span><span class="jur-sub">Кипр — член ЕС, но не Шенгена; присоединение анонсировано на 2026 год, решение ожидается к концу года</span></td>
+              <td class="jur-col-cy"><span class="jur-good">✓ Да</span><span class="jur-sub">Полноправный член Шенгенской зоны</span></td>
+              <td><span class="jur-low">Нет</span><span class="jur-sub">Не входит в ЕС и Шенген</span></td>
+              <td><span class="jur-good">✓ Да</span><span class="jur-sub">Полноправный член Шенгенской зоны</span></td>
+            </tr>
+            <tr>
+              <td>Личное налогообложение</td>
+              <td class="jur-col-cy"><span class="jur-good">Non-dom — 17 лет</span><span class="jur-sub">Без налога на дивиденды и проценты для резидентов-нерезидентов по домицилю</span></td>
+              <td>Non-dom (ремиттансная база)<span class="jur-sub">Иностранный доход облагается только при переводе в Мальту; минимальный налог €5 000/год при доходе от €35 000</span></td>
+              <td class="jur-col-cy"><span class="jur-good">0%</span><span class="jur-sub">Личный подоходный налог отсутствует</span></td>
+              <td><span class="jur-low">До 53%</span><span class="jur-sub">Льготный режим IFICI (замена NHR с 2025 года) — только для ИТ/науки/здравоохранения, не для пассивных инвесторов</span></td>
+            </tr>
+            <tr>
+              <td>Статус резидентства</td>
+              <td class="jur-col-cy"><span class="jur-good">Бессрочно сразу</span><span class="jur-sub">ПМЖ через инвестиции — без промежуточного ВНЖ</span></td>
+              <td>ПМЖ при выполнении условий<span class="jur-sub">Требуется поддержание инвестиции и условий проживания</span></td>
+              <td>10 лет (продлеваемая виза)<span class="jur-sub">Не постоянный статус и не гражданство</span></td>
+              <td>ВНЖ с продлением<span class="jur-sub">Инвестицию нужно удерживать не менее 5 лет</span></td>
+            </tr>
+            <tr>
+              <td>Путь к гражданству</td>
+              <td class="jur-col-cy">Возможен<span class="jur-sub">При соблюдении требований законодательства Кипра</span></td>
+              <td>Через натурализацию<span class="jur-sub">Дополнительные требования сверх ПМЖ</span></td>
+              <td><span class="jur-low">Крайне ограничен</span><span class="jur-sub">Натурализация иностранных инвесторов практически не применяется</span></td>
+              <td><span class="jur-low">10 лет</span><span class="jur-sub">Ужесточено в мае 2026 года (было 5 лет; для граждан ЕС/CPLP — 7 лет)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.82rem;color:var(--navy-55);margin-top:1rem;">Данные по Мальте, ОАЭ и Португалии приведены по открытым источникам на июль 2026 года и могут изменяться — уточняйте актуальные условия у нас на консультации.</p>
     </div>
   </section>
 
