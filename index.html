@@ -46,7 +46,7 @@
 
 <!-- Fonts: self-hosted -->
 <link rel="preload" as="image" href="images/limassol-dark.webp" fetchpriority="high" type="image/webp" />
-<link rel="preload" as="image" href="images/arthur-hero.webp" fetchpriority="high" type="image/webp" />
+<link rel="preload" as="image" href="images/arthur-hero.webp" fetchpriority="high" type="image/webp" media="(min-width: 1025px)" />
 <link rel="preload" href="/fonts/montserrat-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -1448,7 +1448,8 @@
     .modal-wrap { border-radius: 18px 18px 0 0; max-height: 92vh; padding: 1.5rem 1.25rem 2rem; }
   }
 </style>
-<link rel="stylesheet" href="/css/header.css" />
+<link rel="preload" href="/css/header.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="/css/header.css" /></noscript>
 
 <!-- Schema.org: LocalBusiness + ProfessionalService -->
 <!-- Schema.org: Organization -->
