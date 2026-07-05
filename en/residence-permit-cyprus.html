@@ -297,6 +297,19 @@
   .jur-badge-cy{display:inline-flex;align-items:center;font-size:.6rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;background:rgba(255,255,255,.18);color:#fff;border-radius:999px;padding:.15em .55em;vertical-align:middle;margin-left:.3rem;white-space:nowrap;}
   .jur-sub{display:block;font-size:.79rem;color:var(--navy-55);line-height:1.4;margin-top:.22rem;}
   @media (max-width:640px){.jur-table th,.jur-table td{padding:.65rem .7rem;font-size:.83rem;}.jur-sub{font-size:.73rem;}}
+
+  /* Related articles */
+  .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;}
+  .related-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .25s,box-shadow .25s;text-decoration:none;display:block;}
+  .related-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px -15px rgba(10,37,64,.18);}
+  .related-card-img{aspect-ratio:16/9;background:linear-gradient(135deg,#0A2540 0%,#1D4ED8 55%,#38BDF8 100%);display:flex;align-items:flex-end;padding:1rem;position:relative;overflow:hidden;}
+  .related-card-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+  .related-card-img-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+  .related-card-body{padding:1.25rem 1.4rem 1.5rem;}
+  .related-card-cat{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem;display:block;}
+  .related-card-body h3{font-size:.98rem;color:var(--navy);line-height:1.35;margin-bottom:.5rem;}
+  .related-card-body p{color:var(--navy-55);font-size:.82rem;line-height:1.55;}
+  @media (max-width:640px){.related-grid{grid-template-columns:1fr;}}
   .split-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2.5rem,5vw,5rem);align-items:start;}
   .split-section.reverse{direction:rtl;}
   .split-section.reverse>*{direction:ltr;}
@@ -507,7 +520,7 @@
     <a href="/en/company-registration-cyprus" role="menuitem">Company Registration</a>
     <a href="/en/residence-permit-cyprus" role="menuitem">Residence Permit</a>
     <div class="svc-div" role="separator"></div>
-    <a href="/en/#services" role="menuitem">Accounting &amp; Audit</a>
+    <a href="/en/accounting-audit-cyprus" role="menuitem">Accounting &amp; Audit</a>
     <a href="/en/#services" role="menuitem">Cyprus Citizenship</a>
     <a href="/en/#services" role="menuitem">Bank Account Opening</a>
     <a href="/en/#services" role="menuitem">Legal Support</a>
@@ -543,7 +556,7 @@
   <div class="mm-svc-list" id="mmSvcList">
     <a href="/en/company-registration-cyprus">Company Registration</a>
     <a href="/en/residence-permit-cyprus">Residence Permit</a>
-    <a href="/en/#services">Accounting &amp; Audit</a>
+    <a href="/en/accounting-audit-cyprus">Accounting &amp; Audit</a>
     <a href="/en/#services">Cyprus Citizenship</a>
     <a href="/en/#services">Bank Account Opening</a>
     <a href="/en/#services">Legal Support</a>
@@ -1211,6 +1224,42 @@
     </div>
   </section>
 
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Related reading</span>
+        <h2>Useful guides for moving to Cyprus</h2>
+      </div>
+      <div class="related-grid">
+        <a href="/en/blog/cyprus-visas-2026" class="related-card reveal">
+          <div class="related-card-img">
+            <picture>
+              <source type="image/webp" srcset="/images/blog-vnj-pmj-cyprus-2026-en-640.webp 640w, /images/blog-vnj-pmj-cyprus-2026-en-1024.webp 1024w" sizes="(max-width:768px) 100vw, 340px" />
+              <img class="related-card-photo" src="/images/blog-vnj-pmj-cyprus-2026-en.png" srcset="/images/blog-vnj-pmj-cyprus-2026-en-640.jpg 640w, /images/blog-vnj-pmj-cyprus-2026-en-1024.jpg 1024w" sizes="(max-width:768px) 100vw, 340px" alt="Cyprus visas 2026 — passports and documents" loading="lazy" decoding="async" />
+            </picture>
+            <span class="related-card-img-label">Visas</span>
+          </div>
+          <div class="related-card-body">
+            <span class="related-card-cat">Visas & relocation</span>
+            <h3>Cyprus Visas 2026: Types, Documents, Processing Times</h3>
+            <p>A complete guide to Cyprus visa types — from tourist to long-stay — and how they connect to getting a residence permit.</p>
+          </div>
+        </a>
+        <a href="/en/blog/nalogi-na-kipre-2026-stavki" class="related-card reveal">
+          <div class="related-card-img">
+            <img class="related-card-photo" src="/images/blog-nalogi-kipre-2026-hero.jpg" alt="Cyprus taxes 2026 — rates and calculations" loading="lazy" decoding="async" />
+            <span class="related-card-img-label">Taxes</span>
+          </div>
+          <div class="related-card-body">
+            <span class="related-card-cat">Taxes</span>
+            <h3>Cyprus Taxes 2026: Personal Income Tax Rates and the €22,000 Threshold</h3>
+            <p>What matters for personal taxation once you relocate to Cyprus under a residence permit or PR.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section class="final section-pad">
     <div class="wrap">
       <div class="final-inner reveal">
@@ -1273,10 +1322,10 @@
         <div class="footer-col">
           <h2>Services</h2>
           <ul>
-            <li><a href="/en/#services">Company Registration in Cyprus</a></li>
+            <li><a href="/en/company-registration-cyprus">Company Registration in Cyprus</a></li>
             <li><a href="/en/residence-permit-cyprus">Residence &amp; Permanent Permit</a></li>
             <li><a href="/en/#services">Cyprus Citizenship</a></li>
-            <li><a href="/en/#services">Accounting &amp; Audit</a></li>
+            <li><a href="/en/accounting-audit-cyprus">Accounting &amp; Audit</a></li>
             <li><a href="/en/#services">Bank Account Opening</a></li>
             <li><a href="/en/#services">Legal Support</a></li>
           </ul>

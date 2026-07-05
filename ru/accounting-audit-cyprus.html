@@ -400,6 +400,19 @@
     .faq-q { font-size:.95rem; gap:var(--s2); }
     .seo-cta-box { padding:1rem; }
   }
+
+  /* Related articles */
+  .related-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
+  .related-card { background:var(--white); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; transition:transform .25s,box-shadow .25s; text-decoration:none; display:block; }
+  .related-card:hover { transform:translateY(-3px); box-shadow:0 12px 30px -15px rgba(10,37,64,.18); }
+  .related-card-img { aspect-ratio:16/9; background:linear-gradient(135deg,#0A2540 0%,#1D4ED8 55%,#38BDF8 100%); display:flex; align-items:flex-end; padding:1rem; position:relative; overflow:hidden; }
+  .related-card-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+  .related-card-img-label { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:rgba(255,255,255,.6); }
+  .related-card-body { padding:1.25rem 1.4rem 1.5rem; }
+  .related-card-cat { font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); margin-bottom:.5rem; display:block; }
+  .related-card-body h3 { font-size:.98rem; color:var(--navy); line-height:1.35; margin-bottom:.5rem; }
+  .related-card-body p { color:var(--navy-55); font-size:.82rem; line-height:1.55; }
+  @media (max-width:640px) { .related-grid { grid-template-columns:1fr; } }
 </style>
 <link rel="preload" href="/css/header.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="/css/header.css" /></noscript>
@@ -845,6 +858,43 @@
     </div>
   </section>
 
+  <!-- ══════════════ ПОХОЖИЕ СТАТЬИ ══════════════ -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Читайте также</span>
+        <h2>Полезные материалы о налогах и бизнесе на Кипре</h2>
+      </div>
+      <div class="related-grid">
+        <a href="/ru/blog/nalogi-na-kipre-2026-stavki" class="related-card reveal">
+          <div class="related-card-img">
+            <img class="related-card-photo" src="/images/blog-nalogi-kipre-2026-hero.jpg" alt="Налоги на Кипре 2026 — ставки и расчёты" loading="lazy" decoding="async" />
+            <span class="related-card-img-label">Налоги</span>
+          </div>
+          <div class="related-card-body">
+            <span class="related-card-cat">Налоги</span>
+            <h3>Налоги на Кипре 2026: ставки НДФЛ и необлагаемый минимум €22 000</h3>
+            <p>Личное налогообложение и то, как оно соотносится с корпоративной бухгалтерией и отчётностью компании.</p>
+          </div>
+        </a>
+        <a href="/ru/blog/cyprus-visas-2026" class="related-card reveal">
+          <div class="related-card-img">
+            <picture>
+              <source type="image/webp" srcset="/images/blog-vnj-pmj-cyprus-2026-640.webp 640w, /images/blog-vnj-pmj-cyprus-2026-1024.webp 1024w" sizes="(max-width:768px) 100vw, 340px" />
+              <img class="related-card-photo" src="/images/blog-vnj-pmj-cyprus-2026.png" srcset="/images/blog-vnj-pmj-cyprus-2026-640.jpg 640w, /images/blog-vnj-pmj-cyprus-2026-1024.jpg 1024w" sizes="(max-width:768px) 100vw, 340px" alt="Визы на Кипр 2026 — паспорта и документы" loading="lazy" decoding="async" />
+            </picture>
+            <span class="related-card-img-label">Визы</span>
+          </div>
+          <div class="related-card-body">
+            <span class="related-card-cat">Визы и переезд</span>
+            <h3>Визы на Кипр в 2026 году: виды, документы, сроки</h3>
+            <p>Полный гид по типам виз на Кипр для тех, кто планирует переезд вместе с ведением бизнеса.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
   <section class="final section-pad">
     <div class="wrap">
@@ -898,10 +948,10 @@
         <div class="footer-col">
           <h2>Услуги</h2>
           <ul>
-            <li><a href="/#services">Регистрация компании на Кипре</a></li>
+            <li><a href="/ru/company-registration-cyprus">Регистрация компании на Кипре</a></li>
             <li><a href="/ru/residence-permit-cyprus">ВНЖ и ПМЖ на Кипре</a></li>
             <li><a href="/#services">Гражданство Кипра</a></li>
-            <li><a href="/#services">Бухгалтерия и аудит</a></li>
+            <li><a href="/ru/accounting-audit-cyprus">Бухгалтерия и аудит</a></li>
             <li><a href="/#services">Открытие банковских счетов</a></li>
             <li><a href="/#services">Юридическое сопровождение</a></li>
           </ul>
