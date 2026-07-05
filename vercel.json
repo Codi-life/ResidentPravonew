@@ -90,6 +90,10 @@
       "destination": "/ru/accounting-audit-cyprus.html"
     },
     {
+      "source": "/en/accounting-audit-cyprus",
+      "destination": "/en/accounting-audit-cyprus.html"
+    },
+    {
       "source": "/en/company-registration-cyprus",
       "destination": "/en/company-registration-cyprus.html"
     },
@@ -100,6 +104,14 @@
     {
       "source": "/en/blog/cyprus-visas-2026",
       "destination": "/en/blog/cyprus-visas-2026.html"
+    },
+    {
+      "source": "/ru/blog/nalogi-na-kipre-2026-stavki",
+      "destination": "/ru/blog/nalogi-na-kipre-2026-stavki.html"
+    },
+    {
+      "source": "/en/blog/nalogi-na-kipre-2026-stavki",
+      "destination": "/en/blog/nalogi-na-kipre-2026-stavki.html"
     },
     {
       "source": "/ru/experts/artur-mardanyan",

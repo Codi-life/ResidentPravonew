@@ -159,8 +159,8 @@
   .blog-card-img-overlay { position:absolute; inset:0; background:rgba(10,37,64,.25); }
   .blog-card-cat { position:relative; z-index:1; display:inline-flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:rgba(29,78,216,.8); border-radius:999px; padding:.3em .9em; }
   .blog-card-body { padding:var(--card-pad); flex:1; display:flex; flex-direction:column; }
-  .blog-card-meta { display:flex; align-items:center; gap:.85rem; font-size:.76rem; color:var(--navy-55); margin-bottom:.9rem; }
-  .blog-card-meta span { display:flex; align-items:center; gap:.3rem; }
+  .blog-card-meta { display:flex; align-items:center; flex-wrap:nowrap; gap:.6rem; font-size:.76rem; color:var(--navy-55); margin-bottom:.9rem; white-space:nowrap; overflow:hidden; }
+  .blog-card-meta span { display:flex; align-items:center; gap:.3rem; flex-shrink:0; white-space:nowrap; }
   .blog-card-meta svg { width:13px; height:13px; flex:none; }
   .blog-card h3 { font-size:clamp(1.05rem,1.6vw,1.2rem); color:var(--navy); line-height:1.3; margin-bottom:.75rem; text-wrap:balance; }
   .blog-card p { font-size:.88rem; color:var(--navy-70); line-height:1.65; margin-bottom:1.4rem; flex:1; }
@@ -181,6 +181,9 @@
   .blog-filters { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2.5rem; }
   .filter-btn { font-family:inherit; font-size:.8rem; font-weight:600; letter-spacing:.04em; padding:.45rem 1.1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--navy-70); cursor:pointer; transition:border-color .2s,color .2s,background .2s; }
   .filter-btn.active,.filter-btn:hover { border-color:var(--blue); color:var(--blue); background:rgba(29,78,216,.05); }
+  .blog-card.is-hidden { display:none; }
+  .blog-empty { display:none; text-align:center; padding:3rem 1rem; color:var(--navy-55); font-size:.95rem; }
+  .blog-empty.is-visible { display:block; }
 
   /* ── Section head ── */
   .section-head { margin-bottom:clamp(2rem,4vw,3rem); }
@@ -373,19 +376,19 @@
 
     <!-- Фильтры -->
     <div class="blog-filters reveal">
-      <button class="filter-btn active">Все статьи</button>
-      <button class="filter-btn">Визы</button>
-      <button class="filter-btn">ВНЖ и ПМЖ</button>
-      <button class="filter-btn">Бизнес</button>
-      <button class="filter-btn">Налоги</button>
-      <button class="filter-btn">Переезд</button>
+      <button class="filter-btn active" data-filter="all">Все статьи</button>
+      <button class="filter-btn" data-filter="visa">Визы</button>
+      <button class="filter-btn" data-filter="residence">ВНЖ и ПМЖ</button>
+      <button class="filter-btn" data-filter="business">Бизнес</button>
+      <button class="filter-btn" data-filter="tax">Налоги</button>
+      <button class="filter-btn" data-filter="relocation">Переезд</button>
     </div>
 
     <!-- Карточки -->
     <div class="blog-grid">
 
       <!-- Главная статья -->
-      <article class="blog-card blog-card-featured reveal">
+      <article class="blog-card blog-card-featured reveal" data-cat="visa">
         <a class="blog-card-overlay" href="/ru/blog/cyprus-visas-2026" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
           <picture>
@@ -406,9 +409,7 @@
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>24 июня 2026</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>10 мин</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>24 июня 2026</span>            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
           </div>
           <h3>Визы на Кипр в 2026 году: виды, документы, сроки и правила въезда</h3>
           <p>Полный гид по всем типам виз на Кипр: туристическая, транзитная, долгосрочная. Кому нужна виза, как подать документы и сколько это стоит — по официальным данным правительства Кипра.</p>
@@ -417,7 +418,7 @@
       </article>
 
       <!-- Карточка 2 -->
-      <article class="blog-card reveal">
+      <article class="blog-card reveal" data-cat="residence">
         <a class="blog-card-overlay" href="/ru/residence-permit-cyprus" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
           <picture>
@@ -438,85 +439,65 @@
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>25 июня 2026</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>7 мин</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>25 июня 2026</span>            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
           </div>
           <h3>ВНЖ и ПМЖ на Кипре в 2026 году: все способы получения</h3>
           <p>Пинк-слип, ВНЖ через компанию, ПМЖ через инвестиции — разбираем каждый способ: документы, сроки и стоимость.</p>
-          <a href="/ru/residence-permit-cyprus" class="btn btn-outline">Подробнее →</a>
-        </div>
-      </article>
-
-      <!-- Карточка 3 -->
-      <article class="blog-card reveal">
-        <div class="blog-card-img">
-          <div class="blog-card-img-overlay"></div>
-          <span class="blog-card-cat">Бизнес</span>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
-          </div>
-          <h3>Регистрация компании на Кипре: пошаговое руководство</h3>
-          <p>Как открыть Cyprus Ltd за 5–10 дней: пакет документов, нотариус, регистратор и банковский счёт. Налоговые преимущества ЕС.</p>
-          <a href="/ru/company-registration-cyprus" class="btn btn-outline">Подробнее →</a>
+          <a href="/ru/residence-permit-cyprus" class="btn btn-outline">Читать статью →</a>
         </div>
       </article>
 
       <!-- Карточка 4 -->
-      <article class="blog-card reveal">
+      <article class="blog-card reveal" data-cat="tax">
+        <a class="blog-card-overlay" href="/ru/blog/nalogi-na-kipre-2026-stavki" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
+          <img
+            class="blog-card-photo"
+            src="/images/blog-nalogi-kipre-2026-hero.jpg"
+            alt="Инвестор оценивает налоговую систему Кипра — карта острова, книги и калькулятор"
+            loading="lazy" decoding="async"
+          />
           <div class="blog-card-img-overlay"></div>
           <span class="blog-card-cat">Налоги</span>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>4 июля 2026</span>            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
           </div>
-          <h3>Налоги на Кипре в 2026 году: полный обзор для физлиц и компаний</h3>
-          <p>Налог на прибыль 12,5%, отсутствие налога на дивиденды, режим Non-Dom — почему Кипр остаётся одним из лучших налоговых юрисдикций ЕС.</p>
-          <a href="/#services" class="btn btn-outline">Подробнее →</a>
+          <h3>Налоги на Кипре 2026: ставки подоходного налога и необлагаемый минимум €22 000</h3>
+          <p>Новая шкала подоходного налога с 2026 года: необлагаемый минимум, пороги ставок, налог на дивиденды и расчёт на конкретном примере.</p>
+          <a href="/ru/blog/nalogi-na-kipre-2026-stavki" class="btn btn-outline">Читать статью →</a>
         </div>
       </article>
 
-      <!-- Карточка 5 -->
-      <article class="blog-card reveal">
+      <!-- Карточка 4 -->
+      <article class="blog-card reveal" data-cat="business">
+        <a class="blog-card-overlay" href="/ru/company-registration-cyprus" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
+          <picture>
+            <source srcset="/images/office.webp" type="image/webp">
+            <img
+              class="blog-card-photo"
+              src="/images/office-opt.jpg"
+              alt="Офис ResidentPravo в Лимасоле — регистрация компаний на Кипре"
+              loading="lazy" decoding="async" width="860" height="537"
+            />
+          </picture>
           <div class="blog-card-img-overlay"></div>
-          <span class="blog-card-cat">Переезд</span>
+          <span class="blog-card-cat">Бизнес</span>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>10 июня 2026</span>            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
           </div>
-          <h3>Переезд на Кипр из России: полное руководство 2026</h3>
-          <p>Пошаговый план переезда: виза, жильё, банковский счёт, оформление ВНЖ, перевозка имущества. Личный опыт и практические советы.</p>
-          <a href="/#faq" class="btn btn-outline">Подробнее →</a>
-        </div>
-      </article>
-
-      <!-- Карточка 6 -->
-      <article class="blog-card reveal">
-        <div class="blog-card-img">
-          <div class="blog-card-img-overlay"></div>
-          <span class="blog-card-cat">ВНЖ и ПМЖ</span>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Скоро</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/ru/experts/artur-mardanyan" class="meta-author">Артур Марданян</a></span>
-          </div>
-          <h3>ПМЖ на Кипре через инвестиции от €300 000</h3>
-          <p>Бессрочное постоянное место жительства в ЕС за инвестиции в недвижимость. Условия, сроки и преимущества программы Fast Track PRP.</p>
-          <a href="/ru/residence-permit-cyprus#pmzh" class="btn btn-outline">Подробнее →</a>
+          <h3>Регистрация компании на Кипре в 2026 году: пошаговый гид</h3>
+          <p>Регистрация компании на Кипре под ключ: подготовка документов, налоговый номер, VAT, банковский счёт и сопровождение бизнеса.</p>
+          <a href="/ru/company-registration-cyprus" class="btn btn-outline">Читать статью →</a>
         </div>
       </article>
 
     </div>
+    <p class="blog-empty">В этой категории пока нет статей. Загляните позже — мы постоянно пополняем блог.</p>
   </div>
 </section>
 
@@ -662,10 +643,20 @@
   close.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false');});
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false');}));
 
+  const blogCards=document.querySelectorAll('.blog-grid .blog-card');
+  const blogEmpty=document.querySelector('.blog-empty');
   document.querySelectorAll('.filter-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
       document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
+      const filter=btn.dataset.filter||'all';
+      let visibleCount=0;
+      blogCards.forEach(card=>{
+        const show=filter==='all'||card.dataset.cat===filter;
+        card.classList.toggle('is-hidden',!show);
+        if(show)visibleCount++;
+      });
+      if(blogEmpty)blogEmpty.classList.toggle('is-visible',visibleCount===0);
     });
   });
 

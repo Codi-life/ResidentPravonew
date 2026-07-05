@@ -19,7 +19,7 @@
 <link rel="canonical" href="https://www.residentpravo.com/" />
 <link rel="alternate" hreflang="ru" href="https://www.residentpravo.com/" />
 <link rel="alternate" hreflang="en" href="https://www.residentpravo.com/en/" />
-<link rel="alternate" hreflang="x-default" href="https://www.residentpravo.com/" />
+<link rel="alternate" hreflang="x-default" href="https://www.residentpravo.com/en/" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -495,6 +495,8 @@
   .hero-proof .proof-star { color: #FFC107; margin-right: 0.1em; }
   .hero-proof .proof-sep  { color: rgba(255,255,255,0.20); }
   .hero-proof .proof-muted { opacity: 0.80; }
+  .hero-proof a.proof-link { color: inherit; text-decoration: none; }
+  .hero-proof a.proof-link:hover { text-decoration: underline; }
   .hero-services {
     display: flex;
     flex-wrap: wrap;
@@ -976,7 +978,7 @@
   .blog-preview-cta a:hover { gap: .85rem; }
 
   /* ============ REVIEWS ============ */
-  .reviews { background: var(--white); display: none; }
+  .reviews { background: var(--white); }
   .reviews-meta {
     display: flex;
     align-items: center;
@@ -1595,7 +1597,7 @@
       "name": "Какой налог на прибыль компании на Кипре?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Корпоративный налог на Кипре составляет 12,5% — один из самых низких в Евросоюзе. При грамотном структурировании бизнеса эффективная ставка может быть ниже за счёт налоговых льгот, включая IP Box режим."
+        "text": "С 1 января 2026 года корпоративный налог на Кипре составляет 15% (повышен с 12,5% в рамках налоговой реформы) — по-прежнему один из самых конкурентных показателей в Евросоюзе. При грамотном структурировании бизнеса эффективная ставка может быть ниже за счёт налоговых льгот, включая IP Box режим."
       }
     },
     {
@@ -1671,7 +1673,7 @@
   ]
 }
 </script>
-<!-- Schema.org: AggregateRating — добавить после появления реальных отзывов с Google -->
+<!-- Schema.org: AggregateRating — пока не добавлена; добавить, когда будет подтверждённое число отзывов/рейтинг с реального Google-профиля -->
 </head>
 <body>
 
@@ -1795,7 +1797,7 @@
           </div>
           <!-- Социальное доказательство — заглушки, заменить после получения реальных данных -->
           <div class="hero-proof reveal">
-            <span><span class="proof-star">★</span> Google&nbsp;4.9 <span class="proof-muted">(100+ отзывов)</span></span>
+            <a class="proof-link" href="https://g.page/r/CXJRNGSJPPGLEAE/review" target="_blank" rel="noopener"><span class="proof-star">★</span> Google&nbsp;4.9</a>
             <span class="proof-sep">•</span>
             <span>✓ 350+ кейсов</span>
             <span class="proof-sep">•</span>
@@ -1894,7 +1896,7 @@
           <span class="service-num">04</span>
           <div class="service-body">
             <h3>Бухгалтерия и аудит</h3>
-            <p>Бухгалтерский учёт, аудит и налоговое планирование на Кипре. Non-Dom, VAT, корпоративный налог 12,5%.</p>
+            <p>Бухгалтерский учёт, аудит и налоговое планирование на Кипре. Non-Dom, VAT, корпоративный налог 15%.</p>
           </div>
           <span class="service-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </a>
@@ -2139,7 +2141,7 @@
             </div>
           </article>
           <article class="case-card">
-            <div class="case-card-photo"><img src="images/case-ukraine.webp" alt="Предприниматель из Армении — бизнес на Кипре" loading="lazy" width="800" height="600" /></div>
+            <div class="case-card-photo"><img src="images/case-armenia.webp" alt="Предприниматель из Армении — бизнес на Кипре" loading="lazy" width="800" height="600" /></div>
             <div class="case-card-body">
               <h3>Предприниматель из Армении</h3>
               <ul class="case-results">
@@ -2151,7 +2153,7 @@
             </div>
           </article>
           <article class="case-card">
-            <div class="case-card-photo"><img src="images/case-armenia.webp" alt="Семья из Украины — ВНЖ и релокация на Кипр" loading="lazy" width="800" height="600" /></div>
+            <div class="case-card-photo"><img src="images/case-ukraine.webp" alt="Семья из Украины — ВНЖ и релокация на Кипр" loading="lazy" width="800" height="600" /></div>
             <div class="case-card-body">
               <h3>Семья из Украины</h3>
               <ul class="case-results">
@@ -2200,6 +2202,28 @@
         <!-- BLOG:RU:START -->
 
         <article class="bp-card">
+          <a class="bp-card-overlay" href="/ru/blog/nalogi-na-kipre-2026-stavki" aria-hidden="true" tabindex="-1"></a>
+          <div class="bp-card-img">
+            
+            <picture>
+              <source type="image/webp" srcset="" sizes="(max-width:768px) 100vw, 400px" />
+              <img class="bp-card-photo" src="/images/blog-nalogi-kipre-2026-hero.jpg" srcset="" sizes="(max-width:768px) 100vw, 400px" alt="Инвестор оценивает налоговую систему Кипра — карта острова, книги и калькулятор" loading="lazy" decoding="async" />
+            </picture>
+            <div class="bp-card-img-overlay"></div>
+            <span class="bp-card-cat">Налоги</span>
+          </div>
+          <div class="bp-card-body">
+            <div class="bp-card-meta">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>4 июля 2026</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>•</span>
+            </div>
+            <h3>Налоги на Кипре 2026: ставки подоходного налога и необлагаемый минимум €22 000</h3>
+            <p>Новая шкала подоходного налога с 2026 года: необлагаемый минимум, пороги ставок, налог на дивиденды и расчёт на конкретном примере.</p>
+            <a href="/ru/blog/nalogi-na-kipre-2026-stavki" class="btn btn-outline">Подробнее →</a>
+          </div>
+        </article>
+
+        <article class="bp-card">
           <a class="bp-card-overlay" href="/ru/residence-permit-cyprus" aria-hidden="true" tabindex="-1"></a>
           <div class="bp-card-img">
             
@@ -2213,7 +2237,7 @@
           <div class="bp-card-body">
             <div class="bp-card-meta">
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>25 июня 2026</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>7 мин</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>•</span>
             </div>
             <h3>ВНЖ и ПМЖ на Кипре в 2026 году: все способы получения</h3>
             <p>Пинк-слип, ВНЖ через компанию, ПМЖ через инвестиции — разбираем каждый способ: документы, сроки и стоимость.</p>
@@ -2235,7 +2259,7 @@
           <div class="bp-card-body">
             <div class="bp-card-meta">
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>24 июня 2026</span>
-              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>10 мин</span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>•</span>
             </div>
             <h3>Визы на Кипр в 2026 году: виды, документы, сроки и правила въезда</h3>
             <p>Полный гид по всем типам виз на Кипр: туристическая, транзитная, долгосрочная. Кому нужна виза, как подать документы и сколько это стоит — по официальным данным правительства Кипра.</p>
@@ -2254,7 +2278,7 @@
   </section>
 
   <!-- ============ REVIEWS ============ -->
-  <!-- Блок скрыт (display:none в .reviews) до появления реальных отзывов с Google. Schema.org AggregateRating в <head> активна. -->
+  <!-- 3 реальных отзыва с Google (проверено по скриншотам от 2026-07-05). Schema.org AggregateRating пока не добавлена — см. комментарий в <head>. -->
   <section class="reviews section-pad" id="reviews" aria-label="Отзывы клиентов">
     <div class="wrap">
       <div class="section-head reveal">
@@ -2271,40 +2295,40 @@
             <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
             Проверено Google
           </span>
-          <span class="reviews-volume">100+ отзывов · 15+ стран</span>
+          <span class="reviews-volume">Реальные отзывы клиентов</span>
         </div>
       </div>
       <div class="review-grid reveal">
-        <article class="review-card review-card--placeholder">
+        <article class="review-card">
           <span class="review-tag">Регистрация компании</span>
           <div class="review-stars" aria-hidden="true">★★★★★</div>
-          <p class="review-text">Здесь появится реальный отзыв с Google.</p>
+          <p class="review-text">Хочу выразить огромную благодарность за профессиональную помощь в открытии компании и банковского счёта на Кипре. Весь процесс был организован быстро и максимально прозрачно. Отдельное спасибо за сопровождение по всем сопутствующим вопросам — всегда получала подробные консультации, оперативные ответы и квалифицированную поддержку.</p>
           <div class="review-footer">
-            <span class="review-author">— Автор</span>
-            <span class="review-date">дата</span>
+            <span class="review-author">Svetlana Cyprus</span>
+            <span class="review-date">5 июля 2026</span>
           </div>
         </article>
-        <article class="review-card review-card--placeholder">
+        <article class="review-card">
           <span class="review-tag">ВНЖ и ПМЖ</span>
           <div class="review-stars" aria-hidden="true">★★★★★</div>
-          <p class="review-text">Здесь появится реальный отзыв с Google.</p>
+          <p class="review-text">Хочу поблагодарить команду ResidentPravo за профессиональную помощь в получении ВНЖ на Кипре. Обратился за сопровождением, и весь процесс прошёл быстро, чётко и без лишних сложностей. Всегда были на связи, подробно отвечали на все вопросы и помогли с документами на каждом этапе.</p>
           <div class="review-footer">
-            <span class="review-author">— Автор</span>
-            <span class="review-date">дата</span>
+            <span class="review-author">Invest Home</span>
+            <span class="review-date">5 июля 2026</span>
           </div>
         </article>
-        <article class="review-card review-card--placeholder">
+        <article class="review-card">
           <span class="review-tag">Бухгалтерия</span>
           <div class="review-stars" aria-hidden="true">★★★★★</div>
-          <p class="review-text">Здесь появится реальный отзыв с Google.</p>
+          <p class="review-text">Обращался в ResidentPravo по регистрации компании на Кипре и дальнейшим вопросам с бухгалтерией. Помогли разобраться с документами, всё объясняли понятным языком и всегда отвечали, когда возникали вопросы. Впечатления только положительные, однозначно рекомендую.</p>
           <div class="review-footer">
-            <span class="review-author">— Автор</span>
-            <span class="review-date">дата</span>
+            <span class="review-author">Raymik</span>
+            <span class="review-date">4 июля 2026</span>
           </div>
         </article>
       </div>
       <div class="reviews-cta">
-        <a href="#" target="_blank" rel="noopener noreferrer">
+        <a href="https://g.page/r/CXJRNGSJPPGLEAE/review" target="_blank" rel="noopener noreferrer">
           Смотреть все отзывы на Google
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
@@ -2359,7 +2383,7 @@
           <div class="faq-more" id="faq-more">
             <div class="faq-item">
               <button class="faq-q" aria-expanded="false" aria-controls="faq-a-7">Какой налог на прибыль компании на Кипре?<span class="faq-icon" aria-hidden="true"></span></button>
-              <div class="faq-a" id="faq-a-7"><div class="faq-a-inner">Корпоративный налог на Кипре составляет 12,5% — один из самых низких в Евросоюзе. При грамотном структурировании бизнеса эффективная ставка может быть ниже за счёт налоговых льгот, включая IP Box режим.</div></div>
+              <div class="faq-a" id="faq-a-7"><div class="faq-a-inner">С 1 января 2026 года корпоративный налог на Кипре составляет 15% (повышен с 12,5% в рамках налоговой реформы) — по-прежнему один из самых конкурентных показателей в Евросоюзе. При грамотном структурировании бизнеса эффективная ставка может быть ниже за счёт налоговых льгот, включая IP Box режим.</div></div>
             </div>
             <div class="faq-item">
               <button class="faq-q" aria-expanded="false" aria-controls="faq-a-8">Какие документы нужны для регистрации компании?<span class="faq-icon" aria-hidden="true"></span></button>
@@ -2406,7 +2430,7 @@
           <a href="#" class="btn btn-ghost light" data-modal="contact">Оставить заявку</a>
         </div>
         <div class="hero-proof" style="justify-content:center;margin-top:1.4rem">
-          <span><span class="proof-star">★</span> Google&nbsp;4.9 <span class="proof-muted">(100+ отзывов)</span></span>
+          <a class="proof-link" href="https://g.page/r/CXJRNGSJPPGLEAE/review" target="_blank" rel="noopener"><span class="proof-star">★</span> Google&nbsp;4.9</a>
           <span class="proof-sep">·</span>
           <span>350+ кейсов</span>
           <span class="proof-sep">·</span>

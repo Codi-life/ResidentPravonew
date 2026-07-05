@@ -147,8 +147,8 @@
   .blog-card-img-overlay { position:absolute; inset:0; background:rgba(10,37,64,.25); }
   .blog-card-cat { position:relative; z-index:1; display:inline-flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:#fff; background:rgba(29,78,216,.8); border-radius:999px; padding:.3em .9em; }
   .blog-card-body { padding:var(--card-pad); flex:1; display:flex; flex-direction:column; }
-  .blog-card-meta { display:flex; align-items:center; gap:.85rem; font-size:.76rem; color:var(--navy-55); margin-bottom:.9rem; }
-  .blog-card-meta span { display:flex; align-items:center; gap:.3rem; }
+  .blog-card-meta { display:flex; align-items:center; flex-wrap:nowrap; gap:.6rem; font-size:.76rem; color:var(--navy-55); margin-bottom:.9rem; white-space:nowrap; overflow:hidden; }
+  .blog-card-meta span { display:flex; align-items:center; gap:.3rem; flex-shrink:0; white-space:nowrap; }
   .blog-card-meta svg { width:13px; height:13px; flex:none; }
   .blog-card h3 { font-size:clamp(1.05rem,1.6vw,1.2rem); color:var(--navy); line-height:1.3; margin-bottom:.75rem; text-wrap:balance; }
   .blog-card p { font-size:.88rem; color:var(--navy-70); line-height:1.65; margin-bottom:1.4rem; flex:1; }
@@ -167,6 +167,9 @@
   .blog-filters { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2.5rem; }
   .filter-btn { font-family:inherit; font-size:.8rem; font-weight:600; letter-spacing:.04em; padding:.45rem 1.1rem; border-radius:999px; border:1.5px solid var(--line); background:transparent; color:var(--navy-70); cursor:pointer; transition:border-color .2s,color .2s,background .2s; }
   .filter-btn.active,.filter-btn:hover { border-color:var(--blue); color:var(--blue); background:rgba(29,78,216,.05); }
+  .blog-card.is-hidden { display:none; }
+  .blog-empty { display:none; text-align:center; padding:3rem 1rem; color:var(--navy-55); font-size:.95rem; }
+  .blog-empty.is-visible { display:block; }
 
   .section-head { margin-bottom:clamp(2rem,4vw,3rem); }
   .section-head h2 { color:var(--navy); margin-top:.75rem; }
@@ -350,17 +353,17 @@
   <div class="wrap">
 
     <div class="blog-filters reveal">
-      <button class="filter-btn active">All Articles</button>
-      <button class="filter-btn">Visas</button>
-      <button class="filter-btn">Residency &amp; PR</button>
-      <button class="filter-btn">Business</button>
-      <button class="filter-btn">Taxes</button>
-      <button class="filter-btn">Relocation</button>
+      <button class="filter-btn active" data-filter="all">All Articles</button>
+      <button class="filter-btn" data-filter="visa">Visas</button>
+      <button class="filter-btn" data-filter="residence">Residency &amp; PR</button>
+      <button class="filter-btn" data-filter="business">Business</button>
+      <button class="filter-btn" data-filter="tax">Taxes</button>
+      <button class="filter-btn" data-filter="relocation">Relocation</button>
     </div>
 
     <div class="blog-grid">
 
-      <article class="blog-card blog-card-featured reveal">
+      <article class="blog-card blog-card-featured reveal" data-cat="visa">
         <a class="blog-card-overlay" href="/en/blog/cyprus-visas-2026" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
           <picture>
@@ -381,9 +384,7 @@
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>June 24, 2026</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>10 min</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>June 24, 2026</span>            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
           </div>
           <h3>Cyprus Visas 2026: Types, Documents, Processing Times &amp; Entry Rules</h3>
           <p>A complete guide to all Cyprus visa types: tourist, transit and long-stay. Who needs a visa, how to apply and what it costs — based on official Cyprus Government data.</p>
@@ -391,7 +392,7 @@
         </div>
       </article>
 
-      <article class="blog-card reveal">
+      <article class="blog-card reveal" data-cat="residence">
         <a class="blog-card-overlay" href="/en/residence-permit-cyprus" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
           <picture>
@@ -412,81 +413,63 @@
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>25 June 2026</span>
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>7 min</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>25 June 2026</span>            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
           </div>
           <h3>Cyprus Residence Permit 2026: All Ways to Obtain</h3>
           <p>Pink Slip, company-based residency, permanent residency via investment — every route explained: documents, timelines and costs.</p>
-          <a href="/en/residence-permit-cyprus" class="btn btn-outline">Learn More →</a>
+          <a href="/en/residence-permit-cyprus" class="btn btn-outline">Read Article →</a>
         </div>
       </article>
 
-      <article class="blog-card reveal">
+      <article class="blog-card reveal" data-cat="tax">
+        <a class="blog-card-overlay" href="/en/blog/nalogi-na-kipre-2026-stavki" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
-          <div class="blog-card-img-overlay"></div>
-          <span class="blog-card-cat">Business</span>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Coming soon</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
-          </div>
-          <h3>Company Registration in Cyprus: Step-by-Step Guide</h3>
-          <p>How to open a Cyprus Ltd in 5–10 days: documents, notary, registrar and bank account. EU tax advantages explained.</p>
-          <a href="/en/company-registration-cyprus" class="btn btn-outline">Learn More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card reveal">
-        <div class="blog-card-img">
+          <img
+            class="blog-card-photo"
+            src="/images/blog-nalogi-kipre-2026-hero.jpg"
+            alt="An investor reviewing Cyprus's tax system — island map, books and calculator"
+            loading="lazy" decoding="async"
+          />
           <div class="blog-card-img-overlay"></div>
           <span class="blog-card-cat">Taxes</span>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Coming soon</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>July 4, 2026</span>            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
           </div>
-          <h3>Cyprus Taxes 2026: Full Overview for Individuals and Companies</h3>
-          <p>12.5% corporate tax, zero dividend tax, Non-Dom regime — why Cyprus remains one of the EU's most attractive tax jurisdictions.</p>
-          <a href="/index-en.html#services" class="btn btn-outline">Learn More →</a>
+          <h3>Cyprus Taxes 2026: Personal Income Tax Rates and the €22,000 Tax-Free Threshold</h3>
+          <p>The new personal income tax scale from 2026: tax-free threshold, bracket thresholds, dividend tax, and a worked example.</p>
+          <a href="/en/blog/nalogi-na-kipre-2026-stavki" class="btn btn-outline">Read Article →</a>
         </div>
       </article>
 
-      <article class="blog-card reveal">
+      <article class="blog-card reveal" data-cat="business">
+        <a class="blog-card-overlay" href="/en/company-registration-cyprus" aria-hidden="true" tabindex="-1"></a>
         <div class="blog-card-img">
+          <picture>
+            <source srcset="/images/office.webp" type="image/webp">
+            <img
+              class="blog-card-photo"
+              src="/images/office-opt.jpg"
+              alt="ResidentPravo office in Limassol — company registration in Cyprus"
+              loading="lazy" decoding="async" width="860" height="537"
+            />
+          </picture>
           <div class="blog-card-img-overlay"></div>
-          <span class="blog-card-cat">Relocation</span>
+          <span class="blog-card-cat">Business</span>
         </div>
         <div class="blog-card-body">
           <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Coming soon</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>June 10, 2026</span>            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
           </div>
-          <h3>Relocating to Cyprus: Complete Guide 2026</h3>
-          <p>Step-by-step relocation plan: visa, housing, bank account, residence permit, shipping belongings. Real experience and practical tips.</p>
-          <a href="/index-en.html#faq" class="btn btn-outline">Learn More →</a>
-        </div>
-      </article>
-
-      <article class="blog-card reveal">
-        <div class="blog-card-img">
-          <div class="blog-card-img-overlay"></div>
-          <span class="blog-card-cat">Residency &amp; PR</span>
-        </div>
-        <div class="blog-card-body">
-          <div class="blog-card-meta">
-            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Coming soon</span>
-            <span class="meta-author-wrap"><span class="meta-dot" aria-hidden="true">•</span><a href="/en/experts/artur-mardanyan" class="meta-author">Artur Mardanyan</a></span>
-          </div>
-          <h3>Cyprus Permanent Residency via Investment from €300,000</h3>
-          <p>Indefinite EU permanent residency through real estate investment. Requirements, timelines and benefits of the Fast Track PRP programme.</p>
-          <a href="/en/residence-permit-cyprus#pmzh" class="btn btn-outline">Learn More →</a>
+          <h3>Company Registration in Cyprus 2026: Step-by-Step Guide</h3>
+          <p>Full-service company registration in Cyprus: document preparation, tax registration, VAT, bank account assistance and ongoing business support.</p>
+          <a href="/en/company-registration-cyprus" class="btn btn-outline">Read Article →</a>
         </div>
       </article>
 
     </div>
+    <p class="blog-empty">No articles in this category yet. Check back soon — we're publishing new guides regularly.</p>
   </div>
 </section>
 
@@ -630,10 +613,20 @@
   close.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false');});
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');burger.setAttribute('aria-expanded','false');}));
 
+  const blogCards=document.querySelectorAll('.blog-grid .blog-card');
+  const blogEmpty=document.querySelector('.blog-empty');
   document.querySelectorAll('.filter-btn').forEach(btn=>{
     btn.addEventListener('click',()=>{
       document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
       btn.classList.add('active');
+      const filter=btn.dataset.filter||'all';
+      let visibleCount=0;
+      blogCards.forEach(card=>{
+        const show=filter==='all'||card.dataset.cat===filter;
+        card.classList.toggle('is-hidden',!show);
+        if(show)visibleCount++;
+      });
+      if(blogEmpty)blogEmpty.classList.toggle('is-visible',visibleCount===0);
     });
   });
 

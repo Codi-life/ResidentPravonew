@@ -17,7 +17,7 @@
 
 ## Key Facts
 
-- Corporate tax in Cyprus: **12.5%** — one of the lowest in the EU
+- Corporate tax in Cyprus: **15%** (raised from 12.5% as of 1 January 2026) — still one of the most competitive rates in the EU
 - IP Box regime available for IP-holding companies (effective rate can be lower)
 - FIC (Foreign Interest Company) grants residence permits for founder + foreign employees
 - Category F ПМЖ: permanent status, no minimum stay requirement
@@ -41,6 +41,8 @@
 - [Residence Permit Cyprus (EN)](https://www.residentpravo.com/en/residence-permit-cyprus) — Complete guide to Cyprus residence and permanent residency: routes, documents, timelines.
 - [Регистрация компании на Кипре (RU)](https://www.residentpravo.com/ru/company-registration-cyprus) — Регистрация кипрской компании под ключ: Ltd, FIC, счёт, бухгалтерия.
 - [Company Registration Cyprus (EN)](https://www.residentpravo.com/en/company-registration-cyprus) — End-to-end Cyprus company formation: Ltd, FIC, bank account, compliance.
+- [Бухгалтерия и аудит на Кипре (RU)](https://www.residentpravo.com/ru/accounting-audit-cyprus) — Бухгалтерское сопровождение, VAT, payroll, ежегодный аудит и налоговое сопровождение кипрских компаний.
+- [Accounting & Audit Cyprus (EN)](https://www.residentpravo.com/en/accounting-audit-cyprus) — Bookkeeping, VAT, payroll, annual audit and tax compliance for Cyprus companies.
 
 ### Blog
 
@@ -48,6 +50,8 @@
 - [Blog (EN)](https://www.residentpravo.com/en/blog) — Practical guides on Cyprus visas, residency, company registration and taxes.
 - [Визы на Кипр 2026 (RU)](https://www.residentpravo.com/ru/blog/cyprus-visas-2026) — Полный гид по типам виз на Кипр: туристические, долгосрочные, ВНЖ, транзитные.
 - [Cyprus Visas 2026 (EN)](https://www.residentpravo.com/en/blog/cyprus-visas-2026) — Complete guide to Cyprus visa types in 2026: tourist, long-stay, residence, transit.
+- [Налоги на Кипре 2026 (RU)](https://www.residentpravo.com/ru/blog/nalogi-na-kipre-2026-stavki) — Ставки подоходного налога на 2026 год, необлагаемый минимум €22 000, налог на дивиденды.
+- [Cyprus Taxes 2026 (EN)](https://www.residentpravo.com/en/blog/nalogi-na-kipre-2026-stavki) — 2026 personal income tax rates, the €22,000 tax-free threshold, and dividend tax.
 
 ### Expert
 
