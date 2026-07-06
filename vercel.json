@@ -103,6 +103,14 @@
       "destination": "/ru/terms-of-use.html"
     },
     {
+      "source": "/en/privacy-policy",
+      "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/en/terms-of-use",
+      "destination": "/terms-of-use.html"
+    },
+    {
       "source": "/ru/residence-permit-cyprus",
       "destination": "/ru/residence-permit-cyprus.html"
     },

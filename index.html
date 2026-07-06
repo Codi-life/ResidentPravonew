@@ -282,13 +282,7 @@
   .header-cta .btn-wa svg { width: 17px; height: 17px; }
   .header-cta .btn-wa:hover { transform: translateY(-1px); box-shadow: 0 7px 18px -7px rgba(37,211,102,0.5); }
 
-  .burger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none; border: none; cursor: pointer;
-    padding: 8px;
-  }
+  .burger { display: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; min-width: 44px; min-height: 44px; }
   .burger span { width: 24px; height: 2px; background: var(--navy); border-radius: 2px; transition: 0.3s; }
 
   /* mobile menu */
@@ -702,7 +696,9 @@
   .about-stat-flags { display: flex; gap: 0.3rem; align-items: center; margin-bottom: 0.2rem; }
   .about-stat-flags .flag { width: 22px; height: 15px; border-radius: 2px; overflow: hidden; display: block; flex: none; box-shadow: 0 0 0 1px rgba(10,37,64,0.12); }
   .about-stat-flags .flag svg { display: block; width: 100%; height: 100%; }
-  .about-more { max-height: 0; overflow: hidden; transition: max-height 0.6s ease; }
+  .about-more { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.6s ease; }
+  .about-more.open { grid-template-rows: 1fr; }
+  #about-more > .about-body { min-height: 0; overflow: hidden; }
   .about-toggle { display: inline-flex; align-items: center; gap: .45rem; margin-top: var(--s3); padding: .65rem 0; background: none; border: none; cursor: pointer; color: var(--blue); font-weight: 600; font-size: .95rem; font-family: inherit; transition: gap .25s ease; }
   .about-toggle:hover { gap: .75rem; }
   .about-toggle svg { width: 16px; height: 16px; flex: none; transition: transform .35s ease; }
@@ -1067,7 +1063,9 @@
   .faq-icon::before { width: 15px; height: 2px; }
   .faq-icon::after { width: 2px; height: 15px; }
   .faq-item.open .faq-icon::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
-  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+  .faq-a { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.4s ease; }
+  .faq-item.open .faq-a { grid-template-rows: 1fr; }
+  .faq-a-inner { min-height: 0; overflow: hidden; }
   .faq-a-inner { padding-bottom: var(--s3); color: var(--navy-70); font-size: 0.98rem; max-width: 60ch; }
   .faq-more { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
   .faq-more.open { max-height: 2000px; }
@@ -2569,16 +2567,13 @@
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
-      const a = item.querySelector('.faq-a');
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item.open').forEach(o => {
         o.classList.remove('open');
-        o.querySelector('.faq-a').style.maxHeight = null;
         o.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
       });
       if (!isOpen) {
         item.classList.add('open');
-        a.style.maxHeight = a.scrollHeight + 'px';
         btn.setAttribute('aria-expanded', 'true');
       }
     });
@@ -2593,8 +2588,7 @@
       aboutToggle.classList.toggle('open', isOpen);
       aboutToggle.setAttribute('aria-expanded', String(isOpen));
       aboutToggle.querySelector('span').textContent = isOpen ? aboutToggle.dataset.less : aboutToggle.dataset.more;
-      aboutMore.style.maxHeight = isOpen ? aboutMore.scrollHeight + 'px' : '0px';
-    });
+      });
   }
 
   // ---- FAQ show more ----
