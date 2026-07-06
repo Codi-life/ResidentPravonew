@@ -626,8 +626,7 @@
   .faq-icon::before { width:15px; height:2px; }
   .faq-icon::after  { width:2px; height:15px; }
   .faq-item.open .faq-icon::after { transform:translate(-50%,-50%) rotate(90deg); opacity:0; }
-  .faq-a { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows .4s ease; }
-  .faq-item.open .faq-a { grid-template-rows: 1fr; }
+  .faq-a { height:0; overflow:hidden; transition:height .35s ease; }
   .faq-a-inner { min-height: 0; overflow: hidden; }
   .faq-a-inner { color:var(--navy-70); font-size:.98rem; max-width:60ch; }
   .faq-item.open .faq-a-inner { padding-bottom:var(--s3); }
@@ -1864,18 +1863,28 @@
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }));
 
   // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(o => {
+  document.querySelectorAll('.faq-q').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.closest('.faq-item');
+      const wasOpen=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{
+        const p=o.querySelector('.faq-a');
+        p.style.height=p.scrollHeight+'px';
+        void p.offsetHeight;
+        p.style.height='0px';
         o.classList.remove('open');
         o.querySelector('.faq-q').setAttribute('aria-expanded','false');
-        });
-      if (!isOpen) {
+      });
+      if(!wasOpen){
         item.classList.add('open');
         btn.setAttribute('aria-expanded','true');
-        }
+        const panel=item.querySelector('.faq-a');
+        panel.style.height=panel.scrollHeight+'px';
+        panel.addEventListener('transitionend',function onEnd(e){
+          if(e.propertyName==='height'&&item.classList.contains('open')){panel.style.height='auto';}
+          panel.removeEventListener('transitionend',onEnd);
+        });
+      }
     });
   });
 
