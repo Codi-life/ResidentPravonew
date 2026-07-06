@@ -169,6 +169,89 @@ function renderCard(article, moreLabel) {
         </article>`;
 }
 
+// ─── Reading time (read from the article's own page, not the blog index) ─────
+
+function getReadingTime(href, lang) {
+  const filePath = path.join(ROOT, href.replace(/^\//, '') + '.html');
+  if (!fs.existsSync(filePath)) return '';
+  const html = fs.readFileSync(filePath, 'utf8');
+  const re = lang === 'ru' ? /(\d+)\s+минут\w*\s+чтения/i : /(\d+)\s+min\s+read/i;
+  const m = html.match(re);
+  if (!m) return '';
+  return lang === 'ru' ? `${m[1]} мин` : `${m[1]} min`;
+}
+
+// ─── Render article-card HTML (expert bio page) ───────────────────────────────
+
+const CAL_SVG_EXPERT   = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`;
+const CLOCK_SVG_EXPERT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`;
+
+function renderArticleCard(article) {
+  const imgBlock = article.jpgSrc
+    ? `
+          <picture>
+            <source type="image/webp" srcset="${article.webpSrcset}" sizes="${article.imgSizes}" />
+            <img src="${article.jpgSrc}" srcset="${article.jpgSrcset}" sizes="${article.imgSizes}" alt="${article.imgAlt}" loading="lazy" decoding="async" />
+          </picture>`
+    : '';
+
+  const readingTimeBlock = article.readingTime
+    ? `\n            ${CLOCK_SVG_EXPERT}\n            ${article.readingTime}`
+    : '';
+
+  return `
+      <a href="${article.href}" class="article-card">
+        <div class="article-card-img">${imgBlock}
+        </div>
+        <div class="article-card-body">
+          <div class="article-cat">${article.category}</div>
+          <h3>${article.title}</h3>
+          <div class="article-meta">
+            ${CAL_SVG_EXPERT}
+            ${article.dateText}${readingTimeBlock}
+          </div>
+        </div>
+      </a>`;
+}
+
+// ─── Inject into expert bio page ───────────────────────────────────────────────
+
+function injectArticles(expertPath, blogIndexPath, lang, startMarker, endMarker) {
+  const blogHtml = fs.readFileSync(blogIndexPath, 'utf8');
+  const articles = parseBlogIndex(blogHtml, lang, 3);
+
+  if (articles.length === 0) {
+    console.warn(`[${lang.toUpperCase()}] No published articles found — ${path.basename(expertPath)} unchanged.`);
+    return;
+  }
+
+  articles.forEach(a => { a.readingTime = getReadingTime(a.href, lang); });
+
+  const cardsHtml = articles.map(renderArticleCard).join('\n');
+
+  let expertHtml = fs.readFileSync(expertPath, 'utf8');
+
+  const startEsc = startMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const endEsc   = endMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const markerRe = new RegExp(`(${startEsc})[\\s\\S]*?(${endEsc})`, 'g');
+
+  const updated = expertHtml.replace(markerRe, `$1\n${cardsHtml}\n$2`);
+
+  if (updated === expertHtml) {
+    const markersPresent = expertHtml.includes(startMarker) && expertHtml.includes(endMarker);
+    if (!markersPresent) {
+      console.warn(`[${lang.toUpperCase()}] Markers not found in ${path.basename(expertPath)} — add <!-- ARTICLES:${lang.toUpperCase()}:START --> / END markers.`);
+    } else {
+      console.log(`[${lang.toUpperCase()}] Articles unchanged — ${path.basename(expertPath)} not rewritten.`);
+    }
+    return;
+  }
+
+  fs.writeFileSync(expertPath, updated, 'utf8');
+  console.log(`[${lang.toUpperCase()}] Injected ${articles.length} article(s) → ${path.basename(expertPath)}`);
+  articles.forEach(a => console.log(`       ${a.dateText}  ${a.title}`));
+}
+
 // ─── Inject into homepage ─────────────────────────────────────────────────────
 
 function inject(indexPath, blogIndexPath, lang, readLabel, startMarker, endMarker) {
@@ -208,7 +291,10 @@ function inject(indexPath, blogIndexPath, lang, readLabel, startMarker, endMarke
 // ─── Sitemap auto-update ──────────────────────────────────────────────────────
 
 function formatDate(d) {
-  return d.toISOString().split('T')[0]; // YYYY-MM-DD
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`; // local date, not UTC — avoids off-by-one-day near midnight in UTC+ zones
 }
 
 function updateSitemap(sitemapPath, ruBlogHtml, enBlogHtml) {
@@ -290,6 +376,22 @@ inject(
   'en', 'Learn More',
   '<!-- BLOG:EN:START -->',
   '<!-- BLOG:EN:END -->'
+);
+
+injectArticles(
+  path.join(ROOT, 'ru', 'experts', 'artur-mardanyan.html'),
+  path.join(ROOT, 'ru', 'blog', 'index.html'),
+  'ru',
+  '<!-- ARTICLES:RU:START -->',
+  '<!-- ARTICLES:RU:END -->'
+);
+
+injectArticles(
+  path.join(ROOT, 'en', 'experts', 'artur-mardanyan.html'),
+  path.join(ROOT, 'en', 'blog', 'index.html'),
+  'en',
+  '<!-- ARTICLES:EN:START -->',
+  '<!-- ARTICLES:EN:END -->'
 );
 
 // Update sitemap.xml with all published blog articles
