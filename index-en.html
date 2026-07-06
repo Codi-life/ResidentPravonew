@@ -405,7 +405,8 @@
   .faq-a { display: grid; grid-template-rows: 0fr; overflow: hidden; transition: grid-template-rows 0.4s ease; }
   .faq-item.open .faq-a { grid-template-rows: 1fr; }
   .faq-a-inner { min-height: 0; overflow: hidden; }
-  .faq-a-inner { padding-bottom: var(--s3); color: var(--navy-70); font-size: 0.98rem; max-width: 60ch; }
+  .faq-a-inner { color: var(--navy-70); font-size: 0.98rem; max-width: 60ch; }
+  .faq-item.open .faq-a-inner { padding-bottom:var(--s3); }
   .faq-more { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
   .faq-more.open { max-height: 2000px; }
   .faq-toggle { display: inline-flex; align-items: center; gap: .45rem; margin-top: var(--s3); padding: .65rem 0; background: none; border: none; cursor: pointer; color: var(--blue); font-weight: 600; font-size: .95rem; font-family: inherit; transition: gap .25s ease; }
