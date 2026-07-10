@@ -44,12 +44,8 @@ company-registration-cyprus строку:
 <a href="/ru/likvidatsiya-kompanii-na-kipre" style="color:var(--blue);">Strike Off и добровольная ликвидация</a>
 ```
 
-## Готовые (полочные) компании
+## Готовые (полочные) компании — DONE (2026-07-08)
 
-Когда будет готова статья про покупку готовой компании — добавить в конец
-ответа FAQ-пункта "Можно ли купить готовую компанию на Кипре вместо
-регистрации новой?":
-
-```html
-Подробнее — <a href="/ru/gotovaya-kompaniya-kipr" style="color:var(--blue);">в отдельном материале о покупке готовой компании на Кипре</a>.
-```
+Статья опубликована: `/ru/blog/gotovaya-kompaniya-ili-registraciya-kipr-2026`.
+Ссылка из FAQ на company-registration-cyprus добавлена. Нужно ещё:
+EN-версия статьи (`en/blog/...`) + рассылка hreflang-alternate после публикации EN.
